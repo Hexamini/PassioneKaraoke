@@ -5,8 +5,6 @@ use Object::Utility::ParserHTML;
 
 package Table;
 
-my $struct = "data/table.html";
-
 =begin
 Ritorna il codice della tabella in formato HTML
 Parametri
@@ -14,6 +12,8 @@ Parametri
 =cut
 sub getHTML
 {
+    my $struct = "data/table.html";
+
     my %values;
     $values{'nome'} = $_[0];
     $values{'cognome'} = $_[1];

@@ -13,72 +13,88 @@
         <meta name="author" content="Fabio Massignan, Davide Polonio, Andrea Mantovani, Luca Bianco" />
 
         <!-- Link ai vari css tramite posizione relativa-->
+
+        <!-- Stylesheet including all the global and the desktop rules -->
+        <link rel="stylesheet" type="text/css" href="assets/style/style.css" />
     </head>
 
     <body>
 
+
+        <!-- Struttura -->
+
         <div id="header">
 
+            <div id="logo"></div>
+
+            <div id="menu">
+                <ul>
+                    <li class="active">Home</li>
+                    <li>Artisti</li>
+                    <li>Canzoni</li>
+                    <li>Classifiche</li>
+                    <li>Account</li> <!-- Voce da modificare -->
+                </ul>
+            </div>
+
+            <div id="search-and-login">
+
+                <div id="account-management">
+                    <a href="#">Accedi</a>
+                </div>
+
+                <div id="search">
+                    <form id="search-form" action="../cgi-bin/search.cgi" method="get">
+                        <label for="searchBox">Cerca</label>
+                        <input name="searchBox" id="searchBox" />
+                        <input type="submit" value="Cerca" name="action" />
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Fine struttura -->
+
+        <div id="content">
             <h1>Passione Karaoke</h1>
-        </div>
 
-        <div id="navBar">
+            <div id="navBar">
 
-            <p>Ti trovi in: Home</p>
-        </div>
-
-        <div id="search">
-
-            <form id="search-form" action="../cgi-bin/search.cgi" method="get">
-
-                <label for="searchBox">Cerca</label>
-                <input name="searchBox" id="searchBox" />
-                <input type="submit" value="Cerca" name="action" />
-            </form>
-        </div>
-
-        <div id="menu">
-
-            <p>Men&ugrave;</p>
-
-            <ul>
-
-                <li class="active">Home</li>
-                <li>Artisti</li>
-                <li>Canzoni</li>
-                <li>Classifiche</li>
-                <li>Account</li> <!-- Voce da modificare -->
-            </ul>
-        </div>
-
-        <div id="musicType">
-
-            <!-- !_categoriaMusica_! -->
-
-            <p>Canzoni ordinate per categorie</p>
-            <ul>
-
-                <li>Rock</li>
-                <li>Acustica</li>
-                <li>Romantica</li> <!-- Le sezioni sono da definire! -->
-            </ul>
-        </div>
-
-        <div id="lastNews">
-
-            <!-- !_ultimeNews_! -->
-
-            <p>Ultime News</p>
-            <div class="newSong">
-
-                <p>Testo di un articolo di una nuova canzone...</p>
+                <p>Ti trovi in: Home</p>
             </div>
 
-            <div class="newArticle">
+            <div id="musicType">
 
-                <p>Nuovo articolo generico, ad es: Prima bozza dell'html!</p>
+                <!-- !_categoriaMusica_! -->
+
+                <p>Canzoni ordinate per categorie</p>
+                <ul>
+
+                    <li>Rock</li>
+                    <li>Acustica</li>
+                    <li>Romantica</li> <!-- Le sezioni sono da definire! -->
+                </ul>
+            </div>
+
+            <div id="lastNews">
+
+                <!-- !_ultimeNews_! -->
+
+                <p>Ultime News</p>
+                <div class="newSong">
+
+                    <p>Testo di un articolo di una nuova canzone...</p>
+                </div>
+
+                <div class="newArticle">
+
+                    <p>Nuovo articolo generico, ad es: Prima bozza dell'html!</p>
+                </div>
             </div>
         </div>
+
 
         <div id="footer">
 

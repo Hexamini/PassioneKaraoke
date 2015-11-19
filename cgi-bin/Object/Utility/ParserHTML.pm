@@ -11,19 +11,28 @@ sub takeValue
 }
 
 =begin 
-Parsing del file html, sostiuisce i segnaposto con i valori contenuti in %values
-e ritorna la pagina html.
+Parametri:
+-filename = path del file html con la struttura;
+-values = hash con i valori dei segnaposti;
+
+Scopo: Parsing del file html, sostiuisce i segnaposto con i valori contenuti in %values;
+
+Ritorno: codice html della pagina;
+
 TODO:
 gestione errori:
 -caso di meno definizioni di segnaposti 
 -caso di piu' definizioni di segnaposti
 =cut
-sub parsingHTML
+sub parsing
 {
-    my ($file_handle,%values) = @_;
+    my ($filename,%values) = @_;
     my $page;
-
-    while( my $line = $file_handle->getline() )
+    
+    open( my $file_handle, '<:encoding(UTF-8)', $filename )
+	or die "Impossibile aprire il file $filename\n";
+        
+    while( my $line = <$file_handle> )
     { 
 	my @found = ( $line =~ /!_\w+_!/g );
 
@@ -39,3 +48,4 @@ sub parsingHTML
     return $page;
 }
 
+1;

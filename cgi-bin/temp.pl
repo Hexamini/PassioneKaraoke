@@ -12,7 +12,7 @@ use Object::Page;
 
 my $tt = Template->new({
 	RELATIVE => 1,
-    INCLUDE_PATH => "../data/view",
+    INCLUDE_PATH => "../data/views",
     OUTPUT_PATH  => "../public_html",
 });
 

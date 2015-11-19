@@ -6,16 +6,64 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
         <!-- scrivere title con keyword su title -->
+        <title>[% title %] - Passione Karaoke</title>
 
         <!-- key meta -->
+
+        <meta name="title" content="[% title %] Passione Karaoke" />
+        <meta name="description" content="[% description %]" />
+        <meta name="keywords" content="[% keywords %]" />
+        <meta name="language" content="italian it" />
+        <meta name="author" content="Fabio Massignan, Davide Polonio, Andrea Mantovani, Luca Bianco" />
     </head>
 
 
+    <body>
 
-<div id="footer">
+        <div id="header">
+
+            <div id="logo"></div>
+
+            <div id="menu">
+                <ul><!-- Il link attivo cambierà con JavaScript -->
+                    <li>Home</li><!--
+                    --><li>Artisti</li><!--
+                    --><li>Articoli</li><!--
+                    --><li>Classifiche</li><!--
+                    --><li>Account</li> <!-- Voce da modificare -->
+                </ul>
+            </div>
+
+            <div id="search-and-login">
+
+                <div id="account-management">
+                    <a href="#">Accedi</a>
+                </div>
+
+                <div id="search">
+                    <form id="search-form" action="../cgi-bin/search.cgi" method="get">
+                        <input type="text" name="searchBox" id="searchBox" /><!--
+                        --><input type="submit" value="Cerca" name="action" />
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="content">
+
+            [% content %]
+        </div>
+
+        <div id="footer">
 
             <div id="copyright">
 
                 <p>Creato da: Fabio Massignan, Polonio Davide, Luca Bianco, Andrea Mantovani &copy; 2015</p>
             </div>
         </div>
+
+    </body>
+
+</html>

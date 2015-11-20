@@ -12,15 +12,10 @@ Parametri
 =cut
 sub getHTML
 {
-    my $struct = "data/table.html";
-
-    my %values;
-    $values{'nome'} = $_[0];
-    $values{'cognome'} = $_[1];
-    $values{'data'} = $_[2];
-    $values{'numero'} = $_[3];
+    my $struct = "table.html";
+    my ( $args ) = @_;
     
-    return ParserHTML::parsing( $struct, %values );
+    return ParserHTML::parsing( { filename => $struct, values => $args, } );
 }
 
 1;

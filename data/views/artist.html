@@ -1,50 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-    <head>
+!_META
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Default meta phrases -->
 
-        <title>!_cantante_! - Passione Karaoke</title>
+@description = Pagina con la liste delle canzoni e degli album di [% artist %]
+@keyword = [% artist %]
+@breadcumb = [% artist %], cgi-bin/r.pl?section=artist&name=[% idArtist %]
 
-        <meta name="title" content="Artista: !_nomeCantante_! - Passione Karaoke" />
-        <meta name="description" content="Pagina con la liste delle canzoni e degli album di !_artista_! " />
-        <meta name="keywords" content="karaoke, musica, canzoni, testi, album, !_cantante_!" />
-        <meta name="language" content="italian it" />
-        <meta name="author" content="Fabio Massignan, Davide Polonio, Andrea Mantovani, Luca Bianco" />
+<!-- End default meta phrases -->
 
-        <!-- Link ai vari css tramite posizione relativa-->
-    </head>
+META_!
 
+<div id="artist-description">
 
-    <div id="header">
+    <div id="artist-foto">
 
+        <img src="!_pathArtista_!" alt="Immagine dell'artista !_nomeArtista_!" />
     </div>
 
+    <div id="artist-name">
 
-    <div id="content">
-
-        <div id="artist-description">
-
-            <div id="artist-foto">
-
-                <img src="!_pathArtista_!" alt="Immagine dell'artista !_nomeArtista_!" />
-            </div>
-
-            <div id="artist-name">
-
-                <h1>!_nomeCantante_!</h1>
-            </div>
-        </div>
-
-        <div id="artist-bio">
-
-            !_bioArtista_!
-        </div>
-
-
-        <!-- Qui vanno elencati tutti gli album -->
-        !_listaAlbum_!
+        <h1>[% artist %]</h1>
     </div>
+</div>
 
-    !_footer_!
-</html>
+<div id="artist-bio">
+
+    [% artistBio %]
+</div>
+
+
+<!-- Qui vanno elencati tutti gli album -->
+[% albumList %]

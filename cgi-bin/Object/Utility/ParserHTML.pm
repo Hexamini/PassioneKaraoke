@@ -28,10 +28,48 @@ sub parsing
 {
     my ( $args ) = @_;
 
-    my $page = '';
+    my $temp = '';
 
-    $tt->process( $args->{filename}, $args->{values}, \$page ) || die $tt->error();
-    return $page;
+    $tt->process( $args->{filename}, $args->{values}, \$temp ) || die $tt->error();
+    return ringChain( $temp );
+}
+
+
+sub ringChain
+{
+    my ( $temp ) = @_;
+     
+    my @lines = split /\n/, $temp;
+    my $process = 0;
+
+    my %meta = ();
+    
+    if( $lines[ $process ] eq "!_META" )
+    {
+	$process = $process + 1;
+	
+	while( $lines[ $process ] ne "META_!" )
+	{
+	    if( ( substr $lines[ $process ], 0, 1 ) eq '\@' )
+	    {
+		#match pair ( meta, value )
+		my @pair = split /=/, $lines[ $process ];
+		
+		print scalar @pair . "<br>";
+		
+		#solo le linee effettivamente riempite
+		if( scalar @pair > 0 )
+		{
+		    $meta{ $pair[0] } = $pair[1];
+		}
+	    }
+	    
+	    $process = $process + 1;
+	}
+    }
+
+
+    return $temp;
 }
 
 1;

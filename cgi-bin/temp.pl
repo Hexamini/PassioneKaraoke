@@ -10,10 +10,15 @@ use lib "cgi-bin";
 use Object::Table;
 use Object::Page;
 
+my $cgi = new CGI;
+print $cgi->header();
+
+my $output = '';
+
 my $tt = Template->new({
-	RELATIVE => 1,
+    RELATIVE => 1,
     INCLUDE_PATH => "../data/views",
-    OUTPUT_PATH  => "../public_html",
+    OUTPUT => \$output,
 });
 
 my $values = {
@@ -23,6 +28,7 @@ my $values = {
     numero => '+393406936174',
 };
 
-$tt->process( 'table.html', $values, 'table.html' ) || die $tt->error();
-print redirect( -url => '../public_html/table.html' );
+$tt->process( 'table.html', $values ) || die $tt->error();
+#print redirect( -url => '../public_html/table.html' );
+print $output . "\n";
 

@@ -1,14 +1,8 @@
 use strict;
-use Path::Class;
 use autodie;
+use Template;
 
 package ParserHTML;
-
-#Estrapola la key del segnaposto
-sub takeValue
-{
-     return ( $_[0] =~ /[^!_]+/g )[0];   
-}
 
 =begin 
 Parametri:
@@ -26,25 +20,21 @@ gestione errori:
 =cut
 sub parsing
 {
-    my ($filename,%values) = @_;
-    my $page;
-    
-    open( my $file_handle, '<:encoding(UTF-8)', $filename )
-	or die "Impossibile aprire il file $filename\n";
-        
-    while( my $line = <$file_handle> )
-    { 
-	my @found = ( $line =~ /!_\w+_!/g );
+    my $page = '';
+    my $tt = Template->new({
+	RELATIVE => 1,
+	INCLUDE_PATH => "../data/views",
+	OUTPUT => \$page,
+    });
 
-	foreach my $word( @found )
-	{
-	    my $value = $values{ takeValue( $word ) };
-	    $line =~ s/$word/$value/;
-	}
+    my $values = {
+	nome => 'Andrea',
+	cognome => 'Mantovani',
+	data => '17 settembre 1994',
+	numero => '+393406936174',
+    };
 
-	$page = $page . $line;
-    }
-
+    $tt->process( 'table.html', $values ) || die $tt->error();
     return $page;
 }
 

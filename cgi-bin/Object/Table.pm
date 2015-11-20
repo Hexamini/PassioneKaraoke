@@ -12,8 +12,8 @@ Parametri
 =cut
 sub getHTML
 {
-    my $struct = "table.html";
     my ( $args ) = @_;
+    my $struct = "table.html";
     
     return ParserHTML::parsing( { filename => $struct, values => $args, } );
 }

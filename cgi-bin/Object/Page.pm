@@ -3,18 +3,16 @@ use lib "cgi-bin"; #uso il mio package
 package Page;
 
 =begin
-Ritorna il codice della pagina in formato HTML
+Visualizza la pagina html
 Parametri
 -hash con le seguenti key: body
 =cut
-sub getHTML
+sub display
 {
-    my $struct = "data/page.html";
+    my ( $args ) = @_;
+    my $struct = "frame.html";
 
-    my %values;
-    $values{'body'} = $_[0] ;
-        
-    return ParserHTML::parsing( $struct, %values );
+    print ParserHTML::parsing({	filename => $struct, values => $args, });
 }
 
 1;

@@ -1,19 +1,19 @@
 use strict;
-use Path::Class;
 use autodie;
+use Template;
 
 package ParserHTML;
 
-#Estrapola la key del segnaposto
-sub takeValue
-{
-     return ( $_[0] =~ /[^!_]+/g )[0];   
-}
+my $tt = Template->new({
+    RELATIVE => 1,
+    INCLUDE_PATH => "../data/views",
+		       });
 
 =begin 
 Parametri:
--filename = path del file html con la struttura;
--values = hash con i valori dei segnaposti;
+-args = hash con le seguienti keyword:
+    +filename = path del file html con la struttura;
+    +values = hash con i valori dei segnaposti;
 
 Scopo: Parsing del file html, sostiuisce i segnaposto con i valori contenuti in %values;
 
@@ -26,25 +26,11 @@ gestione errori:
 =cut
 sub parsing
 {
-    my ($filename,%values) = @_;
-    my $page;
-    
-    open( my $file_handle, '<:encoding(UTF-8)', $filename )
-	or die "Impossibile aprire il file $filename\n";
-        
-    while( my $line = <$file_handle> )
-    { 
-	my @found = ( $line =~ /!_\w+_!/g );
+    my ( $args ) = @_;
 
-	foreach my $word( @found )
-	{
-	    my $value = $values{ takeValue( $word ) };
-	    $line =~ s/$word/$value/;
-	}
+    my $page = '';
 
-	$page = $page . $line;
-    }
-
+    $tt->process( $args->{filename}, $args->{values}, \$page ) || die $tt->error();
     return $page;
 }
 

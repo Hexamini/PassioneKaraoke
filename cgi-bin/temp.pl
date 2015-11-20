@@ -7,12 +7,11 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI;
 use lib "cgi-bin";
 
-use Object::Table;
-use Object::Page;
+use Object::Utility::ParserHTML;
 
 my $cgi = new CGI;
 print $cgi->header();
-
+=begin
 my $output = '';
 
 my $tt = Template->new({
@@ -30,5 +29,7 @@ my $values = {
 
 $tt->process( 'table.html', $values ) || die $tt->error();
 #print redirect( -url => '../public_html/table.html' );
-print $output . "\n";
+=cut
+my $object = ParserHTML::parsing();
+print $object . "\n";
 

@@ -4,6 +4,11 @@ use Template;
 
 package ParserHTML;
 
+my $tt = Template->new({
+    RELATIVE => 1,
+    INCLUDE_PATH => "../data/views",
+		       });
+
 =begin 
 Parametri:
 -args = hash con le seguienti keyword:
@@ -24,13 +29,8 @@ sub parsing
     my ( $args ) = @_;
 
     my $page = '';
-    my $tt = Template->new({
-	RELATIVE => 1,
-	INCLUDE_PATH => "../data/views",
-	OUTPUT => \$page,
-    });
 
-    $tt->process( $args->{filename}, $args->{values} ) || die $tt->error();
+    $tt->process( $args->{filename}, $args->{values}, \$page ) || die $tt->error();
     return $page;
 }
 

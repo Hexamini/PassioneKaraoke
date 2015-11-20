@@ -6,8 +6,9 @@ package ParserHTML;
 
 =begin 
 Parametri:
--filename = path del file html con la struttura;
--values = hash con i valori dei segnaposti;
+-args = hash con le seguienti keyword:
+    +filename = path del file html con la struttura;
+    +values = hash con i valori dei segnaposti;
 
 Scopo: Parsing del file html, sostiuisce i segnaposto con i valori contenuti in %values;
 
@@ -20,6 +21,8 @@ gestione errori:
 =cut
 sub parsing
 {
+    my ( $args ) = @_;
+
     my $page = '';
     my $tt = Template->new({
 	RELATIVE => 1,
@@ -27,14 +30,7 @@ sub parsing
 	OUTPUT => \$page,
     });
 
-    my $values = {
-	nome => 'Andrea',
-	cognome => 'Mantovani',
-	data => '17 settembre 1994',
-	numero => '+393406936174',
-    };
-
-    $tt->process( 'table.html', $values ) || die $tt->error();
+    $tt->process( $args->{filename}, $args->{values} ) || die $tt->error();
     return $page;
 }
 

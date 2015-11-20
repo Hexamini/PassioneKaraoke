@@ -8,18 +8,25 @@ use CGI;
 use lib "cgi-bin";
 
 use Object::Utility::ParserHTML;
+use Object::Table;
 
 my $cgi = new CGI;
 print $cgi->header();
 
-    my $values = {
-	nome => 'Andrea',
-	cognome => 'Mantovani',
-	data => '17 settembre 1994',
-	numero => '+393406936174',
-    };
+my $table = Table::getHTML({ 	
+    nome => 'Andrea',
+    cognome => 'Mantovani',
+    data => '17 settembre 1994',
+    numero => '+393406936174',
+			   });
+
+my $table1 = Table::getHTML({ 	
+    nome => 'Andrea',
+    cognome => 'Mantovani',
+    data => '17 settembre 1994',
+    numero => '+393406936174',
+			   });
 
 
-my $object = ParserHTML::parsing( { filename => 'table.html', values => $values, } );
-print $object . "\n";
+print "$table<br>$table1\n";
 

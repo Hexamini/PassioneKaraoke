@@ -7,8 +7,8 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI;
 use lib "cgi-bin";
 
-use Object::Utility::ParserHTML;
 use Object::Table;
+use Object::Page;
 
 my $cgi = new CGI;
 print $cgi->header();
@@ -20,13 +20,5 @@ my $table = Table::getHTML({
     numero => '+393406936174',
 			   });
 
-my $table1 = Table::getHTML({ 	
-    nome => 'Andrea',
-    cognome => 'Mantovani',
-    data => '17 settembre 1994',
-    numero => '+393406936174',
-			   });
-
-
-print "$table<br>$table1\n";
+Page::display( { content => $table, });
 

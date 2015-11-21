@@ -45,6 +45,7 @@ sub ringChain
     my %ring = ({
 	'@description' => '',
 	'@keywords' => '',
+	'@content' => '',
 		});
 
     # Gestione dei meta tag
@@ -67,13 +68,12 @@ sub ringChain
 
 	$process = $process + 1; # salto la linea della chiusura dei meta
     }
-
+    
     # splice restituisce tutto il contenuto rimasto, ovvero l'html della pagina.
     # Si crea l'array da dare la join la quale restituira' tutte le righe 
-    # rimaste con alla fine lo \n per portarle a capo. 
-    my $content = join( "\n", splice( @lines, $process, scalar @lines ) ); 
-
-    return $content;
+    # rimaste con alla fine lo \n per portarle a capo.   
+    $ring{ '@content' } = join( "\n", splice( @lines, $process, scalar @lines ) ); 
+    return %ring;
 }
 
 1;

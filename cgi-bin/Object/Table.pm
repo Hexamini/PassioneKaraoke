@@ -15,7 +15,10 @@ sub getHTML
     my ( $args ) = @_;
     my $struct = "table.html";
     
-    return ParserHTML::parsing( { filename => $struct, values => $args, } );
+    my $tmp = ParserHTML::parsing( { filename => $struct, values => $args, } );
+    my %chain = ParserHTML::ringChain( $tmp );
+
+    return $chain{ '@content' };
 }
 
 1;

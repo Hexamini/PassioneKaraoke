@@ -43,8 +43,6 @@ sub ringChain
     my $process = 0; # linea processata
 
     my %ring = ({
-	'@description' => '',
-	'@keywords' => '',
 	'@content' => '',
 		});
 

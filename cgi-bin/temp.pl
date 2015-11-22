@@ -13,12 +13,11 @@ use Object::Page;
 my $cgi = new CGI;
 print $cgi->header();
 
-my $table = Table::getHTML({ 	
+my $table = Table::get({ 	
     nome => 'Andrea',
     cognome => 'Mantovani',
     data => '17 settembre 1994',
     numero => '+393406936174',
 			   });
 
-Page::display( { content => $table, });
-
+Page::display( $table );

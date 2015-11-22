@@ -5,20 +5,24 @@ use Object::Utility::ParserHTML;
 
 package Table;
 
+my $struct = "table";
+
 =begin
 Ritorna il codice della tabella in formato HTML
 Parametri
 -hash con le seguenti key: nome, cognome, data, numero
 =cut
-sub getHTML
+sub get
 {
     my ( $args ) = @_;
-    my $struct = "table.html";
-    
+        
     my $tmp = ParserHTML::parsing( { filename => $struct, values => $args, } );
-    my %chain = ParserHTML::ringChain( $tmp );
+    my $chain = ParserHTML::ringChain( $tmp );
 
-    return $chain{ '@content' };
+    # associa al contenuto una chiave intitolata come la stuttura 
+    $chain->{ $struct } = delete $chain->{ 'content' };
+
+    return $chain;
 }
 
 1;

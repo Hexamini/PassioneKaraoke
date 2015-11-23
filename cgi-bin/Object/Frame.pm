@@ -20,9 +20,10 @@ sub get
     # sezione swap chiavi
     while( my ( $key, $value ) = each( %$lastNews ) )
     {
+	# sezione collisione chiavi
 	if( exists $fus->{ $key } )
 	{
-	    if( $key eq 'keywoards' )
+	    if( $key eq 'keywords' )
 	    {
 		$fus->{ $key } = $fus->{ $key } . ', ' . $value;
 	    }
@@ -32,15 +33,14 @@ sub get
 	    $fus->{ $key } = $value;
 	}
     }
-=begin    
-    my $tmp = ParserHTML::parsing( { filename => $struct, values => $args, } );
+    
+    my $tmp = ParserHTML::parsing( { filename => $struct, values => $fus, } );
     my $chain = ParserHTML::ringChain( $tmp );
 
     # associa al contenuto una chiave intitolata come la stuttura 
-    $chain->{ $struct } = delete $chain->{ content };
+    # $chain->{ $struct } = delete $chain->{ content };
 
     return $chain;
-=cut
 }
 
 1;

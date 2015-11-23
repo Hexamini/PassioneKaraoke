@@ -5,7 +5,8 @@ use Template;
 package ParserHTML;
 
 my $tt = Template->new({
-    INCLUDE_PATH => "data/views",
+    RELATIVE => 1,
+    INCLUDE_PATH => "../data/views",
 		       });
 
 =begin 
@@ -28,8 +29,9 @@ sub parsing
     my ( $args ) = @_;
 
     my $temp = '';
+    my $file = $args->{filename} . '.html';
 
-    $tt->process( ( $args->{filename} ) . '.html', $args->{values}, \$temp ) || die $tt->error();
+    $tt->process( $file, $args->{values}, \$temp ) || die $tt->error();
     return $temp;
 }
 

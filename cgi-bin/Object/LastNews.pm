@@ -1,7 +1,7 @@
 use lib "cgi-bin";
 use strict;
 
-use Object::Utility::ParserHTML;
+use Object::Utility::Behavior;
 
 package LastNews;
 
@@ -12,14 +12,14 @@ my $struct = "lastNews";
 =cut
 sub get
 {
-    my ( $args ) = @_;
-        
-    my $tmp = ParserHTML::parsing( { filename => $struct, values => $args, } );
-    my $chain = ParserHTML::ringChain( $tmp );
+    my ( $lastSong, $lastArticle ) = @_;
+    
+    my $values = {
+	lastSong => $lastSong,
+	lastArticle => $lastArticle,
+    };
 
-    # associa al contenuto una chiave intitolata come la stuttura 
-    $chain->{ $struct } = delete $chain->{ 'content' };
-    return $chain;
+    return Behavior::getChain( $struct, $values, 1 );
 }
 
 1;

@@ -1,7 +1,7 @@
 use lib "cgi-bin";
 use strict;
 
-use Object::Utility::ParserHTML;
+use Object::Utility::Behavior;
 
 package Table;
 
@@ -14,15 +14,16 @@ Parametri
 =cut
 sub get
 {
-    my ( $args ) = @_;
-        
-    my $tmp = ParserHTML::parsing( { filename => $struct, values => $args, } );
-    my $chain = ParserHTML::ringChain( $tmp );
+    my ( $name, $surname, $data, $number ) = @_;
 
-    # associa al contenuto una chiave intitolata come la stuttura 
-    $chain->{ $struct } = delete $chain->{ 'content' };
+    my $values = {
+	nome => $name,
+	cognome => $surname,
+	data => $data,
+	numero => $number,
+    };
 
-    return $chain;
+    return Behavior::getChain( $struct, $values, 1 );
 }
 
 1;

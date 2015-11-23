@@ -7,7 +7,7 @@ my $struct = "page";
 =begin
 Visualizza la pagina html
 Parametri
--hash con le seguenti key: body
+-hash con le seguenti key: content
 =cut
 sub display
 {

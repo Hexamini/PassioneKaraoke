@@ -8,6 +8,8 @@ use CGI;
 use lib "cgi-bin";
 
 use Object::Table;
+use Object::LastNews;
+use Object::Frame;
 use Object::Page;
 
 my $cgi = new CGI;
@@ -20,4 +22,14 @@ my $table = Table::get({
     numero => '+393406936174',
 			   });
 
-Page::display( $table );
+my $lastNews = LastNews::get({
+    lastSong => 'Va in campagna',
+    lastArticle => 'Nessuno',
+			     });
+
+my $frame = Frame::get({
+    lastNews => $lastNews,
+    table => $table,
+});
+
+#Page::display( $table );

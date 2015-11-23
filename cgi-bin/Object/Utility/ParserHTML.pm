@@ -6,7 +6,7 @@ package ParserHTML;
 
 my $tt = Template->new({
     RELATIVE => 1,
-    INCLUDE_PATH => "../data/views",
+    INCLUDE_PATH => '../data/views',
 		       });
 
 =begin 

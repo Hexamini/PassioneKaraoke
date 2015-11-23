@@ -32,4 +32,4 @@ my $frame = Frame::get({
     table => $table,
 });
 
-#Page::display( $table );
+Page::display( $frame );

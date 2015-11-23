@@ -8,17 +8,19 @@ use CGI;
 use lib "cgi-bin";
 
 use Object::Table;
+use Object::LastNews;
+use Object::Frame;
 use Object::Page;
 
 my $cgi = new CGI;
 print $cgi->header();
 
-my $table = Table::getHTML({ 	
-    nome => 'Andrea',
-    cognome => 'Mantovani',
-    data => '17 settembre 1994',
-    numero => '+393406936174',
-			   });
+my $table = Table::get( 'Andrea', 
+			'Mantovani', 
+			'17 settembre 1994', 
+			'+393406936174' );
 
-Page::display( { content => $table, });
+my $lastNews = LastNews::get( 'Va in campagna', 'Nessuno' );
+my $frame = Frame::get( $table, $lastNews );
 
+Page::display( $frame );

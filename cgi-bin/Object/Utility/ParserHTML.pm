@@ -6,7 +6,7 @@ package ParserHTML;
 
 my $tt = Template->new({
     RELATIVE => 1,
-    INCLUDE_PATH => "../data/views",
+    INCLUDE_PATH => '../data/views',
 		       });
 
 =begin 
@@ -29,8 +29,9 @@ sub parsing
     my ( $args ) = @_;
 
     my $temp = '';
+    my $file = $args->{filename} . '.html';
 
-    $tt->process( $args->{filename}, $args->{values}, \$temp ) || die $tt->error();
+    $tt->process( $file, $args->{values}, \$temp ) || die $tt->error();
     return $temp;
 }
 
@@ -42,9 +43,7 @@ sub ringChain
     my @lines = split /\n/, $temp;
     my $process = 0; # linea processata
 
-    my %ring = ({
-	'@content' => '',
-		});
+    my $ring = {};
 
     # Gestione dei meta tag
     if( $lines[ $process ] eq "!_META" ) # Riga d'intestazione
@@ -53,12 +52,13 @@ sub ringChain
 	
 	while( $lines[ $process ] ne "META_!" ) # Riga di fine
 	{
-	    if( $lines[ $process ] =~ /(^@\w+)(\s*=\s*)(.*$)/g )
+	    if( $lines[ $process ] =~ /(^@)(\w+)(\s*=\s*)(.*$)/g )
 	    {
-		# $1 => meta
-		# $3 => valore
-		# $2 => l'uguale, da usare solo se si vuole gestire gli errori
-		$ring{ $1 } = $3;
+		# $2 => nome meta
+		# $4 => valore
+		# $1 => @ di identificazione meta
+		# $3 => l'uguale, da usare solo se si vuole gestire gli errori
+		$ring->{ $2 } = $4;
 	    }
 	    
 	    $process = $process + 1;
@@ -70,8 +70,8 @@ sub ringChain
     # splice restituisce tutto il contenuto rimasto, ovvero l'html della pagina.
     # Si crea l'array da dare la join la quale restituira' tutte le righe 
     # rimaste con alla fine lo \n per portarle a capo.   
-    $ring{ '@content' } = join( "\n", splice( @lines, $process, scalar @lines ) ); 
-    return %ring;
+    $ring->{ 'content' } = join( "\n", splice( @lines, $process, scalar @lines ) ); 
+    return $ring;
 }
 
 1;

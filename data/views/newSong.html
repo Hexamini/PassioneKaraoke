@@ -1,0 +1,18 @@
+<div id="new-Song">
+
+    <h1>Inserimento nuova canzone</h1>
+
+    <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
+
+    <form id="insert-form" action="../cgi-bin/edit.cgi" method="post">
+
+        <input type="hidden" name="mode" value="insert" />
+        <input type="hidden" name="section" value="song" />
+
+        <input type="text" name="songTitle" id="songTitle" />
+        <textarea name="songDescription" form="insert-form"></textarea>
+        <input type="submit" value="Crea" name="action" />
+    </form>
+
+    <!-- Le righe e le colonne definite in css? -->
+</div>

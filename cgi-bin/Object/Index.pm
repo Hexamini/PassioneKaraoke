@@ -16,10 +16,6 @@ sub get
 {
     my ( $musicCategory, $lastNews ) = @_;
 
-    my $values = {
-	musicCategory => $musicCategory,
-	lastNews => $lastNews,
-    };
-
-    return Behind::getChain( $struct, $values );
+    my $fus = Behavior::weld( $musicCategory, $lastNews );
+    return Behavior::getChain( $struct, $fus );
 }

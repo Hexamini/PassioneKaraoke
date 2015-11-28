@@ -2,19 +2,25 @@
 
 <!-- Default meta phrases -->
 
-@description = Pagina con la liste delle canzoni e degli album di [% artist %]
+@description = Pagina riguardante [% title %]
 @keyword = [% title %]
-@breadcumb = [% news %], cgi-bin/r.pl?section=article&name=[% idNews %]
 
 <!-- End default meta phrases -->
 
 META_!
+<!-- info riguardanti l'autore dell'articolo -->
+<div id="article-data">
+    <span id="article-author">[% author %]</span>
+    <span id="article-date">[% date %]</span>
+</div>
 
+<!-- intestazione articolo -->
 <div id="article-head">
     <h1>[% title %]</h1>
     <h2>[% subtitle %]</h2>
 </div>
 
+<!-- contenuto articolo -->
 <div id="article-content">
     [% content %]
 </div>

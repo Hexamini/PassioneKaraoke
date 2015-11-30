@@ -13,13 +13,9 @@ my $struct = "lastNews";
 sub get
 {
     my ( $lastSong, $lastArticle ) = @_;
-    
-    my $values = {
-	lastSong => $lastSong,
-	lastArticle => $lastArticle,
-    };
 
-    return Behavior::getChain( $struct, $values, 1 );
+    my $fus = Behavior::weld( $lastSong, $lastArticle );
+    return Behavior::getChain( $struct, $fus, 1 );
 }
 
 1;

@@ -7,11 +7,6 @@ package Behavior;
 
 my %collider = ();
 
-sub hello
-{
-    print "Hello";
-}
-
 =Description
 Parametri:
     meta = meta da gestire la collisione
@@ -45,41 +40,13 @@ sub weld
     # sezione swap chiavi
     while( my ( $key, $value ) = each( %$ringChainB ) )
     {
-	$fusion->{ $key } = 
-	    ( exists $fusion->{ $key } ) ? 
-	    collision( $fusion->{ $key }, $value, $key ) :
-	    $fusion->{ $key };
+	# sezione gestione collisioni
+	$fusion->{ $key } = ( exists $fusion->{ $key } && 
+			      exists $collider{ $key } ) ? 
+	    $collider{ $key }( $fusion->{ $key }, $value ) : $value;
     }
 
     return $fusion;
-}
-
-=Description
-Parametri:
-    cA = contenuto A identificato con la chiave $key
-    cB = contentuo B identificato con la chiave $key
-    $key = valore chiave che identifica $cA e $cB
-
-Risultato:
-    Il tipo di cA e cB. Il valore dipende dal valore della chiave
-
-Scopo:
-    In caso di collisione qui si gestiscono i vari casi, senza appesantire la
-    fusione weld.
-=cut
-sub collision
-{
-    my ( $cA, $cB, $key ) = @_;
-
-    if( exists $collider{ $key } )
-    {
-	return $collider{ $key }( $cA, $cB );
-    }
-    else
-    {
-	#sostituizione 
-	return $cA;
-    }
 }
 
 =Description
@@ -111,3 +78,9 @@ sub getChain
 }
 
 1;
+
+
+
+
+
+

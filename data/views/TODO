@@ -12,11 +12,11 @@
 #[ok]Iscrizione - F
 #[  ]Account personale (1x admin, 1x user) - F,F
 #[ok]Risultati di ricerca - D
-#[  ]Creazione nuovo articolo - F
+#[ok]Creazione nuovo articolo - F
 #[ok]Inserimento/modifica canzone - D
 #[ok]Inserimento/modifica artista - D
 #[ok]Inserimento/modifica album - D
-#[  ]Inserimento/modifica news - F
+#[ok]Inserimento/modifica news - F
 #
 #Conteggio: pagine mancanti: 4
 #Totali: 17

@@ -21,3 +21,12 @@ sub get
 
     return Bahavior::getChain( $struct, $values, 1 );
 }    
+
+sub structName
+{
+    return $struct;
+}
+
+1;
+
+

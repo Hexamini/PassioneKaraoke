@@ -8,7 +8,7 @@ package Category;
 my $struct = 'category';
 
 =begin
-    Parametri:
+Parametri:
     category = Nome categoria
 =cut
 sub get
@@ -21,3 +21,5 @@ sub get
 
     return Behavior::getChain( $struct, $values, 1 );
 }
+
+1;

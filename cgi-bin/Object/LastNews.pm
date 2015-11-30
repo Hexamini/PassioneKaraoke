@@ -8,7 +8,9 @@ package LastNews;
 my $struct = "lastNews";
 
 =begin
-
+Parametri:
+    lastSong = Oggetto rappresentativo di LastSong
+    lastArticle = Oggetto rappresentativo di LastArticle
 =cut
 sub get
 {

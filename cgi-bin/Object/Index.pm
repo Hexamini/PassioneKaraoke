@@ -19,3 +19,5 @@ sub get
     my $fus = Behavior::weld( $musicCategory, $lastNews );
     return Behavior::getChain( $struct, $fus );
 }
+
+1;

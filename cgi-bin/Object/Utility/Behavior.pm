@@ -5,6 +5,25 @@ use Object::Utility::ParserHTML;
 
 package Behavior;
 
+my %collider = ();
+
+sub hello
+{
+    print "Hello";
+}
+
+=Description
+Parametri:
+    meta = meta da gestire la collisione
+    rule = funzione da applicare nel caso di collisione
+=cut
+sub mngCollision
+{
+    my ( $meta, $rule ) = @_;
+    
+    $collider{ $meta } = $rule;
+}
+
 =Description
 Parametri:
     ringChainA = href che funge da anello della catena A
@@ -52,12 +71,13 @@ sub collision
 {
     my ( $cA, $cB, $key ) = @_;
 
-    if( $key eq 'keywords' )
+    if( exists $collider{ $key } )
     {
-	return $cA . ', ' . $cB;
+	return $collider{ $key }( $cA, $cB );
     }
     else
     {
+	#sostituizione 
 	return $cA;
     }
 }

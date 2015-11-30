@@ -11,9 +11,12 @@ use Object::Table;
 use Object::LastNews;
 use Object::Frame;
 use Object::Page;
+use Object::Utility::Behavior;
 
 my $cgi = new CGI;
 print $cgi->header();
+
+Utility::Behavior::mngCollision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; } );
 
 my $table = Table::get( 'Andrea', 
 			'Mantovani', 

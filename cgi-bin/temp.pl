@@ -16,7 +16,7 @@ use Object::Utility::Behavior;
 my $cgi = new CGI;
 print $cgi->header();
 
-Behavior::mngCollision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
+Behavior::mngCollision( 'keyword', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 
 my $table = Table::get( 'Andrea', 
 			'Mantovani', 

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.passionekaraoke.com"
+           targetNamespace="http://www.passionekaraoke.com"
+           elementFormDefault="qualified">
+ <!-- per l'attributo xml:lang -->
+<xs:import namespace="http://www.w3.org/XML/1998/namespace"
+           schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+<!-- ****************** Inizio Artista ****************** -->
+<!-- Inizio Artisti -->
+    <xs:element name="artistList" type="TartistList"/>
+
+    <xs:complexType name="TartistList">
+        <xs:sequence>
+            <xs:element name="artist" maxOccurs="unbounded"
+                        type="TartistType" />
+        </xs:sequence>
+    </xs:complexType>
+
+     <xs:complexType name="TartistType">
+        <xs:choice>
+            <xs:element name="single" type="Tsingle" />
+            <xs:element name="band" type="Tband" />
+        </xs:choice>
+    </xs:complexType>
+
+
+    <xs:complexType name="Tsingle">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="surname" type="xs:string" />
+            <xs:element name="nick" type="xs:string" />
+            <xs:element name="born" type="xs:string" />
+            <xs:element name="death" minOccurs="0" type="xs:string" />
+            <xs:element name="describtion" type="xs:string" />
+            <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Tband">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="born" type="xs:string" />
+            <xs:element name="dissolution" minOccurs="0" type="xs:string" />
+            <xs:element name="describtion" type="xs:string" />
+            <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
+        </xs:sequence>
+    </xs:complexType>
+
+<!-- Fine Artisti -->
+
+<!-- Inizio Album -->
+    <xs:complexType name="Talbum">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="creation" type="xs:string" />
+            <xs:element name="song" minOccurs="1" maxOccurs="unbounded"
+                        type="Tsong" />
+        </xs:sequence>
+    </xs:complexType>
+<!-- Fine Album -->
+
+<!-- Inizio Canzoni -->
+	<xs:complexType name="Tsong">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="lyrics" type="xs:string" />
+			<xs:element name="extra" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+<!-- Fine Canzoni -->
+<!-- ****************** Fine Artista ****************** -->
+
+<!-- ****************** Inizio Articoli ****************** -->
+	<xs:element name="articleList" type="TarticleList"/>
+
+	<xs:complexType name="TarticleList">
+		<xs:element name="article" maxOccurs="unbounded" type="Tarticle" />
+	</xs:complexType>
+
+	<xs:complexType name="Tarticle">
+		<xs:element name="title" type="xs:string" />
+		<xs:element name="subtitle" type="xs:string" />
+		<xs:element name="content" type="xs:string" />
+	</xs:complexType>
+
+<!-- ****************** Fine Articoli ****************** -->
+
+</xs:schema>

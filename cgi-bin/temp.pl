@@ -13,9 +13,28 @@ use Object::Frame;
 use Object::Page;
 use Object::Utility::Behavior;
 
+#Funzione di prova =============================================================
+
+use Object::UserPage;
+use Object::AdminTools;
+
+sub userPage
+{
+    my $username = 'korut94';
+
+    my $adminTools = AdminTools::get( { 'articleManager' => 'La', }, { 'artistManager' => 'mia', }, { 'albumManager' => 'casa', } );
+    my $userPage = UserPage::get( $username, $adminTools );
+    Page::display( $userPage );
+}
+
+#===============================================================================
+
 my $cgi = new CGI;
 print $cgi->header();
 
+userPage();
+
+=Section corret
 Behavior::mngCollision( 'keyword', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 
 my $table = Table::get( 'Andrea', 
@@ -27,3 +46,4 @@ my $lastNews = LastNews::get( 'Va in campagna', 'Nessuno' );
 my $frame = Frame::get( $table, $lastNews );
 
 Page::display( $frame );
+=cut

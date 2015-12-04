@@ -17,15 +17,15 @@ sub get
     my ( $username, $adminTools ) = @_;
 
     my $fus = {
-	username => $username,
+	'username' => $username,
     };
 
     if( defined $adminTools )
     {
-	$fus{ adminTools } = $adminTools->{ AdminTools::structName() };
+	$fus = Behavior::weld( $fus, $adminTools );
     }
 
-    return Behavior::getChain( $struct, $values );
+    return Behavior::getChain( $struct, $fus );
 }
 
 1;

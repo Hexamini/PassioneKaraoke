@@ -17,8 +17,8 @@ sub get
 {
     my ( $articleManager, $artistManager, $albumManager ) = @_;
     
-    my $int = Behavior::weld( $articleManager, $artistManager );
-    my $values = Behavior::weld( $int, $albumManager );
+    my $tmp = Behavior::weld( $articleManager, $artistManager );
+    my $values = Behavior::weld( $tmp, $albumManager );
 
     return Behavior::getChain( $struct, $values, 1 );
 }

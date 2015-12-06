@@ -21,12 +21,12 @@ sub get
     my ( $song, $artist, $album, $songDescription, $songLyrics, $songExtraResources ) = @_;
 
     my $values = {
-	song => $song,
-	artisti => $artist,
-	album => $album,
-	songDescription => $songDescription,
-	songLyrics => $songLyrics,
-	songExtraResources => $songExtraResources,
+	'song' => $song,
+	'artist' => $artist,
+	'album' => $album,
+	'songDescription' => $songDescription,
+	'songLyrics' => $songLyrics,
+	'songExtraResources' => $songExtraResources,
     };
 
     return Behavior::getChain( $struct, $values );

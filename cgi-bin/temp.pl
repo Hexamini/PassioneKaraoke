@@ -13,10 +13,11 @@ use Page::Page;
 use Page::SongDescriptionPage;
 use Page::SongManagerPage;
 use Page::ArtistManagerPage;
+use Page::AlbumManagerPage;
 
 my $cgi = new CGI;
 print $cgi->header();
 
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 
-Page::display( ArtistManagerPage::get() );
+Page::display( AlbumManagerPage::get() );

@@ -1,7 +1,7 @@
 use lib "cgi-bin";
 use strict;
 
-use Page::Object::Utility::Behavior;
+use Page::Object::Base::Behavior;
 
 package LastSong;
 

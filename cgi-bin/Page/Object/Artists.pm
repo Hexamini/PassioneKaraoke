@@ -1,7 +1,7 @@
 use lib 'cgi-bin';
 use strict;
 
-use Page::Object::Utility::Behavior;
+use Page::Object::Base::Behavior;
 use Page::Object::ArtistsList;
 
 package Artists;
@@ -17,7 +17,7 @@ sub get
     my ( $listOfArtists ) = @_;
     
     my $values = {
-	listOfArtists => $listOfArtists,
+	'listOfArtists' => $listOfArtists,
     };
     
     return Behavior::getChain( $struct, $values );

@@ -10,10 +10,11 @@ use Page::ArtistPage;
 use Page::ArtistsPage;
 use Page::IndexPage;
 use Page::Page;
+use Page::SongDescriptionPage;
 
 my $cgi = new CGI;
 print $cgi->header();
 
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 
-Page::display( IndexPage::get() );
+Page::display( SongDescriptionPage::get() );

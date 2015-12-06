@@ -2,28 +2,54 @@ use lib "cgi-bin";
 use strict;
 
 use Object::Utility::Behavior;
+use Object::Song;
 
-package Table;
+package Album;
 
 my $struct = "album";
 
 =begin
 Ritorna il codice della tabella in formato HTML
 Parametri
-    nome: Nome dell'album
-    path: path immagine album
-    listaCanzoni: rappresentazione della lista di canzoni
+    album = Nome dell'album
+    albumName = ???
+    albumImage = path immagine album
+    songsList = rappresentazione della lista di canzoni
 =cut
 sub get
 {
-    my( $name, $path, $list ) = @_;
+    my( $album, $albumName, $albumImage, $songsList ) = @_;
 
     my $values = {
-	nomeAlbum => $name,
-	pathAlbum => $path,
-	listaCanzoni => $list,
+	album => $album,
+	albumImage => $albumImage,
+	albumName => $albumName, 
+	songsList => $songsList,
     };
     
     return Behavior::getChain( $stuct, $values, 1 );
 }
 
+
+sub structName
+{
+    return $struct;
+}
+
+
+sub songsList
+{
+    my ( @songsName ) = @_;
+
+    my $list = '';
+
+    for my $name( @songsName )
+    {
+	my $item = Song::get( $name );
+	$list = $list . $item->{ Song::structName() };
+    }
+
+    return $list;
+}
+
+1;

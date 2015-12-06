@@ -2,6 +2,7 @@ use lib "cgi-bin";
 use strict;
 
 use Object::Utility::Behavior;
+use Object::Album;
 
 package Artist;
 
@@ -27,3 +28,19 @@ sub get
 
     return Behavior::getChain( $struct, $values );
 }
+
+sub listAlbum
+{
+    my ( @albums ) = @_;
+
+    my $list = '';
+
+    for my $album( @albums )
+    {
+	$list = $list . $album->{ Album::structName() };
+    }
+
+    return $list;
+}
+
+1;

@@ -23,3 +23,5 @@ sub get
 
     return Behavior::getChain( $struct, $values, 1 );
 }    
+
+1;

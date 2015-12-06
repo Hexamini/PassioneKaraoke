@@ -8,6 +8,7 @@ use CGI;
 use lib "cgi-bin";
 use Page::ArtistPage;
 use Page::ArtistsPage;
+use Page::IndexPage;
 use Page::Page;
 
 my $cgi = new CGI;
@@ -15,4 +16,4 @@ print $cgi->header();
 
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 
-Page::display( ArtistsPage::get() );
+Page::display( IndexPage::get() );

@@ -16,10 +16,16 @@ sub get
     my ( $category ) = @_;
 
     my $values = {
-	category => $values;
+	'category' => $category,
     };
 
     return Behavior::getChain( $struct, $values, 1 );
+}
+
+sub extractContent
+{
+    my ( $category ) = @_;
+    return $category->{ $struct };
 }
 
 1;

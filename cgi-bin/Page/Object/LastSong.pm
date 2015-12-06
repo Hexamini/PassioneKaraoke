@@ -17,8 +17,8 @@ sub get
     my ( $songTitle, $shortText ) = @_;
 
     my $values = {
-	songTitle => $songTitle,
-	shortText => $shortText,
+	'songTitle' => $songTitle,
+	'shortText' => $shortText,
     };
 
     return Behavior::getChain( $struct, $values, 1 );

@@ -6,34 +6,17 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI;
 use lib "cgi-bin";
-
-use Object::Table;
-use Object::LastNews;
-use Object::Frame;
-use Object::Page;
-use Object::Utility::Behavior;
-
-#Funzione di prova =============================================================
-
-use Object::UserPage;
-use Object::AdminTools;
-
-sub userPage
-{
-    my $username = 'korut94';
-
-    my $adminTools = AdminTools::get( { 'articleManager' => 'La', }, { 'artistManager' => 'mia', }, { 'albumManager' => 'casa', } );
-    my $userPage = UserPage::get( $username, $adminTools );
-    Page::display( $userPage );
-}
-
-#===============================================================================
+use Page::Object::Utility::Behavior;
+use Page::ArtistPage;
+use Page::ArtistsPage;
+use Page::Page;
 
 my $cgi = new CGI;
 print $cgi->header();
 
 Behavior::mngCollision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
-userPage();
+
+Page::display( ArtistsPage::get() );
 
 =Section corret
 my $table = Table::get( 'Andrea', 

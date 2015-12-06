@@ -18,11 +18,11 @@ sub get
     my ( $actionType, $optionArtistName ) = @_;
 
     my $values = {
-	actionType => $actionType,
-	optionArtistName => $optionArtistName,
+	'actionType' => $actionType,
+	'optionArtistName' => $optionArtistName,
     };
     
-    return Behavior::getChain( $struct, $values, 1 );
+    return Behavior::getChain( $struct, $values );
 }
 
 =Description
@@ -40,7 +40,7 @@ sub optionArtists
     for my $name( @artists )
     {
 	my $opt = AlbumManagerList::get( $name );
-	$optionArtistName = $optionArtistName . $opt->{AlbumManagerList::structName()};
+	$optionArtistName = $optionArtistName . AlbumManagerList::extractContent( $opt );
     }
 
     return $optionArtistName;

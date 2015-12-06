@@ -1,4 +1,5 @@
 use lib "cgi-bin"; #uso il mio package
+use Page::Object::Utility::Behavior;
 
 package Page;
 
@@ -14,6 +15,12 @@ sub display
     my ( $chain ) = @_;
 
     print ParserHTML::parsing({ filename => $struct, values => $chain, });
+}
+
+sub collision
+{
+    my ( $meta, $rule ) = @_;
+    Behavior::mngCollision( $meta, $rule );
 }
 
 1;

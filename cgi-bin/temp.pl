@@ -16,15 +16,3 @@ print $cgi->header();
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 
 Page::display( ArtistsPage::get() );
-
-=Section corret
-my $table = Table::get( 'Andrea', 
-			'Mantovani', 
-			'17 settembre 1994', 
-			'+393406936174' );
-
-my $lastNews = LastNews::get( 'Va in campagna', 'Nessuno' );
-my $frame = Frame::get( $table, $lastNews );
-
-Page::display( $frame );
-=cut

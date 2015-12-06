@@ -10,15 +10,15 @@ my $struct = 'categories';
 
 =begin
 Parametri:
-    listOfCategory = Rappresentazione della lista di categorie
+    category = Rappresentazione della lista di categorie
 =cut
 
-sub Categories
+sub get
 {
     my ( $list ) = @_;
 
     my $values = {
-	listOfCategory => $list,
+	'category' => $list,
     };
 
     return Behavior::getChain( $struct, $values, 1 );   
@@ -36,7 +36,7 @@ sub listCategory
     for my $name( @categories )
     {
 	my $category = Category::get( $name );
-	$list = $list . $category->{ Category::structName() };
+	$list = $list . Category::extractContent( $category );
     }
 
     return $list;

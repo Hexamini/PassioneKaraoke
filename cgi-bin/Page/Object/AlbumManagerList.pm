@@ -5,7 +5,7 @@ use Page::Object::Utility::Behavior;
 
 package AlbumManagerList;
 
-my $struct = 'AlbumManagerList';
+my $struct = 'albumManagerList';
 
 =Description
 Parametri: 
@@ -16,16 +16,16 @@ sub get
     my ( $name ) = @_;
 
     my $values = {
-	artistName => $name,
+	'artistName' => $name,
     };
 
     return Behavior::getChain( $struct, $values, 1 );
 }
 
-
-sub structName
+sub extractContent
 {
-    return $struct;
+    my ( $itemList ) = @_;
+    return $itemList->{ $struct };
 }
 
 1;

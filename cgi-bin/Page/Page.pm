@@ -1,5 +1,5 @@
 use lib "cgi-bin"; #uso il mio package
-use Page::Object::Utility::Behavior;
+use Page::Object::Base::Behavior;
 
 package Page;
 

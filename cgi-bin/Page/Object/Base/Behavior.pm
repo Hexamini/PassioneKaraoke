@@ -1,7 +1,7 @@
 use lib "cgi-bin";
 use strict;
 
-use Page::Object::Utility::ParserHTML;
+use Page::Object::Base::ParserHTML;
 
 package Behavior;
 

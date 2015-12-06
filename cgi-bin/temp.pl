@@ -6,7 +6,6 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI;
 use lib "cgi-bin";
-use Page::Object::Utility::Behavior;
 use Page::ArtistPage;
 use Page::ArtistsPage;
 use Page::Page;
@@ -14,7 +13,7 @@ use Page::Page;
 my $cgi = new CGI;
 print $cgi->header();
 
-Behavior::mngCollision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
+Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 
 Page::display( ArtistsPage::get() );
 

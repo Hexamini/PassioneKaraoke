@@ -16,10 +16,10 @@ sub get
     my ( $actionType ) = @_;
 
     my $values = {
-	actionType => $actionType,
+	'actionType' => $actionType,
     };
     
-    return Behavior::getChain( $struct, $values, 1 );
+    return Behavior::getChain( $struct, $values );
 }
 
 1;

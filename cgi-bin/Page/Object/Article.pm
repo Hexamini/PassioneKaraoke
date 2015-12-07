@@ -20,14 +20,14 @@ sub get
     my ( $titolo, $sottoTitolo, $autore, $data, $contenuto ) = @_;
 
     my $values = {
-	title => $titolo,
-	subtitle => $sottoTitolo,
-	author => $autore,
-	date => $data,
-	content => $contenuto,
+	'title' => $titolo,
+	'subtitle' => $sottoTitolo,
+	'author' => $autore,
+	'date' => $data,
+	'content' => $contenuto,
     };
 	
-    return Behavior::getChain( $struct, $values, 1 );
+    return Behavior::getChain( $struct, $values );
 }
 
 1;

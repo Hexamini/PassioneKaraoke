@@ -9,7 +9,7 @@ my $struct = 'articleManager';
 
 sub get
 {
-    return Behavior::getChain( $struct, {}, 1 );
+    return Behavior::getChain( $struct );
 }
 
 1;

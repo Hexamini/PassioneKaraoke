@@ -17,9 +17,10 @@ use Page::AlbumManagerPage;
 use Page::ArticlePage;
 use Page::LoginPage;
 use Page::SigninPage;
+use Page::ArticleManagerPage;
 
 my $cgi = new CGI;
 print $cgi->header();
 
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
-Page::display( SigninPage::get() );
+Page::display( ArticleManagerPage::get() );

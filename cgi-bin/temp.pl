@@ -18,9 +18,10 @@ use Page::ArticlePage;
 use Page::LoginPage;
 use Page::SigninPage;
 use Page::ArticleManagerPage;
+use Page::ArticlesPage;
 
 my $cgi = new CGI;
 print $cgi->header();
 
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
-Page::display( ArticleManagerPage::get() );
+Page::display( ArticlesPage::get() );

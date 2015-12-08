@@ -7,7 +7,7 @@ package ArtistManagerPage;
 
 sub get
 {
-    return ArtistManager::get( 'Edit' );
+    return ArtistManager::get( 'Edit', 0 );
 }
 
 1;

@@ -7,7 +7,7 @@ package ArticleManagerPage;
 
 sub get
 {
-    return ArticleManager::get();
+    return ArticleManager::get( 0 );
 }
 
 1;

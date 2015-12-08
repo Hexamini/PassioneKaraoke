@@ -4,17 +4,16 @@
 
 @description = Pagina con la liste delle canzoni e degli album di [% artist %]
 @keyword = [% artist %]
-@breadcumb = [% artist %], cgi-bin/r.pl?section=artist&name=[% idArtist %]
-
+@title = [% artist %]
 <!-- End default meta phrases -->
 
 META_!
 
 <div id="artist-description">
 
-    <div id="artist-foto">
+    <div id="artist-photo">
 
-        <img src="!_pathArtista_!" alt="Immagine dell'artista !_nomeArtista_!" />
+        <img src="[% artistPhoto %]" alt="Immagine dell'artista [% artist %]" />
     </div>
 
     <div id="artist-name">

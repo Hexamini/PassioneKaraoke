@@ -1,0 +1,42 @@
+!_META
+
+@description = Descrizione e testo della canzone [% song %]
+@keyword = canzone, karaoke, testo, [% song %], [% artist %], [% album %]
+@title = [% song %]
+
+META_!
+
+<div id="song-head">
+
+    <h1>[% song %]</h1>
+    <p id="details">[% artist %] - [% album %]</p>
+</div>
+
+<div id="song-content">
+
+    [% songDescription %]
+
+    <div id="song-lyrics">
+
+        <!-- La voce è da inserire dentro un tag <pre> dato che è una canzone
+            e quindi non segue i canoni del testo normale? -->
+        [% songLyrics %]
+    </div>
+
+    <div id="song-extra">
+
+        <!-- In questa sezione sarà possibile aggiungere link extra, per
+            esempio come link a youtube o link ad altre risorse (o magari
+            note di copyright o simili) -->
+
+        [% songExtraResources %]
+    </div>
+
+    <!-- Note aggiuntive: -che sia necessario un div da riempire con JavaScript
+        in base al tipo di utente loggato? Per esempio per aggiungere eventuali
+        bottoni di modifica/eliminazione della voce
+
+        -Che sia necessario un div per la forse futura implmentazione di una
+        sezione per i commenti? In questo caso come bisognerebbe comportarsi?
+    -->
+</div>

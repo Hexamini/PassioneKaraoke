@@ -1,28 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-    <head>
+!_META
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Default meta phrases -->
 
-        <title>Login - Passione Karaoke</title>
+@title = Login
+@description = Pagina di login per accedere alle funzionalit&agrave; del sito
+@keyword = login, pagina, personale
 
-        <meta name="title" content="Login - Passione Karaoke" />
-        <meta name="description" content="Pagine che contiene le ultime novità riguardo !_nomeArticolo_!" />
-        <!-- chiedere alla prof se preferisce una descrizione generica con parametri passati da perl o
-            un descrizione personalizzata per ogni articolo-->
-        <meta name="keywords" content="karaoke, musica, canzoni, artisti, !_nomeArticolo_!" />
-        <meta name="language" content="italian it" />
-        <meta name="author" content="Fabio Massignan, Davide Polonio, Andrea Mantovani, Luca Bianco" />
+<!-- End default meta phrases -->
 
-        <!-- Link ai vari css tramite posizione relativa-->
-    </head>
+META_!
 
-    <body>
-        <!-- manca ancora header, menu, login -->
         <div id="login">
+            <h1>Pagina di <span xml:lang="en">login</span></h1>
             <form id="login-form" action="../cgi-bin/login.cgi" method="post">
-            <label for="username">Username</label>
+                <label for="username"><span xml:lang="en">Username</span></label>
+                <input name="username" id="username" maxlength="18"/>
+                <label for="password"><span xml:lang="en">Password</span></label>
+                <input type="password" name="password" id="password" maxlength="8"/>
+                <input type="submit" value="login" name="action" />
             </form>
         </div>
-    </body>
-</html>
+

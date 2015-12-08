@@ -2,23 +2,23 @@
 #
 #==Pagine da creare==
 #[ok]Singolo artista - D
-#[  ]Tutti gli artisti - D
+#[ok]Tutti gli artisti - D
 #[ok]Singolo aticolo - F
-#[  ]Tutti gli articoli - F
+#[ok]Tutti gli articoli - F
 #[ok]Pagina principale index.html - D
-#[  ]Singola canzone - D
+#[ok]Singola canzone - D
 #[ok]Pagina generica page.html - D
-#[  ]Login - F
-#[  ]Iscrizione - F
-#[  ]Account personale (1x admin, 1x user) - F,F
-#[  ]Risultati di ricerca - D
-#[  ]Creazione nuovo articolo - F
-#[  ]Aggiunta nuova canzone - D
-#[  ]Inserimento/modifica artista - D
-#[  ]Inserimento/modifica album - D
-#[  ]Inserimento/modifica news - F
+#[ok]Login - F
+#[ok]Iscrizione - F
+#[ok]Account personale (1x admin, 1x user) - F,F
+#[ok]Risultati di ricerca - D
+#[ok]Creazione nuovo articolo - F
+#[ok]Inserimento/modifica canzone - D
+#[ok]Inserimento/modifica artista - D
+#[ok]Inserimento/modifica album - D
+#[ok]Inserimento/modifica news - F
 #
-#Conteggio: pagine fatte 3
+#Conteggio: pagine mancanti: 0
 #Totali: 17
 #==END pagine da creare==
 #

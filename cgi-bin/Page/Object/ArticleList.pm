@@ -7,21 +7,27 @@ package ArticleList;
 
 my $struct = 'articleList';
 
+=Description
+Parametri:
+    titolo = Titolo articolo
+    sottotitolo = Sottotitolo articolo
+=cut
 sub get
 {
     my ( $titolo, $sottotitolo ) = @_;
     
     my $values = {
-	title => $titolo,
-	subtitle => $sottotitolo,
+	'title' => $titolo,
+	'subtitle' => $sottotitolo,
     };
 
     return Behavior::getChain( $struct, $values, 1 );
 }
 
-sub structName
+sub extractContent
 {
-    return $struct;
+    my ( $itemList ) = @_;
+    return $itemList->{ $struct };
 }
 
 1;

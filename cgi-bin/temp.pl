@@ -5,6 +5,8 @@ use warnings;
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI;
+use Switch;
+
 use lib "cgi-bin";
 use Page::ArtistPage;
 use Page::ArtistsPage;
@@ -25,4 +27,28 @@ my $cgi = new CGI;
 print $cgi->header();
 
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
-Page::display( UserPagePage::get() );
+
+my $buffer = $ENV{ 'QUERY_STRING' };
+my @pairs = split( /&/, $buffer );
+
+my ( $section ) = ( $pairs[0] =~ /=(.+)/ );
+
+switch( $section )
+{
+    case 'albumManager' { Page::display( AlbumManagerPage::get() ); }
+    case 'article' { Page::display( ArticlePage::get() ); }
+    case 'articles' { Page::display( ArticlesPage::get() ); }
+    case 'articleManager' { Page::display( ArticleManagerPage::get() ); }
+    case 'artist' { Page::display( ArtistPage::get() ); }
+    case 'artists' { Page::display( ArtistsPage::get() ); }
+    case 'artistManager' { Page::display( ArtistManagerPage::get() ); }
+    case 'index' { Page::display( IndexPage::get() ); }
+    case 'login' { Page::display( LoginPage::get() ); }
+    case 'signin' { Page::display( SigninPage::get() ); }
+    case 'songDescription' { Page::display( SongDescriptionPage::get() ); }
+    case 'songManager' { Page::display( SongManagerPage::get() ); }
+    case 'userPage' { Page::display( UserPagePage::get() ); }
+    else { die "Error 404: page not found!"; }
+}
+
+#Page::display( UserPagePage::get() );

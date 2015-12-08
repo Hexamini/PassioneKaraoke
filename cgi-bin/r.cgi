@@ -50,5 +50,3 @@ switch( $section )
     case 'userPage' { Page::display( UserPagePage::get() ); }
     else { die "Error 404: page not found!"; }
 }
-
-#Page::display( UserPagePage::get() );

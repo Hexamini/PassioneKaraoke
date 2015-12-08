@@ -10,16 +10,17 @@ my $struct = 'artistManager';
 =Description
 Parametri: 
     actionType = Tipologia d'azione in corso. Puo' essere 'Edit' o 'Insert'
+    content = 1 se vuole solo il contenuto, 0 anche i meta associati
 =cut
 sub get
 {
-    my ( $actionType ) = @_;
+    my ( $actionType, $content ) = @_;
 
     my $values = {
 	'actionType' => $actionType,
     };
     
-    return Behavior::getChain( $struct, $values );
+    return Behavior::getChain( $struct, $values, $content );
 }
 
 1;

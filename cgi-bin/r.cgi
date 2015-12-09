@@ -24,7 +24,7 @@ use Page::ArticlesPage;
 use Page::UserPagePage;
 
 my $cgi = new CGI;
-print $cgi->header();
+print $cgi->header( -charset => 'utf-8' );
 
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 

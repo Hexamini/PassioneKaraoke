@@ -16,10 +16,10 @@ META_!
 
     <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
 
-    <form id="insert-artist-type-form">
+    <form id="insert-artist-type-form" action="">
 
-        <input type="radio" name="artistType" value="artist" checked>Artista
-        <input type="radio" name="artistType" value="band">Band
+        <input type="radio" name="artistType" value="artist" checked="artist">Artista</input>
+        <input type="radio" name="artistType" value="band">Band</input>
         <!-- Va fatta la gestione in JavaScript tramite onclick -->
     </form>
 
@@ -40,7 +40,7 @@ META_!
         <label for="artistDeath">Morte dell'artista (vuoto se ancora in vita)</label>
         <input type="text" name="artistDeath" class="artist-death" />
         <label for="artistDescription">Descrizione</label>
-        <textarea name="artistDescription" class="artist-description"></textarea>
+        <textarea name="artistDescription" class="artist-description" rows="80" cols="40"></textarea>
 
         <input type="submit" value="Conferma" name="action" />
     </form>
@@ -58,7 +58,7 @@ META_!
         <label for="artistDissolution">Data scioglimento (lasciare vuoto se non si sono sciolti)</label>
         <input type="text" name="artistDissolution" class="artist-dissolution" />
         <label for="artistDescription">Descrizione</label>
-        <textarea name="artistDescription" class="artist-description"></textarea>
+        <textarea name="artistDescription" class="artist-description" rows="80" cols="40"></textarea>
 
         <input type="submit" value="Conferma" name="action" />
     </form>

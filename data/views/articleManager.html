@@ -11,22 +11,25 @@
 META_!
 
 <div id="article-manager">
+
+	<h1>Gestione Articolo</h1>
+
     <form class="insert-article-form" action="../cgi-bin/edit.cgi" method="post">
 
         <label for="articleAuthor">Autore</label>
-        <input type="text" name="articleAuthor" class="article-author" />
+        <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" />
 
         <label for="articleData">Data</label>
-        <input type="text" name="articleData" class="article-data" />
+        <input type="text" name="articleData" class="article-data" id="articleData" />
 
         <label for="articleTitle">Titolo</label>
-        <input type="text" name="articleTitle" class="article-title" />
+        <input type="text" name="articleTitle" class="article-title" id="articleTitle"/>
 
         <label for="articleSubtitle">Sottotitolo</label>
-        <input type="text" name="articleSubtitle" class="article-subtitle" />
+        <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle"/>
 
         <label for="articleContent">Contenuto</label>
-        <textarea name="articleContent" class="article-content"></textarea>
+        <textarea name="articleContent" class="article-content" id="articleContent" rows="80" cols="40"></textarea>
 
         <input type="submit" value="Conferma" name="action" />
     </form>

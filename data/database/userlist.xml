@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="dettagli.xslt"?>
+<userList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.passionekaraoke.com"
+	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
+    <user>
+        <username>admin</username>
+        <mail>admin@passionekaraoke.com</mail>
+        <password>password</password>
+    </user>
+
+</userList>

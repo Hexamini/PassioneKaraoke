@@ -19,9 +19,9 @@ sub get
     my ( $query, $itemFound, $searchResults ) = @_;
 
     my $values = {
-	query => $query,
-	itemsFound => $itemFound,
-	searchResults => $searchResults,
+	'query' => $query,
+	'itemsFound' => $itemFound,
+	'searchResults' => $searchResults,
     };
 
     return Behavior::getChain( $struct, $values );
@@ -29,7 +29,7 @@ sub get
 
 =Description
 Parametri:
-    results = Array contentenit SearchResult
+    results = Array contenente SearchResult
 =cut
 sub searchResults
 {
@@ -38,7 +38,7 @@ sub searchResults
 
     for my $result( @results )
     {
-	$list = $list . $result->{ SearchResult::structName() } ;
+	$list = $list . SearchResult::extractContent( $result );
     }
 
     return $list;

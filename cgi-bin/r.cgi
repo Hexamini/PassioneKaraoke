@@ -23,6 +23,7 @@ use Page::SigninPage;
 use Page::ArticleManagerPage;
 use Page::ArticlesPage;
 use Page::UserPagePage;
+use Page::SearchPage;
 
 my $cgi = new CGI;
 print $cgi->header( -charset => 'utf-8' );
@@ -48,6 +49,7 @@ switch( $section )
     case 'index' { Page::display( IndexPage::get() ); }
     case 'login' { Page::display( LoginPage::get() ); }
     case 'signin' { Page::display( SigninPage::get() ); }
+    case 'search' { Page::display( SearchPage::get() ); }
     case 'songDescription' { Page::display( SongDescriptionPage::get() ); }
     case 'songManager' { Page::display( SongManagerPage::get() ); }
     case 'userPage' { Page::display( UserPagePage::get() ); }

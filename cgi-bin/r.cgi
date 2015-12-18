@@ -6,6 +6,7 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI;
 use Switch;
+use XML::LibXML;
 
 use lib "cgi-bin";
 use Page::ArtistPage;

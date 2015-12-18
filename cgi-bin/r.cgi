@@ -34,11 +34,13 @@ my @pairs = split( /&/, $buffer );
 
 my ( $section ) = ( $pairs[0] =~ /=(.+)/ );
 
+my $parser = XML::LibXML->new();
+
 switch( $section )
 {
     case 'albumManager' { Page::display( AlbumManagerPage::get() ); }
     case 'article' { Page::display( ArticlePage::get() ); }
-    case 'articles' { Page::display( ArticlesPage::get() ); }
+    case 'articles' { Page::display( ArticlesPage::get( $parser ) ); }
     case 'articleManager' { Page::display( ArticleManagerPage::get() ); }
     case 'artist' { Page::display( ArtistPage::get() ); }
     case 'artists' { Page::display( ArtistsPage::get() ); }

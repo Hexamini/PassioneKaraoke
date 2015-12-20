@@ -24,6 +24,7 @@ use Page::ArticleManagerPage;
 use Page::ArticlesPage;
 use Page::UserPagePage;
 use Page::SearchPage;
+use Page::C404Page;
 
 my $cgi = new CGI;
 print $cgi->header( -charset => 'utf-8' );
@@ -33,14 +34,13 @@ Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
 my $buffer = $ENV{ 'QUERY_STRING' };
 my @pairs = split( /&/, $buffer );
 
-my ( $section ) = ( $pairs[0] =~ /=(.+)/ );
-
+my ( $section ) = ( ( shift @pairs ) =~ /=(.+)/ );
 my $parser = XML::LibXML->new();
 
 switch( $section )
 {
     case 'albumManager' { Page::display( AlbumManagerPage::get() ); }
-    case 'article' { Page::display( ArticlePage::get() ); }
+    case 'article' { Page::display( ArticlePage::get( $parser, @pairs ) ); }
     case 'articles' { Page::display( ArticlesPage::get( $parser ) ); }
     case 'articleManager' { Page::display( ArticleManagerPage::get() ); }
     case 'artist' { Page::display( ArtistPage::get() ); }
@@ -53,5 +53,5 @@ switch( $section )
     case 'songDescription' { Page::display( SongDescriptionPage::get() ); }
     case 'songManager' { Page::display( SongManagerPage::get() ); }
     case 'userPage' { Page::display( UserPagePage::get() ); }
-    else { die "Error 404: page not found!"; }
+    else { Page::display( C404Page::get() ); }
 }

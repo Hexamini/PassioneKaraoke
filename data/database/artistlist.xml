@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="dettagli.xslt"?>
 <artistList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.passionekaraoke.com"
 	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
 
-    <artist>
-        <band>
+    <bands>
+        <band id="elioelestorietese">
             <name>Elio e le storie tese</name>
             <born>1985</born>
             <describtion>
             Elio e le Storie Tese (talvolta abbreviato in EelST o Elii) sono un gruppo musicale italiano di Milano, fondato da Stefano Belisari (in arte Elio) nel 1979.
             </describtion>
-            <album>
+            <album id="_albumbiango">
                 <name>Album Biango</name>
                 <creation>2013</creation>
-                <song>
+                <song id="_lacanzonemononota">
                     <name>La canzone Mononota</name>
                     <lyrics>la canzone mononota che si canta con una
                             nota, e quella nota è questa: DO
                     </lyrics>
                     <extra>Un link a youtube</extra>
                 </song>
-                <song>
+                <song id="_complessodelprimomaggio">
                     <name>Complesso del primo maggio</name>
                     <lyrics>Il biglietto del concerto del
                             primo maggio è uno maggio
@@ -30,9 +29,10 @@
                 </song>
             </album>
         </band>
-    </artist>
-    <artist>
-        <single>
+
+    </bands>
+    <singles>
+        <single id="fedez">
             <name>Leonardo Lucia</name>
             <surname>Federico</surname>
             <nick>Fedez</nick>
@@ -40,10 +40,10 @@
             <describtion>Federico Leonardo Lucia, meglio conosciuto con lo pseudonimo Fedez (IPA: ['fɛːdets][4]; Milano, 15 ottobre 1989), è un rapper e produttore discografico italiano, considerato una grande promessa del rap italiano e una delle figure più importanti del panorama musicale italiano[2].
 
 Le sue vendite certificate dalla FIMI ammontano ad oltre 925.000 copie premiate con diciassette dischi di platino e sette dischi d'oro, ottenute grazie a due album in studio e otto singoli.[5] Fedez è stato uno dei quattro giudici dell'ottava edizione italiana del talent show X Factor: in tale occasione è riuscito a portare allo scontro finale due dei concorrenti da lui patrocinati, Madh e Lorenzo Fragola, vincendo la competizione con quest'ultimo.</describtion>
-            <album>
+            <album id="penisolachenonce">
                 <name>Penisola che non c'è</name>
                 <creation>2011</creation>
-                <song>
+                <song id="_penisolachenonce">
                     <name>Penisola che non c'è</name>
                     <lyrics>Penisola che non c'è
                             Farà anche tanto schifo
@@ -51,7 +51,7 @@ Le sue vendite certificate dalla FIMI ammontano ad oltre 925.000 copie premiate 
                     </lyrics>
                     <extra>Un link di youtube</extra>
                 </song>
-                <song>
+                <song id="_tuttoalcontrario">
                     <name>Tutto il contrario</name>
                     <lyrics>oirartnoc li ottuT
                             i topi non avevano nipoti
@@ -61,5 +61,5 @@ Le sue vendite certificate dalla FIMI ammontano ad oltre 925.000 copie premiate 
                 </song>
             </album>
         </single>
-    </artist>
+    </singles>
 </artistList>

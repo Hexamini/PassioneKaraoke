@@ -11,22 +11,26 @@
 <!-- Inizio Artisti -->
     <xs:element name="artistList" type="TartistList"/>
 
-    <xs:complexType name="TartistList">
+     <xs:complexType name="TartistList">
         <xs:sequence>
-            <xs:element name="artist" maxOccurs="unbounded"
-                        type="TartistType" />
+            <xs:element name="bands" type="Tband" />
+            <xs:element name="singles" type="Tsingle"/>
         </xs:sequence>
     </xs:complexType>
 
-     <xs:complexType name="TartistType">
-        <xs:choice>
-            <xs:element name="single" type="Tsingle" />
-            <xs:element name="band" type="Tband" />
-        </xs:choice>
+    <xs:complexType name="Tband">
+        <xs:sequence>
+            <xs:element name="band" type="band"  maxOccurs="unbounded"/>
+        </xs:sequence>
     </xs:complexType>
 
-
     <xs:complexType name="Tsingle">
+        <xs:sequence>
+            <xs:element name="single" type="single"  maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="single">
         <xs:sequence>
             <xs:element name="name" type="xs:string" />
             <xs:element name="surname" type="xs:string" />
@@ -36,9 +40,10 @@
             <xs:element name="describtion" type="xs:string" />
             <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
         </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
 
-    <xs:complexType name="Tband">
+    <xs:complexType name="band">
         <xs:sequence>
             <xs:element name="name" type="xs:string" />
             <xs:element name="born" type="xs:string" />
@@ -46,6 +51,7 @@
             <xs:element name="describtion" type="xs:string" />
             <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
         </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
 
 <!-- Fine Artisti -->
@@ -58,6 +64,7 @@
             <xs:element name="song" minOccurs="1" maxOccurs="unbounded"
                         type="Tsong" />
         </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
 <!-- Fine Album -->
 
@@ -68,6 +75,7 @@
 			<xs:element name="lyrics" type="xs:string" />
 			<xs:element name="extra" type="xs:string" />
 		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
 	</xs:complexType>
 <!-- Fine Canzoni -->
 <!-- ****************** Fine Artista ****************** -->
@@ -83,10 +91,13 @@
 
 	<xs:complexType name="Tarticle">
 		<xs:sequence>
+            <xs:element name="author" type="xs:string" />
+            <xs:element name="data" type="xs:string" />
 			<xs:element name="title" type="xs:string" />
 			<xs:element name="subtitle" type="xs:string" />
 			<xs:element name="content" type="xs:string" />
 		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
 	</xs:complexType>
 
 <!-- ****************** Fine Articoli ****************** -->
@@ -105,17 +116,40 @@
 			<xs:element name="username" type="xs:string" />
 			<xs:element name="mail" type="xs:string" />
 			<xs:element name="password" type="xs:string" />
-			<xs:element name="vote" minOccurs="0" maxOccurs="unbounded" type="Tvote" />
+			<xs:element name="votes" type="Tvotes" />
 		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
 	</xs:complexType>
+
+    <xs:complexType name="Tvotes">
+        <xs:sequence>
+            <xs:element name="typeVote" type="TtypeVote" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="TtypeVote">
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="rifer" type="xs:string" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
 	
-	<xs:complexType name="Tvote">
-		<xs:sequence>
-			<xs:element name="song" type="Tsong" />
-			<xs:element name="type" type="xs:string" /> <!-- +1 o -1 -->
-		</xs:sequence>
-	</xs:complexType>	
-	
+
+
 <!-- ****************** Fine Utenti ****************** -->
 
 </xs:schema>
+
+<!--
+**********************SPIEGAZIONI**********************
+ID:
+- single = nick se esiste, o nome e cognome senza spazi
+- band = nome band senza spazi
+- album = nome album senza spazi
+- song = nome canzone con _ all'inizio
+- article = _numero proggressivo
+- user = username
+*******************************************************
+-->

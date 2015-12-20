@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="dettagli.xslt"?>
 <articleList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.passionekaraoke.com"
 	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
-    <article>
+    <article id="_1">
+        <author>admin</author>
+        <data>18/12/2015</data>
         <title>Buongiorno a tutti</title>
         <subtitle>Ecco il primo articolo</subtitle>
         <content>Ecco il Primo articolo del nostro sito
                     che sicuramente avra' milioni di problemi</content>
     </article>
-    <article>
+    <article id="_2">
+        <author>admin</author>
+        <data>18/12/2015</data>
         <title>Tutti i cantanti sono spariti</title>
         <subtitle>La musica e' finita</subtitle>
-        <content>Un tragico incidente ha fatto sparire tutti i caantanti</content>
+        <content>Un tragico incidente ha fatto sparire tutti i cantanti</content>
     </article>
 </articleList>

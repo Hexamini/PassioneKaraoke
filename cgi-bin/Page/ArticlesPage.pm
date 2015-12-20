@@ -18,8 +18,6 @@ sub get
     my @nodes = $doc->findnodes( '/xs:articleList/xs:article' );
     my @articles = ();
 
-    my $length = @nodes;
-
     foreach my $node( @nodes )
     {
 	my $title = $node->findnodes( 'xs:title' )->get_node( 1 )->textContent;

@@ -1,17 +1,29 @@
 use lib "cgi-bin";
 use strict;
+use XML::LibXML;
 
 use Page::Object::Artists;
 use Page::Object::ArtistsList;
+use Page::Object::Base::ParserXML;
 
 package ArtistsPage;
 
+my $file = '../data/database/artistlist.xml';
+
 sub get
 {
-    my $artist1 = ArtistsList::get( "Gioban", "#" );
-    my $artist2 = ArtistsList::get( "Vio", "#" );
+    my ( $parser ) = @_;
+    my $doc = ParserXML::getDoc( $parser, $file );
 
-    my @artists = ( $artist1, $artist2 );
+    my @nodes = $doc->findnodes( '//xs:band/xs:name | //xs:single/xs:name' );
+    my @artists = ();
+    
+    foreach my $node( @nodes )
+    {
+	my $name = $node->textContent;
+	push( @artists, ArtistsList::get( $name, '#' ) );
+    }
+
     return Artists::get( Artists::artistsList( @artists ) );
 }
 

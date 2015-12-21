@@ -147,6 +147,14 @@ h1 {
     font-weight: bolder;
 }
 
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #857356;
+    margin: 15px 0;
+}
+
 /******* HOME ***************/
 #search-index {
     margin: 70px auto;
@@ -248,7 +256,7 @@ h1 {
     font-size: 12px;
 }
 
-
+/***************Artists************/
 #artist-list {
     width: 60%;
     margin: 20px auto;
@@ -284,14 +292,27 @@ h1 {
     color: #CC7037;
 }
 
-h3 {
+/***********Article single ***********/
+
+#article-author{
+    font-weight: bold;
+    font-size: 14px;
+}
+#article-date {
+    font-size: 12px;
+    color: #242220;
+}
+#article-head h2 {
     text-align: center;
-    text-transform: uppercase;
+    color: #383837;
     font-size: 22px;
-    color: #857356;
-    margin: 15px 0;
 }
 
+#article-content {
+    font-size: 14px;
+    line-height: 28px;
+    margin: 30px 0 0;
+}
 
 /***********************************
 *   Footer

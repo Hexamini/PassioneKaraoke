@@ -3,7 +3,7 @@
 	xmlns="http://www.passionekaraoke.com"
 	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
 
-    <newSong id="_lacanzonemononota">La canzone mononota</newSong>
-    <newSong id="_tuttoalcontrario">Tutto al contrario</newSong>
+    <newSong id="_lacanzonemononota" type="band">La canzone mononota</newSong>
+    <newSong id="_tuttoalcontrario" type="single">Tutto al contrario</newSong>
 
 </lastNews>

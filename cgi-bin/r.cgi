@@ -39,11 +39,11 @@ my $parser = XML::LibXML->new();
 
 switch( $section )
 {
-    case 'albumManager' { Page::display( AlbumManagerPage::get() ); }
+    case 'albumManager' { Page::display( AlbumManagerPage::get( $parser, @pairs ) ); }
     case 'article' { Page::display( ArticlePage::get( $parser, @pairs ) ); }
     case 'articles' { Page::display( ArticlesPage::get( $parser ) ); }
     case 'articleManager' { Page::display( ArticleManagerPage::get() ); }
-    case 'artist' { Page::display( ArtistPage::get() ); }
+    case 'artist' { Page::display( ArtistPage::get( $parser, @pairs ) ); }
     case 'artists' { Page::display( ArtistsPage::get( $parser ) ); }
     case 'artistManager' { Page::display( ArtistManagerPage::get() ); }
     case 'index' { Page::display( IndexPage::get() ); }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lastNews xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.passionekaraoke.com"
+	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
+
+    <newSong id="_lacanzonemononota">La canzone mononota</newSong>
+    <newSong id="_tuttoalcontrario">Tutto al contrario</newSong>
+
+</lastNews>

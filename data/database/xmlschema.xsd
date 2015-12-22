@@ -135,10 +135,24 @@
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
-	
-
 
 <!-- ****************** Fine Utenti ****************** -->
+
+    <xs:element name="lastNews" type="TlastNews"/>
+
+    <xs:complexType name="TlastNews">
+        <xs:sequence>
+            <xs:element name="newSong" type="TnewSong" maxOccurs="5" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TnewSong">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:ID" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
 
 </xs:schema>
 

@@ -11,47 +11,22 @@
 <!-- Inizio Artisti -->
     <xs:element name="artistList" type="TartistList"/>
 
-     <xs:complexType name="TartistList">
+    <xs:complexType name="TartistList">
         <xs:sequence>
-            <xs:element name="bands" type="Tband" />
-            <xs:element name="singles" type="Tsingle"/>
+            <xs:element name="artist" type="Tartist"  maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="Tband">
+    <xs:complexType name="Tartist">
         <xs:sequence>
-            <xs:element name="band" type="band"  maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="Tsingle">
-        <xs:sequence>
-            <xs:element name="single" type="single"  maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="single">
-        <xs:sequence>
-            <xs:element name="name" type="xs:string" />
-            <xs:element name="surname" type="xs:string" />
-            <xs:element name="nick" type="xs:string" />
+            <xs:element name="nick" type="xs:string" minOccurs="0" />
             <xs:element name="born" type="xs:string" />
             <xs:element name="death" minOccurs="0" type="xs:string" />
-            <xs:element name="describtion" type="xs:string" />
+            <xs:element name="description" type="xs:string" />
             <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
-    </xs:complexType>
-
-    <xs:complexType name="band">
-        <xs:sequence>
-            <xs:element name="name" type="xs:string" />
-            <xs:element name="born" type="xs:string" />
-            <xs:element name="dissolution" minOccurs="0" type="xs:string" />
-            <xs:element name="describtion" type="xs:string" />
-            <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="type" type="xs:string" />
     </xs:complexType>
 
 <!-- Fine Artisti -->
@@ -160,8 +135,7 @@
 <!--
 **********************SPIEGAZIONI**********************
 ID:
-- single = nick se esiste, o nome e cognome senza spazi
-- band = nome band senza spazi
+- single = nick
 - album = nome album senza spazi
 - song = nome canzone con _ all'inizio
 - article = _numero proggressivo

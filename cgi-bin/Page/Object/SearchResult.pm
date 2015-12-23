@@ -18,18 +18,19 @@ sub get
     my ( $resultLink, $title, $shortDescription ) = @_;
     
     my $values = {
-	resultLink => $resultLink,
-	title => $title,
-	shortDescription => $shortDescription,
+	'resultLink' => $resultLink,
+	'title' => $title,
+	'shortDescription' => $shortDescription,
     };
 
     return Behavior::getChain( $struct, $values, 1 );
 }
 
 
-sub structName
+sub extractContent
 {
-    return $struct;
+    my ( $result ) = @_;
+    return $result->{ $struct };
 }
 
 1;

@@ -46,11 +46,11 @@ switch( $section )
     case 'artist' { Page::display( ArtistPage::get( $parser, @pairs ) ); }
     case 'artists' { Page::display( ArtistsPage::get( $parser ) ); }
     case 'artistManager' { Page::display( ArtistManagerPage::get() ); }
-    case 'index' { Page::display( IndexPage::get() ); }
+    case 'index' { Page::display( IndexPage::get( $parser ) ); }
     case 'login' { Page::display( LoginPage::get() ); }
     case 'signin' { Page::display( SigninPage::get() ); }
     case 'search' { Page::display( SearchPage::get() ); }
-    case 'songDescription' { Page::display( SongDescriptionPage::get() ); }
+    case 'songDescription' { Page::display( SongDescriptionPage::get( $parser, @pairs ) ); }
     case 'songManager' { Page::display( SongManagerPage::get() ); }
     case 'userPage' { Page::display( UserPagePage::get() ); }
     else { Page::display( C404Page::get() ); }

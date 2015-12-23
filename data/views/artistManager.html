@@ -16,49 +16,20 @@ META_!
 
     <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
 
-    <form id="insert-artist-type-form" action="">
-
-        <input type="radio" name="artistType" value="artist" checked="checked" />Artista
-        <input type="radio" name="artistType" value="band" />Band
-        <!-- Va fatta la gestione in JavaScript tramite onclick -->
-    </form>
-
     <!-- Per il singolo artista -->
     <form class="insert-artist-form" action="../cgi-bin/edit.cgi" method="post">
 
         <input type="hidden" name="mode" value="[% actionType %]" />
         <input type="hidden" name="section" value="artist" />
 
-        <label for="a-Name">Nome</label>
-        <input type="text" name="artistName" class="artist-name" id="a-Name" />
-        <label for="a-Surname">Cognome</label>
-        <input type="text" name="artistSurname" class="artist-surname" id="a-Surname" />
-        <label for="a-Nick">Nome d'arte (vuoto se non presente)</label>
+        <label for="a-Nick">Nome d'arte o nome del gruppo</label>
         <input type="text" name="artistNick" class="artist-nick" id="a-Nick" />
-        <label for="a-Born">Nascita dell'artista</label>
+        <label for="a-Born">Nascita dell'artista o formazione del gruppo</label>
         <input type="text" name="artistBorn" class="artist-born" id="a-Born" />
-        <label for="a-Death">Morte dell'artista (vuoto se ancora in vita)</label>
+        <label for="a-Death">Morte dell'artista o scioglimento della band (vuoto se ancora in vita)</label>
         <input type="text" name="artistDeath" class="artist-death" id="a-Death" />
         <label for="a-Description">Descrizione</label>
         <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40"></textarea>
-
-        <input type="submit" value="Conferma" name="action" />
-    </form>
-
-    <!-- Per la band -->
-    <form class="insert-band-form" action="../cgi-bin/edit.cgi" method="post">
-
-        <input type="hidden" name="mode" value="[% actionType %]" />
-        <input type="hidden" name="section" value="band" />
-
-        <label for="b-Name">Nome</label>
-        <input type="text" name="artistName" class="artist-name" id="b-Name" />
-        <label for="b-Born">Nascita della band</label>
-        <input type="text" name="artistBorn" class="artist-born" id="b-Born" />
-        <label for="b-Dissolution">Data scioglimento (lasciare vuoto se non si sono sciolti)</label>
-        <input type="text" name="artistDissolution" class="artist-dissolution" id="b-Dissolution" />
-        <label for="b-Description">Descrizione</label>
-        <textarea name="artistDescription" class="artist-description" id="b-Description" rows="80" cols="40"></textarea>
 
         <input type="submit" value="Conferma" name="action" />
     </form>

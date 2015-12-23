@@ -17,15 +17,15 @@ sub get
     my ( $id ) = ( ( shift @pairs ) =~ /=((\w|\d)+)$/ );
     my $doc = ParserXML::getDoc( $parser, $file );
     
-    $article = $doc->findnodes( "//article[\@id=$id]" )->get_node( 1 );
+    $article = $doc->findnodes( "//xs:article[\@id=$id]" )->get_node( 1 );
 
     if( $article )
     {
-	return Article::get( $article->findnodes( 'title' )->get_node( 1 )->textContent,
-			     $article->findnodes( 'subtitle' )->get_node( 1 )->textContent,
-			     $article->findnodes( 'author' )->get_node( 1 )->textContent,
-			     $article->findnodes( 'data' )->get_node( 1 )->textContent,
-			     $article->findnodes( 'content' )->get_node( 1 )->textContent );
+	return Article::get( $article->findnodes( 'xs:title' )->get_node( 1 )->textContent,
+			     $article->findnodes( 'xs:subtitle' )->get_node( 1 )->textContent,
+			     $article->findnodes( 'xs:author' )->get_node( 1 )->textContent,
+			     $article->findnodes( 'xs:data' )->get_node( 1 )->textContent,
+			     $article->findnodes( 'xs:content' )->get_node( 1 )->textContent );
     }
     else
     {

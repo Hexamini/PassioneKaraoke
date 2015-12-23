@@ -28,8 +28,8 @@ sub get
     foreach my $newSong( @nodeSong )
     {
 	push( @lastSongs, LastSong::get( 
-		  $newSong->findnodes( '/xs:song' )->get_node( 1 )->textContent,
-		  $newSong->findnodes( '/xs:artist' )->get_node( 1 )->textContent,
+		  $newSong->findnodes( 'xs:song/text()' ),
+		  $newSong->findnodes( 'xs:artist/text()' ),
 		  $newSong->getAttribute( 'artist' ),
 		  $newSong->getAttribute( 'album' ),
 		  $newSong->getAttribute( 'id' ) 
@@ -40,15 +40,16 @@ sub get
     foreach my $newArticle( @nodeArticle )
     {
 	push( @lastArticles, LastArticle::get(
-		  $newArticle->findnodes( '/xs:title' )->get_node( 1 )->textContent,
-		  $newArticle->findnodes( '/xs:subtitle' )->get_node( 1 )->textContent,
+		  $newArticle->findnodes( 'xs:title/text()' ),
+		  $newArticle->findnodes( 'xs:subtitle/text()' ),
 		  $newArticle->getAttribute( 'id' )
 	      )
 	    );
     }
-    
-    my $lastSong = LastNews::lastSongs( @lastSongs );
+
     my $lastArticle = LastNews::lastArticles( @lastArticles );
+    my $lastSong = LastNews::lastSongs( @lastSongs );
+
     my $lastNews = LastNews::get( $lastSong, $lastArticle );
 
     $doc = ParserXML::getDoc( $parser, $fileCategory );

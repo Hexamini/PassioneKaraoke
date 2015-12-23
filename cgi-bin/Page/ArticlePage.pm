@@ -8,24 +8,24 @@ use Page::Object::Base::ParserXML;
 
 package ArticlePage;
 
-my $file = '../data/database/articleList';
+my $file = '../data/database/articlelist.xml';
 
 sub get
 {
     my( $parser, @pairs ) = @_;
     
-    my ( $id ) = ( ( shift @pairs ) =~ /=((\w|\d)+)$/ );
+    my ( $id ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my $doc = ParserXML::getDoc( $parser, $file );
     
-    my $article = $doc->findnodes( "//xs:article[\@id=$id]" )->get_node( 1 );
+    my $article = $doc->findnodes( "//xs:article[\@id='$id']" )->get_node( 1 );
 
     if( $article )
     {
-	return Article::get( $article->findnodes( 'xs:title' )->get_node( 1 )->textContent,
-			     $article->findnodes( 'xs:subtitle' )->get_node( 1 )->textContent,
-			     $article->findnodes( 'xs:author' )->get_node( 1 )->textContent,
-			     $article->findnodes( 'xs:data' )->get_node( 1 )->textContent,
-			     $article->findnodes( 'xs:content' )->get_node( 1 )->textContent );
+	return Article::get( $article->findnodes( 'xs:title/text()' ),
+			     $article->findnodes( 'xs:subtitle/text()' ),
+			     $article->findnodes( 'xs:author/text()' ),
+			     $article->findnodes( 'xs:data/text()' ),
+			     $article->findnodes( 'xs:content/text()' ) );
     }
     else
     {

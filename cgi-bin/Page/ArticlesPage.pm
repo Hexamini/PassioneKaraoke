@@ -20,8 +20,8 @@ sub get
 
     foreach my $node( @nodes )
     {
-	my $title = $node->findnodes( 'xs:title' )->get_node( 1 )->textContent;
-	my $subtitle = $node->findnodes( 'xs:subtitle' )->get_node( 1 )->textContent;
+	my $title = $node->findnodes( 'xs:title/text()' );
+	my $subtitle = $node->findnodes( 'xs:subtitle/text()' );
 	
 	push( @articles, ArticleList::get( $title, $subtitle ) );
     }

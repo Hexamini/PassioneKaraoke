@@ -15,8 +15,8 @@ sub get
     my $doc = ParserXML::getDoc( $parser, $file );
 
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
-    my $nameArtist = $doc->findnodes( "//xs:artist[\@id=$idArtist]/xs:nick" )->get_node( 1 )->textContent;
-        
+    my $nameArtist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
+       
     my @optSing = ( $nameArtist );
         
     return AlbumManager::get( 'Edit', AlbumManager::optionArtists( @optSing ), 0 );

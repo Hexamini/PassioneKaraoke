@@ -17,7 +17,7 @@ sub get
     my ( $id ) = ( ( shift @pairs ) =~ /=((\w|\d)+)$/ );
     my $doc = ParserXML::getDoc( $parser, $file );
     
-    $article = $doc->findnodes( "//xs:article[\@id=$id]" )->get_node( 1 );
+    my $article = $doc->findnodes( "//xs:article[\@id=$id]" )->get_node( 1 );
 
     if( $article )
     {

@@ -15,7 +15,7 @@ sub get
     my ( $parser ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
-    my @nodes = $doc->findnodes( '//xs:nick/xs:name' );
+    my @nodes = $doc->findnodes( '//xs:nick' );
     my @artists = ();
     
     foreach my $node( @nodes )

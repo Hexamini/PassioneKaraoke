@@ -18,25 +18,25 @@ sub get
 
     my ( $id ) = ( ( shift @pair ) =~ /=(.+)/ );
 
-    my $nodo = $doc->findnodes( "//xs:artist[\@id=$id]" )->get_node( 1 );
-    my $name = $nodo->findnodes( "/xs:nick" )->get_node( 1 )->textContent;
+    my $nodo = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 
-    my $description = $nodo->findnodes( '/xs:description' )->get_node( 1 )->textContent;
-    
-    my @nodeAlbum = $nodo->findnodes( '/xs:album' );
+    my $name = $nodo->findnodes( "xs:nick/text()" );
+    my $description = $nodo->findnodes( 'xs:description/text()' );
+
+    my @nodeAlbum = $nodo->findnodes( 'xs:album' );
     my @albums = ();
     
     
     foreach my $album( @nodeAlbum )
     {
-	my $nameAlbum = $album->findnodes( '/xs:name' )->get_node( 1 )->textContent;
+	my $nameAlbum = $album->findnodes( 'xs:name/text()' );
 	
-	my @nodeSong = $album->findnodes( '/xs:song' );
+	my @nodeSong = $album->findnodes( 'xs:song' );
 	my @songs = ();
 	
 	foreach my $song( @nodeSong )
 	{
-	    push @songs, $song->findnodes( '/xs:name' )->get_node( 1 )->textContent;
+	    push @songs, $song->findnodes( 'xs:name/text()' );
 	}
 
 	my $songList = Album::songsList( @songs );

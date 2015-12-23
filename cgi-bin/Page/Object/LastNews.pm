@@ -18,8 +18,14 @@ sub get
 {
     my ( $lastSongs, $lastArticles ) = @_;
 
-    my $fus = Behavior::weld( $lastSongs, $lastArticles );
-    return Behavior::getChain( $struct, $fus, 1 );
+    #my $fus = Behavior::weld( $lastSongs, $lastArticles );
+
+    my $values = {
+	'lastSong' => $lastSongs,
+	'lastArticle' => $lastArticles,
+    };
+    
+    return Behavior::getChain( $struct, $values, 1 );
 }
 
 sub lastSongs

@@ -15,7 +15,7 @@ sub get
     my $doc = ParserXML::getDoc( $parser, $file );
 
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
-    my $nameArtist = $doc->findnodes( "//*[\@id=$idArtist]/name" )->get_node( 1 )->textContent;
+    my $nameArtist = $doc->findnodes( "//xs:artist[\@id=$idArtist]/xs:nick" )->get_node( 1 )->textContent;
         
     my @optSing = ( $nameArtist );
         

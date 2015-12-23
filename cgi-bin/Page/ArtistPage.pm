@@ -18,36 +18,25 @@ sub get
 
     my ( $id ) = ( ( shift @pair ) =~ /=(.+)/ );
 
-    my $nodo = $doc->findnodes( "//band[\@id=$id]" )->get_node( 1 );
-    my $name = '';
-    
-    if( $nodo ) #band...
-    {
-	$name = $nodo->findnodes( 'name' )->get_node( 1 )->textContent;
-    }
-    else #...o singolo
-    {
-	$name = $doc->findnodes( "//single[\@=$id]/nick" )->get_node( 1 )->textContent;
-    }
-        
-    $nodo = $doc->findnodes( "//*[\@id=$id]" )->get_node( 1 );
+    my $nodo = $doc->findnodes( "//xs:artist[\@id=$id]" )->get_node( 1 );
+    my $name = $nodo->findnodes( "/xs:nick" )->get_node( 1 )->textContent;
 
-    my $description = $doc->findnodes( '/description' )->get_node( 1 )->textContent;
+    my $description = $nodo->findnodes( '/xs:description' )->get_node( 1 )->textContent;
     
-    my @nodeAlbum = $doc->findnodes( '/album' );
+    my @nodeAlbum = $nodo->findnodes( '/xs:album' );
     my @albums = ();
     
     
     foreach my $album( @nodeAlbum )
     {
-	my $nameAlbum = $album->findnodes( '/name' )->get_node( 1 )->textContent;
+	my $nameAlbum = $album->findnodes( '/xs:name' )->get_node( 1 )->textContent;
 	
-	my @nodeSong = $doc->findnodes( '/song' );
+	my @nodeSong = $album->findnodes( '/xs:song' );
 	my @songs = ();
 	
 	foreach my $song( @nodeSong )
 	{
-	    push @songs, $song->findnodes( '/name' )->get_node( 1 )->textContent;
+	    push @songs, $song->findnodes( '/xs:name' )->get_node( 1 )->textContent;
 	}
 
 	my $songList = Album::songsList( @songs );

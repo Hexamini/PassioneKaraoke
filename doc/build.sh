@@ -5,9 +5,12 @@
 
 function build() {
 
-    pdflatex \\nonstopmode\\input main.tex && pdflatex \\nonstopmode\\input main.tex
+    #"vecchio" comando
+    #pdflatex \\nonstopmode\\input main.tex && pdflatex \\nonstopmode\\input main.tex
 
-    #2 volte per aggiornare l'indice
+
+    #questo e' piu' compatibile
+    latexmk -pdflatex='pdflatex -interaction=nonstopmode' -pdf
 
 }
 

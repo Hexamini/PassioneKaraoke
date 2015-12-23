@@ -49,6 +49,7 @@
 			<xs:element name="name" type="xs:string" />
 			<xs:element name="lyrics" type="xs:string" />
 			<xs:element name="extra" type="xs:string" />
+            <xs:element name="grades" type="xs:integer" default="0"/>
 		</xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
 	</xs:complexType>

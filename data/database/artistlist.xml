@@ -18,6 +18,7 @@
                         nota, e quella nota è questa: DO
                 </lyrics>
                 <extra>Un link a youtube</extra>
+                <grades>1</grades>
             </song>
             <song id="_complessodelprimomaggio">
                 <name>Complesso del primo maggio</name>
@@ -25,6 +26,7 @@
                         primo maggio è uno maggio
                 </lyrics>
                 <extra>Un link a youtube</extra>
+                <grades>0</grades>
             </song>
         </album>
     </artist>
@@ -45,6 +47,7 @@
                         non so perchè ho scelto questo cantante
                 </lyrics>
                 <extra>Un link di youtube</extra>
+                <grades>0</grades>
             </song>
             <song id="_tuttoalcontrario">
                 <name>Tutto il contrario</name>
@@ -53,6 +56,7 @@
                         anna
                 </lyrics>
                 <extra>Un link di youtube</extra>
+                <grades>-1</grades>
             </song>
         </album>
     </artist>

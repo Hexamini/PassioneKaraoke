@@ -10,18 +10,26 @@ my $struct = 'lastArticle';
 =begin
 Parametri:
     articleName = Nome dell'articolo
-    shortText = Breve descrizione
+    subtitle = Sottotitolo dell'articolo
+    id = Id articolo
 =cut
 sub get
 {
-    my ( $articleName, $shortText ) = @_;
+    my ( $articleName, $subtitle, $id ) = @_;
 
     my $values = {
 	'articleName' => $articleName,
-	'shortText' => $shortText,	
+	'subtitle' => $subtitle,
+	'id' => $id,
     };
 
     return Behavior::getChain( $struct, $values, 1 );
 }    
+
+sub extractContent
+{
+    my ( $lastArticle ) = @_;
+    return $lastArticle->{ $struct };
+}
 
 1;

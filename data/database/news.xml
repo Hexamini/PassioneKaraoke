@@ -2,8 +2,25 @@
 <lastNews xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.passionekaraoke.com"
 	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
+    <songs>
+        <newSong id="_lacanzonemononota"
+                 artist="elioelestorietese"
+                 album="_albumbiango">La canzone mononota</newSong>
+        <newSong id="_tuttoalcontrario"
+                 artist="fedez"
+                 album="penisolachenonce">Tutto al contrario</newSong>
+    </songs>
 
-    <newSong id="_lacanzonemononota" type="band">La canzone mononota</newSong>
-    <newSong id="_tuttoalcontrario" type="single">Tutto al contrario</newSong>
+    <articles>
+        <newArticle id="_1">
+            <title>Buongiorno a tutti</title>
+            <subtitle>Ecco il primo articolo</subtitle>
+        </newArticle>
+
+        <newArticle id="_2">
+            <title>Tutti i cantanti sono spariti</title>
+            <subtitle>La musica e' finita</subtitle>
+        </newArticle>
+    </articles>
 
 </lastNews>

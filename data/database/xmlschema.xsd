@@ -117,7 +117,20 @@
 
     <xs:complexType name="TlastNews">
         <xs:sequence>
+            <xs:element name="songs" type="TsongsNew" />
+            <xs:element name="articles" type="TarticlesNew" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TsongsNew">
+        <xs:sequence>
             <xs:element name="newSong" type="TnewSong" maxOccurs="5" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TarticlesNew">
+        <xs:sequence>
+            <xs:element name="newArticle" type="TnewArticle" maxOccurs="5" />
         </xs:sequence>
     </xs:complexType>
 
@@ -125,9 +138,18 @@
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute name="id" type="xs:ID" use="required"/>
-                <xs:attribute name="type" type="xs:string" use="required"/>
+                <xs:attribute name="artist" type="xs:string" use="required"/>
+                <xs:attribute name="album" type="xs:string" use="required"/>
             </xs:extension>
         </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="TnewArticle">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="subtitle" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
 
 </xs:schema>

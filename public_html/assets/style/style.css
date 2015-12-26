@@ -3,6 +3,7 @@
     padding: 0;
     text-decoration: none;
     border: 0 none;
+    outline: none;
 }
 
 body {
@@ -155,7 +156,10 @@ h3 {
     margin: 15px 0;
 }
 
-/******* HOME ***************/
+
+
+/******* Home ***************/
+
 #search-index {
     margin: 70px auto;
     width: 70%;
@@ -256,7 +260,10 @@ h3 {
     font-size: 12px;
 }
 
-/***************Artists************/
+
+
+/********** Artists **************/
+
 #artist-list {
     width: 60%;
     margin: 20px auto;
@@ -292,6 +299,8 @@ h3 {
     color: #CC7037;
 }
 
+
+
 /***********Article single ***********/
 
 #article-author{
@@ -313,6 +322,45 @@ h3 {
     line-height: 28px;
     margin: 30px auto 0;
     width: 80%;
+}
+
+/******* Single artist ************/
+
+#artist-description {
+    width: 90%;
+    margin: 0 auto;
+    height: 100px;
+}
+
+#artist-photo {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: #DEBF8A;
+    margin: 0 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#artist-photo img {
+    width: 100%;
+}
+
+#artist-name {
+    float: left;
+    display: inline-block;
+    line-height: 100px;
+    margin: 0;
+}
+
+#artist-bio {
+    width: 80%;
+    margin: 40px auto;
+    font-size: 14px;
+    line-height: 28px;
 }
 
 /***********************************

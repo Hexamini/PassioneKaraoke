@@ -1,5 +1,4 @@
 #!/usr/bin/perl -w
-
 use lib "cgi-bin";
 use strict;
 use warnings;
@@ -31,4 +30,3 @@ else
 {
     print 'User not found';
 }
-

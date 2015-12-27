@@ -89,12 +89,11 @@
 	
 	<xs:complexType name="Tuser">
 		<xs:sequence>
-			<xs:element name="username" type="xs:string" />
 			<xs:element name="mail" type="xs:string" />
 			<xs:element name="password" type="xs:string" />
 			<xs:element name="votes" type="Tvotes" />
 		</xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="username" type="xs:ID" use="required"/>
 	</xs:complexType>
 
     <xs:complexType name="Tvotes">

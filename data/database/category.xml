@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categoryList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.passionekaraoke.com"
+	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
+
+    <category>Rock</category>
+    <category>Pop</category>
+    <category>Rap</category>
+    <category>Sanremo</category>
+    <category>Bambini</category>
+
+</categoryList>

@@ -2,8 +2,7 @@
 <userList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.passionekaraoke.com"
 	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
-    <user id="admin">
-        <username>admin</username>
+    <user username="admin">
         <mail>admin@passionekaraoke.com</mail>
         <password>password</password>
         <votes>

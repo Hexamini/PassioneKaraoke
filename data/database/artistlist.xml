@@ -19,6 +19,7 @@
                 </lyrics>
                 <extra>Un link a youtube</extra>
                 <grades>1</grades>
+                <category>Sanremo</category>
             </song>
             <song id="_complessodelprimomaggio">
                 <name>Complesso del primo maggio</name>
@@ -27,6 +28,7 @@
                 </lyrics>
                 <extra>Un link a youtube</extra>
                 <grades>0</grades>
+                <category>Pop</category>
             </song>
         </album>
     </artist>
@@ -48,6 +50,7 @@
                 </lyrics>
                 <extra>Un link di youtube</extra>
                 <grades>0</grades>
+                <category>Rap</category>
             </song>
             <song id="_tuttoalcontrario">
                 <name>Tutto il contrario</name>
@@ -57,6 +60,7 @@
                 </lyrics>
                 <extra>Un link di youtube</extra>
                 <grades>-1</grades>
+                <category>Rap</category>
             </song>
         </album>
     </artist>

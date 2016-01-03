@@ -50,6 +50,7 @@
 			<xs:element name="lyrics" type="xs:string" />
 			<xs:element name="extra" type="xs:string" />
             <xs:element name="grades" type="xs:integer" default="0"/>
+            <xs:element name="category" type="xs:string" />
 		</xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
 	</xs:complexType>
@@ -89,12 +90,11 @@
 	
 	<xs:complexType name="Tuser">
 		<xs:sequence>
-			<xs:element name="username" type="xs:string" />
 			<xs:element name="mail" type="xs:string" />
 			<xs:element name="password" type="xs:string" />
 			<xs:element name="votes" type="Tvotes" />
 		</xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="username" type="xs:ID" use="required"/>
 	</xs:complexType>
 
     <xs:complexType name="Tvotes">
@@ -152,7 +152,17 @@
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
+<!-- ****************** Fine Utenti ****************** -->
 
+<!-- ****************** Inizio Categorie ****************** -->
+    <xs:element name="categoryList" type="TcategoryList"/>
+
+    <xs:complexType name="TcategoryList">
+        <xs:sequence>
+            <xs:element name="category" type="xs:string" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+<!-- ****************** Fine Categorie ****************** -->
 </xs:schema>
 
 <!--
@@ -161,7 +171,7 @@ ID:
 - single = nick
 - album = nome album senza spazi
 - song = nome canzone con _ all'inizio
-- article = _numero proggressivo
+- article = _numero progressivo
 - user = username
 *******************************************************
 -->

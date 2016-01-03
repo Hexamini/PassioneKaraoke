@@ -7,6 +7,7 @@ use Page::Object::AdminTools;
 use Page::Object::ArticleManager;
 use Page::Object::ArtistManager;
 use Page::Object::AlbumManager;
+use Page::Object::AlbumManagerList;
 use Page::Object::Base::ParserXML;
 
 package UserPagePage;
@@ -20,12 +21,14 @@ sub get
     my ( $user ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my $doc = ParserXML::getDoc( $parser, $file );
 
-    my @node = $doc->findnodes( '/xs:artistList/xs:artist/xs:nick' );
+    my @node = $doc->findnodes( '/xs:artistList/xs:artist' );
     my @optSing = ();
     
-    foreach my $nick( @node )
+    foreach my $artist( @node )
     {
-	push( @optSing, $nick->textContent );
+	push( @optSing, AlbumManagerList::get( $artist->getAttribute( 'id' ),
+					       $artist->findnodes( 'xs:nick/text()' ) ) 
+	    );
     }
 
     my $albumM = AlbumManager::get( 'Insert', AlbumManager::optionArtists( @optSing ), 1 );

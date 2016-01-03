@@ -29,20 +29,19 @@ sub get
 
 =Description
 Parametri:
-    artists: array contenente i nomi degli artisti
+    list: array contenente gli oggetti rappresentanti un AlbumManagerList
 Ritorno:
     ritorna un oggetto optionArtistName, ovvere una lista di cantanti da selezionare 
 =cut
 sub optionArtists
 {
-    my ( @artists ) = @_;
+    my ( @list ) = @_;
 
     my $optionArtistName = ''; 
 
-    for my $name( @artists )
+    for my $item( @artists )
     {
-	my $opt = AlbumManagerList::get( $name );
-	$optionArtistName = $optionArtistName . AlbumManagerList::extractContent( $opt );
+	$optionArtistName = $optionArtistName . AlbumManagerList::extractContent( $item );
     }
 
     return $optionArtistName;

@@ -3,6 +3,7 @@ use strict;
 use XML::LibXML;
 
 use Page::Object::AlbumManager;
+use Page::Object::AlbumManagerList;
 use Page::Object::Base::ParserXML;
 
 package AlbumManagerPage;
@@ -16,8 +17,8 @@ sub get
 
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
     my $nameArtist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
-       
-    my @optSing = ( $nameArtist );
+
+    my @optSing = ( AlbumManagerList::get( $idArtist, $nameArtist ) );
         
     return AlbumManager::get( 'Edit', AlbumManager::optionArtists( @optSing ), 0 );
 }

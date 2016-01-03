@@ -11,7 +11,7 @@ use Page::Object::Base::ParserXML;
 
 package UserPagePage;
 
-my $file = '../data/database/userlist.xml';
+my $file = '../data/database/artistlist.xml';
 
 sub get
 {
@@ -19,13 +19,21 @@ sub get
 
     my ( $user ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my $doc = ParserXML::getDoc( $parser, $file );
+
+    my @node = $doc->findnodes( '/xs:artistList/xs:artist/xs:nick' );
+    my @optSing = ();
     
-    my @optSing = ( 'Gian va', 'DIo', 'Gesu', 'Fantozzi' );
+    foreach my $nick( @node )
+    {
+	push( @optSing, $nick->textContent );
+    }
+
     my $albumM = AlbumManager::get( 'Insert', AlbumManager::optionArtists( @optSing ), 1 );
     my $articleM = ArticleManager::get( 1 );
     my $artistM = ArtistManager::get( 'Insert', 1 );
 
     my $adminTools = AdminTools::get( $articleM, $artistM, $albumM );
+
     return UserPage::get( $user, $adminTools );    
 }
 

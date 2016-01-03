@@ -39,7 +39,7 @@ sub optionArtists
 
     my $optionArtistName = ''; 
 
-    for my $item( @artists )
+    for my $item( @list )
     {
 	$optionArtistName = $optionArtistName . AlbumManagerList::extractContent( $item );
     }

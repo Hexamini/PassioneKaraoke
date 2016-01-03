@@ -16,21 +16,24 @@ META_!
 
     <form class="insert-article-form" action="../cgi-bin/edit.cgi" method="post">
 
-        <label for="articleAuthor">Autore</label>
-        <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" />
+        <fieldset>
 
-        <label for="articleData">Data</label>
-        <input type="text" name="articleData" class="article-data" id="articleData" />
+            <label for="articleAuthor">Autore</label>
+            <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" />
 
-        <label for="articleTitle">Titolo</label>
-        <input type="text" name="articleTitle" class="article-title" id="articleTitle"/>
+            <label for="articleData">Data</label>
+            <input type="text" name="articleData" class="article-data" id="articleData" />
 
-        <label for="articleSubtitle">Sottotitolo</label>
-        <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle"/>
+            <label for="articleTitle">Titolo</label>
+            <input type="text" name="articleTitle" class="article-title" id="articleTitle"/>
 
-        <label for="articleContent">Contenuto</label>
-        <textarea name="articleContent" class="article-content" id="articleContent" rows="80" cols="40"></textarea>
+            <label for="articleSubtitle">Sottotitolo</label>
+            <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle"/>
 
-        <input type="submit" value="Conferma" name="action" />
+            <label for="articleContent">Contenuto</label>
+            <textarea name="articleContent" class="article-content" id="articleContent" rows="80" cols="40"></textarea>
+
+            <input type="submit" value="Conferma" name="action" />
+        </fieldset>
     </form>
 </div>

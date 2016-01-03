@@ -16,28 +16,32 @@ META_!
 
     <form id="insert-album-form" action="../cgi-bin/edit.cgi" method="post">
 
-        <input type="hidden" name="mode" value="[% actionType %]" />
-        <input type="hidden" name="section" value="album" />
+        <fieldset>
 
-        <!-- Nota riguardo l'aggiunta di una selection: questa sezione non è destinata al pubblico
-            finale ma solo all'amministratore. È quindi vero che un menù a tendina riduce l'accessibilità,
-            ma è anche vero che in questo caso migliora l'usabilità. L'accessibilità ricade quindi in
-            "secondo piano" -->
+            <input type="hidden" name="mode" value="[% actionType %]" />
+            <input type="hidden" name="section" value="album" />
 
-        <p>Per aggiungere un album &egrave; necessario selezionare un'artista</p>
+            <!-- Nota riguardo l'aggiunta di una selection: questa sezione non è destinata al pubblico
+                finale ma solo all'amministratore. È quindi vero che un menù a tendina riduce l'accessibilità,
+                ma è anche vero che in questo caso migliora l'usabilità. L'accessibilità ricade quindi in
+                "secondo piano" -->
 
-        <select name="artistName">
+            <p>Per aggiungere un album &egrave; necessario selezionare un'artista</p>
 
-            <option value="default" selected="selected">Scegli un'artista</option>
-            [% optionArtistName %]
-        </select>
+            <select name="artistName">
 
-        <label for="album-name">Nome</label>
-        <input type="text" name="albumName" id="album-name" />
+                <option value="default" selected="selected">Scegli un'artista</option>
+                [% optionArtistName %]
+            </select>
 
-        <label for="album-creation">Data di pubblicazione</label>
-        <input type="text" name="albumCreation" id="album-creation" />
+            <label for="album-name">Nome</label>
+            <input type="text" name="albumName" id="album-name" />
 
-        <input type="submit" value="Conferma" name="action" />
+            <label for="album-creation">Data di pubblicazione</label>
+            <input type="text" name="albumCreation" id="album-creation" />
+
+            <input type="submit" value="Conferma" name="action" />
+
+        </fieldset>
     </form>
 </div>

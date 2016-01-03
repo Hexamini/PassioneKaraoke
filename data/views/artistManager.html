@@ -19,18 +19,21 @@ META_!
     <!-- Per il singolo artista -->
     <form class="insert-artist-form" action="../cgi-bin/edit.cgi" method="post">
 
-        <input type="hidden" name="mode" value="[% actionType %]" />
-        <input type="hidden" name="section" value="artist" />
+        <fieldset>
 
-        <label for="a-Nick">Nome d'arte o nome del gruppo</label>
-        <input type="text" name="artistNick" class="artist-nick" id="a-Nick" />
-        <label for="a-Born">Nascita dell'artista o formazione del gruppo</label>
-        <input type="text" name="artistBorn" class="artist-born" id="a-Born" />
-        <label for="a-Death">Morte dell'artista o scioglimento della band (vuoto se ancora in vita)</label>
-        <input type="text" name="artistDeath" class="artist-death" id="a-Death" />
-        <label for="a-Description">Descrizione</label>
-        <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40"></textarea>
+            <input type="hidden" name="mode" value="[% actionType %]" />
+            <input type="hidden" name="section" value="artist" />
 
-        <input type="submit" value="Conferma" name="action" />
+            <label for="a-Nick">Nome d'arte o nome del gruppo</label>
+            <input type="text" name="artistNick" class="artist-nick" id="a-Nick" />
+            <label for="a-Born">Nascita dell'artista o formazione del gruppo</label>
+            <input type="text" name="artistBorn" class="artist-born" id="a-Born" />
+            <label for="a-Death">Morte dell'artista o scioglimento della band (vuoto se ancora in vita)</label>
+            <input type="text" name="artistDeath" class="artist-death" id="a-Death" />
+            <label for="a-Description">Descrizione</label>
+            <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40"></textarea>
+
+            <input type="submit" value="Conferma" name="action" />
+        </fieldset>
     </form>
 </div>

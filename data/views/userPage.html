@@ -14,16 +14,20 @@ META_!
 
 <div id="personal-data">
     <form class="edit-data" action="../cgi-bin/edit.cgi" method="post">
-        <label for="username">Username</label>
-        <input type="text" name="username" class="username" id="username"/>
 
-        <label for="email"><span xml:lang="en">E-Mail</span></label>
-        <input name="email" id="email" maxlength="18"/>
+        <fieldset>
 
-        <label for="password"><span xml:lang="en">Password</span></label>
-        <input type="password" name="password" id="password" maxlength="8"/>
+            <label for="username">Username</label>
+            <input type="text" name="username" class="username" id="username"/>
 
-        <input type="submit" value="Registrati" name="action" />
+            <label for="email"><span xml:lang="en">E-Mail</span></label>
+            <input name="email" id="email" maxlength="18"/>
+
+            <label for="password"><span xml:lang="en">Password</span></label>
+            <input type="password" name="password" id="password" maxlength="8"/>
+
+            <input type="submit" value="Registrati" name="action" />
+        </fieldset>
     </form>
 </div>
 

@@ -1,5 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
@@ -43,10 +44,13 @@
     -->
     <div id="search">
         <form id="search-form" action="../cgi-bin/search.cgi" method="get">
-            <input type="text" name="searchBox" id="searchBox"/><!--
-        --><input type="submit" value="Cerca" name="action"/>
+            <fieldset>
+                <input type="text" name="searchBox" id="searchBox"/><!--
+                --><input type="submit" value="Cerca" name="action"/>
+            </fieldset>
         </form>
     </div>
+
 </div>
 
 <div id="content">

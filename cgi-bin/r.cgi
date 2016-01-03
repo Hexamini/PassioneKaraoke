@@ -52,6 +52,6 @@ switch( $section )
     case 'search' { Page::display( SearchPage::get() ); }
     case 'songDescription' { Page::display( SongDescriptionPage::get( $parser, @pairs ) ); }
     case 'songManager' { Page::display( SongManagerPage::get() ); }
-    case 'userPage' { Page::display( UserPagePage::get() ); }
+    case 'userPage' { Page::display( UserPagePage::get( $parser, @pairs ) ); }
     else { Page::display( C404Page::get() ); }
 }

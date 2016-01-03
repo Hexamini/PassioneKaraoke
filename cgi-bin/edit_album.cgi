@@ -13,7 +13,7 @@ my $cgi = new CGI;
 
 print $cgi->header();
 
-my $artist = $cgi->param( 'artistName' );
+my $author = $cgi->param( 'artistName' );
 my $name = $cgi->param( 'albumName' );
 my $creation = $cgi->param( 'albumCreation' );
 
@@ -23,7 +23,6 @@ my $parser = XML::LibXML->new();
 my $doc = ParserXML::getDoc( $parser, $file );
 
 #Conversione da name a id, togliere successivamente
-$author = '_' . $author;
 $author =~ s/\s+//g;
 $author = lc $author;
 #================================================================================
@@ -41,7 +40,7 @@ my $framment =
 my $album = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
 my $root = $doc->findnodes( "//xs:artist[\@id='$author']" )->get_node( 1 );
 
-$root->appendChild( $article ) || die( 'Non appeso' );
+$root->appendChild( $album ) || die( 'Non appeso' );
 
 open( OUT, ">$file" );
 print OUT $doc->toString;

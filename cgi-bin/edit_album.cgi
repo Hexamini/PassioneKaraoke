@@ -22,11 +22,6 @@ my $file = '../data/database/artistlist.xml';
 my $parser = XML::LibXML->new();
 my $doc = ParserXML::getDoc( $parser, $file );
 
-#Conversione da name a id, togliere successivamente
-$author =~ s/\s+//g;
-$author = lc $author;
-#================================================================================
-
 my $id = '_' . $name;
 $id =~ s/\s+//g;
 $id = lc $id;

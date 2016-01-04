@@ -12,13 +12,15 @@ Parametri:
     articleManager = Gestore articoli
     artistManager = Gestore artitist
     albumManager = Gestore album
+    categoryManager = Gestore categorie
 =cut
 sub get
 {
-    my ( $articleManager, $artistManager, $albumManager ) = @_;
+    my ( $articleManager, $artistManager, $albumManager, $categoryManager ) = @_;
     
     my $tmp = Behavior::weld( $articleManager, $artistManager );
-    my $values = Behavior::weld( $tmp, $albumManager );
+    $tmp = Behavior::weld( $tmp, $albumManager );
+    my $values = Behavior::weld( $tmp, $categoryManager );
 
     return Behavior::getChain( $struct, $values, 1 );
 }

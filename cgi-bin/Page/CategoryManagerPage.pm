@@ -9,3 +9,5 @@ sub get
 {
     return CategoryManager::get();
 }
+
+1;

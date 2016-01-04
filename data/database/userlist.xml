@@ -6,8 +6,8 @@
         <mail>admin@passionekaraoke.com</mail>
         <password>password</password>
         <votes>
-            <typeVote rifer="_lacanzonemononota">1</typeVote>
-            <typeVote rifer="_tuttoalcontrario">-1</typeVote>
+            <typeVote idSong="_lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
+            <typeVote idSong="_tuttoalcontrario" idArtist="fedez" idAlbum="penisolachenonce">-1</typeVote>
         </votes>
     </user>
 </userList>

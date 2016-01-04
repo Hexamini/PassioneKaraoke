@@ -106,13 +106,16 @@
     <xs:complexType name="TtypeVote">
       <xs:simpleContent>
         <xs:extension base="xs:integer">
-          <xs:attribute name="rifer" type="xs:string" />
+          <xs:attribute name="idSong" type="xs:string" />
+	  <xs:attribute name="idArtist" type="xs:string" />
+	  <xs:attribute name="idAlbum" type="xs:string" />
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
 
 <!-- ****************** Fine Utenti ****************** -->
 
+<!-- ****************** Inizio News ****************** -->
     <xs:element name="lastNews" type="TlastNews"/>
 
     <xs:complexType name="TlastNews">
@@ -151,7 +154,7 @@
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
-<!-- ****************** Fine Utenti ****************** -->
+<!-- ****************** Fine News ****************** -->
 
 <!-- ****************** Inizio Categorie ****************** -->
     <xs:element name="categoryList" type="TcategoryList"/>

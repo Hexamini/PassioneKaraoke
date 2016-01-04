@@ -1,25 +1,11 @@
-!_META
-
-<!-- Default meta phrases -->
-
-@description = Modulo di inserimento/modifica cantante o gruppo
-@keyword = amministrazione, inserimento, modifica, cantante, gruppo
-@title = Gestione artista
-
-<!-- End default meta phrases -->
-
-META_!
-
 <div id="artist-manager">
 
     <h1>Gestione artista</h1>
 
     <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
 
-    <!-- Per il singolo artista -->
-    <!-- @korut94 Correto link script per l'aggiunte dell'artista -->
     <form class="insert-artist-form" action="../cgi-bin/edit_artist.cgi" method="post">
-    <!--                                                          -->
+
         <fieldset>
 
             <label for="a-Nick">Nome d'arte o nome del gruppo</label>
@@ -32,6 +18,7 @@ META_!
             <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40"></textarea>
 
             <input type="submit" value="Conferma" name="action" />
+	    <input type="submit" value="&#43" name="action" />
         </fieldset>
     </form>
 </div>

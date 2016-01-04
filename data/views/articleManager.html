@@ -1,22 +1,9 @@
-!_META
-
-<!-- Default meta phrases -->
-
-@description = Modulo di inserimento/modifica articoli
-@keyword = amministrazione, inserimento, modifica, articoli
-@title = Gestione articoli
-
-<!-- End default meta phrases -->
-
-META_!
-
 <div id="article-manager">
 
 	<h1>Gestione Articolo</h1>
 
-    <!-- @korut94 Correto link script aggiunta articolo -->
     <form class="insert-article-form" action="../cgi-bin/edit_article.cgi" method="post">
-    <!--                                                -->
+
         <fieldset>
 
             <label for="articleAuthor">Autore</label>
@@ -35,6 +22,7 @@ META_!
             <textarea name="articleContent" class="article-content" id="articleContent" rows="80" cols="40"></textarea>
 
             <input type="submit" value="Conferma" name="action" />
+	    <input type="submit" value="&#43" name="action" />
         </fieldset>
     </form>
 </div>

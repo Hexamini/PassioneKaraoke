@@ -26,7 +26,6 @@
             <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
-        <xs:attribute name="type" type="xs:string" />
     </xs:complexType>
 
 <!-- Fine Artisti -->

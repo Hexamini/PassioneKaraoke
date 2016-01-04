@@ -24,6 +24,7 @@ use Page::ArticleManagerPage;
 use Page::ArticlesPage;
 use Page::UserPagePage;
 use Page::SearchPage;
+use Page::CategoryManagerPage;
 use Page::C404Page;
 
 my $cgi = new CGI;
@@ -53,5 +54,6 @@ switch( $section )
     case 'songDescription' { Page::display( SongDescriptionPage::get( $parser, @pairs ) ); }
     case 'songManager' { Page::display( SongManagerPage::get() ); }
     case 'userPage' { Page::display( UserPagePage::get( $parser, @pairs ) ); }
+    case 'categoryManager' { Page::display( CategoryManagerPage::get() ); }
     else { Page::display( C404Page::get() ); }
 }

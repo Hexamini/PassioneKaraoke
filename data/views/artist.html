@@ -9,24 +9,40 @@
 
 META_!
 
-<div id="artist-description">
+<div id="artist-content">
 
-    <div id="artist-photo">
+    <div id="artist-description">
 
-        <img src="[% artistPhoto %]" alt="Immagine dell'artista [% artist %]" />
+        <!-- Modalità modifica per l'artista -->
+        [% editMode %]
+
+        <div id="artist-photo">
+
+            <img src="[% artistPhoto %]" alt="Immagine dell'artista [% artist %]" />
+        </div>
+
+        <div id="artist-name">
+
+            <h2>[% artist %]</h2>
+        </div>
     </div>
 
-    <div id="artist-name">
+    <div id="artist-bio">
 
-        <h2>[% artist %]</h2>
+        [% artistBio %]
     </div>
+
+    <div id="artist-list-of-albums">
+
+        <h1>Lista degli album</h1>
+
+        <!--Permette la modifica degli album -->
+        [% editMode %]
+
+
+        <!-- Qui vanno elencati tutti gli album -->
+        [% albumList %]
+
+    </div>
+
 </div>
-
-<div id="artist-bio">
-
-    [% artistBio %]
-</div>
-
-
-<!-- Qui vanno elencati tutti gli album -->
-[% albumList %]

@@ -1,37 +1,10 @@
-!_META
-
-<!-- Default meta phrases -->
-
-@description = Modulo di inserimento/modifica album
-@keyword = amministrazione, inserimento, modifica, album
-@title = Gestione album
-
-<!-- End default meta phrases -->
-
-META_!
-
 <div id="album-manager">
 
     <h1>Gestione album</h1>
 
-    <!-- @korut94 Corretto link script per l'aggiunta dell'album -->
     <form id="insert-album-form" action="../cgi-bin/edit_album.cgi" method="post">
-    <!--                                                         -->
+
         <fieldset>
-
-
-            <!-- Nota riguardo l'aggiunta di una selection: questa sezione non è destinata al pubblico
-                finale ma solo all'amministratore. È quindi vero che un menù a tendina riduce l'accessibilità,
-                ma è anche vero che in questo caso migliora l'usabilità. L'accessibilità ricade quindi in
-                "secondo piano" -->
-
-            <p>Per aggiungere un album &egrave; necessario selezionare un'artista</p>
-
-            <select name="artistName">
-
-                <option value="default" selected="selected">Scegli un'artista</option>
-                [% optionArtistName %]
-            </select>
 
             <label for="album-name">Nome</label>
             <input type="text" name="albumName" id="album-name" />
@@ -40,6 +13,7 @@ META_!
             <input type="text" name="albumCreation" id="album-creation" />
 
             <input type="submit" value="Conferma" name="action" />
+            <input type="submit" value="&#43" name="action" />
 
         </fieldset>
     </form>

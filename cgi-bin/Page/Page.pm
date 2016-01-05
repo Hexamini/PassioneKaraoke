@@ -18,7 +18,6 @@ sub display
     my $user = Session::getSession();
 
     print ParserHTML::parsing({ filename => $struct, values => $chain, });
-    print "User loggato: $user";
 }
 
 sub collision

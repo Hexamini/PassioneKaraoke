@@ -1,5 +1,6 @@
 use lib "cgi-bin"; #uso il mio package
 use Page::Object::Base::Behavior;
+use Page::Object::Base::Session;
 
 package Page;
 
@@ -13,8 +14,11 @@ Parametri
 sub display
 {
     my ( $chain ) = @_;
+    
+    my $user = Session::getSession();
 
     print ParserHTML::parsing({ filename => $struct, values => $chain, });
+    print "User loggato: $user";
 }
 
 sub collision

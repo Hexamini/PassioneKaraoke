@@ -18,14 +18,14 @@ sub display
     my $user = Session::getSession();
 
     my $login = {
-	'user' => 'User',
+	'user' => 'Login',
 	'ref_user' => 'section=login',
     };
     
     if( $user )
     {
 	$login->{ 'user' } = $user,
-	$login->{ 'ref_user' } = "section=userPage&user=$user",
+	$login->{ 'ref_user' } = "section=userPage&username=$user",
     }
 
     $chain = Behavior::weld( $chain, $login );

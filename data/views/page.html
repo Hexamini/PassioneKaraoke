@@ -29,11 +29,11 @@
     <div id="navigation-bar">
         <div id="logo">This is the logo</div>
         <ul id="menu"><!-- Il link attivo cambierà con JavaScript -->
-            <li><a href="r.cgi?section=index">Home</a></li><!--
-            --><li><a href="r.cgi?section=artists">Artisti</a></li><!--
-            --><li><a href="r.cgi?section=articles">Articoli</a></li><!--
+            <li><a href="r.cgi?section=index" class='[% index %]'>Home</a></li><!--
+            --><li><a href="r.cgi?section=artists" class='[% artists %]'>Artisti</a></li><!--
+            --><li><a href="r.cgi?section=articles" class='[% articles %]'>Articoli</a></li><!--
             --><li><a href="">Classifiche</a></li><!--
-             @korut94 aggiunto segnaposto in modo da far apparire il nome dell'utente quando sara' loggato	                 --><li><a href="r.cgi?[% ref_user %]">[% user %]</a></li> <!-- Voce da modificare -->
+             @korut94 aggiunto segnaposto in modo da far apparire il nome dell'utente quando sara' loggato	                 --><li><a href="r.cgi?[% ref_user %]" class='[% login %]'>[% user %]</a></li> <!-- Voce da modificare -->
 	    <!--                                                                              -->
         </ul>
     </div>

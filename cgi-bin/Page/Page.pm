@@ -24,7 +24,7 @@ sub display
     
     if( $user )
     {
-	$login->{ 'user' } = '$user',
+	$login->{ 'user' } = "$user",
 	$login->{ 'ref_user' } = "section=userPage&user=$user",
     }
 

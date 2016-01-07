@@ -17,7 +17,9 @@
     <meta name="keywords" content="[% keyword %]"/>
     <meta name="language" content="italian it"/>
     <meta name="author" content="Fabio Massignan, Davide Polonio, Andrea Mantovani, Luca Bianco"/>
+    <!-- @korut94 link valido per il server di tecweb dell'unipd -->
     <link rel="stylesheet" type="text/css" href="assets/style/style.css"/>
+    <!--                                                         -->                       
 
 </head>
 
@@ -34,7 +36,7 @@
             --><li><a href="r.cgi?section=articles">Articoli</a></li><!--
             --><li><a href="">Classifiche</a></li><!--
             <!-- @korut94 aggiunto segnaposto in modo da far apparire il nome dell'utente quando sara' loggato -->						      
-            --><li><a href="r.cgi?section=login">[% login %]</a></li> <!-- Voce da modificare -->
+            --><li><a href="r.cgi?[% ref_user %]">[% user %]</a></li> <!-- Voce da modificare -->
 	    <!--                                                                                               -->
         </ul>
     </div>

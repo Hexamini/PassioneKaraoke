@@ -16,7 +16,7 @@ sub getSession
     
 	if( $session->is_expired || $session->is_empty )
 	{
-	    return 'Non valido';
+	    return undef;
 	}
 	else
 	{
@@ -26,7 +26,7 @@ sub getSession
 
     else 
     {
-	return 'Non valido';
+	return undef;
     }
 }
 

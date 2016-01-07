@@ -17,7 +17,7 @@
     <meta name="keywords" content="[% keyword %]"/>
     <meta name="language" content="italian it"/>
     <meta name="author" content="Fabio Massignan, Davide Polonio, Andrea Mantovani, Luca Bianco"/>
-    <link rel="stylesheet" type="text/css" href="../public_html/assets/style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css"/>
 
 </head>
 
@@ -33,7 +33,9 @@
             --><li><a href="r.cgi?section=artists">Artisti</a></li><!--
             --><li><a href="r.cgi?section=articles">Articoli</a></li><!--
             --><li><a href="">Classifiche</a></li><!--
-            --><li><a href="r.cgi?section=login">Account</a></li> <!-- Voce da modificare -->
+            <!-- @korut94 aggiunto segnaposto in modo da far apparire il nome dell'utente quando sara' loggato -->						      
+            --><li><a href="r.cgi?section=login">[% login %]</a></li> <!-- Voce da modificare -->
+	    <!--                                                                                               -->
         </ul>
     </div>
 

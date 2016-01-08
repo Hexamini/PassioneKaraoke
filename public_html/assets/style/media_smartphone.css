@@ -116,7 +116,7 @@ h3 {
 }
 
 
-#music-type li {
+#music-type li, #last-news .new-song {
 
     height: 50px;
     line-height: 50px;
@@ -130,8 +130,12 @@ h3 {
     box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
-
-
+#last-news .new-song a {
+    color: #0D47A1;
+}
+#last-news .new-song a:hover {
+    text-decoration: underline;
+}
 
 /*************************
 FOOTER

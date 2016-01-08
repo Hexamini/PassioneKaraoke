@@ -1,3 +1,10 @@
+@media screen and (min-width: 1024px ){
+
+}
+
+
+/*
+
 * {
     margin: 0;
     padding: 0;
@@ -6,20 +13,22 @@
     outline: none;
 }
 
+
 body {
-    background-color: #FAF1DC;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
     min-height: 100%;
     padding-bottom: 40px;
-    padding-top: 140px;
+    padding-top: 100px;
     position: relative;
     color: #141311;
+
 }
 
 /**************************
 *        Header
 ***************************/
-
+/*
 #header {
     position: fixed;
     top: 0;
@@ -32,20 +41,21 @@ body {
 
 #navigation-bar {
     width: 100%;
-    height: 80px;
+    height: 100px;
     position: relative;
-    background-color: #DEBF8A;
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
+    background-color: #03A9F4;
 }
 
 #navigation-bar #logo {
     width: 25%;
     height: 100%;
     float: left;
-    line-height: 80px;
     text-align: center;
+}
+
+#navigation-bar #logo img {
+    height: 90px;
+    margin: 5px auto;
 }
 
 #navigation-bar #menu {
@@ -57,7 +67,6 @@ body {
 #navigation-bar #menu li {
     display: inline-block;
     width: 20%;
-    line-height: 80px;
     text-align: center;
 }
 
@@ -68,76 +77,29 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 18px;
-    color: #CC7037;
-    border-left: 1px solid #D1B482;
+    line-height: 100px;
+    color: #E1F5FE;
+}
+
+#navigation-bar #open-menu-btn {
+    display: none;
 }
 
 #navigation-bar #menu li a:hover {
-    color: #E06F28;
-    background-color: #D1B482;
+    color: white;
+    background-color: #29B6F6;
 }
 
 #navigation-bar #menu li a:active {
-    color: #fad3b2;
-    background-color: #ba9969;
-}
-
-#header #search {
-    width: 100%;
-    height: 40px;
-    background-color: #E8D4B3;
-    text-align: center;
-}
-
-#header #search #search-form {
-    display: inline-block;
-    width: 80%;
-    height: 30px;
-    margin-top: 6px;
-}
-
-#header #search #search-form #searchBox {
-    width: 89%;
-    height: 100%;
-    border: 1px solid #D1B482;
-    background-color: #F2E6D0;
-    padding-left: 20px;
-    color: #A8916C;
-    /* Box sizing per spostare i bordi all'interno del calcolo di height*/
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    /* Border radius cross browser */
-    -webkit-border-top-left-radius: 7px;
-    -webkit-border-bottom-left-radius: 7px;
-    -moz-border-radius-topleft: 7px;
-    -moz-border-radius-bottomleft: 7px;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-
-}
-
-#header #search #search-form input[type=submit] {
-    width: 10%;
-    height: 100%;
-    -webkit-border-top-right-radius: 7px;
-    -webkit-border-bottom-right-radius: 7px;
-    -moz-border-radius-topright: 7px;
-    -moz-border-radius-bottomright: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-    background-color: #D1B482;
     color: white;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bolder;
-    cursor: pointer;
+    background-color: #039BE5;
 }
+
 
 /****************************
  *        Content
  ****************************/
-
+/*
 #navBar {
     color: #A8916C;
     margin: 20px 10px;
@@ -165,7 +127,7 @@ h3 {
 
 
 /******* Home ***************/
-
+/*
 #search-index {
     margin: 70px auto;
     width: 70%;
@@ -179,11 +141,11 @@ h3 {
     padding-left: 20px;
     color: #A8916C;
     /* Box sizing per spostare i bordi all'interno del calcolo di height*/
-    -webkit-box-sizing: border-box;
+    /*-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* Border radius cross browser */
-    -webkit-border-top-left-radius: 7px;
+    /*-webkit-border-top-left-radius: 7px;
     -webkit-border-bottom-left-radius: 7px;
     -moz-border-radius-topleft: 7px;
     -moz-border-radius-bottomleft: 7px;
@@ -269,7 +231,7 @@ h3 {
 
 
 /********** Artists **************/
-
+/*
 #artist-list {
     width: 60%;
     margin: 20px auto;
@@ -308,7 +270,7 @@ h3 {
 
 
 /***********Article single ***********/
-
+/*
 #article-author{
     font-weight: bold;
     font-size: 14px;
@@ -331,7 +293,7 @@ h3 {
 }
 
 /******* Single artist ************/
-
+/*
 #artist-description {
     width: 90%;
     margin: 0 auto;
@@ -370,7 +332,7 @@ h3 {
 }
 
 /****** Login ***************/
-
+/*
 #login-form {
     width: 60%;
     margin: 40px auto;
@@ -393,11 +355,11 @@ h3 {
     padding-left: 20px;
     color: #A8916C;
     /* Box sizing per spostare i bordi all'interno del calcolo di height*/
-    -webkit-box-sizing: border-box;
+    /*-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* Border radius cross browser */
-    -webkit-border-bottom: 5px;
+    /*-webkit-border-bottom: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
@@ -423,7 +385,7 @@ h3 {
 }
 
 /********* Sign In ****************/
-
+/*
 #signin {
     width: 60%;
     margin: 40px auto;
@@ -450,11 +412,11 @@ h3 {
     padding-left: 20px;
     color: #A8916C;
     /* Box sizing per spostare i bordi all'interno del calcolo di height*/
-    -webkit-box-sizing: border-box;
+    /*-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* Border radius cross browser */
-    -webkit-border-bottom: 5px;
+    /*-webkit-border-bottom: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
@@ -481,7 +443,7 @@ h3 {
 
 
 /********* Search Page ************/
-
+/*
 #search-results {
     width: 80%;
     margin: 40px auto;
@@ -519,7 +481,7 @@ h3 {
 /***********************************
 *   Footer
 ************************************/
-
+/*
 #footer {
     position: absolute;
     bottom: 0;

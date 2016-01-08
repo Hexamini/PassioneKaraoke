@@ -163,6 +163,41 @@ h3 {
 }
 
 
+/***************** ARTISTS ****************************/
+
+.artist {
+    background-color: #CFD8DC;
+    margin: 6px 0;
+    height: 80px;
+    padding: 6px 0;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+}
+
+.artist .mini-artist-image {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-left: 6px;
+
+}
+
+.artist .mini-artist-image img {
+    width:100%;
+    height: 100%;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+}
+
+.artist .artist-name {
+    display: inline-block;
+    margin-left: 26px;
+    height: 100%;
+    vertical-align: middle;
+}
+
 /*************************
 FOOTER
 **************************/

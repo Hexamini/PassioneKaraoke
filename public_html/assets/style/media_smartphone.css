@@ -4,6 +4,7 @@
     text-decoration: none;
     outline: none;
     border: 0 none;
+    list-style: none;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
 #navigation-bar #logo {
     height: 100%;
     width: 200px;
-    margin-left: 10px;
+    margin-left: 16px;
 }
 
 #navigation-bar #logo img {
@@ -89,6 +90,16 @@ body {
     text-align: center;
 }
 
+#navigation-bar #menu li a:hover {
+    color: white;
+    background-color: #29B6F6;
+}
+
+#navigation-bar #menu li a:active {
+    color: white;
+    background-color: #039BE5;
+}
+
 /*************************
  CONTENT
  *************************/
@@ -116,29 +127,49 @@ h3 {
 }
 
 
-#music-type li, #last-news .new-song {
-
+#music-type li, #last-news .new-song, #last-news .new-article  {
     height: 50px;
-    line-height: 50px;
+    padding: 16px 0;
+    line-height: 25px;
     text-align:center;
     width: 100%;
     background-color:#CFD8DC;
     color: #546E7A;
+    font-size: 14px;
     margin: 6px 0;
     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
     -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
     box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
-#last-news .new-song a {
-    color: #0D47A1;
+#music-type li {
+    line-height: 50px;
 }
-#last-news .new-song a:hover {
+
+
+#last-news .new-song a, #last-news .new-article a {
+    color: #0D47A1;
+    font-size: 16px;
+    display: block;
+}
+#last-news .new-song a:hover, #last-news .new-article a:hover {
     text-decoration: underline;
 }
+
+
+
+#last-news .new-article a {
+    display: block;
+}
+
 
 /*************************
 FOOTER
 **************************/
 
-
+#footer {
+    margin: 16px;
+    font-size: 12px;
+    text-align: center;
+    color:#9E9E9E;
+}

@@ -11,14 +11,21 @@ my $struct = 'artists';
 =Description
 Parametri:
     listArtists = Oggetto rappresentativo la lista degli artisti
+    editButton = Oggetto rappresentante un bottone per accedere alla modalita
+                 edit
 =cut
 sub get
 {
-    my ( $listOfArtists ) = @_;
-    
+    my ( $listOfArtists, $editButton ) = @_;
+
     my $values = {
 	'listOfArtists' => $listOfArtists,
     };
+
+    if( defined $editButton )
+    {
+	$values = Behavior::weld( $values, $editButton );
+    }
     
     return Behavior::getChain( $struct, $values );
 }

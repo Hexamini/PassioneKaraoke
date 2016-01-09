@@ -3,6 +3,8 @@ use strict;
 use CGI;
 use CGI::Session;
 
+use Page::Object::Base::ParserXML;
+
 package Session;
 
 sub getSession
@@ -28,6 +30,26 @@ sub getSession
     {
 	return undef;
     }
+}
+
+=Description
+Paramentri:
+    $user = Sessione utente
+=cut
+sub isAdmin
+{
+    my ( $user, $parser ) = @_;
+
+    return ( $user == 'admin' );
+    
+=Begin
+    my $file = '../data/database/userlist.xml';
+    my $doc = ParserXML::getDoc( $parser, $file );
+
+    my $node = $doc->findnodes( "//xs:user[\@username='$user' and \@type='admin']" )->get_node( 1 );
+
+    return ( defined $node );
+=cut
 }
 
 1;

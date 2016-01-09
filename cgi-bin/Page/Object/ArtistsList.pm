@@ -10,15 +10,17 @@ my $struct = 'artistsList';
 =Description
 Parametri:
     nome = Nome dell'artista
+    idArtista = Id dell'artista
     logoArtista = Path logo dell'artista
 =cut
 sub get
 {
-    my ( $nome, $logoArtista ) = @_;
+    my ( $nome, $idArtista, $logoArtista ) = @_;
 
     my $values = {
-	artist => $nome,
-	artistLogo => $logoArtista,
+	'artist' => $nome,
+	'id' => $idArtista,
+	'artistLogo' => $logoArtista,
     };
 
     return Behavior::getChain( $struct, $values, 1 );

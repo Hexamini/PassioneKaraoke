@@ -1,6 +1,14 @@
 \subsection{Perl}
-Il per \`e il motore principale del sito, che ne permette il funzionamento. L'html \`e stato scritto in maniera tale da permettere una massima modularizzazione. \textbf{r.cgi} \`e lo script principale del sito, che si occupa di servire le pagine corrette.
+Il perl \`e il motore principale del sito, che ne permette il funzionamento offrendo pagine html all'utente, e gestisce le query sulla base XML.
 \subsubsection{Generazione delle pagine web}
-Le pagine web che vengono servite sono ``costruite" dal perl secondo una specifico metodo. \textit{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.
+L'html \`e stato scritto in maniera tale da permettere una massima modularizzazione. \textbf{r.cgi} \`e lo script principale del sito, che si occupa di servire le pagine corrette.
+Le pagine web che vengono servite sono ``costruite" dal perl secondo uno specifico metodo. \textit{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.
 \paragraph*{Segnaposti} Per poter realizzare ci\`o sono stati implementati l'utilizzo di segnaposti, che permettono tramite un parsing di includere le varie parti dell'html correttamente.
+\lstinputlisting[language=HTML,caption=Esempio di segnaposto]{res/codeExample/segnaposto.html}
+Durante il parsing, viene riconosciuto il segnaposto e viene aggiunto il modulo html corrente.
+\subsubsection{Interazione con la base XML}
+Perl non si occupa solamente della generazione dell'html, ma anche del prelievo dei dati dalla base scritta in XML.
+%TODO
+\subsubsection{Gesione delle sessioni}
+Le sessioni (salvate nel server) vengono gestite tramite l'utilizzo di cookies (che riportano l'id della sessione corrispondente): permettono agli utenti registrati di eseguire il login e di accedere ad altre funzionalit\`a.
 %TODO

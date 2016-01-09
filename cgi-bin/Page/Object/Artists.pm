@@ -13,18 +13,22 @@ Parametri:
     listArtists = Oggetto rappresentativo la lista degli artisti
     editButton = Oggetto rappresentante un bottone per accedere alla modalita
                  edit
+    artistManager = Oggetto rappresentate la gestione di un artita
 =cut
 sub get
 {
-    my ( $listOfArtists, $editButton ) = @_;
+    my ( $listOfArtists, $editButton, $artistManager ) = @_;
 
     my $values = {
 	'listOfArtists' => $listOfArtists,
     };
 
-    if( defined $editButton )
-    {
+    if ( defined $editButton ) {
 	$values = Behavior::weld( $values, $editButton );
+    }
+
+    if ( defined $artistManager ) {
+	$values = Behavior::weld( $values, $artistManager );
     }
     
     return Behavior::getChain( $struct, $values );

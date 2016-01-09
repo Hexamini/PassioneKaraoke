@@ -5,6 +5,7 @@ use XML::LibXML;
 use Page::Object::Artists;
 use Page::Object::ArtistsList;
 use Page::Object::EditButton;
+use Page::Object::ArtistManager;
 use Page::Object::Base::ParserXML;
 use Page::Object::Base::Session;
 
@@ -14,7 +15,7 @@ my $file = '../data/database/artistlist.xml';
 
 sub get
 {
-    my ( $parser ) = @_;
+    my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
     my @nodes = $doc->findnodes( '//xs:artist' );
@@ -28,13 +29,31 @@ sub get
     }
 
     my $user = Session::getSession();
+    my $artistsPage = '';
     
-    my $artistsPage = ( !Session::isAdmin( $user ) ) ? 
-	Artists::get( Artists::artistsList( @artists ) ) :
-	Artists::get( 
-	    Artists::artistsList( @artists ), 
-	    EditButton::get( 'section=artists' )
-	);
+    if ( !Session::isAdmin( $user ) ) {
+	$artistsPage = Artists::get( Artists::artistsList( @artists ) );
+    } else {
+
+	my $size = @pairs;
+	my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+	if ( $size == 1 && $mode == 'edit' ) {
+
+	    $artistsPage = Artists::get( 
+		Artists::artistsList( @artists ),
+		EditButton::get( 'section=artists' ),
+		ArtistManager::get( 'edit', 1 )
+	    );
+
+	} else {
+
+	    $artistsPage = Artists::get( 
+		Artists::artistsList( @artists ),
+		EditButton::get( 'section=artists' )
+            );
+	}
+    }
 
     return $artistsPage;
 }

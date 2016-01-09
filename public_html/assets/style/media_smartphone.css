@@ -140,7 +140,7 @@ h3 {
     width: 100%;
     background-color:#CFD8DC;
     color: #546E7A;
-    font-size: 14px;
+    font-size: 12px;
     margin: 6px 0;
     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
     -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
@@ -265,6 +265,29 @@ h3 {
     font-size: 14px;
     border-bottom: 1px solid #B0BEC5;
 }
+
+/********** ARTICLE ***********************/
+
+.article {
+    height: 50px;
+    padding: 16px 0;
+    line-height: 25px;
+    text-align:center;
+    width: 100%;
+    background-color:#CFD8DC;
+    color: #546E7A;
+    font-size: 12px;
+    margin: 6px 0;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+}
+
+.article strong {
+    font-size: 16px;
+    color: #0D47A1;
+}
+
 
 /*************************
 FOOTER

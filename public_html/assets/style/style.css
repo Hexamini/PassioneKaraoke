@@ -112,6 +112,14 @@
         max-width: 1024px;
         margin: 6px auto;
     }
+
+
+    /*************** ARTICLES *************************/
+
+    .article {
+        max-width: 1024px;
+        margin: 6px auto;
+    }
 }
 
 /***********Article single ***********/

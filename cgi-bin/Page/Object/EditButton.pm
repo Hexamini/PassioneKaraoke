@@ -9,7 +9,7 @@ my $struct = 'editButton';
 
 =Description
 Parametri:
-    section = Indirizzo pagina corrente
+    section = Sezione da accedere in modalita' edit
 =cut
 sub get
 {
@@ -19,7 +19,7 @@ sub get
 	'page' => $section,
     };
 
-    return Behavior::getChain( $struct, $values );
+    return Behavior::getChain( $struct, $values, 1 );
 }
 
 1;

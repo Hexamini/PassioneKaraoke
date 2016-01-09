@@ -13,9 +13,6 @@ META_!
 
     <div id="artist-description">
 
-        <!-- Modalità modifica per l'artista -->
-        [% editMode %]
-
         <div id="artist-photo">
 
             <img src="[% artistPhoto %]" alt="Immagine dell'artista [% artist %]" />
@@ -42,6 +39,9 @@ META_!
 
         <!-- Qui vanno elencati tutti gli album -->
         [% albumList %]
+
+        <!-- Aggiunge un album -->
+        [% albumManager %]
 
     </div>
 

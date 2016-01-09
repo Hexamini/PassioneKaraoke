@@ -40,16 +40,24 @@ sub isAdmin
 {
     my ( $user, $parser ) = @_;
 
-    return ( $user == 'admin' );
-    
+    if ( undef $user ) {
+
+	return 0;
+
+    } else {
+
+	return ( $user == 'admin' );
+
 =Begin
-    my $file = '../data/database/userlist.xml';
-    my $doc = ParserXML::getDoc( $parser, $file );
+        my $file = '../data/database/userlist.xml';
+	my $doc = ParserXML::getDoc( $parser, $file );
 
-    my $node = $doc->findnodes( "//xs:user[\@username='$user' and \@type='admin']" )->get_node( 1 );
+	my $node = $doc->findnodes( "//xs:user[\@username='$user' and \@type='admin']" )->get_node( 1 );
 
-    return ( defined $node );
+	return ( defined $node );
 =cut
+    }
+
 }
 
 1;

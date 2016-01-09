@@ -8,8 +8,17 @@ and (max-width: 1023px) {
         text-align:center;
     }
 
+    h2 {
+        text-align: center;
+    }
+
     #content {
         margin: 16px;
+    }
+
+    #article-content, #artist-bio {
+        max-width: 900px;
+        margin: 0 auto;
     }
 }
 

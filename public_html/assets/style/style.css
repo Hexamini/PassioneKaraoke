@@ -120,6 +120,13 @@
         max-width: 1024px;
         margin: 6px auto;
     }
+
+    /************* SINGLE ARTICLE **********************/
+
+    #article-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
 }
 
 /***********Article single ***********/

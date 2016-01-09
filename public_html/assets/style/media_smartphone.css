@@ -11,6 +11,7 @@ body {
     width: 100%;
     font-family: 'Roboto', sans-serif;
     padding-top: 88px;
+    color: #616161;
 }
 
 /********************
@@ -140,7 +141,7 @@ h3 {
     width: 100%;
     background-color:#CFD8DC;
     color: #546E7A;
-    font-size: 12px;
+    font-size: 14px;
     margin: 6px 0;
     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
     -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
@@ -154,7 +155,7 @@ h3 {
 
 #last-news .new-song a, #last-news .new-article a {
     color: #0D47A1;
-    font-size: 16px;
+    font-size: 18px;
     display: block;
 }
 #last-news .new-song a:hover, #last-news .new-article a:hover {
@@ -276,7 +277,7 @@ h3 {
     width: 100%;
     background-color:#CFD8DC;
     color: #546E7A;
-    font-size: 12px;
+    font-size: 14px;
     margin: 6px 0;
     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
     -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
@@ -284,8 +285,28 @@ h3 {
 }
 
 .article strong {
-    font-size: 16px;
+    font-size: 18px;
     color: #0D47A1;
+}
+
+/****************** SINGLE ARTICLE **********************/
+
+#article-content {
+    color: #263238;
+    font-size: 16px;
+    line-height: 24px;
+}
+#article-data {
+    margin-top: 16px;
+}
+#article-data #article-author{
+    font-weight: bold;
+    font-size: 16px;
+    color: #37474F;
+}
+#article-data #article-date {
+    font-size: 14px;
+
 }
 
 

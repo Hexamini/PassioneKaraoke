@@ -1,29 +1,7 @@
-\section{Progettazione}
-
-Di seguito vengono viste e spiegate alcune scelte di design effettuate durante la progettazione del sito.
-
-\subsection{Accessibilità}
-%TODO
-%MEMO: per i problemi e le soluzioni addottate per l'accessibilita' vedere:
-%https://github.com/Hexamini/PassioneKaraoke/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3AAccessibilit%C3%A0+
-Il sito è stato utilizzato sviluppando solamente codice XHTML 1.0 Strict, per assicurare la massima compatibilità. Per i fogli di stile è invece stato deciso di applicare CSS 3.0, per potersi avvantaggiare di nuove tecnologie grafiche e ridurre al minimo l'utilizzo di JavaScript, che invece è stato applicato per i controlli sul form di login e sulla gestione del contenuto del sito, avendo comunque una buona degradazione in caso questa tecnologia non sia disponibile nel dispositivo in uso.
-
-\subsection{Usabilità}
-%TODO
-
-\subsection{Perl}
-Il per \`e il motore principale del sito, che ne permette il funzionamento. L'html \`e stato scritto in maniera tale da permettere una massima modularizzazione. \textbf{r.cgi} \`e lo script principale del sito, che si occupa di servire le pagine corrette.
-\subsubsection{Generazione delle pagine web}
-Le pagine web che vengono servite sono ``costruite" dal perl secondo una specifico metodo. \textif{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.
-\paragraph*{Segnaposti} Per poter realizzare ci\`o sono stati implementati l'utilizzo di segnaposti, che permettono tramite un parsing di includere le varie parti dell'html correttamente.
-%TODO
-
-\subsection{HTML}
-%TODO
-
-\subsection{CSS}
-%TODO
-%MEMO: per css vedere la seguente issue: https://github.com/Hexamini/PassioneKaraoke/issues/59
-
-\subsection{Javascript}
-%TODO
+\input{res/chapter/design/progettazione}
+\input{res/chapter/design/accessibilita}
+\input{res/chapter/design/usabilita}
+\input{res/chapter/design/perl}
+\input{res/chapter/design/html}
+\input{res/chapter/design/css}
+\input{res/chapter/design/xml}

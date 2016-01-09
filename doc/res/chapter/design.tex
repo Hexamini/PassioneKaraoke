@@ -12,7 +12,10 @@ Il sito è stato utilizzato sviluppando solamente codice XHTML 1.0 Strict, per a
 %TODO
 
 \subsection{Perl}
-Il per \`e il motore principale del sito, che permette di far funzionare l'intero sito. L'html \`e stato scritto in maniera tale da permettere una massima modularizzazione.
+Il per \`e il motore principale del sito, che ne permette il funzionamento. L'html \`e stato scritto in maniera tale da permettere una massima modularizzazione. \textbf{r.cgi} \`e lo script principale del sito, che si occupa di servire le pagine corrette.
+\subsubsection{Generazione delle pagine web}
+Le pagine web che vengono servite sono ``costruite" dal perl secondo una specifico metodo. \textif{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.
+\paragraph*{Segnaposti} Per poter realizzare ci\`o sono stati implementati l'utilizzo di segnaposti, che permettono tramite un parsing di includere le varie parti dell'html correttamente.
 %TODO
 
 \subsection{HTML}

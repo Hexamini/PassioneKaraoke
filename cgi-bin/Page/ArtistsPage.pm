@@ -17,18 +17,26 @@ sub get
     my ( $parser ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
-    my @nodes = $doc->findnodes( '//xs:nick' );
+    my @nodes = $doc->findnodes( '//xs:artist' );
     my @artists = ();
     
     foreach my $node( @nodes )
     {
-	my $name = $node->textContent;
-	push( @artists, ArtistsList::get( $name, '#' ) );
+	my $name = $node->findnodes( 'xs:nick/text()' );
+	my $id = $node->getAttribute( 'id' );
+	push( @artists, ArtistsList::get( $name, $id, '#' ) );
     }
 
     my $user = Session::getSession();
     
-    return Artists::get( Artists::artistsList( @artists ) );
+    my $artistsPage = ( !Session::isAdmin( $user ) ) ? 
+	Artists::get( Artists::artistsList( @artists ) ) :
+	Artists::get( 
+	    Artists::artistsList( @artists ), 
+	    EditButton::get( 'section=artists' )
+	);
+
+    return $artistsPage;
 }
 
 1;

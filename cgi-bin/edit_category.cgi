@@ -11,27 +11,19 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-my $author = $cgi->param( 'artistName' );
-my $name = $cgi->param( 'albumName' );
-my $creation = $cgi->param( 'albumCreation' );
+print $cgi->header();
 
-my $file = '../data/database/artistlist.xml';
+my $category = $cgi->param( 'categoryName' );
+
+my $file = '../data/database/category.xml';
 
 my $parser = XML::LibXML->new();
 my $doc = ParserXML::getDoc( $parser, $file );
 
-my $id = '_' . $name;
-$id =~ s/\s+//g;
-$id = lc $id;
-
-my $framment = 
-    "<album id='$id'>
-       <name>$name</name>
-       <creation>$creation</creation>
-     </album>";
+my $framment = "<category>$category</category>";
 
 my $album = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
-my $root = $doc->findnodes( "//xs:artist[\@id='$author']" )->get_node( 1 );
+my $root = $doc->findnodes( '/xs:categoryList' )->get_node( 1 );
 
 $root->appendChild( $album ) || die( 'Non appeso' );
 
@@ -39,8 +31,5 @@ open( OUT, ">$file" );
 print OUT $doc->toString;
 close( OUT );
 
-print $cgi->redirect( "r.cgi?section=artist&id=$author&mode=edit" );
-
-
-
+print "Write all";
 

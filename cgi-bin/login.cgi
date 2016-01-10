@@ -5,6 +5,7 @@ use warnings;
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI;
+use CGI::Session;
 use XML::LibXML;
 
 use Page::Object::Base::ParserXML;
@@ -22,7 +23,11 @@ my $node = $doc->findnodes( "//xs:user[\@username='$user' and xs:password='$pass
 
 if( $node )
 {
-    print $cgi->redirect( "r.cgi?section=userPage&username=$user" );
+    my $session = new CGI::Session( 'driver:File', undef, { Directory => '/tmp/pgnac' } ); #Crea la sessione
+    my $cookie = $cgi->cookie( 'CGISESSID' => $session->id );
+
+    $session->param( 'user', $user );
+    print $cgi->redirect( -uri => 'r.cgi?section=index', -cookie => $cookie );
 }
 else
 {

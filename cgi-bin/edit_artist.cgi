@@ -11,8 +11,6 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
-
 my $nick = $cgi->param( 'artistNick' );
 my $born = $cgi->param( 'artistBorn' );
 my $death = $cgi->param( 'artistDeath' );
@@ -48,5 +46,5 @@ open( OUT, ">$file" );
 print OUT $doc->toString;
 close( OUT );
 
-print "Write all";
+print $cgi->redirect( 'r.cgi?seciont=artists&mode=edit' );
 

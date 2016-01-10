@@ -46,6 +46,8 @@ sub get
 	push @albums, Album::get( $nameAlbum, '#', $songList );
     }
 
+    @albums = reverse @albums;
+
     my $user = Session::getSession();
     my $artistPage = '';
 

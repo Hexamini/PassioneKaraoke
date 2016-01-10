@@ -13,7 +13,7 @@ Parametri:
 =cut
 sub get
 {
-    my ( $page, $mode, $value ) = @_;
+    my ( $page, $mode, $value, $name ) = @_;
 
     my $values = {
 	'page' => $page,
@@ -21,7 +21,13 @@ sub get
 	'value' => $value,
     };
 
-    return Behavior::getChain( $struct, $values, 1 );
+    my $button = Behavior::getChain( $struct, $values, 1 );
+    
+    if( defined $name ){
+	$button = Behavior::rename( $button, $struct, $name );
+    }
+
+    return $button;
 }
 
 1;

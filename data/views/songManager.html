@@ -1,15 +1,3 @@
-!_META
-
-<!-- Default meta phrases -->
-
-@description = Modulo di inserimento/modifica canzone
-@keyword = amministrazione, inserimento, modifica, canzone
-@title = Gestione canzone
-
-<!-- End default meta phrases -->
-
-META_!
-
 <div id="song-manager">
 
     <h1>Gestione canzone</h1>
@@ -21,9 +9,12 @@ META_!
         <fieldset>
 
             <input type="text" name="songTitle" id="song-title" />
-            <textarea name="songDescription" id="song-description" rows="80" cols="40"></textarea>
+            <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40"></textarea>
+            <textarea name="songExtra" id="song-extra" rows="80" cols="40"></textarea>
             <!-- Le righe e le colonne definite in css? -->
             <input type="submit" value="Conferma" name="action" />
+            <input type="submit" value="&#43" name="action" />
+
         </fieldset>
     </form>
 

@@ -5,6 +5,7 @@
 @title = Articoli
 @description = Pagina contenente tutti gli articoli pubblicati su PassioneKaraoke
 @keyword = articoli, novit&agrave;
+@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; Articoli
 
 <!-- End default meta phrases -->
 
@@ -14,6 +15,10 @@ META_!
 
     <h1>Lista degli articoli</h1>
 
+    <!-- @korut94 segnaposto corretto -->
+    [% editButton %]
+    <!--                              -->
+    
     <ul id="article-list">
         [% articleList %]
         <!-- titolo e descrizione per ogni articolo -->

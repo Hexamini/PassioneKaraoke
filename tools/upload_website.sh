@@ -26,7 +26,7 @@ function launch_syncronization() {
 
 }
 
-function check_if_allowed_branch() {
+function check_if_allowed_brach() {
 
     if [ "$TRAVIS_BRANCH" == "test" ] || [ "$TRAVIS_BRANCH" == "master" ]
     then

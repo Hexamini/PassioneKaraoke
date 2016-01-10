@@ -8,13 +8,14 @@
 VERSION=0.0.1
 
 function load_lib() {
-    
-    #Lib from tools
-    source ../doc/tools/lib.sh || { error "Can't found doc/tools/lib.sh. Exiting"; exit 1 }
 
     #lib_config from tools
-    source ../doc/tools/lib_config.sh || { error "Can't found doc/tools/lib_config.sh. Exiting"; exit 1 }
+    source ../doc/tools/lib_config.sh || exit 1
 
+    
+    #Lib from tools
+    source ../doc/tools/lib.sh || exit 1
+    
 }
 
 function launch_syncronization() {
@@ -51,7 +52,7 @@ function check_if_pull_request() {
 function main() {
 
     load_lib
-    msg v "Version: $VERSION 0.0.1"
+    msg v "Version: $VERSION"
 
     check_if_pull_request
     check_if_allowed_brach

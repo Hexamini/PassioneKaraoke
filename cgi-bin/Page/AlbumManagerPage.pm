@@ -16,11 +16,12 @@ sub get
 
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
     my ( $mode ) = ( ( shift @pair ) =~ /=(.+)/ );
-    
+
+    my $artist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
     my $albumManager = '';
 
     if ( $mode == 'insert' ) {
-	$albumManager = AlbumManager::get( $idArtist );
+	$albumManager = AlbumManager::get( $idArtist, $artist );
     } else {
 	#Sezione per la modifica
     }

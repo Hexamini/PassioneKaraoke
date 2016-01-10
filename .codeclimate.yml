@@ -1,0 +1,13 @@
+engines:
+  csslint:
+    enabled: true
+  eslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - javascript
+
+explude_paths:
+- doc/**/*

@@ -1,21 +1,62 @@
 #!/bin/bash
 
-# Simple script for Travis-CI
+# Simple script that upload PassioneKaraoke on server after Travis-CI checks only
+# if this isn't a pull request.
 # @author: Polonio Davide poloniodavide@gmail.com
 # @license: GPLv3
 
+VERSION=0.0.1
+
 function load_lib() {
     
-    #Lib da tools
+    #Lib from tools
     source doc/tools/lib.sh || {error "Can't found doc/tools/lib.sh. Exiting"; exit 1}
 
-    #lib_config da tools
+    #lib_config from tools
     source doc/tools/lib_config.sh || {error "Can't found doc/tools/lib_config.sh. Exiting"; exit 1}
 
-    #file di config anche per questo script?
 }
 
 function launch_syncronization() {
 
-    #TODO -> rsync via ssh
+    #rsync via ssh
+
+    ssh $USERNAME@$FIRST_URL -i tools/id_rsa "git clone --branch=test https://github.com/Hexamini/PassioneKaraoke.git tmpTravis && rsync -avz -e ssh $USERNAME@$WEBSERVER_URL:/home/2/2013/dpolonio/tecweb ~/tmpTravis/ && rm -rf ~/tmpTravis/"
+
+}
+
+function check_if_allowed_branch() {
+
+    if [ "$TRAVIS_BRANCH" == "test" ] || [ "$TRAVIS_BRANCH" == "master" ]
+    then
+	msg v "I'm uploading $TRAVIS_BRANCH on the web server"
+    else
+	msg v "I only upload test or master branch on the web server. Terminating"
+	exit 0
+    fi
+}
+
+function check_if_pull_request() {
+
+    if [ "$TRAVIS_PULL_REQUEST" == "false" ]
+    then
+	msg d "This is not a pull request. Continuing"
+    else
+	msg v "This is a pull request. Pull request aren't pulled in the web server"
+	exit 0
+    fi
+}
+
+
+function main() {
+
+    load_lib
+    msg v "Version: $VERSION 0.0.1"
+
+    check_if_pull_request
+    check_if_allowed_brach
+
+    launch_syncronization
+
+    exit 0
 }

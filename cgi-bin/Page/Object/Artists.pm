@@ -16,7 +16,7 @@ Parametri:
 =cut
 sub get
 {
-    my ( $listOfArtists, $editButton ) = @_;
+    my ( $listOfArtists, $editButton, $addButton ) = @_;
 
     my $values = {
 	'listOfArtists' => $listOfArtists,
@@ -24,6 +24,10 @@ sub get
 
     if ( defined $editButton ) {
 	$values = Behavior::weld( $values, $editButton );
+	
+	if ( defined $addButton ) {
+	    $values = Behavior::weld( $values, $addButton );
+	}
     }
     
     return Behavior::getChain( $struct, $values );

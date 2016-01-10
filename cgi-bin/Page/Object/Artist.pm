@@ -15,11 +15,11 @@ Parametri:
     artistBio = Bibliografia del cantante
     albumList = Rappresentazione lista album 
     editButton = Rappresentazione bottone per l'entrata in edit mode
-    albumManager = Gestione album
+    addButton = Rappresentazione bottone per l'inserimento di un album
 =cut
 sub get
 {
-    my ( $artist, $pathArtista, $artistBio, $albumList, $editButton, $albumManager ) = @_;
+    my ( $artist, $pathArtista, $artistBio, $albumList, $editButton, $addButton ) = @_;
 
     my $values = {
 	'artist' => $artist,
@@ -32,8 +32,8 @@ sub get
 	$values = Behavior::weld( $values, $editButton );
     } 
     
-    if ( defined $albumManager ) {
-	$values = Behavior::weld( $values, $albumManager );
+    if ( defined $addButton ) {
+	$values = Behavior::weld( $values, $addButton );
     }
 
     return Behavior::getChain( $struct, $values );

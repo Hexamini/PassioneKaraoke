@@ -7,7 +7,10 @@ package ArtistManagerPage;
 
 sub get
 {
-    return ArtistManager::get( 'Edit', 0 );
+    my ( @pairs ) = @_;
+    my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+    return ArtistManager::get( $mode, 0 );
 }
 
 1;

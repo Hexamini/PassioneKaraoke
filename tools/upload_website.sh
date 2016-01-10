@@ -29,14 +29,13 @@ function launch_syncronization() {
 
     #rsync via ssh
 
-    ssh $USERNAME@$FIRST_URL -i id_rsa "git clone --branch=test https://github.com/Hexamini/PassioneKaraoke.git tmpTravis && rsync -avz -e ssh  ~/tmpTravis/ $USERNAME@$WEBSERVER_URL:/home/2/2013/dpolonio/tecweb && rm -rf ~/tmpTravis/"
+    ssh $USERNAME@$FIRST_URL -i id_rsa "git clone --branch=$TRAVIS_BRANCH https://github.com/Hexamini/PassioneKaraoke.git tmpTravis && rsync -avz -e ssh  ~/tmpTravis/ $USERNAME@$WEBSERVER_URL:/home/2/2013/dpolonio/tecweb && rm -rf ~/tmpTravis/"
 
 }
 
-function check_if_allowed_brach() {
+function check_if_allowed_branch() {
 
-    #last condition is only for dev purpose
-    if [ "$TRAVIS_BRANCH" == "test" ] || [ "$TRAVIS_BRANCH" == "master" ] || [ "$TRAVIS_BRANCH" == "davide/feat/ToolIntegration" ]
+    if [ "$TRAVIS_BRANCH" == "test" ] || [ "$TRAVIS_BRANCH" == "master" ]
     then
 	msg v "I'm uploading $TRAVIS_BRANCH on the web server"
     else
@@ -63,7 +62,7 @@ function main() {
     msg v "Version: $VERSION"
 
     check_if_pull_request
-    check_if_allowed_brach
+    check_if_allowed_branch
 
     fix_permissions
     

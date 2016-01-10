@@ -20,6 +20,15 @@ function load_components() {
 	echo "Couldn't load successfully lib.sh. Exiting"
 	exit 1
     fi
+
+    source lib_config.sh
+    local isLibLoaded=$?
+
+    if [ $isLibLoaded -eq 1 ]
+    then
+	msg e "Couldn't load successfully lib_config.sh. Exiting"
+	exit 1
+    fi
     
 }
 

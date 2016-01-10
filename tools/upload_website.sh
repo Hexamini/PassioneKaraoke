@@ -18,6 +18,13 @@ function load_lib() {
     
 }
 
+function fix_permissions() {
+
+    msg d "Fixing Permissions"
+    
+    chmod 400 id_rsa
+}
+
 function launch_syncronization() {
 
     #rsync via ssh
@@ -58,6 +65,8 @@ function main() {
     check_if_pull_request
     check_if_allowed_brach
 
+    fix_permissions
+    
     launch_syncronization
 
     exit 0

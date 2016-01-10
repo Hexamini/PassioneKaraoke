@@ -14,7 +14,7 @@ sub getSession
 
     if( $sid )
     {
-	my $session = new CGI::Session( undef, $sid, { Directory => '/tmp/pgnac' } );
+	my $session = new CGI::Session( undef, $sid, { Directory => '../data/pgnac' } );
     
 	if( $session->is_expired || $session->is_empty )
 	{

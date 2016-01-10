@@ -63,7 +63,7 @@ sub get
 		'#',
 		$description,
 		Artist::listAlbum( @albums ),
-		EditButton::get( "section=artist&amp;id=$id" ),
+		EditButton::get( "section=artist&amp;id=$id", 'edit', 'Sezione Amministrativa', 'editButton' ),
 		AlbumManager::get( 'edit', {}, 1 )
 	    );
 

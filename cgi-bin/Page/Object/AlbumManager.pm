@@ -2,7 +2,6 @@ use lib "cgi-bin";
 use strict;
 
 use Page::Object::Base::Behavior;
-use Page::Object::AlbumManagerList;
 
 package AlbumManager;
 
@@ -10,39 +9,36 @@ my $struct = "albumManager";
 
 =Description
 Parametri:
-    actionType = Modalita' inserimento, puo' assumere valore 'Edit' o 'Insert'
-    optionArtistName = Lista cantanti compositori dell'album
-    content = Valore 1 se si desidera avere solo il contenuto, 0 per i meta 
-              associati.
+    idArtist = Id dell'artista creatore dell'album
+    artist = Nome dell'artista
 =cut
 sub get
 {
-    my ( $actionType, $optionArtistName, $content ) = @_;
+    my ( $idArtist, $artist ) = @_;
 
     my $values = {
-	'actionType' => $actionType,
-	'optionArtistName' => $optionArtistName,
+	'idArtist' => $idArtist,
+	'artist' => $artist,
     };
-    
-    return Behavior::getChain( $struct, $values, $content );
+
+    return Behavior::getChain( $struct, $values );
 }
 
 =Description
 Parametri:
-    artists: array contenente i nomi degli artisti
+    list: array contenente gli oggetti rappresentanti un AlbumManagerList
 Ritorno:
     ritorna un oggetto optionArtistName, ovvere una lista di cantanti da selezionare 
 =cut
 sub optionArtists
 {
-    my ( @artists ) = @_;
+    my ( @list ) = @_;
 
     my $optionArtistName = ''; 
 
-    for my $name( @artists )
+    for my $item( @list )
     {
-	my $opt = AlbumManagerList::get( $name );
-	$optionArtistName = $optionArtistName . AlbumManagerList::extractContent( $opt );
+	$optionArtistName = $optionArtistName . AlbumManagerList::extractContent( $item );
     }
 
     return $optionArtistName;

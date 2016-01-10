@@ -4,7 +4,10 @@ use XML::LibXML;
 
 use Page::Object::Artists;
 use Page::Object::ArtistsList;
+use Page::Object::EditButton;
+use Page::Object::ArtistManager;
 use Page::Object::Base::ParserXML;
+use Page::Object::Base::Session;
 
 package ArtistsPage;
 
@@ -12,19 +15,49 @@ my $file = '../data/database/artistlist.xml';
 
 sub get
 {
-    my ( $parser ) = @_;
+    my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
-    my @nodes = $doc->findnodes( '//xs:nick' );
+    my @nodes = $doc->findnodes( '//xs:artist' );
     my @artists = ();
     
     foreach my $node( @nodes )
     {
-	my $name = $node->textContent;
-	push( @artists, ArtistsList::get( $name, '#' ) );
+	my $name = $node->findnodes( 'xs:nick/text()' );
+	my $id = $node->getAttribute( 'id' );
+	push( @artists, ArtistsList::get( $name, $id, '#' ) );
     }
 
-    return Artists::get( Artists::artistsList( @artists ) );
+    @artists = reverse @artists;
+
+    my $user = Session::getSession();
+    my $artistsPage = '';
+    
+    if ( !Session::isAdmin( $user ) ) {
+	$artistsPage = Artists::get( Artists::artistsList( @artists ) );
+    } else {
+
+	my $size = @pairs;
+	my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+	if ( $size == 1 && $mode == 'edit' ) {
+
+	    $artistsPage = Artists::get( 
+		Artists::artistsList( @artists ),
+		EditButton::get( 'section=artists', 'edit', 'Sezione amministrativa', 'editButton' ),
+		EditButton::get( 'section=artistManager', 'insert', '&#43', 'addButton' )
+	    );
+
+	} else {
+
+	    $artistsPage = Artists::get( 
+		Artists::artistsList( @artists ),
+		EditButton::get( 'section=artists', 'edit', 'Sezione amministrativa', 'editButton' )
+            );
+	}
+    }
+
+    return $artistsPage;
 }
 
 1;

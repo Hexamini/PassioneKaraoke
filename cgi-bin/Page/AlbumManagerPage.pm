@@ -15,11 +15,18 @@ sub get
     my $doc = ParserXML::getDoc( $parser, $file );
 
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
-    my $nameArtist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
-       
-    my @optSing = ( $nameArtist );
-        
-    return AlbumManager::get( 'Edit', AlbumManager::optionArtists( @optSing ), 0 );
+    my ( $mode ) = ( ( shift @pair ) =~ /=(.+)/ );
+
+    my $artist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
+    my $albumManager = '';
+
+    if ( $mode == 'insert' ) {
+	$albumManager = AlbumManager::get( $idArtist, $artist );
+    } else {
+	#Sezione per la modifica
+    }
+
+    return $albumManager;
 }
 
 1;

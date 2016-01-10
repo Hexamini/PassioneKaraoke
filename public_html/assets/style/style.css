@@ -380,6 +380,7 @@ and (max-width: 1023px) {
         width: 20%;
         text-align: center;
         height: 100%;
+        float: left;
     }
 
     #navigation-bar #menu li a {
@@ -392,6 +393,7 @@ and (max-width: 1023px) {
         font-size: 18px;
         line-height: 100px;
         color: #E1F5FE;
+        margin: 0;
     }
 
 

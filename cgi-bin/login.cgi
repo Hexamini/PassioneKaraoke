@@ -23,7 +23,14 @@ my $node = $doc->findnodes( "//xs:user[\@username='$user' and xs:password='$pass
 
 if( $node )
 {
-    my $session = new CGI::Session( 'driver:File', undef, { Directory => '/tmp/pgnac' } ); #Crea la sessione
+    my $dir = '../data/pgnac';
+
+    #Se non esiste la cartella per mantenere le sessioni quest'ultima viene creata
+    if ( !( -d $dir ) ) {
+	mkdir $dir;
+    }
+
+    my $session = new CGI::Session( 'driver:File', undef, { Directory => $dir } ); #Crea la sessione
     my $cookie = $cgi->cookie( 'CGISESSID' => $session->id );
 
     $session->param( 'user', $user );

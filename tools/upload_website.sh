@@ -10,10 +10,10 @@ VERSION=0.0.1
 function load_lib() {
     
     #Lib from tools
-    source doc/tools/lib.sh || {error "Can't found doc/tools/lib.sh. Exiting"; exit 1}
+    source ../doc/tools/lib.sh || { error "Can't found doc/tools/lib.sh. Exiting"; exit 1 }
 
     #lib_config from tools
-    source doc/tools/lib_config.sh || {error "Can't found doc/tools/lib_config.sh. Exiting"; exit 1}
+    source ../doc/tools/lib_config.sh || { error "Can't found doc/tools/lib_config.sh. Exiting"; exit 1 }
 
 }
 

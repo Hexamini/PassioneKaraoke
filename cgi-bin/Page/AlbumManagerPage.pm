@@ -16,8 +16,16 @@ sub get
 
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
     my ( $mode ) = ( ( shift @pair ) =~ /=(.+)/ );
+    
+    my $albumManager = '';
 
-    return AlbumManager::get();
+    if ( $mode == 'insert' ) {
+	$albumManager = AlbumManager::get();
+    } else {
+	#Sezione per la modifica
+    }
+
+    return $albumManager;
 }
 
 1;

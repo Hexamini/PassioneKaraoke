@@ -9,11 +9,17 @@ my $struct = "albumManager";
 
 =Description
 Parametri:
-
+    idArtist = Id dell'artista creatore dell'album
 =cut
 sub get
 {
-    return Behavior::getChain( $struct );
+    my ( $idArtist ) = @_;
+
+    my $values = {
+	'idArtist' => $idArtist,
+    };
+
+    return Behavior::getChain( $struct, $values );
 }
 
 =Description

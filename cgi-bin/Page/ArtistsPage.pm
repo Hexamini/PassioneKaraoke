@@ -28,6 +28,8 @@ sub get
 	push( @artists, ArtistsList::get( $name, $id, '#' ) );
     }
 
+    @artists = reverse @artists;
+
     my $user = Session::getSession();
     my $artistsPage = '';
     

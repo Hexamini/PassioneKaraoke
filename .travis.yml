@@ -9,8 +9,7 @@ branches:
         - davide/feat/ToolIntegration
 
 addons:
-      ssh_know_hosts:
-      - ssh.studenti.math.unipd.it
+    ssh_known_hosts: ssh.studenti.math.unipd.it
 
 install:
     - sudo add-apt-repository ppa:texlive-backports/ppa -y

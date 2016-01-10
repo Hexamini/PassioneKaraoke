@@ -28,7 +28,8 @@ function launch_syncronization() {
 
 function check_if_allowed_brach() {
 
-    if [ "$TRAVIS_BRANCH" == "test" ] || [ "$TRAVIS_BRANCH" == "master" ]
+    #last condition is only for dev purpose
+    if [ "$TRAVIS_BRANCH" == "test" ] || [ "$TRAVIS_BRANCH" == "master" ] || [ "$TRAVIS_BRANCH" == "davide/feat/ToolIntegration" ]
     then
 	msg v "I'm uploading $TRAVIS_BRANCH on the web server"
     else

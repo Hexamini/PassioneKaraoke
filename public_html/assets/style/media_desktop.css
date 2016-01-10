@@ -1,7 +1,8 @@
-@media screen and (min-width: 1024px ){
+@media screen and (min-width: 1024px ) {
     body {
         padding-top: 132px;
     }
+
     #navigation-bar {
         height: 100px !important;
     }
@@ -9,6 +10,7 @@
     #navigation-bar #logo {
         float: left;
     }
+
     #navigation-bar #logo img {
         height: 90px;
     }
@@ -18,7 +20,7 @@
     }
 
     #navigation-bar #menu {
-        position:static;
+        position: static;
         float: right;
         width: 74%;
         height: 100%;
@@ -46,8 +48,6 @@
         margin: 0;
     }
 
-
-
     /*******************************
     ***         CONTENT
     ********************************/
@@ -55,40 +55,42 @@
         max-width: 1326px;
         margin: 0 auto 24px;
     }
+
     h1 {
         margin: 48px 0;
         font-size: 56px;
         text-align: center;
     }
+
     h2 {
         font-size: 32px;
         text-align: center;
     }
+
     h3 {
         text-align: center;
         margin: 24px;
     }
 
-    #last-news{
+    #last-news {
         width: 49%;
         margin-left: 1%;
         display: inline-block;
         vertical-align: top;
     }
+
     #music-type {
         width: 49%;
         display: inline-block;
     }
 
     /******************* ARTIST *********************/
-
     .artist {
         max-width: 1024px;
         margin: 6px auto;
     }
 
     /***************** SINGLE ARTIST *****************/
-
     #artist-description {
         text-align: center;
         margin-bottom: 24px;
@@ -97,6 +99,7 @@
     #artist-photo {
         display: inline-block;
     }
+
     #artist-name {
         display: inline-block;
         vertical-align: top;
@@ -114,29 +117,26 @@
         margin: 6px auto;
     }
 
-
     /*************** ARTICLES *************************/
-
     .article {
         max-width: 1024px;
         margin: 6px auto;
     }
 
     /************* SINGLE ARTICLE **********************/
-
     #article-content {
         max-width: 900px;
         margin: 0 auto;
     }
 
     /************* LOGIN *********************************/
-
     #login label {
         display: inline-block;
         width: 24%;
         margin-right: 5%;
         line-height: 40px;
     }
+
     #login input[type=text], #login input[type=password] {
         display: inline-block;
         width: 70%;
@@ -146,5 +146,10 @@
     #login input[type=submit] {
         max-width: 900px;
         margin-top: 32px;
+    }
+
+    /************* BUTTON EDIT MODE *********************/
+    #edit-mode-form input[type=submit] {
+        margin-left: 40px;
     }
 }

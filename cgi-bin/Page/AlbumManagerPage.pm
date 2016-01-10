@@ -20,7 +20,7 @@ sub get
     my $albumManager = '';
 
     if ( $mode == 'insert' ) {
-	$albumManager = AlbumManager::get();
+	$albumManager = AlbumManager::get( $idArtist );
     } else {
 	#Sezione per la modifica
     }

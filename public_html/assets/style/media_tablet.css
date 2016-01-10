@@ -20,5 +20,9 @@ and (max-width: 1023px) {
         max-width: 900px;
         margin: 0 auto;
     }
+
+    #login input[type=submit]{
+        max-width: 900px;
+    }
 }
 

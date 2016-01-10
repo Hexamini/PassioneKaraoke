@@ -128,4 +128,23 @@
         max-width: 900px;
         margin: 0 auto;
     }
+
+    /************* LOGIN *********************************/
+
+    #login label {
+        display: inline-block;
+        width: 24%;
+        margin-right: 5%;
+        line-height: 40px;
+    }
+    #login input[type=text], #login input[type=password] {
+        display: inline-block;
+        width: 70%;
+        margin: 16px 0;
+    }
+
+    #login input[type=submit] {
+        max-width: 900px;
+        margin-top: 32px;
+    }
 }

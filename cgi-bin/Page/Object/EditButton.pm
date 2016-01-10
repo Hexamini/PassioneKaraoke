@@ -13,10 +13,12 @@ Parametri:
 =cut
 sub get
 {
-    my ( $section ) = @_;
+    my ( $page, $mode, $value ) = @_;
 
     my $values = {
-	'page' => $section,
+	'page' => $page,
+	'mode' => $mode,
+	'value' => $value,
     };
 
     return Behavior::getChain( $struct, $values, 1 );

@@ -31,5 +31,6 @@ if( $node )
 }
 else
 {
+    print $cgi->header( -charset => 'utf-8' );
     print 'User not found';
 }

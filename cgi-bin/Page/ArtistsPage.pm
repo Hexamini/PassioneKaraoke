@@ -42,8 +42,8 @@ sub get
 
 	    $artistsPage = Artists::get( 
 		Artists::artistsList( @artists ),
-		EditButton::get( 'section=artists' ),
-		ArtistManager::get( 'edit', 1 )
+		EditButton::get( 'section=artists', 'edit', 'Sezione amministrativa' ),
+		EditButton::get( 'section=artistManager', 'insert', '&#43' );
 	    );
 
 	} else {

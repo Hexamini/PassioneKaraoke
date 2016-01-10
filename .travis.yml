@@ -31,4 +31,3 @@ script:
 
 after_success:
     - cd tools/ && ./upload_website.sh && cd -
-    - rm id_rsa

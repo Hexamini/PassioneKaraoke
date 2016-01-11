@@ -19,13 +19,13 @@ sub get
     my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
+    my ( $id ) = ( ( shift @pairs ) =~ /=(.+)/ );
+    
     my $size = @pairs;
     my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
     my $editMode = ( $size == 1 && $mode == 'edit' );
     
-    my ( $id ) = ( ( shift @pairs ) =~ /=(.+)/ );
-
     my $nodo = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 
     my $name = $nodo->findnodes( "xs:nick/text()" );

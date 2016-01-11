@@ -12,8 +12,6 @@ sub get
     my ( $artist ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my ( $idArtist ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my ( $idAlbum ) = ( ( shift @pairs ) =~ /=(.+)/ );
-
-    print "Query string: $artist $idArtist $idAlbum";
     
     return SongManager::get( $idArtist, $artist, $idAlbum );
 }

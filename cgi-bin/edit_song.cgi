@@ -11,12 +11,18 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
+print $cgi->head();
+
 my $name = $cgi->param( 'songTitle' );
 my $artist = $cgi->param( 'songArtist' );
 my $album = $cgi->param( 'songAlbum' );
 my $lyrics = $cgi->param( 'songLyrics' );
 my $extra = $cgi->param( 'songExtra' );
 my $category = $cgi->param( 'songCategory' );
+
+print "Nome: $name";
+
+exit 0;
 
 my $id = '_' . $name;
 $id =~ s/\s+//g;

@@ -38,13 +38,13 @@ sub extractContent
 
 sub songsList
 {
-    my ( @songsName ) = @_;
+    my ( @songs ) = @_;
 
     my $list = '';
 
-    for my $name( @songsName )
+    for my $song( @songs )
     {
-	$list = $list . Song::extractContent( $item );
+	$list = $list . Song::extractContent( $song );
     }
 
     return $list;

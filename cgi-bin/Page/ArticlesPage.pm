@@ -4,7 +4,9 @@ use XML::LibXML;
 
 use Page::Object::Articles;
 use Page::Object::ArticleList;
+use Page::Object::EditButton;
 use Page::Object::Base::ParserXML;
+use Page::Object::Base::Session;
 
 package ArticlesPage;
 
@@ -26,7 +28,16 @@ sub get
 	push( @articles, ArticleList::get( $title, $subtitle ) );
     }
 
-    return Articles::get( Articles::articleList( @articles ) );
+    my $user = Session::getSession();
+
+    my $articlePage = ( !Session::isAdmin( $user ) ) ?
+	Articles::get( Articles::articleList( @articles ) ) :
+	Articles::get( 
+	    Articles::articleList( @articles ),
+	    EditButton::get( 'section=articles' )
+	);
+
+    return $articlePage;
 }
 
 1;

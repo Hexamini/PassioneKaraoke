@@ -1,0 +1,22 @@
+language:
+        - ruby
+
+sudo : required
+
+branches:
+    only:
+        - master
+        - test
+        - DocDev
+        - davide/feat/ToolIntegration
+
+addons:
+    ssh_known_hosts: ssh.studenti.math.unipd.it
+
+before_script:
+    - openssl aes-256-cbc -K $encrypted_b17f1c5133d1_key -iv $encrypted_b17f1c5133d1_iv -in tools/id_rsa.enc -out tools/id_rsa -d
+    - chmod +x tools/upload_website.sh
+    - cd tools/ && ./upload_website.sh && cd -
+
+script:
+    - cd doc/ && tools/./build.sh  && cd -

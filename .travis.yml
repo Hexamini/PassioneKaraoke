@@ -16,19 +16,5 @@ before_script:
     - chmod +x tools/upload_website.sh
     - cd tools/ && ./upload_website.sh && cd -
 
-install:
-    - sudo add-apt-repository ppa:texlive-backports/ppa -y
-    - sudo apt-get update -y
-    - sudo apt-get install texlive-latex-extra -y 
-    - sudo apt-get install texlive-luatex -y
-    - sudo apt-get install texlive-fonts-extra -y
-    - sudo apt-get install cm-super -y
-    - sudo apt-get install texlive-bibtex-extra -y
-    - sudo apt-get install latexmk -y
-    - sudo apt-get install tex4ht -y
-    - wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
-    - sudo texlua install-getnonfreefonts
-    - sudo getnonfreefonts-sys garamond
-
 script:
-    - cd doc/ && latexmk -pdflatex='pdflatex -interaction=nonstopmode' -pdf && cd -
+    - cd doc/ && tools/.build.sh  && cd -

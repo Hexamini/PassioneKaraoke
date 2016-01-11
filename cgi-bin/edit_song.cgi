@@ -20,13 +20,11 @@ my $lyrics = $cgi->param( 'songLyrics' );
 my $extra = $cgi->param( 'songExtra' );
 my $category = $cgi->param( 'songCategory' );
 
-print "Nome: $name";
-
-exit 0;
-
 my $id = '_' . $name;
 $id =~ s/\s+//g;
 $id = lc $id;
+
+print "ID: $id $name ";
 
 my $framment = 
     "<song id='$id'>
@@ -36,6 +34,10 @@ my $framment =
        <category>$category</category>
        <grades>0</grades>
      </song>";
+
+print $framment;
+
+exit 0;
 
 my $file = '../data/database/artistlist.xml';
 my $parser = XML::LibXML->new();

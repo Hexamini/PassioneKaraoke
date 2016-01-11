@@ -17,4 +17,4 @@ before_script:
     - cd tools/ && ./upload_website.sh && cd -
 
 script:
-    - cd doc/ && tools/.build.sh  && cd -
+    - cd doc/ && tools/./build.sh  && cd -

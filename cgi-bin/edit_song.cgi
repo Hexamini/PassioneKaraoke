@@ -24,8 +24,6 @@ my $id = '_' . $name;
 $id =~ s/\s+//g;
 $id = lc $id;
 
-print "ID: $id $name ";
-
 my $framment = 
     "<song id='$id'>
        <name>$name</name>
@@ -34,10 +32,6 @@ my $framment =
        <category>$category</category>
        <grades>0</grades>
      </song>";
-
-print $framment;
-
-exit 0;
 
 my $file = '../data/database/artistlist.xml';
 my $parser = XML::LibXML->new();

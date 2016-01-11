@@ -44,7 +44,6 @@ sub songsList
 
     for my $name( @songsName )
     {
-	my $item = Song::get( $name );
 	$list = $list . Song::extractContent( $item );
     }
 

@@ -5,7 +5,7 @@
 @description = Pagina che permette l'aggiunta di una nuova canzone in un album
 @keyword = canzone, aggiunta
 @title = Aggiungi canzone
-@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&id=[% idArtist %]'>[% artist %]</a> &gt; Aggiungi canzone
+@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&amp;id=[% idArtist %]'>[% artist %]</a> &gt; Aggiungi canzone
 <!-- End default meta phrases -->
 
 META_!
@@ -16,10 +16,14 @@ META_!
 
     <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
 
-    <form id="insert-song-form" action="../cgi-bin/edit.cgi" method="post">
+    <form id="insert-song-form" action="../cgi-bin/edit_song.cgi" method="post">
 
         <fieldset>
-
+	    <!-- @korut94 aggiunto campi nascosti per il passaggio degli id dell'artista ed album allo script -->
+	    <input type="hidden" name="songArtist" id="song-artist" value="[% artist %]" />
+	    <input type="hidden" name="songAlbum" id="song-album" value="[% album %]" />
+	    <!--                                                                                              -->
+	  
             <input type="text" name="songTitle" id="song-title" />
             <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40"></textarea>
             <textarea name="songExtra" id="song-extra" rows="80" cols="40"></textarea>

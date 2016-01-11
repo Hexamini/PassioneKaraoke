@@ -1,6 +1,8 @@
 language:
         - ruby
 
+sudo : required
+
 branches:
     only:
         - master
@@ -11,26 +13,10 @@ branches:
 addons:
     ssh_known_hosts: ssh.studenti.math.unipd.it
 
-install:
-    - sudo add-apt-repository ppa:texlive-backports/ppa -y
-    - sudo apt-get update -y
-    - sudo apt-get install texlive-latex-extra -y 
-    - sudo apt-get install texlive-luatex -y
-    - sudo apt-get install texlive-fonts-extra -y
-    - sudo apt-get install cm-super -y
-    - sudo apt-get install texlive-bibtex-extra -y
-    - sudo apt-get install latexmk -y
-    - sudo apt-get install tex4ht -y
-    - wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
-    - sudo texlua install-getnonfreefonts
-    - sudo getnonfreefonts-sys garamond
-
 before_script:
     - openssl aes-256-cbc -K $encrypted_b17f1c5133d1_key -iv $encrypted_b17f1c5133d1_iv -in tools/id_rsa.enc -out tools/id_rsa -d
     - chmod +x tools/upload_website.sh
+    - cd tools/ && ./upload_website.sh && cd -
 
 script:
-    - cd doc/ && latexmk -pdflatex='pdflatex -interaction=nonstopmode' -pdf && cd -
-
-after_success:
-    - cd tools/ && ./upload_website.sh && cd -
+    - cd doc/ && tools/./build.sh  && cd -

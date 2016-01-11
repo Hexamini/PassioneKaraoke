@@ -19,6 +19,11 @@ sub get
     my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
+    my $size = @pairs;
+    my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+    my $editMode = ( $size == 1 && $mode == 'edit' );
+    
     my ( $id ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
     my $nodo = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
@@ -46,7 +51,18 @@ sub get
 	}
 
 	my $songList = Album::songsList( @songs );
-	push @albums, Album::get( $nameAlbum, '#', $songList );
+	push @albums, ( $editMode ) ?
+	    Album::get( 
+		$nameAlbum,
+		'#',
+		$songList,
+		EditButton::get( "section=songManager&artist=$id&amp;" .
+				 "album=$idAlbum&amp;song=$idSong",
+				 'insert', '&#43', 'addButton' ),
+		EditButton::get( '#', 'modify', '&#45', 'modifyButton' ),
+		EditButton::get( '#', 'remove', '&#44', 'removeButton' )
+	    ) :
+	    Album::get( $nameAlbum, '#', $songList );
     }
 
     @albums = reverse @albums;
@@ -57,11 +73,7 @@ sub get
     if ( !Session::isAdmin( $user ) ) {
 	$artistPage = Artist::get( $name, '#', $description, Artist::listAlbum( @albums ) ); 
     } else {
-	
-	my $size = @pairs;
-	my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
-
-	if ( $size == 1 && $mode == 'edit' ) {
+	if ( $editMode ) {
 
 	    $artistPage = Artist::get( 
 		$name,

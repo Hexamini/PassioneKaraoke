@@ -2,10 +2,10 @@
 
 <!-- Default meta phrases -->
 
-@description = Modulo di inserimento/modifica canzone
-@keyword = amministrazione, inserimento, modifica, canzone
-@title = Gestione canzone
-
+@description = Pagina che permette l'aggiunta di una nuova canzone in un album
+@keyword = canzone, aggiunta
+@title = Aggiungi canzone
+@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&id=[% idArtist %]'>[% artist %]</a> &gt; Aggiungi canzone
 <!-- End default meta phrases -->
 
 META_!
@@ -20,13 +20,13 @@ META_!
 
         <fieldset>
 
-            <input type="hidden" name="mode" value="[% actionType %]" />
-            <input type="hidden" name="section" value="song" />
-
             <input type="text" name="songTitle" id="song-title" />
-            <textarea name="songDescription" id="song-description" rows="80" cols="40"></textarea>
+            <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40"></textarea>
+            <textarea name="songExtra" id="song-extra" rows="80" cols="40"></textarea>
             <!-- Le righe e le colonne definite in css? -->
             <input type="submit" value="Conferma" name="action" />
+            <input type="submit" value="&#43" name="action" />
+
         </fieldset>
     </form>
 

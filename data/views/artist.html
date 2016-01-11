@@ -5,28 +5,45 @@
 @description = Pagina con la liste delle canzoni e degli album di [% artist %]
 @keyword = [% artist %]
 @title = [% artist %]
+@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; [% artist %]
 <!-- End default meta phrases -->
 
 META_!
 
-<div id="artist-description">
+<div id="artist-content">
 
-    <div id="artist-photo">
+    <div id="artist-description">
 
-        <img src="[% artistPhoto %]" alt="Immagine dell'artista [% artist %]" />
+        <div id="artist-photo">
+
+            <img src="[% artistPhoto %]" alt="Immagine dell'artista [% artist %]" />
+        </div>
+
+        <div id="artist-name">
+
+            <h1>[% artist %]</h1>
+        </div>
     </div>
 
-    <div id="artist-name">
+    <div id="artist-bio">
 
-        <h2>[% artist %]</h2>
+        [% artistBio %]
     </div>
+
+    <div id="artist-list-of-albums">
+
+        <h2>Lista degli album</h2>
+
+        <!--Permette la modifica degli album -->
+        [% editButton %]
+	
+	<!-- @korut94 bottone per l'aggiunta di un album -->
+	[% addButton %]
+	<!--                                                  -->                              
+
+        <!-- Qui vanno elencati tutti gli album -->
+        [% albumList %]
+
+    </div>
+
 </div>
-
-<div id="artist-bio">
-
-    [% artistBio %]
-</div>
-
-
-<!-- Qui vanno elencati tutti gli album -->
-[% albumList %]

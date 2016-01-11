@@ -1,314 +1,121 @@
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    border: 0 none;
-    outline: none;
+@media screen and (min-width: 1024px ){
+    body {
+        padding-top: 132px;
+    }
+    #navigation-bar {
+        height: 100px !important;
+    }
+
+    #navigation-bar #logo {
+        float: left;
+    }
+    #navigation-bar #logo img {
+        height: 90px;
+    }
+
+    #navigation-bar #open-menu-btn {
+        display: none;
+    }
+
+    #navigation-bar #menu {
+        position:static;
+        float: right;
+        width: 74%;
+        height: 100%;
+        padding: 0;
+        line-height: 100px;
+    }
+
+    #navigation-bar #menu li {
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+        height: 100%;
+    }
+
+    #navigation-bar #menu li a {
+        position: static;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 100px;
+        color: #E1F5FE;
+    }
+
+
+
+    /*******************************
+    ***         CONTENT
+    ********************************/
+    #content {
+        max-width: 1326px;
+        margin: 0 auto 24px;
+    }
+    h1 {
+        margin: 48px 0;
+        font-size: 56px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+    h3 {
+        text-align: center;
+        margin: 24px;
+    }
+
+    #last-news{
+        width: 49%;
+        margin-left: 1%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    #music-type {
+        width: 49%;
+        display: inline-block;
+    }
+
+    /******************* ARTIST *********************/
+
+    .artist {
+        max-width: 1024px;
+        margin: 6px auto;
+    }
+
+    /***************** SINGLE ARTIST *****************/
+
+    #artist-description {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    #artist-photo {
+        display: inline-block;
+    }
+    #artist-name {
+        display: inline-block;
+        vertical-align: top;
+        height: 150px;
+        margin-left: 16px;
+    }
+
+    #artist-bio {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .album {
+        max-width: 1024px;
+        margin: 6px auto;
+    }
 }
-
-body {
-    background-color: #FAF1DC;
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100%;
-    padding-bottom: 40px;
-    padding-top: 140px;
-    position: relative;
-    color: #141311;
-}
-
-/**************************
-*        Header
-***************************/
-
-#header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    -webkit-box-shadow: 0px 1px 4px 0px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow: 0px 1px 4px 0px rgba(50, 50, 50, 0.3);
-    box-shadow: 0px 1px 4px 0px rgba(50, 50, 50, 0.3);
-}
-
-#navigation-bar {
-    width: 100%;
-    height: 80px;
-    position: relative;
-    background-color: #DEBF8A;
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-}
-
-#navigation-bar #logo {
-    width: 25%;
-    height: 100%;
-    float: left;
-    line-height: 80px;
-    text-align: center;
-}
-
-#navigation-bar #menu {
-    float: right;
-    width: 74%;
-    height: 100%;
-}
-
-#navigation-bar #menu li {
-    display: inline-block;
-    width: 20%;
-    line-height: 80px;
-    text-align: center;
-}
-
-#navigation-bar #menu li a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 18px;
-    color: #CC7037;
-    border-left: 1px solid #D1B482;
-}
-
-#navigation-bar #menu li a:hover {
-    color: #E06F28;
-    background-color: #D1B482;
-}
-
-#navigation-bar #menu li a:active {
-    color: #fad3b2;
-    background-color: #ba9969;
-}
-
-#header #search {
-    width: 100%;
-    height: 40px;
-    background-color: #E8D4B3;
-    text-align: center;
-}
-
-#header #search #search-form {
-    display: inline-block;
-    width: 80%;
-    height: 30px;
-    margin-top: 6px;
-}
-
-#header #search #search-form #searchBox {
-    width: 89%;
-    height: 100%;
-    border: 1px solid #D1B482;
-    background-color: #F2E6D0;
-    padding-left: 20px;
-    color: #A8916C;
-    /* Box sizing per spostare i bordi all'interno del calcolo di height*/
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    /* Border radius cross browser */
-    -webkit-border-top-left-radius: 7px;
-    -webkit-border-bottom-left-radius: 7px;
-    -moz-border-radius-topleft: 7px;
-    -moz-border-radius-bottomleft: 7px;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-
-}
-
-#header #search #search-form input[type=submit] {
-    width: 10%;
-    height: 100%;
-    -webkit-border-top-right-radius: 7px;
-    -webkit-border-bottom-right-radius: 7px;
-    -moz-border-radius-topright: 7px;
-    -moz-border-radius-bottomright: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-    background-color: #D1B482;
-    color: white;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bolder;
-    cursor: pointer;
-}
-
-/****************************
- *        Content
- ****************************/
-
-#navBar {
-    color: #A8916C;
-    margin: 20px 10px;
-}
-
-#content {
-    width: 90%;
-    margin: 0 auto;
-}
-
-h1 {
-    font-size: 48px;
-    text-align: center;
-    font-weight: bolder;
-}
-
-h3 {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 22px;
-    color: #857356;
-    margin: 15px 0;
-}
-
-
-
-/******* Home ***************/
-
-#search-index {
-    margin: 70px auto;
-    width: 70%;
-
-}
-#search-index #search-index-box{
-    width: 85%;
-    height: 40px;
-    border: 1px solid #D1B482;
-    background-color: #F2E6D0;
-    padding-left: 20px;
-    color: #A8916C;
-    /* Box sizing per spostare i bordi all'interno del calcolo di height*/
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    /* Border radius cross browser */
-    -webkit-border-top-left-radius: 7px;
-    -webkit-border-bottom-left-radius: 7px;
-    -moz-border-radius-topleft: 7px;
-    -moz-border-radius-bottomleft: 7px;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-}
-
-#search-index input[type=submit]{
-    width: 15%;
-    height: 40px;
-    -webkit-border-top-right-radius: 7px;
-    -webkit-border-bottom-right-radius: 7px;
-    -moz-border-radius-topright: 7px;
-    -moz-border-radius-bottomright: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-    background-color: #D1B482;
-    color: white;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bolder;
-}
-
-#musicType {
-    width: 49%;
-    display: inline-block;
-}
-#musicType ul {
-    margin: 30px 0;
-}
-
-#musicType li {
-    height: 50px;
-    line-height: 50px;
-    width: 80%;
-    margin: 10px auto;
-    display: block;
-    text-decoration: none;
-    background-color: #DEBF8A;
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    font-size: 14px;
-    font-weight: bold;
-    color: #E06F28;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-#musicType li:hover {
-    color: white;
-    background-color: #E0C699;
-}
-
-#lastNews{
-    width: 49%;
-    margin-left: 1%;
-    display: inline-block;
-
-    vertical-align: top;
-}
-
-.newSong, .newArticle {
-    width: 80%;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-color: #DEBF8A;
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    margin: 20px auto;
-}
-.newSong h4, .newArticle h4 {
-    margin: 5px 0 15px 20px;
-    font-size: 16px;
-}
-.newSong p, .newArticle p {
-    font-size: 12px;
-}
-
-
-
-/********** Artists **************/
-
-#artist-list {
-    width: 60%;
-    margin: 20px auto;
-}
-
-#artist-list .artist {
-    background-color: #DEBF8A;
-    height: 70px;
-    margin: 30px 0;
-    list-style: none;
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.3);
-    position: relative;
-}
-#artist-list .artist .mini-artist-image {
-    overflow:hidden;
-    width: 90px;
-    height: 90px;
-    -webkit-border-radius: 45px;
-    -moz-border-radius: 45px;
-    border-radius: 45px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-#artist-list .artist .artist-name {
-    position: absolute;
-    top: 10px;
-    left: 110px;
-    font-weight: bold;
-    color: #CC7037;
-}
-
-
 
 /***********Article single ***********/
-
+/*
 #article-author{
     font-weight: bold;
     font-size: 14px;
@@ -331,7 +138,7 @@ h3 {
 }
 
 /******* Single artist ************/
-
+/*
 #artist-description {
     width: 90%;
     margin: 0 auto;
@@ -370,7 +177,7 @@ h3 {
 }
 
 /****** Login ***************/
-
+/*
 #login-form {
     width: 60%;
     margin: 40px auto;
@@ -393,11 +200,11 @@ h3 {
     padding-left: 20px;
     color: #A8916C;
     /* Box sizing per spostare i bordi all'interno del calcolo di height*/
-    -webkit-box-sizing: border-box;
+    /*-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* Border radius cross browser */
-    -webkit-border-bottom: 5px;
+    /*-webkit-border-bottom: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
@@ -423,7 +230,7 @@ h3 {
 }
 
 /********* Sign In ****************/
-
+/*
 #signin {
     width: 60%;
     margin: 40px auto;
@@ -450,11 +257,11 @@ h3 {
     padding-left: 20px;
     color: #A8916C;
     /* Box sizing per spostare i bordi all'interno del calcolo di height*/
-    -webkit-box-sizing: border-box;
+    /*-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* Border radius cross browser */
-    -webkit-border-bottom: 5px;
+    /*-webkit-border-bottom: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
@@ -481,7 +288,7 @@ h3 {
 
 
 /********* Search Page ************/
-
+/*
 #search-results {
     width: 80%;
     margin: 40px auto;
@@ -519,7 +326,7 @@ h3 {
 /***********************************
 *   Footer
 ************************************/
-
+/*
 #footer {
     position: absolute;
     bottom: 0;

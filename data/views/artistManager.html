@@ -2,10 +2,10 @@
 
 <!-- Default meta phrases -->
 
-@description = Modulo di inserimento/modifica cantante o gruppo
-@keyword = amministrazione, inserimento, modifica, cantante, gruppo
-@title = Gestione artista
-
+@description = Pagina che permette l'inserimento di un nuovo artista
+@keyword = artisti, inserimento
+@title = Aggiungi artista
+@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; Aggiungi artista
 <!-- End default meta phrases -->
 
 META_!
@@ -16,14 +16,9 @@ META_!
 
     <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
 
-    <!-- Per il singolo artista -->
-    <!-- @korut94 Correto link script per l'aggiunte dell'artista -->
     <form class="insert-artist-form" action="../cgi-bin/edit_artist.cgi" method="post">
-    <!--                                                          -->
-        <fieldset>
 
-            <input type="hidden" name="mode" value="[% actionType %]" />
-            <input type="hidden" name="section" value="artist" />
+        <fieldset>
 
             <label for="a-Nick">Nome d'arte o nome del gruppo</label>
             <input type="text" name="artistNick" class="artist-nick" id="a-Nick" />
@@ -31,7 +26,9 @@ META_!
             <input type="text" name="artistBorn" class="artist-born" id="a-Born" />
             <label for="a-Death">Morte dell'artista o scioglimento della band (vuoto se ancora in vita)</label>
             <input type="text" name="artistDeath" class="artist-death" id="a-Death" />
-            <label for="a-Description">Descrizione</label>
+            <label for="a-Image">Immagine dell'artista</label>
+            <input type="text" name="artistImage" class="artist-image" id="a-Image" />
+            <label for="a-Description">Descrizione dell'artista</label>
             <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40"></textarea>
 
             <input type="submit" value="Conferma" name="action" />

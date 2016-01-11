@@ -2,10 +2,10 @@
 
 <!-- Default meta phrases -->
 
-@description = Modulo di inserimento/modifica album
-@keyword = amministrazione, inserimento, modifica, album
-@title = Gestione album
-
+@description = Pagina che permette l'inserimento di un nuovo album
+@keyword = album, inserimento
+@title = Aggiungi album
+@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&amp;id=[% idArtist %]&amp;mode=edit'>[% artist %]</a> &gt; Aggiungi album
 <!-- End default meta phrases -->
 
 META_!
@@ -14,26 +14,10 @@ META_!
 
     <h1>Gestione album</h1>
 
-    <!-- @korut94 Corretto link script per l'aggiunta dell'album -->
     <form id="insert-album-form" action="../cgi-bin/edit_album.cgi" method="post">
-    <!--                                                         -->
+
         <fieldset>
-
-            <input type="hidden" name="mode" value="[% actionType %]" />
-            <input type="hidden" name="section" value="album" />
-
-            <!-- Nota riguardo l'aggiunta di una selection: questa sezione non è destinata al pubblico
-                finale ma solo all'amministratore. È quindi vero che un menù a tendina riduce l'accessibilità,
-                ma è anche vero che in questo caso migliora l'usabilità. L'accessibilità ricade quindi in
-                "secondo piano" -->
-
-            <p>Per aggiungere un album &egrave; necessario selezionare un'artista</p>
-
-            <select name="artistName">
-
-                <option value="default" selected="selected">Scegli un'artista</option>
-                [% optionArtistName %]
-            </select>
+	    <input type="hidden" name="artistName" value="[% idArtist %]" />
 
             <label for="album-name">Nome</label>
             <input type="text" name="albumName" id="album-name" />
@@ -42,7 +26,6 @@ META_!
             <input type="text" name="albumCreation" id="album-creation" />
 
             <input type="submit" value="Conferma" name="action" />
-
         </fieldset>
     </form>
 </div>

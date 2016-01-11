@@ -18,7 +18,7 @@ sub get
     my ( $idArtist, $artist, $idAlbum ) = @_;
 
     my $values = {
-	'idAritst' => $idArtist,
+	'idArtist' => $idArtist,
 	'idAlbum' => $idAlbum,
 	'artist' => $artist,
     };

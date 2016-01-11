@@ -33,13 +33,16 @@ sub get
     foreach my $album( @nodeAlbum )
     {
 	my $nameAlbum = $album->findnodes( 'xs:name/text()' );
+	my $idAlbum = $album->getAttribute( 'id' );
 	
 	my @nodeSong = $album->findnodes( 'xs:song' );
 	my @songs = ();
 	
 	foreach my $song( @nodeSong )
 	{
-	    push @songs, $song->findnodes( 'xs:name/text()' );
+	    my $idSong = $song->getAttribute( 'id' );
+	    my $nameSong = $song->findnodes( 'xs:name/text()' );
+	    push @songs, Song::get( $nameSong, $id, $idAlbum, $idSong );
 	}
 
 	my $songList = Album::songsList( @songs );

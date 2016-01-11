@@ -11,7 +11,7 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->head();
+print $cgi->header( -charset => 'utf-8' );
 
 my $name = $cgi->param( 'songTitle' );
 my $artist = $cgi->param( 'songArtist' );

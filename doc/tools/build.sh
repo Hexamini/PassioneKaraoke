@@ -32,8 +32,8 @@ function build() {
 
 function main() {
 
-     build
-     install_dependencies
+    install_dependencies
+    build
 	
 }
 

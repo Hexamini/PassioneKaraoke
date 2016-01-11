@@ -8,19 +8,22 @@ package SongManager;
 my $struct = 'songManager';
 
 =Description
-    actionType = Azione da intraprendere, puo' essere Edit o Insert
-    content = Valore 1 se si desidera avere solo il contenuto, 0 per i meta
-              associati.
+Paramentri:
+    idArtist = Id dell'artista proprietario dell'album
+    artist = Nome dell'artista proprietario dell'album
+    idAlbum = Id dell'album dove inserire la canzone
 =cut
 sub get
 {
-    my ( $actionType, $content ) = @_;
+    my ( $idArtist, $artist, $idAlbum ) = @_;
 
     my $values = {
-	'actionType' => $actionType,
+	'idAritst' => $idArtist,
+	'idAlbum' => $idAlbum,
+	'artist' => $artist,
     };
 
-    return Behavior::getChain( $struct, $values, $content );
+    return Behavior::getChain( $struct, $values, 0 );
 }
 
 1;

@@ -20,16 +20,22 @@ META_!
 
         <fieldset>
 	    <!-- @korut94 aggiunto campi nascosti per il passaggio degli id dell'artista ed album allo script -->
-	    <input type="hidden" name="songArtist" id="song-artist" value="[% artist %]" />
-	    <input type="hidden" name="songAlbum" id="song-album" value="[% album %]" />
+	    <input type="hidden" name="songArtist" id="song-artist" value="[% idArtist %]" />
+	    <input type="hidden" name="songAlbum" id="song-album" value="[% idAlbum %]" />
 	    <!--                                                                                              -->
-	  
+
+	    <!-- @korut94 aggiunti label ai vari campi -->
+	    <label for="song-title">Titolo</label>
             <input type="text" name="songTitle" id="song-title" />
+	    
+	    <label for="song-lyrics">Testo della canzone</label>
             <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40"></textarea>
-            <textarea name="songExtra" id="song-extra" rows="80" cols="40"></textarea>
+
+	    <label for="song-extra">Link a youtube</label>
+	    <textarea name="songExtra" id="song-extra" rows="80" cols="40"></textarea>
             <!-- Le righe e le colonne definite in css? -->
             <input type="submit" value="Conferma" name="action" />
-            <input type="submit" value="&#43" name="action" />
+	    <!--                                        -->
 
         </fieldset>
     </form>

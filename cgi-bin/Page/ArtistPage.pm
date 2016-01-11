@@ -19,7 +19,7 @@ sub get
     my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
-    my ( $id ) = ( ( shift @pairs ) =~ /=(.+)/ );
+    my ( $id ) = ( ( shift @pairs ) =~ /=(.+)/ ); #id artista
     
     my $size = @pairs;
     my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
@@ -28,7 +28,7 @@ sub get
     
     my $nodo = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 
-    my $name = $nodo->findnodes( "xs:nick/text()" );
+    my $name = $nodo->findnodes( "xs:nick/text()" ); #nome artista
     my $description = $nodo->findnodes( 'xs:description/text()' );
 
     my @nodeAlbum = $nodo->findnodes( 'xs:album' );
@@ -56,8 +56,8 @@ sub get
 		$nameAlbum,
 		'#',
 		$songList,
-		EditButton::get( "section=songManager&artist=$id&amp;" . 
-				 "album=$idAlbum",
+		EditButton::get( "section=songManager&artist=$name&amp;" . 
+				 "idArtist=$id&amp;album=$idAlbum",
 				 'insert', '&#43', 'addButton' ),
 		EditButton::get( '#', 'modify', '&#45', 'modifyButton' ),
 		EditButton::get( '#', 'remove', '&#44', 'removeButton' )

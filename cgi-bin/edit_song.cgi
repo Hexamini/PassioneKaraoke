@@ -11,9 +11,7 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
-
-my $name = $cgi->param( 'songName' );
+my $name = $cgi->param( 'songTitle' );
 my $artist = $cgi->param( 'songArtist' );
 my $album = $cgi->param( 'songAlbum' );
 my $lyrics = $cgi->param( 'songLyrics' );
@@ -38,13 +36,13 @@ my $parser = XML::LibXML->new();
 my $doc = ParserXML::getDoc( $parser, $file );
 
 my $song = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
-my $root = $doc->findnodes( "/xs:artistList/xs:artist[\@id=$artist]/xs:album[\@album=$album]" )->get_node( 1 );
+my $root = $doc->findnodes( "/xs:artistList/xs:artist[\@id='$artist']/xs:album[\@id='$album']" )->get_node( 1 );
 
-$root->appendChild( $album ) || die( 'Non appeso' );
+$root->appendChild( $song ) || die( 'Non appeso' );
 
 open( OUT, ">$file" );
 print OUT $doc->toString;
 close( OUT );
 
-print "Write all";
+print $cgi->redirect( "r.cgi?section=artist&amp;id=$artist&amp;mode=edit" );
 

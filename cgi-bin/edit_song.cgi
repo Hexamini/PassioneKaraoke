@@ -11,7 +11,7 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-my $name = $cgi->param( 'songName' );
+my $name = $cgi->param( 'songTitle' );
 my $artist = $cgi->param( 'songArtist' );
 my $album = $cgi->param( 'songAlbum' );
 my $lyrics = $cgi->param( 'songLyrics' );

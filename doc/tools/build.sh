@@ -4,18 +4,18 @@
 #@license: GPLv3
 
 function install_dependencies() {
-    add-apt-repository ppa:texlive-backports/ppa -y
-    apt-get update -y
-    apt-get install texlive-latex-extra -y 
-    apt-get install texlive-luatex -y
-    apt-get install texlive-fonts-extra -y
-    apt-get install cm-super -y
-    apt-get install texlive-bibtex-extra -y
-    apt-get install latexmk -y
-    apt-get install tex4ht -y
-    wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
-    texlua install-getnonfreefonts
-    getnonfreefonts-sys garamond
+    su -c "add-apt-repository ppa:texlive-backports/ppa -y"
+    su -c "apt-get update -y"
+    su -c "apt-get install texlive-latex-extra -y "
+    su -c "apt-get install texlive-luatex -y"
+    su -c "apt-get install texlive-fonts-extra -y"
+    su -c "apt-get install cm-super -y"
+    su -c "apt-get install texlive-bibtex-extra -y"
+    su -c "apt-get install latexmk -y"
+    su -c "apt-get install tex4ht -y"
+    su -c "wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts"
+    su -c "texlua install-getnonfreefonts"
+    su -c "getnonfreefonts-sys garamond"
 
 }
 

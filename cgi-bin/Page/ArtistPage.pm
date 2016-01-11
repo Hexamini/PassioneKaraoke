@@ -56,8 +56,8 @@ sub get
 		$nameAlbum,
 		'#',
 		$songList,
-		EditButton::get( "section=songManager&artist=$id&amp;" .
-				 "album=$idAlbum&amp;song=$idSong",
+		EditButton::get( "section=songManager&artist=$id&amp;" . 
+				 "album=$idAlbum",
 				 'insert', '&#43', 'addButton' ),
 		EditButton::get( '#', 'modify', '&#45', 'modifyButton' ),
 		EditButton::get( '#', 'remove', '&#44', 'removeButton' )

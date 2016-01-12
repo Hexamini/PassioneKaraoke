@@ -28,14 +28,33 @@ sub get
 	push( @articles, ArticleList::get( $title, $subtitle ) );
     }
 
+    @articles = reverse @articles;
+    
     my $user = Session::getSession();
 
-    my $articlePage = ( !Session::isAdmin( $user ) ) ?
-	Articles::get( Articles::articleList( @articles ) ) :
-	Articles::get( 
-	    Articles::articleList( @articles ),
-	    EditButton::get( 'section=articles', 'insert', 'Sezione amministrativa', 'editButton' )
-	);
+    if ( !Session::isAdmin( $user ) ) {
+	$articlesPage = Articles::get( Articles::articlesList( @articles ) );
+    } else {
+
+	my $size = @pairs;
+	my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+	if ( $size == 1 && $mode == 'edit' ) {
+
+	    $articlesPage = Articles::get( 
+		Articles::articlesList( @articles ),
+		EditButton::get( 'section=articles', 'edit', 'Sezione amministrativa', 'editButton' ),
+		EditButton::get( 'section=articleManager', 'insert', '&#43', 'addButton' )
+	    );
+
+	} else {
+
+	    $articlesPage = Articles::get( 
+		Articles::articlesList( @articles ),
+		EditButton::get( 'section=articles', 'edit', 'Sezione amministrativa', 'editButton' )
+            );
+	}
+    }
 
     return $articlePage;
 }

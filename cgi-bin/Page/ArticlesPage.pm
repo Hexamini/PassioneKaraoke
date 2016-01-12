@@ -14,7 +14,7 @@ my $file = '../data/database/articlelist.xml';
 
 sub get
 {
-    my ( $parser ) = @_;
+    my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
     my @nodes = $doc->findnodes( '/xs:articleList/xs:article' );
@@ -31,6 +31,7 @@ sub get
     @articles = reverse @articles;
     
     my $user = Session::getSession();
+    my $articlesPage = '';
 
     if ( !Session::isAdmin( $user ) ) {
 	$articlesPage = Articles::get( Articles::articlesList( @articles ) );

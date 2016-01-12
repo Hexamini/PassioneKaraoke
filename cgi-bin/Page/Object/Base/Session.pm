@@ -40,7 +40,7 @@ sub isAdmin
 {
     my ( $user, $parser ) = @_;
 
-    if ( undef $user ) {
+    if ( length $user == 0 ) {
 
 	return 0;
 

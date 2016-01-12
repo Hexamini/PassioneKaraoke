@@ -34,7 +34,7 @@ sub get
 	Articles::get( Articles::articleList( @articles ) ) :
 	Articles::get( 
 	    Articles::articleList( @articles ),
-	    EditButton::get( 'section=articles', 'insert', 'Sezione amministrativa', 'editButton' );
+	    EditButton::get( 'section=articles', 'insert', 'Sezione amministrativa', 'editButton' )
 	);
 
     return $articlePage;

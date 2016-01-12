@@ -57,7 +57,7 @@ sub get
 	}
     }
 
-    return $articlePage;
+    return $articlesPage;
 }
 
 1;

@@ -34,7 +34,7 @@ sub get
     my $articlesPage = '';
 
     if ( !Session::isAdmin( $user ) ) {
-	$articlesPage = Articles::get( Articles::articlesList( @articles ) );
+	$articlesPage = Articles::get( Articles::articleList( @articles ) );
     } else {
 
 	my $size = @pairs;
@@ -43,7 +43,7 @@ sub get
 	if ( $size == 1 && $mode == 'edit' ) {
 
 	    $articlesPage = Articles::get( 
-		Articles::articlesList( @articles ),
+		Articles::articleList( @articles ),
 		EditButton::get( 'section=articles', 'edit', 'Sezione amministrativa', 'editButton' ),
 		EditButton::get( 'section=articleManager', 'insert', '&#43', 'addButton' )
 	    );
@@ -51,7 +51,7 @@ sub get
 	} else {
 
 	    $articlesPage = Articles::get( 
-		Articles::articlesList( @articles ),
+		Articles::articleList( @articles ),
 		EditButton::get( 'section=articles', 'edit', 'Sezione amministrativa', 'editButton' )
             );
 	}

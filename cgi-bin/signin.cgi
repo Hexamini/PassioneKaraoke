@@ -10,7 +10,6 @@ use XML::LibXML;
 use Page::Object::Base::ParserXML;
 
 my $cgi = new CGI;
-print $cgi->header( -charset => 'utf-8' );
 
 my $username = $cgi->param( 'username' );
 my $mail = $cgi->param( 'email' );
@@ -46,6 +45,8 @@ else
     open( OUT, ">$file" );
     print OUT $doc->toString;
     close( OUT );
+
+    $cgi->redirect( "r.cgi?username=$username" );
 }
 
 

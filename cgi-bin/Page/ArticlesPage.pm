@@ -14,7 +14,7 @@ my $file = '../data/database/articlelist.xml';
 
 sub get
 {
-    my ( $parser ) = @_;
+    my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
     my @nodes = $doc->findnodes( '/xs:articleList/xs:article' );
@@ -28,16 +28,36 @@ sub get
 	push( @articles, ArticleList::get( $title, $subtitle ) );
     }
 
+    @articles = reverse @articles;
+    
     my $user = Session::getSession();
+    my $articlesPage = '';
 
-    my $articlePage = ( !Session::isAdmin( $user ) ) ?
-	Articles::get( Articles::articleList( @articles ) ) :
-	Articles::get( 
-	    Articles::articleList( @articles ),
-	    EditButton::get( 'section=articles' )
-	);
+    if ( !Session::isAdmin( $user ) ) {
+	$articlesPage = Articles::get( Articles::articleList( @articles ) );
+    } else {
 
-    return $articlePage;
+	my $size = @pairs;
+	my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+	if ( $size == 1 && $mode == 'edit' ) {
+
+	    $articlesPage = Articles::get( 
+		Articles::articleList( @articles ),
+		EditButton::get( 'section=articles', 'edit', 'Sezione amministrativa', 'editButton' ),
+		EditButton::get( 'section=articleManager', 'insert', '&#43', 'addButton' )
+	    );
+
+	} else {
+
+	    $articlesPage = Articles::get( 
+		Articles::articleList( @articles ),
+		EditButton::get( 'section=articles', 'edit', 'Sezione amministrativa', 'editButton' )
+            );
+	}
+    }
+
+    return $articlesPage;
 }
 
 1;

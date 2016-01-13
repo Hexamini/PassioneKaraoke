@@ -11,8 +11,6 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
-
 my $author = $cgi->param( 'articleAuthor' );
 my $data = $cgi->param( 'articleData' );
 my $title = $cgi->param( 'articleTitle' );
@@ -44,7 +42,7 @@ open( OUT, ">$file" );
 print OUT $doc->toString;
 close( OUT );
 
-print "Write all";
+print $cgi->redirect( 'r.cgi?section=articles&amp;mode=edit' );
 
 
 

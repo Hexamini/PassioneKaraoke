@@ -1,0 +1,22 @@
+!_META
+
+<!-- Default meta phrases -->
+
+@description = Pagina con la liste delle canzoni appartenenti alla categoria [% category %]
+@keyword = [% category %]
+@title = [% category %]
+@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; <a href='r.cgi?section=categories'>Categorie</a> &gt; [% category %]
+<!-- End default meta phrases -->
+
+META_!
+
+<div id="category-content">
+
+	<h2>Lista delle canzoni della categoria: [% category %]</h2>
+
+	<ul id="category-song-list">
+
+		[% categorySongList %]
+	</ul>
+
+</div>

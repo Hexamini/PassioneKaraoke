@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -374,6 +374,46 @@ h3 {
     background-color: #4FC3F7;
 }
 
+/************* BUTTON EDIT MODE ********************/
+
+.insert-artist-form label, .insert-article-form label  {
+    display:block;
+    font-size: 16px;
+}
+
+.insert-artist-form input, .insert-article-form input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #90A4AE;
+    margin: 8px 0;
+    background-color:#CFD8DC;
+    text-indent: 15px;
+    font-size: 14px;
+}
+
+.insert-artist-form input[type=submit], .insert-article-form input[type=submit] {
+    height: 60px;
+    line-height: 60px;
+    text-align:center;
+    width: 90%;
+    background-color:#0277BD;
+    font-size: 18px;
+    margin:16px auto 0;
+    border: 0 none;
+    font-weight: bolder;
+    display:block;
+    text-transform: uppercase;
+    color: white;
+    text-indent: 0;
+}
+
+.insert-artist-form input[type=submit]:hover, .insert-article-form  input[type=submit]:hover{
+    background-color: #0288D1;
+}
+.insert-artist-form input[type=submit]:active,.insert-article-form input[type=submit]:active {
+    background-color: #01579B;
+}
+
 
 /*************************
 FOOTER
@@ -385,7 +425,6 @@ FOOTER
     text-align: center;
     color:#9E9E9E;
 }
-
 
 @media screen
 and (min-width: 481px)
@@ -449,6 +488,7 @@ and (max-width: 1023px) {
         width: 20%;
         text-align: center;
         height: 100%;
+        float:left;
     }
 
     #navigation-bar #menu li a {

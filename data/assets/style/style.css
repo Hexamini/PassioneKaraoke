@@ -54,17 +54,30 @@ body {
     z-index: 99;
     text-transform: uppercase;
     padding-top: 30px;
+    -webkit-transition: all 0.3s ease-out 0.1s;
+    -moz-transition: all 0.3s ease-out 0.1s;
+    -o-transition: all 0.3s ease-out 0.1s;
+    transition: all 0.3s ease-out 0.1s;
 }
 
 #navigation-bar #open-menu-btn {
     display: block;
-    background-color: #0277BD;
     width: 48px;
     height: 48px;
     position: absolute;
     top: 12px;
     right: 16px;
     z-index: 100;
+    font-size: 1px;
+    color: #0277BD;
+    background: url('../../img/menu-hamb.svg') no-repeat center;
+    background-size: contain;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
+}
+#navigation-bar #open-menu-btn:active {
+    background-color:#0277BD;
 }
 
 #navigation-bar #menu.open {

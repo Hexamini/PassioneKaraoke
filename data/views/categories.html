@@ -1,12 +1,25 @@
-<div id="music-type">
+!_META
 
-    <!-- !_categoriaMusica_! -->
+<!-- Default meta phrases -->
 
-    <h3>Canzoni ordinate per categorie</h3>
+@description = Lista contenente tutte le categorie presenti in PassioneKaraoke
+@keyword = categorie, lista, cantanti, gruppi
+@title = Lista categorie
+@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; Categorie
+
+<!-- End default meta phrases -->
+
+META_!
+
+<div id="categories-list">
+
+    <h1>Lista di tutte le categorie</h1>
 
     [% editButton %]
+    [% addButton %]
 
-    <ul>
-        [% category %]
+    <ul id="category-list">
+
+        [% categoryList %]
     </ul>
 </div>

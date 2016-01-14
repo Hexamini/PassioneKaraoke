@@ -1,12 +1,18 @@
 <div class="album">
 
     <!--Permette la modifica delle canzoni all'interno dell'album-->
-    [% editMode %]
+    [% editButton %]
 
     <div class="description-album">
 
         <img src="[% albumImage %]" alt="Immagine dell'album [% album %]" />
         <h3>[% album %]</h3>
+	<!-- @korut94 aggiunti i bottoni per la gestione dell'album -->
+	[% addButton %]
+	[% modifyButton %]
+        [% removeButton %]
+	<!--                                                        -->
+
     </div>
 
     <div class="songs">

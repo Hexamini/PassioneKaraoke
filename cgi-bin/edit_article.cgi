@@ -11,14 +11,13 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
-
 my $author = $cgi->param( 'articleAuthor' );
 my $data = $cgi->param( 'articleData' );
 my $title = $cgi->param( 'articleTitle' );
 my $subtitle = $cgi->param( 'articleSubtitle' );
 my $content = $cgi->param( 'articleContent' );
 
+#Sezione aggiunta articoli nel database
 my $file = '../data/database/articlelist.xml';
 
 my $parser = XML::LibXML->new();
@@ -44,7 +43,31 @@ open( OUT, ">$file" );
 print OUT $doc->toString;
 close( OUT );
 
-print "Write all";
+#Sezione per l'aggiornamento dell'ultimo articolo
+$file = '../data/database/news.xml';
+$doc = ParserXML::getDoc( $parser, $file );
+
+$framment =
+    "<newArticle id='_$id'>
+       <title>$title</title>
+       <subtitle>$subtitle</subtitle>
+     </newArticle>";
+
+my $newArticle = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
+$root = $doc->findnodes( '//xs:articles' );
+
+if ( $root->size() == 5 ) {
+    my $oldNode = $root->findnodes( '/newArticle[1]' )->get_node( 1 );
+    $root->removeChild( $oldNode );
+}
+
+$root->appendChild( $newArticle ) || die( 'Non appeso' );
+
+open( OUT, ">$file" );
+print OUT $doc->toString;
+close( OUT );
+
+print $cgi->redirect( 'r.cgi?section=articles&amp;mode=edit' );
 
 
 

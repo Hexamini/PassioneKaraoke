@@ -9,13 +9,15 @@ my $struct = 'albumManagerList';
 
 =Description
 Parametri: 
-    artistName = nome del cantante
+    id = id del cantante
+    name = nome del cantante
 =cut
 sub get
 {
-    my ( $name ) = @_;
+    my ( $id, $name ) = @_;
 
     my $values = {
+	'artistId' => $id,
 	'artistName' => $name,
     };
 

@@ -11,14 +11,16 @@ my $struct = 'articleList';
 Parametri:
     titolo = Titolo articolo
     sottotitolo = Sottotitolo articolo
+    id = Id dell'articolo
 =cut
 sub get
 {
-    my ( $titolo, $sottotitolo ) = @_;
+    my ( $titolo, $sottotitolo, $id ) = @_;
     
     my $values = {
 	'title' => $titolo,
 	'subtitle' => $sottotitolo,
+	'id' => $id,
     };
 
     return Behavior::getChain( $struct, $values, 1 );

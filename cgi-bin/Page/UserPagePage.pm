@@ -3,38 +3,50 @@ use strict;
 use XML::LibXML;
 
 use Page::Object::UserPage;
-use Page::Object::AdminTools;
-use Page::Object::ArticleManager;
-use Page::Object::ArtistManager;
-use Page::Object::AlbumManager;
+use Page::Object::LikeSong;
 use Page::Object::Base::ParserXML;
 
 package UserPagePage;
 
-my $file = '../data/database/artistlist.xml';
+my $fileSong = '../data/database/artistlist.xml';
+my $fileUser = '../data/database/userlist.xml';
 
 sub get
 {
     my ( $parser, @pairs ) = @_;
 
     my ( $user ) = ( ( shift @pairs ) =~ /=(.+)/ );
-    my $doc = ParserXML::getDoc( $parser, $file );
+    my $docSong = ParserXML::getDoc( $parser, $fileSong );
+    my $docUser = ParserXML::getDoc( $parser, $fileUser );
 
-    my @node = $doc->findnodes( '/xs:artistList/xs:artist/xs:nick' );
-    my @optSing = ();
+    my @nodeVotes = $docUser->findnodes( "//xs:user[\@username='$user']/xs:votes/xs:typeVote" );
+
+    my @songs = ();
     
-    foreach my $nick( @node )
-    {
-	push( @optSing, $nick->textContent );
+    foreach my $vote( @nodeVotes ) {
+	my $idArtist = $vote->getAttribute( 'idArtist' );
+	my $idAlbum = $vote->getAttribute( 'idAlbum' );
+	my $idSong = $vote->getAttribute( 'idSong' );
+
+	my $nodeArtist = $docUser->findnodes( "//xs:artist[\@id='$idArtist']" )->get_node( 1 );
+
+	my $nickArtist = $nodeArtist->findnodes( 'xs:nick' );
+	my $songTitle = $nodeArtist->findnodes( 
+	    "/xs:album[\@id='$idAlbum']/xs:song[\@id='idSong']/xs:name/text()"
+	);
+
+	push( @songs, LikeSong::get( 
+		  $idArtist, 
+		  $idAlbum, 
+		  $idSong, 
+		  $songTitle, 
+		  $nickArtist
+	      ) );
     }
 
-    my $albumM = AlbumManager::get( 'Insert', AlbumManager::optionArtists( @optSing ), 1 );
-    my $articleM = ArticleManager::get( 1 );
-    my $artistM = ArtistManager::get( 'Insert', 1 );
+    @songs = reverse @songs;
 
-    my $adminTools = AdminTools::get( $articleM, $artistM, $albumM );
-
-    return UserPage::get( $user, $adminTools );    
+    return UserPage::get( $user, UserPage::likeSong( @songs ) );
 }
 
 1;

@@ -7,7 +7,13 @@ package SongManagerPage;
 
 sub get
 {
-    return SongManager::get( 'Edit' );
+    my ( @pairs ) = @_;
+
+    my ( $artist ) = ( ( shift @pairs ) =~ /=(.+)/ );
+    my ( $idArtist ) = ( ( shift @pairs ) =~ /=(.+)/ );
+    my ( $idAlbum ) = ( ( shift @pairs ) =~ /=(.+)/ );
+    
+    return SongManager::get( $idArtist, $artist, $idAlbum );
 }
 
 1;

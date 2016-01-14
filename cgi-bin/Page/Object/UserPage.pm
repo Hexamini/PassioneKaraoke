@@ -1,6 +1,7 @@
 use lib "cgi-bin";
 use strict;
 
+use Page::Object::LikeSong;
 use Page::Object::Base::Behavior;
 
 package UserPage;
@@ -10,22 +11,29 @@ my $struct = 'userPage';
 =Description
 Paramtri:
     username = Nickname di registrazione dell'utente
-    adminTools [ opzionale ] = Sezione amministrazione
+    likeSongs = Lista di tutte le canzoni selezionate positivamente dall'utente
 =cut
 sub get
 {
-    my ( $username, $adminTools ) = @_;
+    my ( $username, $likeSongs ) = @_;
 
     my $fus = {
 	'username' => $username,
+	'likeSong' => $likeSongs,
     };
 
-    if( defined $adminTools )
-    {
-	$fus = Behavior::weld( $fus, $adminTools );
+    return Behavior::getChain( $struct, $fus );
+}
+
+sub likeSong {
+    my ( @songs ) = @_;
+    my $list = '';
+
+    foreach my $song( @songs ) {
+	$list = $list . LikeSong::extractContent( $song );
     }
 
-    return Behavior::getChain( $struct, $fus );
+    return $list;
 }
 
 1;

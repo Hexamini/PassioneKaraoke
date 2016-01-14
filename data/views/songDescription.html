@@ -3,12 +3,13 @@
 @description = Descrizione e testo della canzone [% song %]
 @keyword = canzone, karaoke, testo, [% song %], [% artist %], [% album %]
 @title = [% song %]
+@breadcrumb = <a href="r.cgi?section=index"><span lang="en">Home</span></a> &gt; <a href="r.cgi?section=artists">Artisti</a> &gt; <a href="r.cgi?section=artist&amp;id=[% idArtist %]">[% artist %]</a> &gt; [% song %]
 
 META_!
 
 <div id="song-head">
 
-    [% editMode %]
+    [% editButton %]
 
     <h1>[% song %]</h1>
     <p id="details">[% artist %] - [% album %]</p>

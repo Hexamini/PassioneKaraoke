@@ -133,7 +133,7 @@ h3 {
 }
 
 
-#music-type li, #last-news .new-song, #last-news .new-article  {
+#categories-list li, #last-news .new-song, #last-news .new-article  {
     height: 50px;
     padding: 16px 0;
     line-height: 25px;
@@ -148,7 +148,7 @@ h3 {
     box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
-#music-type li {
+#categories-list li {
     line-height: 50px;
 }
 

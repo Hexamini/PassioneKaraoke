@@ -3,7 +3,7 @@
 	xmlns="http://www.passionekaraoke.com"
 	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
 
-    <artist id="elioelestorietese" type="band">
+    <artist id="elioelestorietese">
         <nick>Elio e le storie tese</nick>
         <born>1985</born>
         <description>
@@ -33,7 +33,7 @@
         </album>
     </artist>
 
-    <artist id="fedez" type="single">
+    <artist id="fedez">
         <nick>Fedez</nick>
         <born>15/10/1989</born>
         <description>Federico Leonardo Lucia, meglio conosciuto con lo pseudonimo Fedez (IPA: ['fɛːdets][4]; Milano, 15 ottobre 1989), è un rapper e produttore discografico italiano, considerato una grande promessa del rap italiano e una delle figure più importanti del panorama musicale italiano[2].

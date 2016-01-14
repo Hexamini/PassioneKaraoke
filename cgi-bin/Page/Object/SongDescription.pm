@@ -11,6 +11,7 @@ my $struct = 'songDescription';
 Parametri:
     song = Nome canzone
     artist = Nome cantante
+    idArtist = Id dell'artista
     album = Nome album
     songDescription = Descrizione della canzone ( immagino note storiche o bibliografiche )
     songLyrics = Testo della canzone
@@ -18,11 +19,12 @@ Parametri:
 =cut
 sub get
 {
-    my ( $song, $artist, $album, $songDescription, $songLyrics, $songExtraResources ) = @_;
+    my ( $song, $artist, $idArtist, $album, $songDescription, $songLyrics, $songExtraResources ) = @_;
 
     my $values = {
 	'song' => $song,
 	'artist' => $artist,
+	'idArtist' => $idArtist,
 	'album' => $album,
 	'songDescription' => $songDescription,
 	'songLyrics' => $songLyrics,

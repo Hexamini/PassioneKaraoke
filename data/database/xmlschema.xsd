@@ -91,6 +91,7 @@
 		<xs:sequence>
 			<xs:element name="mail" type="xs:string" />
 			<xs:element name="password" type="xs:string" />
+            <xs:element name="type" type="xs:string" minOccurs="0"/>
 			<xs:element name="votes" type="Tvotes" />
 		</xs:sequence>
         <xs:attribute name="username" type="xs:ID" use="required"/>

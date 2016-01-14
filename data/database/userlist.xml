@@ -5,9 +5,18 @@
     <user username="admin">
         <mail>admin@passionekaraoke.com</mail>
         <password>password</password>
+        <type>administrator</type>
         <votes>
             <typeVote idSong="_lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
             <typeVote idSong="_tuttoalcontrario" idArtist="fedez" idAlbum="penisolachenonce">-1</typeVote>
+        </votes>
+    </user>
+
+    <user username="fabio">
+        <mail>massignanfab@gmail.com</mail>
+        <password>fabio</password>
+        <votes>
+            <typeVote idSong="_lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
         </votes>
     </user>
 </userList>

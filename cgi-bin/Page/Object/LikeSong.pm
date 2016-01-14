@@ -24,7 +24,7 @@ sub get {
 	'id_song' => $idSong,
 	'songTitle' => $songTitle,
 	'artist' => $artist,
-    }
+    };
 
     return Behavior::getChain( $struct, $values, 1 );
 }

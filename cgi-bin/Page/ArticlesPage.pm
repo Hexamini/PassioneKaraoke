@@ -24,8 +24,9 @@ sub get
     {
 	my $title = $node->findnodes( 'xs:title/text()' );
 	my $subtitle = $node->findnodes( 'xs:subtitle/text()' );
+	my $id = $node->getAttribute( 'id' ); 
 	
-	push( @articles, ArticleList::get( $title, $subtitle ) );
+	push( @articles, ArticleList::get( $title, $subtitle, $id ) );
     }
 
     @articles = reverse @articles;

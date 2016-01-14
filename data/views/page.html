@@ -1,11 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<html lang="it">
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" >
 
     <!-- scrivere title con keyword su title -->
     <title>[% title %] - Passione Karaoke</title>
@@ -40,20 +39,6 @@
             --><li><a href="r.cgi?[% ref_user %]">[% user %]</a></li> <!-- Voce da modificare -->
         </ul>
     </div>
-    <script>
-        (function(){
-            var btn = document.getElementById("open-menu-btn");
-            var menu = document.getElementById("menu");
-            var menuOpen = false;
-            btn.onclick = function () {
-                if(menuOpen)
-                    menu.className = "";
-                else
-                    menu.className = "open";
-                menuOpen = !menuOpen;
-            };
-        })();
-    </script>
     <!--
     <div id="account-management">
         <a href="#">Accedi</a>
@@ -78,6 +63,7 @@
         <p>Creato da: Fabio Massignan, Polonio Davide, Luca Bianco, Andrea Mantovani &copy; 2015</p>
     </div>
 </div>
+<script src="../data/assets/js/animation.js"></script>
 
 </body>
 

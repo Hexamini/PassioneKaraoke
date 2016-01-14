@@ -11,18 +11,18 @@
 
 META_!
         <div class="[% visible %]">
-            <p>L'<span xml:lang="en">username</span> o la <span xml:lang="en">password</span> inseriti sono errati.</p>
+            <p>L'<span lang="en">username</span> o la <span lang="en">password</span> inseriti sono errati.</p>
         </div>
 
         <div id="login">
-            <h1>Pagina di <span xml:lang="en">login</span></h1>
+            <h1>Pagina di <span lang="en">login</span></h1>
             <form id="login-form" action="../cgi-bin/login.cgi" method="post">
 	      <!-- @korut94 risolto conflitto di merge -->
                 <fieldset>
 
-                    <label for="username"><span xml:lang="en">Username</span></label>
+                    <label for="username"><span lang="en">Username</span></label>
                     <input type="text" name="username" id="username" maxlength="18"/>
-                    <label for="password"><span xml:lang="en">Password</span></label>
+                    <label for="password"><span lang="en">Password</span></label>
                     <input type="password" name="password" id="password" maxlength="8"/>
                     <input type="submit" value="login" name="action" />
                 </fieldset>

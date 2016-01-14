@@ -17,6 +17,7 @@ my $title = $cgi->param( 'articleTitle' );
 my $subtitle = $cgi->param( 'articleSubtitle' );
 my $content = $cgi->param( 'articleContent' );
 
+#Sezione aggiunta articoli nel database
 my $file = '../data/database/articlelist.xml';
 
 my $parser = XML::LibXML->new();
@@ -37,6 +38,30 @@ my $article = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non 
 my $root = $doc->findnodes( 'xs:articleList' )->get_node( 1 );
 
 $root->appendChild( $article ) || die( 'Non appeso' );
+
+open( OUT, ">$file" );
+print OUT $doc->toString;
+close( OUT );
+
+#Sezione per l'aggiornamento dell'ultimo articolo
+$file = '../data/database/news.xml';
+$doc = ParserXML::getDoc( $parser, $file );
+
+$framment =
+    "<newArticle id='_$id'>
+       <title>$title</title>
+       <subtitle>$subtitle</subtitle>
+     </newArticle>";
+
+my $newArticle = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
+$root = $doc->findnodes( '//xs:articles' );
+
+if ( $root->size() == 5 ) {
+    my $oldNode = $root->findnodes( '/newArticle[1]' )->get_node( 1 );
+    $root->removeChild( $oldNode );
+}
+
+$root->appendChild( $newArticle ) || die( 'Non appeso' );
 
 open( OUT, ">$file" );
 print OUT $doc->toString;

@@ -364,7 +364,11 @@ h3 {
 
 /************* BUTTON EDIT MODE ********************/
 
-#edit-mode-form input {
+.edit-mode {
+    display: inline-block;
+}
+
+.edit-mode-form input {
     border: 1px solid #0D47A1;
     color: #01579B;
     padding: 6px;
@@ -379,11 +383,11 @@ h3 {
     border-radius: 6px;
 }
 
-#edit-mode-form input:hover {
+.edit-mode-form input:hover {
     background-color: #B3E5FC;
 }
 
-#edit-mode-form input:active {
+.edit-mode-form input:active {
     background-color: #4FC3F7;
 }
 
@@ -628,7 +632,7 @@ and (max-width: 1023px) {
 
     /************* BUTTON EDIT MODE *********************/
 
-    #edit-mode-form input[type=submit] {
+    .edit-mode-form input[type=submit] {
         margin-left: 40px;
     }
 

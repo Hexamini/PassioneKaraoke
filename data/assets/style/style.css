@@ -463,7 +463,7 @@ and (max-width: 1023px) {
     }
 
     #login input[type=submit]{
-        max-width: 900px;
+        max-width: 700px;
     }
 }
 
@@ -605,17 +605,17 @@ and (max-width: 1023px) {
     #login label {
         display: inline-block;
         width: 24%;
-        margin-right: 5%;
+        margin-right: 25%;
         line-height: 40px;
     }
     #login input[type=text], #login input[type=password] {
         display: inline-block;
-        width: 70%;
+        width: 50%;
         margin: 16px 0;
     }
 
     #login input[type=submit] {
-        max-width: 900px;
+        max-width: 700px;
         margin-top: 32px;
     }
 
@@ -623,5 +623,32 @@ and (max-width: 1023px) {
 
     #edit-mode-form input[type=submit] {
         margin-left: 40px;
+    }
+
+    /****************** INPUT MODIFICHE ******************/
+
+    .insert-artist-form label, .insert-article-form label  {
+        display: inline-block;
+        width: 24%;
+        margin-right: 25%;
+        line-height: 40px;
+    }
+
+    .insert-artist-form input, .insert-article-form input {
+        display: inline-block;
+        width: 50%;
+        margin: 16px 0;
+    }
+
+    .insert-artist-form input[type=submit], .insert-article-form input[type=submit] {
+        max-width: 700px;
+        margin-top: 32px;
+    }
+
+    .insert-artist-form input[type=submit]:hover, .insert-article-form  input[type=submit]:hover{
+        background-color: #0288D1;
+    }
+    .insert-artist-form input[type=submit]:active,.insert-article-form input[type=submit]:active {
+        background-color: #01579B;
     }
 }

@@ -28,7 +28,7 @@ sub get
 	my $idAlbum = $vote->getAttribute( 'idAlbum' );
 	my $idSong = $vote->getAttribute( 'idSong' );
 
-	my $nodeArtist = $docUser->findnodes( "//xs:artist[\@id='$idArtist']" )->get_node( 1 );
+	my $nodeArtist = $docSong->findnodes( "//xs:artist[\@id='$idArtist']" )->get_node( 1 );
 
 	my $nickArtist = $nodeArtist->findnodes( 'xs:nick' );
 	my $songTitle = $nodeArtist->findnodes( 

@@ -52,10 +52,11 @@ $doc = ParserXML::getDoc( $parser, $file );
 $framment = "<newSong id='$id' artist='$artist' album='$album'>$name</newSong>";
 
 my $newSong = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
-$root = $doc->findnodes( '//xs:songs' );
 
-if ( $root->size() == 5 ) {
-    my $oldNode = $root->findnodes( '/newSong[1]' )->get_node( 1 );
+$root = $doc->findnodes( '//xs:songs' )->get_node( 1 );
+
+if ( $root->findnodes( '*' )->size() == 5 ) {
+    my $oldNode = $root->findnodes( 'newSong[1]' )->get_node( 1 );
     $root->removeChild( $oldNode );
 }    
 

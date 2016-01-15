@@ -54,10 +54,10 @@ $framment =
      </newArticle>";
 
 my $newArticle = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
-$root = $doc->findnodes( '//xs:articles' );
+$root = $doc->findnodes( '//xs:articles' )->get_node( 1 );
 
-if ( $root->size() == 5 ) {
-    my $oldNode = $root->findnodes( '/newArticle[1]' )->get_node( 1 );
+if ( $root->findnodes( '*' )->size() == 5 ) {
+    my $oldNode = $root->findnodes( 'newArticle[1]' )->get_node( 1 );
     $root->removeChild( $oldNode );
 }
 

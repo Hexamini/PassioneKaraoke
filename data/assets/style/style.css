@@ -369,18 +369,21 @@ h3 {
 }
 
 .edit-mode-form input {
-    border: 1px solid #0D47A1;
     color: #01579B;
-    padding: 6px;
+    padding: 7px;
     display: inline-block;
     font-size: 12px;
     text-transform: uppercase;
     background-color: #81D4FA;
     font-weight: bold;
-    margin: 0 6px 16px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
+    margin: 0 16px 16px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    min-width: 30px;
+     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
 .edit-mode-form input:hover {
@@ -390,7 +393,9 @@ h3 {
 .edit-mode-form input:active {
     background-color: #4FC3F7;
 }
-
+.description-album .edit-mode {
+    float:right;
+}
 /************* BUTTON EDIT MODE ********************/
 
 #insert-artist-form label,
@@ -470,6 +475,11 @@ FOOTER
     color:#9E9E9E;
 }
 
+
+/**********************************************/
+/****************** TABLET ********************/
+/**********************************************/
+
 @media screen
 and (min-width: 481px)
 and (max-width: 1023px) {
@@ -498,6 +508,9 @@ and (max-width: 1023px) {
     }
 }
 
+/**********************************************/
+/****************** DESKTOP *******************/
+/**********************************************/
 
 @media screen and (min-width: 1024px ){
     body {

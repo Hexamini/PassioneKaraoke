@@ -405,6 +405,7 @@ h3 {
     font-size: 16px;
     vertical-align: top;
     line-height:40px;
+    margin-top: 8px;
 }
 
 #insert-album-form input,

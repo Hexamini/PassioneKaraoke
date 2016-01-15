@@ -19,7 +19,7 @@ sub get
     my $docSong = ParserXML::getDoc( $parser, $fileSong );
     my $docUser = ParserXML::getDoc( $parser, $fileUser );
 
-    my @nodeVotes = $docUser->findnodes( "//xs:user[\@username='$user']/xs:votes/xs:typeVote" );
+    my @nodeVotes = $docUser->findnodes( "//xs:user[\@username='$user']/xs:votes/xs:typeVote[text()='1']" );
 
     my @songs = ();
     

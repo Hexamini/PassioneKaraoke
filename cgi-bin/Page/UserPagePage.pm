@@ -32,7 +32,7 @@ sub get
 
 	my $nickArtist = $nodeArtist->findnodes( 'xs:nick' );
 	my $songTitle = $nodeArtist->findnodes( 
-	    "/xs:album[\@id='$idAlbum']/xs:song[\@id='idSong']/xs:name/text()"
+	    "xs:album[\@id='$idAlbum']/xs:song[\@id='$idSong']/xs:name/text()"
 	);
 
 	push( @songs, LikeSong::get( 

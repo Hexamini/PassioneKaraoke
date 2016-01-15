@@ -22,6 +22,7 @@ my $id = '_' . $name;
 $id =~ s/\s+//g;
 $id = lc $id;
 
+#Sezione aggiunta canzoni nel database
 my $framment = 
     "<song id='$id'>
        <name>$name</name>
@@ -39,6 +40,30 @@ my $song = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben
 my $root = $doc->findnodes( "/xs:artistList/xs:artist[\@id='$artist']/xs:album[\@id='$album']" )->get_node( 1 );
 
 $root->appendChild( $song ) || die( 'Non appeso' );
+
+open( OUT, ">$file" );
+print OUT $doc->toString;
+close( OUT );
+
+#Sezione per l'aggiornamento dell'ultima canzone
+$file = '../data/database/news.xml';
+$doc = ParserXML::getDoc( $parser, $file );
+
+$framment = "<newSong id='$id' artist='$artist' album='$album'>$name</newSong>";
+
+my $newSong = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
+
+$root = $doc->findnodes( '//xs:songs' );
+my $size = $root->size();
+
+$root = $root->get_node( 1 );
+
+if ( $size == 5 ) {
+    my $oldNode = $root->findnodes( 'newSong[1]' )->get_node( 1 );
+    $root->removeChild( $oldNode );
+}    
+
+$root->appendChild( $newSong ) || die( 'Non appeso' );
 
 open( OUT, ">$file" );
 print OUT $doc->toString;

@@ -146,14 +146,14 @@ h3 {
 }
 
 
-#music-type li, #last-news .new-song, #last-news .new-article  {
+#categories-list li, #last-news .new-song, #last-news .new-article  {
     height: 50px;
     padding: 16px 0;
     line-height: 25px;
     text-align:center;
     width: 100%;
-    background-color:#CFD8DC;
-    color: #546E7A;
+    background-color:#81C784;
+    color: #1565C0;
     font-size: 14px;
     margin: 6px 0;
     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
@@ -161,13 +161,13 @@ h3 {
     box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
-#music-type li {
+#categories-list li {
     line-height: 50px;
 }
 
 
 #last-news .new-song a, #last-news .new-article a {
-    color: #0D47A1;
+    color: #1A237E;
     font-size: 18px;
     display: block;
 }
@@ -364,37 +364,57 @@ h3 {
 
 /************* BUTTON EDIT MODE ********************/
 
-#edit-mode-form input {
-    border: 1px solid #0D47A1;
+.edit-mode {
+    display: inline-block;
+}
+
+.edit-mode-form input {
     color: #01579B;
-    padding: 6px;
+    padding: 7px;
     display: inline-block;
     font-size: 12px;
     text-transform: uppercase;
     background-color: #81D4FA;
     font-weight: bold;
-    margin: 0 6px 16px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
+    margin: 0 16px 16px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    min-width: 30px;
+     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
-#edit-mode-form input:hover {
+.edit-mode-form input:hover {
     background-color: #B3E5FC;
 }
 
-#edit-mode-form input:active {
+.edit-mode-form input:active {
     background-color: #4FC3F7;
 }
-
+.description-album .edit-mode {
+    float:right;
+}
 /************* BUTTON EDIT MODE ********************/
 
-.insert-artist-form label, .insert-article-form label  {
+#insert-artist-form label,
+#insert-article-form label,
+#insert-album-form label  {
     display:block;
     font-size: 16px;
+    vertical-align: top;
+    line-height:40px;
+    margin-top: 8px;
 }
 
-.insert-artist-form input, .insert-article-form input {
+#insert-album-form input,
+#insert-artist-form input,
+#insert-article-form input,
+#insert-song-form input,
+#insert-article-form textarea,
+#insert-song-form textarea,
+#insert-artist-form textarea {
     width: 100%;
     height: 40px;
     border: 1px solid #90A4AE;
@@ -404,7 +424,18 @@ h3 {
     font-size: 14px;
 }
 
-.insert-artist-form input[type=submit], .insert-article-form input[type=submit] {
+
+#insert-article-form textarea,
+#insert-song-form textarea,
+#insert-artist-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+#insert-album-form input[type=submit],
+#insert-artist-form input[type=submit],
+#insert-song-form input[type=submit],
+#insert-article-form input[type=submit] {
     height: 60px;
     line-height: 60px;
     text-align:center;
@@ -420,10 +451,16 @@ h3 {
     text-indent: 0;
 }
 
-.insert-artist-form input[type=submit]:hover, .insert-article-form  input[type=submit]:hover{
+#insert-album-form input[type=submit]:hover,
+#insert-artist-form input[type=submit]:hover,
+#insert-song-form input[type=submit]:hover,
+#insert-article-form  input[type=submit]:hover{
     background-color: #0288D1;
 }
-.insert-artist-form input[type=submit]:active,.insert-article-form input[type=submit]:active {
+#insert-album-form input[type=submit]:active,
+#insert-artist-form input[type=submit]:active,
+#insert-song-form input[type=submit]:active,
+#insert-article-form input[type=submit]:active {
     background-color: #01579B;
 }
 
@@ -438,6 +475,11 @@ FOOTER
     text-align: center;
     color:#9E9E9E;
 }
+
+
+/**********************************************/
+/****************** TABLET ********************/
+/**********************************************/
 
 @media screen
 and (min-width: 481px)
@@ -463,10 +505,13 @@ and (max-width: 1023px) {
     }
 
     #login input[type=submit]{
-        max-width: 900px;
+        max-width: 700px;
     }
 }
 
+/**********************************************/
+/****************** DESKTOP *******************/
+/**********************************************/
 
 @media screen and (min-width: 1024px ){
     body {
@@ -546,7 +591,7 @@ and (max-width: 1023px) {
         display: inline-block;
         vertical-align: top;
     }
-    #music-type {
+    #categories-list {
         width: 49%;
         display: inline-block;
     }
@@ -605,23 +650,68 @@ and (max-width: 1023px) {
     #login label {
         display: inline-block;
         width: 24%;
-        margin-right: 5%;
+        margin-right: 25%;
         line-height: 40px;
     }
     #login input[type=text], #login input[type=password] {
         display: inline-block;
-        width: 70%;
+        width: 50%;
         margin: 16px 0;
     }
 
     #login input[type=submit] {
-        max-width: 900px;
+        max-width: 700px;
         margin-top: 32px;
     }
 
     /************* BUTTON EDIT MODE *********************/
 
-    #edit-mode-form input[type=submit] {
+    .edit-mode-form input[type=submit] {
         margin-left: 40px;
+    }
+
+    /****************** INPUT MODIFICHE ******************/
+
+    #insert-artist-form label,
+    #insert-article-form label,
+    #insert-song-form label,
+    #insert-album-form label  {
+        display: inline-block;
+        width: 24%;
+        margin-right: 25%;
+        line-height: 40px;
+    }
+
+    #insert-album-form input,
+    #insert-artist-form input,
+    #insert-article-form input,
+    #insert-song-form input,
+    #insert-article-form textarea,
+    #insert-artist-form textarea,
+    #insert-song-form textarea {
+        display: inline-block;
+        width: 50%;
+        margin: 16px 0;
+    }
+
+    #insert-album-form input[type=submit],
+    #insert-artist-form input[type=submit],
+    #insert-song-form input[type=submit],
+    #insert-article-form input[type=submit] {
+        max-width: 700px;
+        margin-top: 32px;
+    }
+
+    #insert-album-form input[type=submit]:hover,
+    #insert-artist-form input[type=submit]:hover,
+    #insert-song-form input[type=submit]:hover,
+    #insert-article-form  input[type=submit]:hover{
+        background-color: #0288D1;
+    }
+    #insert-album-form input[type=submit]:active,
+    #insert-artist-form input[type=submit]:active,
+    #insert-song-form input[type=submit]:active,
+    #insert-article-form input[type=submit]:active {
+        background-color: #01579B;
     }
 }

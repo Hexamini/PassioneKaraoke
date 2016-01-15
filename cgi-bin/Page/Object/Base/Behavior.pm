@@ -49,6 +49,14 @@ sub weld
     return $fusion;
 }
 
+sub rename
+{
+    my ( $chain, $oldName, $newName ) = @_;
+
+    $chain->{ $newName } = delete $chain->{ $oldName };
+    return $chain;
+}
+
 =Description
 Parametri: 
     struct = Nome della struttura. Verra' cercato in un file $struct.html
@@ -71,11 +79,13 @@ sub getChain
 
     if( $retitle )
     {
+#	rename( $chain, 'content', $struct );
 	$chain->{ $struct } = delete $chain->{ content };
     }
 
     return $chain;
 }
+
 
 1;
 

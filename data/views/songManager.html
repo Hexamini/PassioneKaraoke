@@ -5,7 +5,7 @@
 @description = Pagina che permette l'aggiunta di una nuova canzone in un album
 @keyword = canzone, aggiunta
 @title = Aggiungi canzone
-@breadcrumb = <a href='r.cgi?section=index'><span xml:lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&amp;id=[% idArtist %]'>[% artist %]</a> &gt; Aggiungi canzone
+@breadcrumb = <a href='r.cgi?section=index'><span lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&amp;id=[% idArtist %]'>[% artist %]</a> &gt; Aggiungi canzone
 <!-- End default meta phrases -->
 
 META_!
@@ -27,6 +27,11 @@ META_!
 	    <!-- @korut94 aggiunti label ai vari campi -->
 	    <label for="song-title">Titolo</label>
             <input type="text" name="songTitle" id="song-title" />
+	    
+	    <label for="song-category">Categoria</label>
+            <select name="songCategory" id="song-category">
+				[% optionCategory %]
+            </select>
 	    
 	    <label for="song-lyrics">Testo della canzone</label>
             <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40"></textarea>

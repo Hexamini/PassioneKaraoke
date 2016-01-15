@@ -13,10 +13,13 @@ Parametri:
 =cut
 sub get
 {
-    my ( $songName ) = @_;
+    my ( $songName, $artistID, $albumID, $songID ) = @_;
 
     my $values = {
 	'songName' => $songName,
+	'artist' => $artistID,
+	'album' => $albumID,
+	'song' => $songID,
     };
 
     return Behavior::getChain( $struct, $values, 1 );

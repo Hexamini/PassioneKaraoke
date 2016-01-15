@@ -14,16 +14,32 @@ Parametri
     album = Nome dell'album
     albumImage = path immagine album
     songsList = rappresentazione della lista di canzoni
+    addButton = Bottone per l'aggiunta di una canzone
+    modifyButton = Bottone per la modifica dell'album
+    removeButton = Bottone per la rimozione dell'album e le canzoni contenute
 =cut
 sub get
 {
-    my( $album, $albumImage, $songsList ) = @_;
+    my( $album, $albumImage, $songsList, $addButton, $modifyButton, $removeButton ) = @_;
 
     my $values = {
 	'album' => $album,
 	'albumImage' => $albumImage,
 	'songsList' => $songsList,
     };
+
+    if ( defined $addButton ) {
+	$values = Behavior::weld( $values, $addButton );
+
+	if ( defined $modifyButton ) {
+	    $values = Behavior::weld( $values, $modifyButton );
+
+	    if ( defined $removeButton ) {
+		$values = Behavior::weld( $values, $removeButton );
+
+	    }
+	}
+    }
     
     return Behavior::getChain( $struct, $values, 1 );
 }
@@ -38,14 +54,13 @@ sub extractContent
 
 sub songsList
 {
-    my ( @songsName ) = @_;
+    my ( @songs ) = @_;
 
     my $list = '';
 
-    for my $name( @songsName )
+    for my $song( @songs )
     {
-	my $item = Song::get( $name );
-	$list = $list . Song::extractContent( $item );
+	$list = $list . Song::extractContent( $song );
     }
 
     return $list;

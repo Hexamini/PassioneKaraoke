@@ -29,7 +29,7 @@ sub get
     my $lyrics = $node->findnodes( 'xs:lyrics/text()' );
     my $extra = $node->findnodes( 'xs:extra/text()' );
     
-    return SongDescription::get( $nameSong, $nameArtist, $nameAlbum, '#', $lyrics, $extra );
+    return SongDescription::get( $nameSong, $nameArtist, $id_artist, $nameAlbum, '#', $lyrics, $extra );
 }
 
 1;

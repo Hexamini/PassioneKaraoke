@@ -1,6 +1,7 @@
+#!/usr/bin/perl -w
 use lib "cgi-bin";
 use strict;
-use CGi;
+use CGI;
 use CGI::Session;
 
 my $cgi = new CGI;
@@ -13,6 +14,5 @@ $session->close();
 $session->delete();
 $session->flush();
 
-print $cgi->header();
-print "Hello";
-#print $cgi->redirect( 'r.cgi?section=index' );
+print $cgi->redirect( 'r.cgi?section=index' );
+

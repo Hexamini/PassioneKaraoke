@@ -2,6 +2,7 @@ use lib "cgi-bin";
 use strict;
 
 use Page::Object::ArticleManager;
+use Page::Object::ErrorList;
 use Page::Object::BoxError;
 
 package ArticleManagerPage;
@@ -12,13 +13,13 @@ sub get
 
     my @errors = ();
 
-    while ( length @pairs > 0 ) {
-	push @errors, ( ( shift @pairs ) =~ /=(.+)/ );
+    while ( scalar @pairs > 0 ) {
+	push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
     }
 
     my $boxError = '';
     
-    if ( length @errors > 0 ) {
+    if ( scalar @errors > 0 ) {
 	$boxError = BoxError::get( BoxError::errorList( @errors ) );
     }
     

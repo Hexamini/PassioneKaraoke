@@ -1,6 +1,7 @@
 use lib "cgi-bin";
 use strict;
 
+use Page::Object::ErrorList;
 use Page::Object::BoxError;
 use Page::Object::ArtistManager;
 
@@ -15,7 +16,7 @@ sub get
 
     #Section catched errors
     while ( ( scalar @pairs ) > 0 ) {
-	push @errors, ( ( shift @pairs ) =~ /=(.+)/ );
+	push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
     }
 
     my $boxError = '';

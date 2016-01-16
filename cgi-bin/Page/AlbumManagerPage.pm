@@ -2,6 +2,7 @@ use lib "cgi-bin";
 use strict;
 use XML::LibXML;
 
+use Page::Object::ErrorList;
 use Page::Object::BoxError;
 use Page::Object::AlbumManager;
 use Page::Object::Base::ParserXML;
@@ -20,13 +21,13 @@ sub get
 
     my @errors = ();
 
-    while ( length @pairs > 0 ) {
-	push @errors, ( ( shift @pairs ) =~ /=(.+)/ );
+    while ( scalar @pairs > 0 ) {
+	push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
     }
 
     my $boxError = '';
 
-    if ( length @errors > 0 ) {
+    if ( scalar @errors > 0 ) {
 	$boxError = BoxError::get( BoxError::errorList( @errors ) );
     }
     

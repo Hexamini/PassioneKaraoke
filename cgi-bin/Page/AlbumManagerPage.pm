@@ -2,6 +2,7 @@ use lib "cgi-bin";
 use strict;
 use XML::LibXML;
 
+use Page::Object::BoxError;
 use Page::Object::AlbumManager;
 use Page::Object::Base::ParserXML;
 
@@ -17,11 +18,23 @@ sub get
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
     my ( $mode ) = ( ( shift @pair ) =~ /=(.+)/ );
 
+    my @errors = ();
+
+    while ( length @pairs > 0 ) {
+	push @errors, ( ( shift @pairs ) =~ /=(.+)/ );
+    }
+
+    my $boxError = '';
+
+    if ( length @errors > 0 ) {
+	$boxError = BoxError::get( BoxError::errorList( @errors ) );
+    }
+    
     my $artist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
     my $albumManager = '';
 
     if ( $mode == 'insert' ) {
-	$albumManager = AlbumManager::get( $idArtist, $artist );
+	$albumManager = AlbumManager::get( $idArtist, $artist, $boxError );
     } else {
 	#Sezione per la modifica
     }

@@ -16,7 +16,7 @@ sub get {
     my ( $errorList ) = @_;
 
     my $values = {
-	'errorList' => $listError,
+	'errorList' => $errorList,
     };
 
     return Behavior::getChain( $struct, $values, 1 );

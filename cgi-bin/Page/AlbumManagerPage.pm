@@ -25,7 +25,7 @@ sub get
 	push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
     }
 
-    my $boxError = '';
+    my $boxError = undef;
 
     if ( scalar @errors > 0 ) {
 	$boxError = BoxError::get( BoxError::errorList( @errors ) );

@@ -4,24 +4,26 @@ use strict;
 use Page::Object::ErrorList;
 use Page::Object::Base::Behavior;
 
+package BoxError;
+
 my $struct = 'boxError';
 
 =Description
 Parametri:
-    listError = Rappresentazione lista errori
+    errorList = Rappresentazione lista errori
 =cut
 sub get {
-    my ( $listError ) = @_;
+    my ( $errorList ) = @_;
 
     my $values = {
-	'listError' => $listError,
+	'errorList' => $listError,
     };
 
     return Behavior::getChain( $struct, $values, 1 );
 }
 
 
-sub listError {
+sub errorList {
     my ( @errors ) = @_;
     my $list = '';
 

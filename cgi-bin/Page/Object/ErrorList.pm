@@ -5,7 +5,7 @@ use Page::Object::Base::Behavior;
 
 package ErrorList;
 
-my $struct = "listError";
+my $struct = "errorList";
 
 =Description
 Parametri:

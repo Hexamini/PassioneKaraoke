@@ -146,7 +146,7 @@ h3 {
     margin: 10px 0;
 }
 
-#categories-list li, #last-news .new-song, #last-news .new-article {
+#last-song .new-song, #last-news .new-article {
     height: 50px;
     padding: 16px 0;
     line-height: 25px;
@@ -161,17 +161,14 @@ h3 {
     box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
-#categories-list li {
-    line-height: 50px;
-}
 
-#last-news .new-song a, #last-news .new-article a {
+#last-song .new-song a, #last-news .new-article a {
     color: #1A237E;
     font-size: 18px;
     display: block;
 }
 
-#last-news .new-song a:hover, #last-news .new-article a:hover {
+#last-song .new-song a:hover, #last-news .new-article a:hover {
     text-decoration: underline;
 }
 
@@ -402,12 +399,16 @@ h3 {
 
 /************* BUTTON EDIT MODE ********************/
 
+.input-form {
+    margin: 16px;
+}
+
 .input-form label {
     display: block;
     font-size: 16px;
     vertical-align: top;
-    line-height: 40px;
-    margin-top: 8px;
+    line-height: 42px;
+    margin-top: 16px;
 }
 
 .input-form input,
@@ -420,6 +421,7 @@ h3 {
     background-color: #CFD8DC;
     text-indent: 15px;
     font-size: 14px;
+
 }
 
 .input-form textarea {
@@ -449,6 +451,12 @@ h3 {
 
 .input-form input[type=submit]:active {
     background-color: #01579B;
+}
+
+
+#artist-manager .note{
+    font-style: italic;
+    font-size: 12px;
 }
 
 /*************************
@@ -552,7 +560,7 @@ and (max-width: 1023px) {
     ***         CONTENT
     ********************************/
     #content {
-        max-width: 1326px;
+        max-width: 1200px;
         margin: 0 auto 24px;
     }
 
@@ -579,7 +587,7 @@ and (max-width: 1023px) {
         vertical-align: top;
     }
 
-    #categories-list {
+    #last-song {
         width: 49%;
         display: inline-block;
     }

@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -76,8 +76,9 @@ body {
     -moz-border-radius: 24px;
     border-radius: 24px;
 }
+
 #navigation-bar #open-menu-btn:active {
-    background-color:#0277BD;
+    background-color: #0277BD;
 }
 
 #navigation-bar #menu.open {
@@ -122,7 +123,6 @@ body {
     margin: 6px;
 }
 
-
 #nav-bar {
     color: #616161;
     font-size: 16px;
@@ -133,6 +133,7 @@ h1 {
     color: #455A64;
     margin: 16px 0;
 }
+
 h2 {
     font-size: 28px;
     color: #455A64;
@@ -145,42 +146,38 @@ h3 {
     margin: 10px 0;
 }
 
-
-#categories-list li, #last-news .new-song, #last-news .new-article  {
+#categories-list li, #last-news .new-song, #last-news .new-article {
     height: 50px;
     padding: 16px 0;
     line-height: 25px;
-    text-align:center;
+    text-align: center;
     width: 100%;
-    background-color:#81C784;
+    background-color: #81C784;
     color: #1565C0;
     font-size: 14px;
     margin: 6px 0;
     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
 #categories-list li {
     line-height: 50px;
 }
 
-
 #last-news .new-song a, #last-news .new-article a {
     color: #1A237E;
     font-size: 18px;
     display: block;
 }
+
 #last-news .new-song a:hover, #last-news .new-article a:hover {
     text-decoration: underline;
 }
 
-
-
 #last-news .new-article a {
     display: block;
 }
-
 
 /***************** ARTISTS ****************************/
 
@@ -190,8 +187,8 @@ h3 {
     height: 80px;
     padding: 6px 0;
     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
 .artist .mini-artist-image {
@@ -203,7 +200,7 @@ h3 {
 }
 
 .artist .mini-artist-image img {
-    width:100%;
+    width: 100%;
     height: 100%;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
@@ -216,6 +213,7 @@ h3 {
     height: 100%;
     vertical-align: middle;
 }
+
 /************ SINGLE ARTIST ***************/
 
 #artist-photo {
@@ -223,6 +221,7 @@ h3 {
     height: 150px;
     margin: 0 auto;
 }
+
 #artist-photo img {
     width: 100%;
     height: 100%;
@@ -241,16 +240,16 @@ h3 {
     height: 70px;
     padding: 6px 0;
     line-height: 25px;
-    text-align:left;
+    text-align: left;
     width: 100%;
-    background-color:#B0BEC5;
+    background-color: #B0BEC5;
     color: #546E7A;
     font-size: 14px;
     margin-top: 16px;
     border-bottom: 1px solid #90A4AE;
 }
 
-#artist-list-of-albums .description-album  img{
+#artist-list-of-albums .description-album img {
     width: 70px;
     height: 70px;
     margin-left: 16px;
@@ -258,23 +257,22 @@ h3 {
     vertical-align: middle;
 }
 
-#artist-list-of-albums .description-album h3{
+#artist-list-of-albums .description-album h3 {
     display: inline-block;
     margin-left: 16px;
 }
 
-
-
 #artist-list-of-albums .list-songs {
     margin: 0 auto;
 }
+
 #artist-list-of-albums .list-songs li {
     height: 50px;
     padding: 16px 0;
     line-height: 25px;
-    text-align:center;
+    text-align: center;
     width: 100%;
-    background-color:#CFD8DC;
+    background-color: #CFD8DC;
     color: #546E7A;
     font-size: 14px;
     border-bottom: 1px solid #B0BEC5;
@@ -286,15 +284,15 @@ h3 {
     height: 50px;
     padding: 16px 0;
     line-height: 25px;
-    text-align:center;
+    text-align: center;
     width: 100%;
-    background-color:#CFD8DC;
+    background-color: #CFD8DC;
     color: #546E7A;
     font-size: 14px;
     margin: 6px 0;
     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
 .article strong {
@@ -309,14 +307,17 @@ h3 {
     font-size: 16px;
     line-height: 24px;
 }
+
 #article-data {
     margin-top: 16px;
 }
-#article-data #article-author{
+
+#article-data #article-author {
     font-weight: bold;
     font-size: 16px;
     color: #37474F;
 }
+
 #article-data #article-date {
     font-size: 14px;
 
@@ -325,7 +326,7 @@ h3 {
 /***************** LOGIN *********************************/
 
 #login label {
-    display:block;
+    display: block;
     font-size: 16px;
 }
 
@@ -334,7 +335,7 @@ h3 {
     height: 40px;
     border: 1px solid #90A4AE;
     margin: 8px 0;
-    background-color:#CFD8DC;
+    background-color: #CFD8DC;
     text-indent: 15px;
     font-size: 14px;
 }
@@ -342,14 +343,14 @@ h3 {
 #login input[type=submit] {
     height: 60px;
     line-height: 60px;
-    text-align:center;
+    text-align: center;
     width: 90%;
-    background-color:#0277BD;
+    background-color: #0277BD;
     font-size: 18px;
-    margin:16px auto 0;
+    margin: 16px auto 0;
     border: 0 none;
     font-weight: bolder;
-    display:block;
+    display: block;
     text-transform: uppercase;
     color: white;
     text-indent: 0;
@@ -358,6 +359,7 @@ h3 {
 #login input[type=submit]:hover {
     background-color: #0288D1;
 }
+
 #login input[type=submit]:active {
     background-color: #01579B;
 }
@@ -381,9 +383,9 @@ h3 {
     -moz-border-radius: 15px;
     border-radius: 15px;
     min-width: 30px;
-     -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow:    1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    box-shadow:         1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
 .edit-mode-form input:hover {
@@ -393,77 +395,61 @@ h3 {
 .edit-mode-form input:active {
     background-color: #4FC3F7;
 }
+
 .description-album .edit-mode {
-    float:right;
+    float: right;
 }
+
 /************* BUTTON EDIT MODE ********************/
 
-#insert-artist-form label,
-#insert-article-form label,
-#insert-album-form label  {
-    display:block;
+.input-form label {
+    display: block;
     font-size: 16px;
     vertical-align: top;
-    line-height:40px;
+    line-height: 40px;
     margin-top: 8px;
 }
 
-#insert-album-form input,
-#insert-artist-form input,
-#insert-article-form input,
-#insert-song-form input,
-#insert-article-form textarea,
-#insert-song-form textarea,
-#insert-artist-form textarea {
+.input-form input,
+.input-form select,
+.input-form textarea {
     width: 100%;
     height: 40px;
     border: 1px solid #90A4AE;
     margin: 8px 0;
-    background-color:#CFD8DC;
+    background-color: #CFD8DC;
     text-indent: 15px;
     font-size: 14px;
 }
 
-
-#insert-article-form textarea,
-#insert-song-form textarea,
-#insert-artist-form textarea {
+.input-form textarea {
     height: 120px;
     resize: none;
 }
 
-#insert-album-form input[type=submit],
-#insert-artist-form input[type=submit],
-#insert-song-form input[type=submit],
-#insert-article-form input[type=submit] {
+.input-form input[type=submit] {
     height: 60px;
     line-height: 60px;
-    text-align:center;
+    text-align: center;
     width: 90%;
-    background-color:#0277BD;
+    background-color: #0277BD;
     font-size: 18px;
-    margin:16px auto 0;
+    margin: 16px auto 0;
     border: 0 none;
     font-weight: bolder;
-    display:block;
+    display: block;
     text-transform: uppercase;
     color: white;
     text-indent: 0;
 }
 
-#insert-album-form input[type=submit]:hover,
-#insert-artist-form input[type=submit]:hover,
-#insert-song-form input[type=submit]:hover,
-#insert-article-form  input[type=submit]:hover{
+.input-form input[type=submit]:hover {
     background-color: #0288D1;
 }
-#insert-album-form input[type=submit]:active,
-#insert-artist-form input[type=submit]:active,
-#insert-song-form input[type=submit]:active,
-#insert-article-form input[type=submit]:active {
+
+.input-form input[type=submit]:active {
     background-color: #01579B;
 }
-
 
 /*************************
 FOOTER
@@ -473,9 +459,8 @@ FOOTER
     margin: 16px;
     font-size: 12px;
     text-align: center;
-    color:#9E9E9E;
+    color: #9E9E9E;
 }
-
 
 /**********************************************/
 /****************** TABLET ********************/
@@ -485,10 +470,9 @@ FOOTER
 and (min-width: 481px)
 and (max-width: 1023px) {
     /* HEADER*/
-
     /* CONTENT */
     h1 {
-        text-align:center;
+        text-align: center;
     }
 
     h2 {
@@ -504,7 +488,7 @@ and (max-width: 1023px) {
         margin: 0 auto;
     }
 
-    #login input[type=submit]{
+    #login input[type=submit] {
         max-width: 700px;
     }
 }
@@ -513,10 +497,11 @@ and (max-width: 1023px) {
 /****************** DESKTOP *******************/
 /**********************************************/
 
-@media screen and (min-width: 1024px ){
+@media screen and (min-width: 1024px ) {
     body {
         padding-top: 132px;
     }
+
     #navigation-bar {
         height: 100px !important;
     }
@@ -524,6 +509,7 @@ and (max-width: 1023px) {
     #navigation-bar #logo {
         float: left;
     }
+
     #navigation-bar #logo img {
         height: 90px;
     }
@@ -533,7 +519,7 @@ and (max-width: 1023px) {
     }
 
     #navigation-bar #menu {
-        position:static;
+        position: static;
         float: right;
         width: 74%;
         height: 100%;
@@ -546,7 +532,7 @@ and (max-width: 1023px) {
         width: 20%;
         text-align: center;
         height: 100%;
-        float:left;
+        float: left;
     }
 
     #navigation-bar #menu li a {
@@ -562,8 +548,6 @@ and (max-width: 1023px) {
         margin: 0;
     }
 
-
-
     /*******************************
     ***         CONTENT
     ********************************/
@@ -571,40 +555,42 @@ and (max-width: 1023px) {
         max-width: 1326px;
         margin: 0 auto 24px;
     }
+
     h1 {
         margin: 48px 0;
         font-size: 56px;
         text-align: center;
     }
+
     h2 {
         font-size: 32px;
         text-align: center;
     }
+
     h3 {
         text-align: center;
         margin: 24px;
     }
 
-    #last-news{
+    #last-news {
         width: 49%;
         margin-left: 1%;
         display: inline-block;
         vertical-align: top;
     }
+
     #categories-list {
         width: 49%;
         display: inline-block;
     }
 
     /******************* ARTIST *********************/
-
     .artist {
         max-width: 1024px;
         margin: 6px auto;
     }
 
     /***************** SINGLE ARTIST *****************/
-
     #artist-description {
         text-align: center;
         margin-bottom: 24px;
@@ -613,6 +599,7 @@ and (max-width: 1023px) {
     #artist-photo {
         display: inline-block;
     }
+
     #artist-name {
         display: inline-block;
         vertical-align: top;
@@ -630,29 +617,26 @@ and (max-width: 1023px) {
         margin: 6px auto;
     }
 
-
     /*************** ARTICLES *************************/
-
     .article {
         max-width: 1024px;
         margin: 6px auto;
     }
 
     /************* SINGLE ARTICLE **********************/
-
     #article-content {
         max-width: 900px;
         margin: 0 auto;
     }
 
     /************* LOGIN *********************************/
-
     #login label {
         display: inline-block;
         width: 24%;
         margin-right: 25%;
         line-height: 40px;
     }
+
     #login input[type=text], #login input[type=password] {
         display: inline-block;
         width: 50%;
@@ -665,53 +649,36 @@ and (max-width: 1023px) {
     }
 
     /************* BUTTON EDIT MODE *********************/
-
     .edit-mode-form input[type=submit] {
         margin-left: 40px;
     }
 
     /****************** INPUT MODIFICHE ******************/
-
-    #insert-artist-form label,
-    #insert-article-form label,
-    #insert-song-form label,
-    #insert-album-form label  {
+    .input-form label {
         display: inline-block;
         width: 24%;
         margin-right: 25%;
         line-height: 40px;
     }
 
-    #insert-album-form input,
-    #insert-artist-form input,
-    #insert-article-form input,
-    #insert-song-form input,
-    #insert-article-form textarea,
-    #insert-artist-form textarea,
-    #insert-song-form textarea {
+    .input-form input,
+    .input-form select,
+    .input-form textarea {
         display: inline-block;
         width: 50%;
         margin: 16px 0;
     }
 
-    #insert-album-form input[type=submit],
-    #insert-artist-form input[type=submit],
-    #insert-song-form input[type=submit],
-    #insert-article-form input[type=submit] {
+    .input-form input[type=submit] {
         max-width: 700px;
         margin-top: 32px;
     }
 
-    #insert-album-form input[type=submit]:hover,
-    #insert-artist-form input[type=submit]:hover,
-    #insert-song-form input[type=submit]:hover,
-    #insert-article-form  input[type=submit]:hover{
+    .input-form input[type=submit]:hover {
         background-color: #0288D1;
     }
-    #insert-album-form input[type=submit]:active,
-    #insert-artist-form input[type=submit]:active,
-    #insert-song-form input[type=submit]:active,
-    #insert-article-form input[type=submit]:active {
+
+    .input-form input[type=submit]:active {
         background-color: #01579B;
     }
 }

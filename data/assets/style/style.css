@@ -161,7 +161,6 @@ h3 {
     box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
 }
 
-
 #last-song .new-song a, #last-news .new-article a {
     color: #1A237E;
     font-size: 18px;
@@ -453,15 +452,24 @@ h3 {
     background-color: #01579B;
 }
 
-.input-form .error {
+.input-form .error, .input-form .box-error {
     padding: 16px;
     border: 1px solid #B71C1C;
     background-color: #FFCDD2;
     color: #B71C1C;
-    margin-top:32px;
+    margin-top: 32px;
 }
 
-#artist-manager .note{
+.input-form .box-error ul {
+    margin-top: 8px;
+}
+
+.input-form .box-error li{
+    list-style: circle;
+    margin-left: 24px;
+}
+
+#artist-manager .note {
     font-style: italic;
     font-size: 12px;
 }

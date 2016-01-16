@@ -15,9 +15,11 @@ sub get
 {
     my ( $boxError ) = @_;
 
-    my $values = {
-	'boxError' => $boxError,
-    };
+    my $values = {};
+
+    if ( defined $boxError ) {
+	$values = Behavior::weld( $values, $boxError );
+    }
     
     return Behavior::getChain( $struct, $values );
 }

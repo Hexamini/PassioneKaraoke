@@ -20,8 +20,11 @@ sub get
     my $values = {
 	'idArtist' => $idArtist,
 	'artist' => $artist,
-	'boxError' => $boxError,
     };
+
+    if ( defined $boxError ) {
+	$values = Behavior::weld( $values, $boxError );
+    }
 
     return Behavior::getChain( $struct, $values );
 }

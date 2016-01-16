@@ -15,19 +15,21 @@ META_!
 	<h1>Gestione Articolo</h1>
 
     <form id="insert-article-form" class="input-form" action="../cgi-bin/edit_article.cgi" method="post">
-
-
         <fieldset>
 
+	    <div class="error">Nome autore non valido, inserire un testo presenti solo lettere e numeri</div>
             <label for="articleAuthor">Autore</label>
             <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" />
 
+	    <div class="error">La data inserita non è valida, il formato deve essere gg-mm-yyyy</div>
             <label for="articleData">Data</label>
             <input type="text" name="articleData" class="article-data" id="articleData" />
 
+	    <div class="error">Titolo errato, inserire un testo presenti solo lettere e numeri</div>
             <label for="articleTitle">Titolo</label>
             <input type="text" name="articleTitle" class="article-title" id="articleTitle"/>
 
+	    <div class="error">Sottotitolo errato, inserire un testo presenti solo lettere e numeri</div>
             <label for="articleSubtitle">Sottotitolo</label>
             <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle"/>
 

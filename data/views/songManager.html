@@ -17,7 +17,15 @@ META_!
     <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
 
     <form id="insert-song-form" class="input-form" action="../cgi-bin/edit_song.cgi" method="post">
-
+    <div class="box-error">
+      <p>Errori riscontrati:</p>
+      <ul>
+	<li>Nabi</li>
+	<li>oafnhod</li>
+      </ul>
+    </div>
+    
+    <form id="insert-song-form" action="../cgi-bin/edit_song.cgi" method="post">
         <fieldset>
 	    <!-- @korut94 aggiunto campi nascosti per il passaggio degli id dell'artista ed album allo script -->
 	    <input type="hidden" name="songArtist" id="song-artist" value="[% idArtist %]" />
@@ -25,6 +33,7 @@ META_!
 	    <!--                                                                                              -->
 
 	    <!-- @korut94 aggiunti label ai vari campi -->
+	    <div class="error">Titolo della canzone errato, inserire un testo presenti solo lettere e numeri</div>
 	    <label for="song-title">Titolo</label>
             <input type="text" name="songTitle" id="song-title" />
 	    
@@ -32,10 +41,12 @@ META_!
             <select name="songCategory" id="song-category">
 				[% optionCategory %]
             </select>
-	    
+
+	    <div class="error">Testo della canzone errato</div>
 	    <label for="song-lyrics">Testo della canzone</label>
             <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40"></textarea>
 
+	    <div class="error">Formato del link non riconosciuto</div>
 	    <label for="song-extra">Link a youtube</label>
 	    <textarea name="songExtra" id="song-extra" rows="80" cols="40"></textarea>
             <!-- Le righe e le colonne definite in css? -->

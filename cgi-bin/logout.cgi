@@ -13,4 +13,6 @@ $session->close();
 $session->delete();
 $session->flush();
 
-print $cgi->redirect( 'r.cgi?section=index' );
+print $cgi->header();
+print "Hello";
+#print $cgi->redirect( 'r.cgi?section=index' );

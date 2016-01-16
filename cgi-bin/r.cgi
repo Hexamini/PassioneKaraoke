@@ -43,7 +43,7 @@ switch( $section )
     case 'albumManager' { Page::display( AlbumManagerPage::get( $parser, @pairs ), $section ); }
     case 'article' { Page::display( ArticlePage::get( $parser, @pairs ), $section ); }
     case 'articles' { Page::display( ArticlesPage::get( $parser, @pairs ), $section ); }
-    case 'articleManager' { Page::display( ArticleManagerPage::get(), $section ); }
+    case 'articleManager' { Page::display( ArticleManagerPage::get( @pairs ), $section ); }
     case 'artist' { Page::display( ArtistPage::get( $parser, @pairs ), $section ); }
     case 'artists' { Page::display( ArtistsPage::get( $parser, @pairs ), $section ); }
     case 'artistManager' { Page::display( ArtistManagerPage::get( @pairs ), $section ); }

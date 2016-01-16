@@ -17,9 +17,9 @@ META_!
     <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
 
     [% boxError %]
-
-    <form id="insert-song-form" action="../cgi-bin/edit_song.cgi" method="post">
-        <fieldset>
+    
+    <form class="insert-song-form" action="../cgi-bin/edit_song.cgi" method="post">
+      <fieldset>
 	    <!-- @korut94 aggiunto campi nascosti per il passaggio degli id dell'artista ed album allo script -->
 	    <input type="hidden" name="songArtist" id="song-artist" value="[% idArtist %]" />
 	    <input type="hidden" name="songAlbum" id="song-album" value="[% idAlbum %]" />

@@ -12,12 +12,14 @@ use Page::Object::Base::ParserXML;
 package IndexPage;
 
 my $fileNews = '../data/database/news.xml';
+my $fileSong = '../data/database/artistlist.xml';
 my $fileCategory = '../data/database/category.xml';
 
 sub get
 {
     my ( $parser ) = @_; 
     my $doc = ParserXML::getDoc( $parser, $fileNews );
+    my $docSong = ParserXML::getDoc( $parser, $fileSong );
 
     my @nodeSong = $doc->findnodes( '//xs:newSong' );
     my @nodeArticle = $doc->findnodes( '//xs:newArticle' );
@@ -27,14 +29,25 @@ sub get
 
     foreach my $newSong( @nodeSong )
     {
+	my $idArtist = $newSong->getAttribute( 'artist' );
+	my $idAlbum = $newSong->getAttribute( 'album' );
+	my $idSong = $newSong->getAttribute( 'id' );
+
+	my $nodeArtist = $docSong->findnodes( "//xs:artist[\@id='$idArtist']" )->get_node( 1 );
+
+	my $nick = $nodeArtist->findnodes( 'xs:nick/text()' );
+	my $song = $nodeArtist->findnodes( 
+	    "xs:album[\@id='$idAlbum']/xs:song[\@id='$idSong']/xs:name/text()" 
+	);
+
 	push( @lastSongs, LastSong::get( 
-		  $newSong->findnodes( 'xs:song/text()' ),
-		  $newSong->findnodes( 'xs:artist/text()' ),
-		  $newSong->getAttribute( 'artist' ),
-		  $newSong->getAttribute( 'album' ),
-		  $newSong->getAttribute( 'id' ) 
+		  $song,
+		  $nick,
+		  $idArtist,
+		  $idAlbum,
+		  $idSong
 	      ) 
-	    );
+	 );
     }
 
     foreach my $newArticle( @nodeArticle )

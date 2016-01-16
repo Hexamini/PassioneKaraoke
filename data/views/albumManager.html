@@ -14,14 +14,24 @@ META_!
 
     <h1>Gestione album</h1>
 
+    <div class="box-error">
+      <p>Errori riscontrati:</p>
+      <ul>
+      </ul>
+    </div>
+    
+
+
     <form id="insert-album-form" action="../cgi-bin/edit_album.cgi" method="post">
 
         <fieldset>
 	    <input type="hidden" name="artistName" value="[% idArtist %]" />
 
+	    <div class="error">Nome album non valido, inserire solo lettere o numeri</div>
             <label for="album-name">Nome</label>
             <input type="text" name="albumName" id="album-name" />
 
+	    <div class="error">La data inserita non è valida, il formato deve essere gg-mm-yyyy</div>
             <label for="album-creation">Data di pubblicazione</label>
             <input type="text" name="albumCreation" id="album-creation" />
 

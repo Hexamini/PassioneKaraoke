@@ -21,14 +21,20 @@ META_!
         <fieldset>
 
             <label for="a-Nick">Nome d'arte o nome del gruppo</label>
-            <input type="text" name="artistNick" class="artist-nick" id="a-Nick" />
+
+            <div class="error">Nome d'arte non valido, inserire un testo presenti solo lettere e numeri</div>
+	    <input type="text" name="artistNick" class="artist-nick" id="a-Nick" />
             <label for="a-Born">Nascita dell'artista o formazione del gruppo</label>
+	    <div class="error">La data inserita non &egrave; valida, il formato deve essere gg-mm-yyyy </div>
             <input type="text" name="artistBorn" class="artist-born" id="a-Born" />
             <label for="a-Death">Morte dell'artista o scioglimento della band (vuoto se ancora in vita)</label>
+	    <div class="error">La data inserita non &egrave; valida, il formato deve essere gg-mm-yyyy </div>
             <input type="text" name="artistDeath" class="artist-death" id="a-Death" />
             <label for="a-Image">Immagine dell'artista</label>
+	    <div class="error">Nome immagine non valido, inserire un testo presenti solo lettere e numeri</div>
             <input type="text" name="artistImage" class="artist-image" id="a-Image" />
             <label for="a-Description">Descrizione dell'artista</label>
+	    <div class="error">Descrizione non valida</div>
             <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40"></textarea>
 
             <input type="submit" value="Conferma" name="action" />

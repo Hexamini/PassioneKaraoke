@@ -11,15 +11,20 @@ my $struct = "albumManager";
 Parametri:
     idArtist = Id dell'artista creatore dell'album
     artist = Nome dell'artista
+    boxError = Oggetto rappresentativo il riquadro degli errori commessi
 =cut
 sub get
 {
-    my ( $idArtist, $artist ) = @_;
+    my ( $idArtist, $artist, $boxError ) = @_;
 
     my $values = {
 	'idArtist' => $idArtist,
 	'artist' => $artist,
     };
+
+    if ( defined $boxError ) {
+	$values = Behavior::weld( $values, $boxError );
+    }
 
     return Behavior::getChain( $struct, $values );
 }

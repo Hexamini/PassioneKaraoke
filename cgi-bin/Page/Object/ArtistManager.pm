@@ -9,18 +9,19 @@ my $struct = 'artistManager';
 
 =Description
 Parametri: 
-    actionType = Tipologia d'azione in corso. Puo' essere 'Edit' o 'Insert'
-    content = 1 se vuole solo il contenuto, 0 anche i meta associati
+    boxError = Oggetto rappresentativo il box d'errore
 =cut
 sub get
 {
-    my ( $actionType, $content ) = @_;
+    my ( $boxError ) = @_;
 
-    my $values = {
-	'actionType' => $actionType,
-    };
+    my $values = {};
+
+    if ( defined $boxError ) {
+	$values = Behavior::weld( $values, $boxError );
+    }
     
-    return Behavior::getChain( $struct, $values, $content );
+    return Behavior::getChain( $struct, $values );
 }
 
 1;

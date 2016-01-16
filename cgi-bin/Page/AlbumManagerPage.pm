@@ -21,8 +21,8 @@ sub get
 
     my @errors = ();
 
-    while ( scalar @pairs > 0 ) {
-	push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+    while ( scalar @pair > 0 ) {
+	push @errors, ErrorList::get( ( ( shift @pair ) =~ /=(.+)/ ) );
     }
 
     my $boxError = undef;

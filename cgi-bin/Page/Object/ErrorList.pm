@@ -5,11 +5,11 @@ use Page::Object::Base::Behavior;
 
 package ErrorList;
 
-my $struct = "errorList";
+my $struct = 'errorList';
 
 =Description
 Parametri:
-    error = Descrizione errore
+    error = Teste dell'errore
 =cut
 sub get {
     my ( $error ) = @_;
@@ -21,9 +21,9 @@ sub get {
     return Behavior::getChain( $struct, $values, 1 );
 }
 
-sub extractContent {
-    my ( $item ) = @_;
-    return $item->{ $struct };
+sub extractContent{
+    my ( $error ) = @_;
+    return $error->{ $struct };
 }
 
-    
+1;

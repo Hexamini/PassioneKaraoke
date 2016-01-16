@@ -1,6 +1,7 @@
 use lib "cgi-bin";
 use strict;
 
+use Page::Object::BoxError;
 use Page::Object::ArtistManager;
 
 package ArtistManagerPage;
@@ -13,14 +14,14 @@ sub get
     my @errors = ();
 
     #Section catched errors
-    while ( ( length @pairs ) > 0 ) {
+    while ( ( scalar @pairs ) > 0 ) {
 	push @errors, ( ( shift @pairs ) =~ /=(.+)/ );
     }
 
     my $boxError = '';
     
-    if ( length @errors > 0 ) {
-	$boxError = BoxError::get( BoxError::ErrorList( @errors ) );
+    if ( scalar @errors > 0 ) {
+	$boxError = BoxError::get( BoxError::errorList( @errors ) );
     }
     
     my $artistManager = '';

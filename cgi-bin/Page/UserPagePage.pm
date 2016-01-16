@@ -19,7 +19,7 @@ sub get
     my $docSong = ParserXML::getDoc( $parser, $fileSong );
     my $docUser = ParserXML::getDoc( $parser, $fileUser );
 
-    my @nodeVotes = $docUser->findnodes( "//xs:user[\@username='$user']/xs:votes/xs:typeVote" );
+    my @nodeVotes = $docUser->findnodes( "//xs:user[\@username='$user']/xs:votes/xs:typeVote[text()='1']" );
 
     my @songs = ();
     
@@ -28,11 +28,11 @@ sub get
 	my $idAlbum = $vote->getAttribute( 'idAlbum' );
 	my $idSong = $vote->getAttribute( 'idSong' );
 
-	my $nodeArtist = $docUser->findnodes( "//xs:artist[\@id='$idArtist']" )->get_node( 1 );
+	my $nodeArtist = $docSong->findnodes( "//xs:artist[\@id='$idArtist']" )->get_node( 1 );
 
 	my $nickArtist = $nodeArtist->findnodes( 'xs:nick' );
 	my $songTitle = $nodeArtist->findnodes( 
-	    "/xs:album[\@id='$idAlbum']/xs:song[\@id='idSong']/xs:name/text()"
+	    "xs:album[\@id='$idAlbum']/xs:song[\@id='$idSong']/xs:name/text()"
 	);
 
 	push( @songs, LikeSong::get( 

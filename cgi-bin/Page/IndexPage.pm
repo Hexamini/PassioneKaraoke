@@ -47,6 +47,10 @@ sub get
 	    );
     }
 
+    #Per usabilita' facciamo apparire le notize in ordine decrescente d'uscita
+    @lastArticles = reverse @lastArticles;
+    @lastSongs = reverse @lastSongs;
+
     my $lastArticle = LastNews::lastArticles( @lastArticles );
     my $lastSong = LastNews::lastSongs( @lastSongs );
 

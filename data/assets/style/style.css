@@ -411,7 +411,7 @@ h3 {
     display: block;
     font-size: 16px;
     vertical-align: top;
-    line-height: 42px;
+    line-height: 24px;
     margin-top: 16px;
 }
 
@@ -455,6 +455,23 @@ h3 {
 
 .input-form input[type=submit]:active {
     background-color: #01579B;
+}
+
+.input-form .error, .input-form .box-error {
+    padding: 16px;
+    border: 1px solid #B71C1C;
+    background-color: #FFCDD2;
+    color: #B71C1C;
+    margin-top: 32px;
+}
+
+.input-form .box-error ul {
+    margin-top: 8px;
+}
+
+.input-form .box-error li{
+    list-style: circle;
+    margin-left: 24px;
 }
 
 #artist-manager .note {
@@ -667,9 +684,9 @@ and (max-width: 1023px) {
     /****************** INPUT MODIFICHE ******************/
     .input-form label {
         display: inline-block;
-        width: 24%;
-        margin-right: 25%;
-        line-height: 40px;
+        width: 34%;
+        margin-right: 15%;
+        line-height: 42px;
     }
 
     .input-form input,

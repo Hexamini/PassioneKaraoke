@@ -1,4 +1,14 @@
 \subsection{HTML}
-La struttura del sito \`e stata realizzata a ``moduli": non esistono infatti pagine complete, ma son presenti spezzoni di pagine che servono al Perl per generare la pagina richiesta dall'utente. Questo permette un riutilizzo dei vari moduli, come ad esempio la lista di tutti gli album di un artista.
+La struttura del sito \`e stata realizzata a ``moduli'': non esistono infatti pagine complete, ma son presenti spezzoni di pagine che servono al Perl per generare la pagina richiesta dall'utente. Questo permette un riutilizzo dei vari moduli, come ad esempio la lista di tutti gli album di un artista.
+\subsubsection{Strutturazione}
+%IDEA: esprimere le funzionalità delle pagine principali del sito
 \paragraph*{page.html} Il file page.html \`e il file principale per tutta la struttura html. In esso infatti sono presenti la dichiarazioni di html usato (per la realizzazione di questo sito si \`e deciso di utilizzare XHTML 1.0 Strict), i tag \textit{meta}, il \textit{breadcrum}, il \textit{menu}. Tutte le altre pagine vengono costruite a partire da page.html: questo fa variare solamente parte della struttura, permettendo di apportare modifiche al men\`u o alle altre componenti condivise da tutte le pagine del sito in maniera semplice.
+
+\paragraph{userPage.html} Il file userPage.html si occupa della gestione della sezione utente, dove potrà vedere i voti apportati alle singole canzoni. L'utente ha la possibilità di apportare un voto positivo (+1) o negativo (-1) cliccando rispettivamente il microfono blu o rosso nella pagina della canzone.
+
+\paragraph{songDescription.html} Questra struttura html si occupa di rappresentare le canzoni (i contenuti saranno effettivamente forniti dal Perl tramite l'uso dei \texit{segnaposti}). Subito al di sotto del breadcrum è possibile trovare il titolo della canzone con il rispettivo artista come sottotitolo. Per gli utenti autenticati sarà possibile trovare al di sotto del titolo l'opzione per esprimere il proprio gradimento. Il contenuto, ovvero le \textit{lyrics} si trovano subito sotto, seguite infine da un video\footnote{È importante notare come i video saranno resi fruibili tramite la piattaforma \texit{YouTube}} che può essere inserito o meno a discrezione dell'amministratore. I video saranno visualizzabile solamente dai browser che supportano questa funzionalità, altrimenti non verranno visualizzati, causando una buona degradazione del sito.
+%TODO
+\subsubsection{Scelte effettuate nella strutturazione}
+%TODO
+\paragraph{HTML5}
 %TODO

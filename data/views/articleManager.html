@@ -19,23 +19,25 @@ META_!
     <form class="insert-article-form" action="../cgi-bin/edit_article.cgi" method="post">
         <fieldset>
 
+        <p>L'asterisco (*) indica i campi obbligatori.</p>
+
 	    <div class="error">Nome autore non valido, inserire un testo presenti solo lettere e numeri</div>
-            <label for="articleAuthor">Autore</label>
+            <label for="articleAuthor">Autore: *</label>
             <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" />
 
 	    <div class="error">La data inserita non è valida, il formato deve essere gg-mm-yyyy</div>
-            <label for="articleData">Data</label>
+            <label for="articleData">Data: *</label>
             <input type="text" name="articleData" class="article-data" id="articleData" />
 
 	    <div class="error">Titolo errato, inserire un testo presenti solo lettere e numeri</div>
-            <label for="articleTitle">Titolo</label>
+            <label for="articleTitle">Titolo: *</label>
             <input type="text" name="articleTitle" class="article-title" id="articleTitle"/>
 
 	    <div class="error">Sottotitolo errato, inserire un testo presenti solo lettere e numeri</div>
-            <label for="articleSubtitle">Sottotitolo</label>
+            <label for="articleSubtitle">Sottotitolo: *</label>
             <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle"/>
 
-            <label for="articleContent">Contenuto</label>
+            <label for="articleContent">Contenuto: *</label>
             <textarea name="articleContent" class="article-content" id="articleContent" rows="80" cols="40"></textarea>
 
             <input type="submit" value="Conferma" name="action" />

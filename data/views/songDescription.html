@@ -2,7 +2,7 @@
 
 @description = Descrizione e testo della canzone [% song %]
 @keyword = canzone, karaoke, testo, [% song %], [% artist %], [% album %]
-@title = [% song %]
+@title = [% song %] - [% album %] - [% artist %]
 @breadcrumb = <a href="r.cgi?section=index"><span lang="en">Home</span></a> &gt; <a href="r.cgi?section=artists">Artisti</a> &gt; <a href="r.cgi?section=artist&amp;id=[% idArtist %]">[% artist %]</a> &gt; [% song %]
 
 META_!
@@ -17,17 +17,9 @@ META_!
 
 <div id="song-appreciation">
 
-    <div id="song-like">
-        <p>Questa canzone mi piace</p>
-    </div>
+    <p>Questa conzone &egrave; stata valutata dagli utenti: [% evaluate %]</p>
 
-    <div id="song-dislike">
-        <p>Questa canzone non mi piace</p>
-    </div>
-
-    <div id="song-poll">
-        [% pollResults %]
-    </div>
+    [% songVotes %]
 
 </div>
 

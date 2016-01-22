@@ -23,22 +23,22 @@ META_!
 
 	    <div class="error">Nome autore non valido, inserire un testo presenti solo lettere e numeri</div>
             <label for="articleAuthor">Autore: *</label>
-            <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" />
+            <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" value="[% author %]" />
 
 	    <div class="error">La data inserita non è valida, il formato deve essere gg-mm-yyyy</div>
             <label for="articleData">Data: *</label>
-            <input type="text" name="articleData" class="article-data" id="articleData" />
+            <input type="text" name="articleData" class="article-data" id="articleData" value="[% date %]" />
 
 	    <div class="error">Titolo errato, inserire un testo presenti solo lettere e numeri</div>
             <label for="articleTitle">Titolo: *</label>
-            <input type="text" name="articleTitle" class="article-title" id="articleTitle"/>
+            <input type="text" name="articleTitle" class="article-title" id="articleTitle" value="[% title %]" />
 
 	    <div class="error">Sottotitolo errato, inserire un testo presenti solo lettere e numeri</div>
             <label for="articleSubtitle">Sottotitolo: *</label>
-            <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle"/>
+            <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle" value="[% subtitle %]" />
 
             <label for="articleContent">Contenuto: *</label>
-            <textarea name="articleContent" class="article-content" id="articleContent" rows="80" cols="40"></textarea>
+            <textarea name="articleContent" class="article-content" id="articleContent" rows="80" cols="40">[% body %]</textarea>
 
             <input type="submit" value="Conferma" name="action" />
         </fieldset>

@@ -32,15 +32,15 @@ META_!
 	    <!-- @korut94 aggiunti label ai vari campi -->
 	    <div class="error">Titolo della canzone errato, inserire un testo presenti solo lettere e numeri</div>
 	    <label for="song-title">Titolo: *</label>
-            <input type="text" name="songTitle" id="song-title" />
+            <input type="text" name="songTitle" id="song-title" value="[% title %]"/>
 
 	    <div class="error">Testo della canzone errato</div>
 	    <label for="song-lyrics">Testo della canzone: *</label>
-            <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40"></textarea>
+            <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40">[% lyrics %]</textarea>
 
 	    <div class="error">Formato del link non riconosciuto</div>
 	    <label for="song-extra">Link a youtube: *</label>
-	    <textarea name="songExtra" id="song-extra" rows="80" cols="40"></textarea>
+	    <textarea name="songExtra" id="song-extra" rows="80" cols="40">[% extra %]</textarea>
             <!-- Le righe e le colonne definite in css? -->
             <input type="submit" value="Conferma" name="action" />
 	    <!--                                        -->

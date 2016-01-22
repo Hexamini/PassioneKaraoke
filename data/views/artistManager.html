@@ -25,23 +25,23 @@ META_!
 
             <div class="error">Nome d'arte non valido, inserire un testo presenti solo lettere e numeri</div>
             <label for="a-Nick">Nome d'arte o nome del gruppo: *</label>
-            <input type="text" name="artistNick" class="artist-nick" id="a-Nick" />
+            <input type="text" name="artistNick" class="artist-nick" id="a-Nick" value="[% nick %]" />
 
             <div class="error">La data inserita non &egrave; valida, il formato deve essere gg-mm-yyyy </div>
             <label for="a-Born">Nascita dell'artista o formazione del gruppo: *</label>
-            <input type="text" name="artistBorn" class="artist-born" id="a-Born" />
+            <input type="text" name="artistBorn" class="artist-born" id="a-Born" value="[% born %]"/>
 
             <div class="error">La data inserita non &egrave; valida, il formato deve essere gg-mm-yyyy </div>
             <label for="a-Death">Morte dell'artista o scioglimento della band:</label>
-            <input type="text" name="artistDeath" class="artist-death" id="a-Death" />
+            <input type="text" name="artistDeath" class="artist-death" id="a-Death" value="[% death %]" />
 
             <div class="error">Nome immagine non valido, inserire un testo presenti solo lettere e numeri</div>
             <label for="a-Image">Immagine dell'artista:</label>
-            <input type="text" name="artistImage" class="artist-image" id="a-Image" />
+            <input type="text" name="artistImage" class="artist-image" id="a-Image" value="[% image %]" />
 
             <div class="error">Descrizione non valida</div>
             <label for="a-Description">Descrizione dell'artista: *</label>
-            <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40"></textarea>
+            <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40">[% description %]</textarea>
             <input type="submit" value="Conferma" name="action" />
         </fieldset>
     </form>

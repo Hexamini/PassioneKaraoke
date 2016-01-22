@@ -1,0 +1,183 @@
+body {
+    padding-top: 7.25em;
+}
+
+#navigation-bar {
+    height: 6.25em !important;
+}
+
+#navigation-bar #logo {
+    float: left;
+}
+
+#navigation-bar #logo img {
+    height: 5.25em;
+}
+
+#navigation-bar #open-menu-btn {
+    display: none;
+}
+
+#navigation-bar #menu {
+    position: static;
+    float: right;
+    width: 74%;
+    height: 100%;
+    padding: 0;
+    line-height: 6.25em;
+}
+
+#navigation-bar #menu li {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    height: 100%;
+    float: left;
+}
+
+#navigation-bar #menu li a {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.125em;
+    line-height: 5.55em;
+    color: #E1F5FE;
+    margin: 0;
+}
+
+/*******************************
+***         CONTENT
+********************************/
+#content {
+    max-width: 980px;
+    margin: 0 auto 1.5em;
+}
+
+h1 {
+    margin: 0.8em 0;
+    font-size: 3.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin: 1.5em;
+}
+
+#last-news {
+    width: 49%;
+    margin-left: 1%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#last-song {
+    width: 49%;
+    display: inline-block;
+}
+
+/******************* ARTIST *********************/
+.artist {
+    max-width: 980px;
+    margin: 0.5em auto;
+}
+
+/***************** SINGLE ARTIST *****************/
+#artist-description {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+#artist-photo {
+    display: inline-block;
+}
+
+#artist-name {
+    display: inline-block;
+    vertical-align: top;
+    height: 10em;
+    margin-left: 1em;
+}
+
+#artist-bio {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.album {
+    max-width: 980px;
+    margin: 0.5em auto;
+}
+
+/*************** ARTICLES *************************/
+.article {
+    max-width: 980px;
+    margin: 0.5em auto;
+}
+
+/************* SINGLE ARTICLE **********************/
+#article-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/************* LOGIN *********************************/
+#login label {
+    display: inline-block;
+    width: 24%;
+    margin-right: 25%;
+    line-height: 3em;
+}
+
+#login input[type=text], #login input[type=password] {
+    display: inline-block;
+    width: 50%;
+    margin: 1em 0;
+}
+
+#login input[type=submit] {
+    max-width: 700px;
+    margin-top: 2em;
+}
+
+/************* BUTTON EDIT MODE *********************/
+.edit-mode-form input[type=submit] {
+    margin-left: 3em;
+}
+
+/****************** INPUT MODIFICHE ******************/
+.input-form label {
+    display: inline-block;
+    width: 34%;
+    margin-right: 15%;
+    line-height: 3em;
+}
+
+.input-form input,
+.input-form select,
+.input-form textarea {
+    display: inline-block;
+    width: 50%;
+    margin: 1em 0;
+}
+
+.input-form input[type=submit] {
+    max-width: 700px;
+    margin-top: 2em;
+}
+
+.input-form input[type=submit]:hover {
+    background-color: #0288D1;
+}
+
+.input-form input[type=submit]:active {
+    background-color: #01579B;
+}

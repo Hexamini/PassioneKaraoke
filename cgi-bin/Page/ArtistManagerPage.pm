@@ -39,11 +39,11 @@ sub get
 
     if ( $mode == 'insert' ) {
 	$artistManager = ArtistManager::get( 
-	    $form{ 'nick' },
-	    $form{ 'birthday' },
-	    $form{ 'dead' },
-	    $form{ 'image' },
-	    $form{ 'description' },
+	    $forms{ 'nick' },
+	    $forms{ 'birthday' },
+	    $forms{ 'dead' },
+	    $forms{ 'image' },
+	    $forms{ 'description' },
 	    $boxError
 	);
 

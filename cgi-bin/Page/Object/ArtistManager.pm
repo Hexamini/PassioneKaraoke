@@ -13,12 +13,12 @@ Parametri:
 =cut
 sub get
 {
-    my ( $nick, $birthday, $dead, $image, $description, $boxError ) = @_;
+    my ( $nick, $born, $death, $image, $description, $boxError ) = @_;
 
     my $values = {
 	'nick' => $nick,
-	'birthday' => $birthday,
-	'dead' => $dead,
+	'born' => $born,
+	'death' => $death,
 	'image' => $image,
 	'description' => $description,
     };

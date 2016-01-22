@@ -10,8 +10,9 @@
 body {
     width: 100%;
     font-family: 'Roboto', sans-serif;
-    padding-top: 88px;
+    padding-top: 5.5em;
     color: #616161;
+    font-size: 16px;
 }
 
 .aiuti {
@@ -30,25 +31,24 @@ body {
     left: 0;
     width: 100%;
     background-color: #03A9F4;
-    -webkit-box-shadow: 0px 1px 4px 0px rgba(50, 50, 50, 0.6);
-    -moz-box-shadow: 0px 1px 4px 0px rgba(50, 50, 50, 0.6);
-    box-shadow: 0px 1px 4px 0px rgba(50, 50, 50, 0.6);
+    -webkit-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
+    -moz-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
+    box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
 }
 
 #navigation-bar {
     width: 100%;
-    height: 72px;
+    height: 4.5em;
 }
 
 #navigation-bar #logo {
     height: 100%;
-    width: 200px;
-    margin-left: 16px;
+    margin-left: 1em;
 }
 
 #navigation-bar #logo img {
-    height: 60px;
-    margin: 5px auto;
+    height:3.5em;
+    margin: 0.5em auto;
 }
 
 #navigation-bar #menu {
@@ -60,28 +60,27 @@ body {
     background-color: #03A9F4;
     z-index: 99;
     text-transform: uppercase;
-    padding-top: 30px;
-    -webkit-transition: all 0.3s ease-out 0.1s;
-    -moz-transition: all 0.3s ease-out 0.1s;
-    -o-transition: all 0.3s ease-out 0.1s;
-    transition: all 0.3s ease-out 0.1s;
+    -webkit-transition: all 0.5s cubic-bezier(.55,0,.1,1) 0.1s;
+    -moz-transition: all 0.5s cubic-bezier(.55,0,.1,1) 0.1s;
+    -o-transition: all 0.5s cubic-bezier(.55,0,.1,1) 0.1s;
+    transition: all 0.5s cubic-bezier(.55,0,.1,1) 0.1s;
 }
 
 #navigation-bar #open-menu-btn {
     display: block;
-    width: 48px;
-    height: 48px;
+    width: 3em;
+    height: 3em;
     position: absolute;
-    top: 12px;
-    right: 16px;
+    top: 0.75em;
+    right: 1em;
+    font-size: 1em;
     z-index: 100;
-    font-size: 1px;
-    color: #0277BD;
+    color:transparent;
     background: url('../../img/menu-hamb.svg') no-repeat center;
     background-size: contain;
-    -webkit-border-radius: 24px;
-    -moz-border-radius: 24px;
-    border-radius: 24px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 #navigation-bar #open-menu-btn:active {
@@ -96,20 +95,20 @@ body {
     display: block;
     height: 25%;
     width: 100%;
-    position: relative;
 }
 
 #navigation-bar #menu li a {
-    font-size: 18px;
-    line-height: 40px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: 40px;
+    font-size: 1.125em;
+    line-height: 3em;
+    height: 100%;
     width: 100%;
-    margin-top: -40px;
     color: #E1F5FE;
+    display:block;
     text-align: center;
+    -webkit-transition: all 0.1s cubic-bezier(.55,0,.1,1) 0.1s;
+    -moz-transition: all 0.1s cubic-bezier(.55,0,.1,1) 0.1s;
+    -o-transition: all 0.1s cubic-bezier(.55,0,.1,1) 0.1s;
+    transition: all 0.1s cubic-bezier(.55,0,.1,1) 0.1s;
 }
 
 #navigation-bar #menu li a:hover {
@@ -126,93 +125,101 @@ body {
  CONTENT
  *************************/
 
+
+
+
 #content {
-    margin: 6px;
+    margin: 0.5em;
+    color: #455A64;
 }
 
+/*************** LINKS *********************/
+#content a {
+    color: #1A237E;
+}
+
+#content a:hover{
+    text-decoration: underline;
+}
+
+#content a:visited{
+    color: #4527A0;
+}
+/*******************************************/
+
 #nav-bar {
-    color: #616161;
-    font-size: 16px;
+    color: #607D8B;
+    font-size: 1em;
 }
 
 h1 {
-    font-size: 48px;
-    color: #455A64;
-    margin: 16px 0;
+    font-size: 3em;
+    color: #263238;
+    margin: 0.3em 0;
 }
 
 h2 {
-    font-size: 28px;
-    color: #455A64;
-    margin: 16px 0;
+    font-size: 2em;
+    color: #37474F;
+    margin: 0.5em 0;
 }
 
 h3 {
-    font-size: 18px;
-    color: #546E7A;
-    margin: 10px 0;
+    font-size: 1.5em;
+    color: #37474F;
+    margin: 0.5em 0;
 }
 
 #last-song .new-song, #last-news .new-article {
-    height: 50px;
-    padding: 16px 0;
-    line-height: 25px;
+    padding: 0.6em 0;
+    line-height: 1.75em;
     text-align: center;
     width: 100%;
     background-color: #81C784;
     color: #1565C0;
-    font-size: 14px;
-    margin: 6px 0;
-    -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    font-size: 0.875em;
+    margin: 0.6em 0;
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
 }
-
 #last-song .new-song a, #last-news .new-article a {
-    color: #1A237E;
-    font-size: 18px;
-    display: block;
-}
-
-#last-song .new-song a:hover, #last-news .new-article a:hover {
-    text-decoration: underline;
-}
-
-#last-news .new-article a {
+    font-size: 1.125em;
     display: block;
 }
 
 /***************** ARTISTS ****************************/
 
 .artist {
-    background-color: #CFD8DC;
-    margin: 6px 0;
-    height: 80px;
-    padding: 6px 0;
-    -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    background-color: #81C784;
+    margin: 0.5em 0;
+    height: 5em;
+    padding: 0.5em 0;
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
 }
 
 .artist .mini-artist-image {
     display: inline-block;
-    width: 80px;
-    height: 80px;
-    margin-left: 6px;
+    width: 5em;
+    height: 5em;
+    margin-left: 0.5em;
 
 }
 
 .artist .mini-artist-image img {
     width: 100%;
     height: 100%;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    border-radius: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 .artist .artist-name {
     display: inline-block;
-    margin-left: 26px;
+    color: #1565C0;
+    margin-left: 2em;
     height: 100%;
     vertical-align: middle;
 }
@@ -220,49 +227,47 @@ h3 {
 /************ SINGLE ARTIST ***************/
 
 #artist-photo {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
+    width: 10em;
+    height: 10em;
+    margin: 1em auto;
 }
 
 #artist-photo img {
     width: 100%;
     height: 100%;
-    -webkit-border-radius: 75px;
-    -moz-border-radius: 75px;
-    border-radius: 75px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 #artist-bio {
-    color: #263238;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1em;
+    line-height: 1.5em;
 }
 
 #artist-list-of-albums .description-album {
-    height: 70px;
-    padding: 6px 0;
-    line-height: 25px;
+    height: 4.375em;
+    padding: 0.5em 0;
+    line-height: 1.5em;
     text-align: left;
     width: 100%;
     background-color: #B0BEC5;
     color: #546E7A;
-    font-size: 14px;
-    margin-top: 16px;
+    font-size: 1em;
+    margin-top: 1em;
     border-bottom: 1px solid #90A4AE;
 }
 
 #artist-list-of-albums .description-album img {
-    width: 70px;
-    height: 70px;
-    margin-left: 16px;
-    background-color: green;
+    width: 4.375em;
+    height: 4.375em;
+    margin-left: 0.5em;
     vertical-align: middle;
+    float:left;
 }
 
 #artist-list-of-albums .description-album h3 {
-    display: inline-block;
-    margin-left: 16px;
+    margin: 0.5em 1em 0 4.775em;
 }
 
 #artist-list-of-albums .list-songs {
@@ -270,59 +275,53 @@ h3 {
 }
 
 #artist-list-of-albums .list-songs li {
-    height: 50px;
-    padding: 16px 0;
-    line-height: 25px;
+    height: 3em;
+    padding: 1em 0;
+    line-height: 1.5em;
     text-align: center;
     width: 100%;
     background-color: #CFD8DC;
     color: #546E7A;
-    font-size: 14px;
+    font-size: 0.875em;
     border-bottom: 1px solid #B0BEC5;
 }
 
 /********** ARTICLE ***********************/
 
 .article {
-    height: 50px;
-    padding: 16px 0;
-    line-height: 25px;
+    height: 3.6em;
+    padding: 1.125em 0;
+    line-height: 1.875em;
     text-align: center;
     width: 100%;
-    background-color: #CFD8DC;
-    color: #546E7A;
-    font-size: 14px;
-    margin: 6px 0;
-    -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-}
-
-.article strong {
-    font-size: 18px;
-    color: #0D47A1;
+    background-color: #81C784;
+    color: #1565C0;
+    font-size: 0.875em;
+    margin: 0.6em 0;
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
 }
 
 /****************** SINGLE ARTICLE **********************/
 
 #article-content {
-    color: #263238;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1em;
+    line-height: 1.5em;
 }
 
 #article-data {
-    margin-top: 16px;
+    margin-top: 1em;
 }
 
 #article-data #article-author {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1em;
     color: #37474F;
 }
 
 #article-data #article-date {
-    font-size: 14px;
+    font-size: 0.875em;
 
 }
 
@@ -330,27 +329,27 @@ h3 {
 
 #login label {
     display: block;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 #login input {
     width: 100%;
-    height: 40px;
+    height: 3em;
     border: 1px solid #90A4AE;
-    margin: 8px 0;
+    margin: 0.6em 0;
     background-color: #CFD8DC;
-    text-indent: 15px;
-    font-size: 14px;
+    text-indent: 1em;
+    font-size: 0.875em;
 }
 
 #login input[type=submit] {
-    height: 60px;
-    line-height: 60px;
+    height: 3.3em;
+    line-height: 3.3em;
     text-align: center;
     width: 90%;
     background-color: #0277BD;
-    font-size: 18px;
-    margin: 16px auto 0;
+    font-size: 1.125em;
+    margin: 0.875em auto 0;
     border: 0 none;
     font-weight: bolder;
     display: block;
@@ -375,20 +374,20 @@ h3 {
 
 .edit-mode-form input {
     color: #01579B;
-    padding: 7px;
+    padding: 0.6em;
     display: inline-block;
-    font-size: 12px;
+    font-size: 0.7em;
     text-transform: uppercase;
     background-color: #81D4FA;
     font-weight: bold;
-    margin: 0 16px 16px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    min-width: 30px;
-    -webkit-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
-    box-shadow: 1px 1px 4px 0px rgba(50, 50, 50, 0.5);
+    margin: 0 1.5em 1.5em;
+    -webkit-border-radius: 1.2em;
+    -moz-border-radius: 1.2em;
+    border-radius: 1.2em;
+    min-width: 2.4em;
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
 }
 
 .edit-mode-form input:hover {
@@ -406,43 +405,43 @@ h3 {
 /************* BUTTON EDIT MODE ********************/
 
 .input-form {
-    margin: 16px;
+    margin: 1em;
 }
 
 .input-form label {
     display: block;
-    font-size: 16px;
+    font-size: 1em;
     vertical-align: top;
-    line-height: 24px;
-    margin-top: 16px;
+    line-height: 1.5em;
+    margin-top: 1em;
 }
 
 .input-form input,
 .input-form select,
 .input-form textarea {
     width: 100%;
-    height: 40px;
+    height: 2.6em;
     border: 1px solid #90A4AE;
-    margin: 8px 0;
+    margin: 0.6em 0;
     background-color: #CFD8DC;
-    text-indent: 15px;
-    font-size: 14px;
+    text-indent: 1em;
+    font-size: 0.875em;
 
 }
 
 .input-form textarea {
-    height: 120px;
+    height: 7.5em;
     resize: none;
 }
 
 .input-form input[type=submit] {
-    height: 60px;
-    line-height: 60px;
+    height: 3.3em;
+    line-height: 3.3em;
     text-align: center;
     width: 90%;
     background-color: #0277BD;
-    font-size: 18px;
-    margin: 16px auto 0;
+    font-size: 1.125em;
+    margin: 0.875em auto 0;
     border: 0 none;
     font-weight: bolder;
     display: block;
@@ -460,25 +459,25 @@ h3 {
 }
 
 .input-form .error, .input-form .box-error {
-    padding: 16px;
+    padding: 1em;
     border: 1px solid #B71C1C;
     background-color: #FFCDD2;
     color: #B71C1C;
-    margin-top: 32px;
+    margin-top: 2em;
 }
 
 .input-form .box-error ul {
-    margin-top: 8px;
+    margin-top: 0.5em;
 }
 
 .input-form .box-error li{
     list-style: circle;
-    margin-left: 24px;
+    margin-left: 1.5em;
 }
 
 #artist-manager .note {
     font-style: italic;
-    font-size: 12px;
+    font-size: 0.67em;
 }
 
 /*************************
@@ -486,8 +485,8 @@ FOOTER
 **************************/
 
 #footer {
-    margin: 16px;
-    font-size: 12px;
+    margin: 1.5em;
+    font-size: 0.6em;
     text-align: center;
     color: #9E9E9E;
 }
@@ -510,7 +509,7 @@ and (max-width: 1023px) {
     }
 
     #content {
-        margin: 16px;
+        margin: 2em;
     }
 
     #article-content, #artist-bio {
@@ -529,11 +528,11 @@ and (max-width: 1023px) {
 
 @media screen and (min-width: 1024px ) {
     body {
-        padding-top: 132px;
+        padding-top: 7.25em;
     }
 
     #navigation-bar {
-        height: 100px !important;
+        height: 6.25em !important;
     }
 
     #navigation-bar #logo {
@@ -541,7 +540,7 @@ and (max-width: 1023px) {
     }
 
     #navigation-bar #logo img {
-        height: 90px;
+        height: 5.25em;
     }
 
     #navigation-bar #open-menu-btn {
@@ -554,7 +553,7 @@ and (max-width: 1023px) {
         width: 74%;
         height: 100%;
         padding: 0;
-        line-height: 100px;
+        line-height: 6.25em;
     }
 
     #navigation-bar #menu li {
@@ -572,8 +571,8 @@ and (max-width: 1023px) {
         height: 100%;
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 18px;
-        line-height: 100px;
+        font-size: 1.125em;
+        line-height: 5.55em;
         color: #E1F5FE;
         margin: 0;
     }
@@ -583,23 +582,23 @@ and (max-width: 1023px) {
     ********************************/
     #content {
         max-width: 1200px;
-        margin: 0 auto 24px;
+        margin: 0 auto 1.5em;
     }
 
     h1 {
-        margin: 48px 0;
-        font-size: 56px;
+        margin: 0.8em 0;
+        font-size: 3.5em;
         text-align: center;
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 2em;
         text-align: center;
     }
 
     h3 {
         text-align: center;
-        margin: 24px;
+        margin: 1.5em;
     }
 
     #last-news {
@@ -617,13 +616,13 @@ and (max-width: 1023px) {
     /******************* ARTIST *********************/
     .artist {
         max-width: 1024px;
-        margin: 6px auto;
+        margin: 0.5em auto;
     }
 
     /***************** SINGLE ARTIST *****************/
     #artist-description {
         text-align: center;
-        margin-bottom: 24px;
+        margin-bottom: 1.5em;
     }
 
     #artist-photo {
@@ -633,8 +632,8 @@ and (max-width: 1023px) {
     #artist-name {
         display: inline-block;
         vertical-align: top;
-        height: 150px;
-        margin-left: 16px;
+        height: 10em;
+        margin-left: 1em;
     }
 
     #artist-bio {
@@ -644,13 +643,13 @@ and (max-width: 1023px) {
 
     .album {
         max-width: 1024px;
-        margin: 6px auto;
+        margin: 0.5em auto;
     }
 
     /*************** ARTICLES *************************/
     .article {
         max-width: 1024px;
-        margin: 6px auto;
+        margin: 0.5em auto;
     }
 
     /************* SINGLE ARTICLE **********************/
@@ -664,23 +663,23 @@ and (max-width: 1023px) {
         display: inline-block;
         width: 24%;
         margin-right: 25%;
-        line-height: 40px;
+        line-height: 3em;
     }
 
     #login input[type=text], #login input[type=password] {
         display: inline-block;
         width: 50%;
-        margin: 16px 0;
+        margin: 1em 0;
     }
 
     #login input[type=submit] {
         max-width: 700px;
-        margin-top: 32px;
+        margin-top: 2em;
     }
 
     /************* BUTTON EDIT MODE *********************/
     .edit-mode-form input[type=submit] {
-        margin-left: 40px;
+        margin-left: 3em;
     }
 
     /****************** INPUT MODIFICHE ******************/
@@ -688,7 +687,7 @@ and (max-width: 1023px) {
         display: inline-block;
         width: 34%;
         margin-right: 15%;
-        line-height: 42px;
+        line-height: 3em;
     }
 
     .input-form input,
@@ -696,12 +695,12 @@ and (max-width: 1023px) {
     .input-form textarea {
         display: inline-block;
         width: 50%;
-        margin: 16px 0;
+        margin: 1em 0;
     }
 
     .input-form input[type=submit] {
         max-width: 700px;
-        margin-top: 32px;
+        margin-top: 2em;
     }
 
     .input-form input[type=submit]:hover {

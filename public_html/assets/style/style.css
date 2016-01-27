@@ -17,11 +17,12 @@ body {
 
 .aiuti {
     font-size: 1px;
-    height: 1px ;
+    height: 1px;
     position: fixed;
     left: -99999px;
     top: 0;
 }
+
 /********************
  HEADER
  ********************/
@@ -47,7 +48,7 @@ body {
 }
 
 #navigation-bar #logo img {
-    height:3.5em;
+    height: 3.5em;
     margin: 0.5em auto;
 }
 
@@ -60,10 +61,10 @@ body {
     background-color: #03A9F4;
     z-index: 99;
     text-transform: uppercase;
-    -webkit-transition: all 0.5s cubic-bezier(.55,0,.1,1) 0.1s;
-    -moz-transition: all 0.5s cubic-bezier(.55,0,.1,1) 0.1s;
-    -o-transition: all 0.5s cubic-bezier(.55,0,.1,1) 0.1s;
-    transition: all 0.5s cubic-bezier(.55,0,.1,1) 0.1s;
+    -webkit-transition: all 0.5s cubic-bezier(.55, 0, .1, 1) 0.1s;
+    -moz-transition: all 0.5s cubic-bezier(.55, 0, .1, 1) 0.1s;
+    -o-transition: all 0.5s cubic-bezier(.55, 0, .1, 1) 0.1s;
+    transition: all 0.5s cubic-bezier(.55, 0, .1, 1) 0.1s;
 }
 
 #navigation-bar #open-menu-btn {
@@ -75,7 +76,7 @@ body {
     right: 1em;
     font-size: 1em;
     z-index: 100;
-    color:transparent;
+    color: transparent;
     background: url('../../img/menu-hamb.svg') no-repeat center;
     background-size: contain;
     -webkit-border-radius: 50%;
@@ -103,12 +104,12 @@ body {
     height: 100%;
     width: 100%;
     color: #E1F5FE;
-    display:block;
+    display: block;
     text-align: center;
-    -webkit-transition: all 0.1s cubic-bezier(.55,0,.1,1) 0.1s;
-    -moz-transition: all 0.1s cubic-bezier(.55,0,.1,1) 0.1s;
-    -o-transition: all 0.1s cubic-bezier(.55,0,.1,1) 0.1s;
-    transition: all 0.1s cubic-bezier(.55,0,.1,1) 0.1s;
+    -webkit-transition: all 0.1s cubic-bezier(.55, 0, .1, 1) 0.1s;
+    -moz-transition: all 0.1s cubic-bezier(.55, 0, .1, 1) 0.1s;
+    -o-transition: all 0.1s cubic-bezier(.55, 0, .1, 1) 0.1s;
+    transition: all 0.1s cubic-bezier(.55, 0, .1, 1) 0.1s;
 }
 
 #navigation-bar #menu li a:hover {
@@ -125,9 +126,6 @@ body {
  CONTENT
  *************************/
 
-
-
-
 #content {
     margin: 0.5em;
     color: #455A64;
@@ -138,13 +136,14 @@ body {
     color: #1A237E;
 }
 
-#content a:hover{
+#content a:hover {
     text-decoration: underline;
 }
 
-#content a:visited{
+#content a:visited {
     color: #4527A0;
 }
+
 /*******************************************/
 
 #nav-bar {
@@ -183,6 +182,7 @@ h3 {
     -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
 }
+
 #last-song .new-song a, #last-news .new-article a {
     font-size: 1.125em;
     display: block;
@@ -263,7 +263,7 @@ h3 {
     height: 4.375em;
     margin-left: 0.5em;
     vertical-align: middle;
-    float:left;
+    float: left;
 }
 
 #artist-list-of-albums .description-album h3 {
@@ -470,7 +470,7 @@ h3 {
     margin-top: 0.5em;
 }
 
-.input-form .box-error li{
+.input-form .box-error li {
     list-style: circle;
     margin-left: 1.5em;
 }
@@ -478,6 +478,51 @@ h3 {
 #artist-manager .note {
     font-style: italic;
     font-size: 0.67em;
+}
+
+/*************** USER PAGE ************************/
+
+#logout-btn {
+    margin: 1em auto;
+    padding: 1em;
+    text-align: center;
+    background-color: #0277BD;
+    font-size: 1.125em;
+    border: 0 none;
+    width: 5em;
+    display:block;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white !important;
+    text-indent: 0;
+}
+
+#logout-btn:hover {
+    background-color: #0288D1;
+}
+
+#logout-btn:active {
+    background-color: #01579B;
+}
+
+
+#like-songs .song{
+    padding: 0.6em 0;
+    line-height: 1.75em;
+    text-align: center;
+    width: 100%;
+    background-color: #81C784;
+    color: #1565C0;
+    font-size: 0.875em;
+    margin: 0.6em 0;
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+    box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+}
+
+#last-song .new-song a, #last-news .new-article a {
+    font-size: 1.125em;
+    display: block;
 }
 
 /*************************
@@ -653,7 +698,7 @@ and (max-width: 1023px) {
     }
 
     /************* SINGLE ARTICLE **********************/
-    #article-content,#text-404  {
+    #article-content, #text-404 {
         max-width: 900px;
         margin: 0 auto;
     }
@@ -710,4 +755,12 @@ and (max-width: 1023px) {
     .input-form input[type=submit]:active {
         background-color: #01579B;
     }
+
+    /*************************USER PAGE é********************/
+    #like-songs {
+        width: 60%;
+        margin: 1em auto;
+    }
+
 }
+

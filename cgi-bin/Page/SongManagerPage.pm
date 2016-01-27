@@ -15,10 +15,19 @@ sub get
     my ( $idArtist ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my ( $idAlbum ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
+    my %forms = ();
     my @errors = ();
 
-    while ( scalar @pairs > 0 ) {
-	push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+    if ( ( scalar @pairs ) > 0 ) {
+	#Section catched forms
+	( $forms{ 'title' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'lyrics' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'extra' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+	#Section catched errors
+	while ( scalar @pairs > 0 ) {
+	    push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+	}
     }
 
     my $boxError = undef;
@@ -27,7 +36,15 @@ sub get
 	$boxError = BoxError::get( BoxError::errorList( @errors ) );
     }
 
-    return SongManager::get( $idArtist, $artist, $idAlbum, $boxError );
+    return SongManager::get( 
+	$idArtist,
+	$artist,
+	$idAlbum,
+	$forms{ 'title' },
+	$forms{ 'lyrics' },
+	$forms{ 'extra' },
+	$boxError
+    );
 }
 
 1;

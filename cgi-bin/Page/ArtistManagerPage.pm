@@ -16,7 +16,7 @@ sub get
     my @errors = ();
 
     if ( ( scalar @pairs ) > 0 ) {
-	#Section catcher forms
+	#Section catched forms
 	( $forms{ 'nick' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
 	( $forms{ 'birthday' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
 	( $forms{ 'dead' } ) = ( ( shift @pairs ) =~ /=(.+)/ );

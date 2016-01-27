@@ -11,10 +11,21 @@ sub get
 {
     my ( @pairs ) = @_;
 
+    my %forms = ();
     my @errors = ();
 
-    while ( scalar @pairs > 0 ) {
-	push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+    if ( ( scalar @pairs ) > 0 ) {
+	#Section catched forms
+	( $forms{ 'author' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'date' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'title' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'subtitle' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'content' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	
+	#Section catched errors
+	while ( scalar @pairs > 0 ) {
+	    push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+	}
     }
 
     my $boxError = undef;
@@ -23,7 +34,14 @@ sub get
 	$boxError = BoxError::get( BoxError::errorList( @errors ) );
     }
     
-    return ArticleManager::get( $boxError );
+    return ArticleManager::get( 
+	$forms{ 'author' },
+	$forms{ 'date' },
+	$forms{ 'title' },
+	$forms{ 'subtitle' },
+	$forms{ 'content' },
+	$boxError 
+    );
 }
 
 1;

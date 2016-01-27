@@ -525,9 +525,21 @@ h3 {
     display: block;
 }
 
-/*************************
-FOOTER
-**************************/
+/************* SINGLE SONG ***********************/
+
+#song-head #details {
+    text-align:center;
+    margin-bottom: 2em;
+}
+
+#song-head #details span {
+    font-weight:bold;
+    font-size: 1.125em;
+}
+
+    /*************************
+    FOOTER
+    **************************/
 
 #footer {
     margin: 1.5em;

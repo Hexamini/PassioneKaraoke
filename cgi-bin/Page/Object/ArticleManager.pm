@@ -14,9 +14,15 @@ Parametri:
 =cut
 sub get
 {
-    my ( $boxError ) = @_;
+    my ( $author, $date, $title, $subtitle, $content, $boxError ) = @_;
 
-    my $values = {};
+    my $values = {
+	'author' => $author,
+	'date' => $date,
+	'title' => $title,
+	'subtitle' => $subtitle,
+	'content' => $content,
+    };
 
     if ( defined $boxError ) {
 	$values = Behavior::weld( $values, $boxError );

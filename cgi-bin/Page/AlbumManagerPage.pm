@@ -19,10 +19,18 @@ sub get
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
     my ( $mode ) = ( ( shift @pair ) =~ /=(.+)/ );
 
+    
+    my %forms = ();
     my @errors = ();
 
-    while ( scalar @pair > 0 ) {
-	push @errors, ErrorList::get( ( ( shift @pair ) =~ /=(.+)/ ) );
+    if ( ( scalar @pairs ) > 0 ) {
+	#Section catcher forms
+	( $forms{ 'album' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'date' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+	while ( scalar @pair > 0 ) {
+	    push @errors, ErrorList::get( ( ( shift @pair ) =~ /=(.+)/ ) );
+	}
     }
 
     my $boxError = undef;
@@ -35,7 +43,13 @@ sub get
     my $albumManager = '';
 
     if ( $mode == 'insert' ) {
-	$albumManager = AlbumManager::get( $idArtist, $artist, $boxError );
+	$albumManager = AlbumManager::get(
+	    $idArtist,
+	    $artist,
+	    $forms{ 'album' },
+	    $forms{ 'date' },
+	    $boxError 
+	);
     } else {
 	#Sezione per la modifica
     }

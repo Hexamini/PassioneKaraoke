@@ -12,11 +12,21 @@ sub get
     my ( @pairs ) = @_;
     my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
+    my %forms = ();
     my @errors = ();
 
-    #Section catched errors
-    while ( ( scalar @pairs ) > 0 ) {
-	push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+    if ( ( scalar @pairs ) > 0 ) {
+	#Section catched forms
+	( $forms{ 'nick' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'birthday' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'dead' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'image' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'description' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+        #Section catched errors
+	while ( ( scalar @pairs ) > 0 ) {
+	    push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+	}
     }
 
     my $boxError = undef;
@@ -28,7 +38,15 @@ sub get
     my $artistManager = '';
 
     if ( $mode == 'insert' ) {
-	$artistManager = ArtistManager::get( $boxError );
+	$artistManager = ArtistManager::get( 
+	    $forms{ 'nick' },
+	    $forms{ 'birthday' },
+	    $forms{ 'dead' },
+	    $forms{ 'image' },
+	    $forms{ 'description' },
+	    $boxError
+	);
+
     } else {
 	#Da aggiungere la compilazione dei campi in ArtistManager
     }

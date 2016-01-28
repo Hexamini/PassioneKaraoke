@@ -19,7 +19,6 @@
                 </lyrics>
                 <extra>Un link a youtube</extra>
                 <grades>1</grades>
-                <category>Sanremo</category>
             </song>
             <song id="_complessodelprimomaggio">
                 <name>Complesso del primo maggio</name>
@@ -28,7 +27,6 @@
                 </lyrics>
                 <extra>Un link a youtube</extra>
                 <grades>0</grades>
-                <category>Pop</category>
             </song>
         </album>
     </artist>
@@ -36,9 +34,9 @@
     <artist id="fedez">
         <nick>Fedez</nick>
         <born>15/10/1989</born>
-        <description>Federico Leonardo Lucia, meglio conosciuto con lo pseudonimo Fedez (IPA: ['fɛːdets][4]; Milano, 15 ottobre 1989), è un rapper e produttore discografico italiano, considerato una grande promessa del rap italiano e una delle figure più importanti del panorama musicale italiano[2].
+        <description>Federico Leonardo Lucia, meglio conosciuto con lo pseudonimo Fedez, è un rapper e produttore discografico italiano, considerato una grande promessa del rap italiano e una delle figure più importanti del panorama musicale italiano[2].
 
-    Le sue vendite certificate dalla FIMI ammontano ad oltre 925.000 copie premiate con diciassette dischi di platino e sette dischi d'oro, ottenute grazie a due album in studio e otto singoli.[5] Fedez è stato uno dei quattro giudici dell'ottava edizione italiana del talent show X Factor: in tale occasione è riuscito a portare allo scontro finale due dei concorrenti da lui patrocinati, Madh e Lorenzo Fragola, vincendo la competizione con quest'ultimo.</description>
+    Le sue vendite certificate dalla FIMI ammontano ad oltre 925.000 copie premiate con diciassette dischi di platino e sette dischi d'oro, ottenute grazie a due album in studio e otto singoli.[5] Fedez è stato uno dei quattro giudici dell'ottava edizione italiana del talent <span lang="en">show</span> X <span lang="en">Factor</span>: in tale occasione è riuscito a portare allo scontro finale due dei concorrenti da lui patrocinati, Madh e Lorenzo Fragola, vincendo la competizione con quest'ultimo.</description>
         <album id="penisolachenonce">
             <name>Penisola che non c'è</name>
             <creation>2011</creation>
@@ -50,7 +48,6 @@
                 </lyrics>
                 <extra>Un link di youtube</extra>
                 <grades>0</grades>
-                <category>Rap</category>
             </song>
             <song id="_tuttoalcontrario">
                 <name>Tutto il contrario</name>
@@ -60,7 +57,6 @@
                 </lyrics>
                 <extra>Un link di youtube</extra>
                 <grades>-1</grades>
-                <category>Rap</category>
             </song>
         </album>
     </artist>

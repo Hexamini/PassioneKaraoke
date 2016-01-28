@@ -23,10 +23,10 @@ sub get
     my %forms = ();
     my @errors = ();
 
-    if ( ( scalar @pairs ) > 0 ) {
+    if ( ( scalar @pair ) > 0 ) {
 	#Section catcher forms
-	( $forms{ 'album' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'date' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	( $forms{ 'album' } ) = ( ( shift @pair ) =~ /=(.+)/ );
+	( $forms{ 'date' } ) = ( ( shift @pair ) =~ /=(.+)/ );
 
 	while ( scalar @pair > 0 ) {
 	    push @errors, ErrorList::get( ( ( shift @pair ) =~ /=(.+)/ ) );

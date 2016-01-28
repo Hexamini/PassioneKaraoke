@@ -28,6 +28,7 @@ use Page::CategoryManagerPage;
 use Page::C404Page;
 
 my $cgi = new CGI;
+binmode(STDOUT, ":utf8");
 print $cgi->header( -charset => 'utf-8' );
 
 Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );

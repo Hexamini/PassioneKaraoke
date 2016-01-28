@@ -5,14 +5,14 @@ function check(inputName, value) {
     console.log("Sono in check");
 
     var listOfInputToCheck = {
-        artistNick : /(\w+){2,}/, //'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
-        artistBorn : /(\d+){1,2}\-(d+){1,2}\-(d+){4}/, //'Il formato data non è valido'],
-        artistDeath : /(\d+){1,2}\-(d+){1,2}\-(d+){4}/, //'La morte dell\'artista non è valida'],
-        songTitle : /(\w+)/, //'Il titolo contiene caratteri non validi'],
-        articleAuthor : /(\w+)/, //'L\'autore dell\'articolo non è corretto'],
-        articleData : /(\d+){1,2}\-(d+){1,2}\-(d+){4}/, //'La data inserita non è valida'],
-        articleTitle : /(\w+)/, //'Il titolo contiene caratteri non validi'],
-        articleSubtitle : /(\w+)/ //'Il sotto-titolo contiene caratteri non validi']
+        artistNick : /^(\w+){2,}$/, //'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
+        artistBorn : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //'Il formato data non è valido'],
+        artistDeath : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //'La morte dell\'artista non è valida'],
+        songTitle : /^(\w+)$/, //'Il titolo contiene caratteri non validi'],
+        articleAuthor : /^(\w+)$/, //'L\'autore dell\'articolo non è corretto'],
+        articleData : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //'La data inserita non è valida'],
+        articleTitle : /^(\w+)$/, //'Il titolo contiene caratteri non validi'],
+        articleSubtitle : /^(\w+)$/ //'Il sotto-titolo contiene caratteri non validi']
     };
 
 
@@ -22,7 +22,7 @@ function check(inputName, value) {
 
     console.log(tmpVar);
 
-    if ( !listOfInputToCheck["artistNick"].test(value) ){
+    if ( !listOfInputToCheck[inputName].test(value) ){
 
         console.log("Cambio la voce in visible");
 

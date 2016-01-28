@@ -27,8 +27,6 @@ use Page::SearchPage;
 use Page::CategoryManagerPage;
 use Page::C404Page;
 
-binmode STDOUT, ":encoding(utf8)";
-
 my $cgi = new CGI;
 print $cgi->header( -charset => 'utf-8' );
 

@@ -15,12 +15,11 @@ Parametri
     albumImage = path immagine album
     songsList = rappresentazione della lista di canzoni
     addButton = Bottone per l'aggiunta di una canzone
-    modifyButton = Bottone per la modifica dell'album
     removeButton = Bottone per la rimozione dell'album e le canzoni contenute
 =cut
 sub get
 {
-    my( $album, $albumImage, $songsList, $addButton, $modifyButton, $removeButton ) = @_;
+    my( $album, $albumImage, $songsList, $addButton, $removeButton ) = @_;
 
     my $values = {
 	'album' => $album,
@@ -31,13 +30,9 @@ sub get
     if ( defined $addButton ) {
 	$values = Behavior::weld( $values, $addButton );
 
-	if ( defined $modifyButton ) {
-	    $values = Behavior::weld( $values, $modifyButton );
+	if ( defined $removeButton ) {
+	    $values = Behavior::weld( $values, $removeButton );
 
-	    if ( defined $removeButton ) {
-		$values = Behavior::weld( $values, $removeButton );
-
-	    }
 	}
     }
     

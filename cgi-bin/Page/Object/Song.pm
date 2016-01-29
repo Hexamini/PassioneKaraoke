@@ -13,7 +13,7 @@ Parametri:
 =cut
 sub get
 {
-    my ( $songName, $artistID, $albumID, $songID ) = @_;
+    my ( $songName, $artistID, $albumID, $songID, $modifyButton, $removeButton ) = @_;
 
     my $values = {
 	'songName' => $songName,
@@ -21,6 +21,12 @@ sub get
 	'album' => $albumID,
 	'song' => $songID,
     };
+
+    if ( defined $modifyButton ) {
+	$values = Behavior::weld( $values, $modifyButton );
+    } if ( defined $removeButton ) {
+	$values = Behavior::weld( $values, $removeButton );
+    }
 
     return Behavior::getChain( $struct, $values, 1 );
 }    

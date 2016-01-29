@@ -47,7 +47,23 @@ sub get
 	{
 	    my $idSong = $song->getAttribute( 'id' );
 	    my $nameSong = $song->findnodes( 'xs:name/text()' );
-	    push @songs, Song::get( $nameSong, $id, $idAlbum, $idSong );
+	    push @songs, Song::get( 
+		$nameSong, 
+		$id, 
+		$idAlbum, 
+		$idSong,
+		EditButton::get( 
+		    'modify',
+		    '&#44',
+		    'modifyButton'
+		),
+		EditButton::get(
+		    'remove_song.cgi',
+		    '&#45',
+		    'removeButton',
+		    "$id:$idAlbum:$idSong"
+		)
+	    );
 	}
 
 	my $songList = Album::songsList( @songs );
@@ -59,11 +75,12 @@ sub get
 		EditButton::get( "r.cgi?section=songManager&artist=$name&amp;" . 
 				 "idArtist=$id&amp;album=$idAlbum&amp;mode=insert",
 				 '&#43', 'addButton' ),
-		EditButton::get( 'modify', '&#45', 'modifyButton' ),
+		EditButton::get( 'modify', '&#44', 'modifyButton' ),
 		EditButton::get( 
-		    'remove_artist.cgi', 
-		    '&#44', 
-		    'removeButton'
+		    'remove_album.cgi', 
+		    '&#45', 
+		    'removeButton',
+		    "$id:$idAlbum"
 		)
 	    ) :
 	    Album::get( $nameAlbum, '#', $songList );

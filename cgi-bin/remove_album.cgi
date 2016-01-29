@@ -11,10 +11,9 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
+my $args = $cgi->param( 'args' );
 
-my $idArtist = $cgi->param( 'idArtits' );
-my $idAlbum = $cgi->param( 'idAlbum' );
+my ( $idArtist, $idAlbum ) = split /:/, $args;
 
 my $file = '../data/database/artistlist.xml';
 
@@ -25,3 +24,9 @@ my $album = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:album[\@id='$idAl
 my $root = $album->parentNode;
 
 $root->removeChild( $album );
+
+open( OUT, ">$file");
+print OUT $doc->toString;
+close( OUT );
+
+print $cgi->redirect( "r.cgi?section=artist&id=$idArtist&mode=edit" );

@@ -1,32 +1,37 @@
-function check(inputName, value) {
+function check(input) {
     'use strict';
 
+    var inputName = input.getAttribute("name");
+    var value = input.value;
+        
     console.log("inputName " + inputName);
     console.log("Sono in check");
 
     var listOfInputToCheck = {
         artistNick : /^(\w+){2,}$/, //'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
-        artistBorn : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //'Il formato data non è valido'],
-        artistDeath : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //'La morte dell\'artista non è valida'],
+	albumName : /^(\w+)$/, 
+	albumCreation: /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/,
+        artistBorn : /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/, //'Il formato data non è valido'],
+        artistDeath : /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/, //'La morte dell\'artista non è valida'],
         songTitle : /^(\w+)$/, //'Il titolo contiene caratteri non validi'],
         articleAuthor : /^(\w+)$/, //'L\'autore dell\'articolo non è corretto'],
-        articleData : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //'La data inserita non è valida'],
+        articleData : /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/, //'La data inserita non è valida'],
         articleTitle : /^(\w+)$/, //'Il titolo contiene caratteri non validi'],
         articleSubtitle : /^(\w+)$/ //'Il sotto-titolo contiene caratteri non validi']
     };
 
 
-    console.log("test2 " + inputName.toString());
-
-    var tmpVar = "\"" + inputName + "\"";
-
-    console.log(tmpVar);
+    console.log( "Test su value " + value + ':' + listOfInputToCheck[inputName].test(value) );
+    
 
     if ( !listOfInputToCheck[inputName].test(value) ){
 
         console.log("Cambio la voce in visible");
+        document.getElementById("err-".concat(inputName)).className = "error visible";
+    } else {
 
-        document.getElementById("err-".concat(inputName)).className += " visible";
+	console.log("Cambio la voce in invisibibile");
+	document.getElementById("err-".concat(inputName)).className = "error hidden";
     }
 }
 
@@ -50,7 +55,7 @@ function main() {
             console.log(inputTag[i].getAttribute("name"));
 
             //inputTag[i].onblur = check(inputTag[i].getAttribute("name"), inputTag[i].getAttribute("value") );
-            inputTag[i].addEventListener("blur", check.bind(null, inputTag[i].getAttribute("name"), inputTag[i].getAttribute("value")))
+            inputTag[i].addEventListener("blur", check.bind(null, inputTag[i]));
 
         }
     }

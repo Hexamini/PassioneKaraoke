@@ -11,7 +11,7 @@ body {
     width: 100%;
     font-family: 'Roboto', sans-serif;
     padding-top: 5.5em;
-    color: #616161;
+    color: #333;
     font-size: 16px;
 }
 
@@ -31,7 +31,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #03A9F4;
+    background-color: #01579B;
     -webkit-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
     -moz-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
     box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
@@ -58,13 +58,13 @@ body {
     position: fixed;
     top: 0;
     left: -100%;
-    background-color: #03A9F4;
+    background-color: #01579B;
     z-index: 99;
     text-transform: uppercase;
-    -webkit-transition: all 0.5s cubic-bezier(.55, 0, .1, 1) 0.1s;
-    -moz-transition: all 0.5s cubic-bezier(.55, 0, .1, 1) 0.1s;
-    -o-transition: all 0.5s cubic-bezier(.55, 0, .1, 1) 0.1s;
-    transition: all 0.5s cubic-bezier(.55, 0, .1, 1) 0.1s;
+    -webkit-transition: all 0.3s cubic-bezier(.55, 0, .1, 1) 0s;
+    -moz-transition: all 0.3s cubic-bezier(.55, 0, .1, 1) 0s;
+    -o-transition: all 0.3s cubic-bezier(.55, 0, .1, 1) 0s;
+    transition: all 0.3s cubic-bezier(.55, 0, .1, 1) 0s;
 }
 
 #navigation-bar #open-menu-btn {
@@ -103,23 +103,21 @@ body {
     line-height: 3em;
     height: 100%;
     width: 100%;
-    color: #E1F5FE;
+    color: white;
     display: block;
     text-align: center;
-    -webkit-transition: all 0.1s cubic-bezier(.55, 0, .1, 1) 0.1s;
-    -moz-transition: all 0.1s cubic-bezier(.55, 0, .1, 1) 0.1s;
-    -o-transition: all 0.1s cubic-bezier(.55, 0, .1, 1) 0.1s;
-    transition: all 0.1s cubic-bezier(.55, 0, .1, 1) 0.1s;
+    -webkit-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
+    -moz-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
+    -o-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
+    transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
 }
 
 #navigation-bar #menu li a:hover {
-    color: white;
-    background-color: #29B6F6;
+    background-color: #0277BD;
 }
 
 #navigation-bar #menu li a:active {
-    color: white;
-    background-color: #039BE5;
+    background-color: #1565C0;
 }
 
 /*************************
@@ -128,7 +126,6 @@ body {
 
 #content {
     margin: 0.5em;
-    color: #455A64;
 }
 
 /*************** LINKS *********************/
@@ -147,25 +144,25 @@ body {
 /*******************************************/
 
 #nav-bar {
-    color: #607D8B;
+    color: #222;
     font-size: 1em;
 }
 
 h1 {
     font-size: 3em;
-    color: #263238;
+    color: #111;
     margin: 0.3em 0;
 }
 
 h2 {
     font-size: 2em;
-    color: #37474F;
+    color: #222;
     margin: 0.5em 0;
 }
 
 h3 {
     font-size: 1.5em;
-    color: #37474F;
+    color: #222;
     margin: 0.5em 0;
 }
 
@@ -174,8 +171,8 @@ h3 {
     line-height: 1.75em;
     text-align: center;
     width: 100%;
-    background-color: #81C784;
-    color: #1565C0;
+    background-color: #A5D6A7;
+    color: #1A237E;
     font-size: 0.875em;
     margin: 0.6em 0;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
@@ -191,7 +188,7 @@ h3 {
 /***************** ARTISTS ****************************/
 
 .artist {
-    background-color: #81C784;
+    background-color: #FFCC80;
     margin: 0.5em 0;
     height: 5em;
     padding: 0.5em 0;
@@ -294,8 +291,8 @@ h3 {
     line-height: 1.875em;
     text-align: center;
     width: 100%;
-    background-color: #81C784;
-    color: #1565C0;
+    background-color: #C5CAE9;
+    color: #1A237E;
     font-size: 0.875em;
     margin: 0.6em 0;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
@@ -537,9 +534,9 @@ h3 {
     font-size: 1.125em;
 }
 
-    /*************************
-    FOOTER
-    **************************/
+/*************************
+FOOTER
+**************************/
 
 #footer {
     margin: 1.5em;
@@ -554,7 +551,7 @@ h3 {
 
 @media screen
 and (min-width: 481px)
-and (max-width: 1023px) {
+and (max-width: 768px) {
     /* HEADER*/
     /* CONTENT */
     h1 {
@@ -577,13 +574,14 @@ and (max-width: 1023px) {
     #login input[type=submit] {
         max-width: 700px;
     }
+
 }
 
 /**********************************************/
 /****************** DESKTOP *******************/
 /**********************************************/
 
-@media screen and (min-width: 1024px ) {
+@media screen and (min-width: 769px ) {
     body {
         padding-top: 7.25em;
     }
@@ -607,7 +605,7 @@ and (max-width: 1023px) {
     #navigation-bar #menu {
         position: static;
         float: right;
-        width: 74%;
+        width: 72%;
         height: 100%;
         padding: 0;
         line-height: 6.25em;
@@ -630,7 +628,6 @@ and (max-width: 1023px) {
         font-weight: bold;
         font-size: 1.125em;
         line-height: 5.55em;
-        color: #E1F5FE;
         margin: 0;
     }
 
@@ -640,6 +637,7 @@ and (max-width: 1023px) {
     #content {
         max-width: 1200px;
         margin: 0 auto 1.5em;
+        padding: 0 1em;
     }
 
     h1 {

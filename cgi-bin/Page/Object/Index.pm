@@ -14,10 +14,9 @@ Parametri:
 =cut
 sub get
 {
-    my ( $musicCategory, $lastNews ) = @_;
+    my ( $lastNews ) = @_;
 
-    my $fus = Behavior::weld( $musicCategory, $lastNews );
-    return Behavior::getChain( $struct, $fus );
+    return Behavior::getChain( $struct, $lastNews );
 }
 
 1;

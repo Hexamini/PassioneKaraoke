@@ -17,7 +17,7 @@ my $album = $cgi->param( 'album' );
 my $song = $cgi->param( 'song' );
 my $vote = $cgi->param( 'like' );
 
-my $file = "../data/database/userlist.xml';
+my $file = '../data/database/userlist.xml';
 my $parser = XML::LibXML->new();
 my $doc = ParserXML::getDoc( $parser, $file );
 

@@ -19,7 +19,6 @@ my $idSong = $cgi->parama( 'idSong' );
 my $name = $cgi->param( 'nameSong' );
 my $lirycs = $cgi->param( 'lirycsSong' );
 my $extra = $cgi->param( 'extraSong' );
-my $category = $cgi->param( 'categorySong' );
 
 my $file = '../data/database/artistlist.xml';
 
@@ -51,10 +50,4 @@ if( $extra )
 {
     my $nodeExtra = $song->( 'xs:extra\text()' )->get_node( 1 );
     $nodeExtra->setData( $extra );
-}
-
-if( $category )
-{
-    my $nodeCategory = $song->( 'xs:category\text()' )->get_node( 1 );
-    $nodeCategory->setData( $category );
 }

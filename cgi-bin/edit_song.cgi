@@ -16,7 +16,6 @@ my $artist = $cgi->param( 'songArtist' );
 my $album = $cgi->param( 'songAlbum' );
 my $lyrics = $cgi->param( 'songLyrics' );
 my $extra = $cgi->param( 'songExtra' );
-my $category = $cgi->param( 'songCategory' );
 
 my $id = '_' . $name;
 $id =~ s/\s+//g;
@@ -28,7 +27,6 @@ my $framment =
        <name>$name</name>
        <lyrics>$lyrics</lyrics>
        <extra>$extra</extra>
-       <category>$category</category>
        <grades>0</grades>
      </song>";
 

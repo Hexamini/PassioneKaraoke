@@ -1,7 +1,7 @@
 use lib "cgi-bin";
 use strict;
 
-use Page::Object::Behavior;
+use Page::Object::Base::Behavior;
 
 package SongVotes;
 

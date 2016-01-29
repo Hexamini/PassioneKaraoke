@@ -1,8 +1,6 @@
 use lib "cgi-bin";
 use strict;
 
-use Page::Object::Categories;
-use Page::Object::Category;
 use Page::Object::LastNews;
 use Page::Object::LastSong;
 use Page::Object::LastArticle;
@@ -13,7 +11,6 @@ package IndexPage;
 
 my $fileNews = '../data/database/news.xml';
 my $fileSong = '../data/database/artistlist.xml';
-my $fileCategory = '../data/database/category.xml';
 
 sub get
 {
@@ -69,19 +66,7 @@ sub get
 
     my $lastNews = LastNews::get( $lastSong, $lastArticle );
 
-    $doc = ParserXML::getDoc( $parser, $fileCategory );
-    my @nodeCategory = $doc->findnodes( '//xs:category' );
-
-    my @categories = ();
-
-    foreach my $category( @nodeCategory )
-    {
-	push( @categories, $category->textContent );
-    }
-    
-    my $categories = Categories::get( Categories::listCategory( @categories ) );
-
-    return Index::get( $categories, $lastNews );
+    return Index::get( $lastNews );
 }
 
 1;

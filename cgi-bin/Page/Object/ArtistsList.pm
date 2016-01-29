@@ -15,13 +15,19 @@ Parametri:
 =cut
 sub get
 {
-    my ( $nome, $idArtista, $logoArtista ) = @_;
+    my ( $nome, $idArtista, $logoArtista, $modifyButton, $removeButton ) = @_;
 
     my $values = {
 	'artist' => $nome,
 	'id' => $idArtista,
 	'artistLogo' => $logoArtista,
     };
+
+    if ( defined $modifyButton ) {
+	$values = Behavior::weld( $values, $modifyButton );
+    } if ( defined $removeButton ) {
+	$values = Behavior::weld( $values, $removeButton );
+    }
 
     return Behavior::getChain( $struct, $values, 1 );
 }

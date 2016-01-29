@@ -17,6 +17,8 @@ sub get
 {
     my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
+    
+    my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
     my @nodes = $doc->findnodes( '//xs:artist' );
     my @artists = ();
@@ -25,7 +27,16 @@ sub get
     {
 	my $name = $node->findnodes( 'xs:nick/text()' );
 	my $id = $node->getAttribute( 'id' );
-	push( @artists, ArtistsList::get( $name, $id, '#' ) );
+	( $mode eq 'edit' ) ? 
+	    push( @artists, ArtistsList::get( 
+		       $name, 
+		       $id,
+		       '#',
+		       EditButton::get( '#', 'modify', '&#45', 'modifyButton' ),
+		       EditButton::get( '#', 'remove', '&#44', 'removeButton' )
+		   ) 
+	    ) :
+	    push( @artists, ArtistsList::get( $name, $id, '#' ) ) ;
     }
 
     @artists = reverse @artists;
@@ -36,16 +47,21 @@ sub get
     if ( !Session::isAdmin( $user ) ) {
 	$artistsPage = Artists::get( Artists::artistsList( @artists ) );
     } else {
-
-	my $size = @pairs;
-	my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
-
-	if ( $size == 1 && $mode == 'edit' ) {
-
+	if ( $mode eq 'edit' ) {
 	    $artistsPage = Artists::get( 
 		Artists::artistsList( @artists ),
-		EditButton::get( 'section=artists', 'edit', 'Sezione amministrativa', 'editButton' ),
-		EditButton::get( 'section=artistManager', 'insert', '&#43', 'addButton' )
+		EditButton::get( 
+		    'section=artists', 
+		    'edit', 
+		    'Sezione amministrativa', 
+		    'editButton'
+		),
+		EditButton::get( 
+		    'section=artistManager', 
+		    'insert', 
+		    '&#43', 
+		    'addButton'
+		)
 	    );
 
 	} else {

@@ -13,11 +13,11 @@ Parametri:
 =cut
 sub get
 {
-    my ( $page, $mode, $value, $name ) = @_;
+    my ( $link, $value, $name, $args ) = @_;
 
     my $values = {
-	'page' => $page,
-	'mode' => $mode,
+	'link' => $link,
+	'args' => $args,
 	'value' => $value,
     };
 

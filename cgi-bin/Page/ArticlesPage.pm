@@ -45,15 +45,27 @@ sub get
 
 	    $articlesPage = Articles::get( 
 		Articles::articleList( @articles ),
-		EditButton::get( 'section=articles', 'edit', 'Sezione amministrativa', 'editButton' ),
-		EditButton::get( 'section=articleManager', 'insert', '&#43', 'addButton' )
+		EditButton::get( 
+		    'r.cgi?section=articles&amp;mode=edit', 
+		    'Sezione amministrativa', 
+		    'editButton'
+		),
+		EditButton::get( 
+		    'r.cgi?section=articleManager&amp;mode=insert', 
+		    '&#43', 
+		    'addButton'
+		)
 	    );
 
 	} else {
 
 	    $articlesPage = Articles::get( 
 		Articles::articleList( @articles ),
-		EditButton::get( 'section=articles', 'edit', 'Sezione amministrativa', 'editButton' )
+		EditButton::get( 
+		    'r.cgi?section=articles&amp;mode=edit', 
+		    'Sezione amministrativa', 
+		    'editButton'
+		)
             );
 	}
     }

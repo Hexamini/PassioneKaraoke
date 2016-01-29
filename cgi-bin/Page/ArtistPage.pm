@@ -56,11 +56,15 @@ sub get
 		$nameAlbum,
 		'#',
 		$songList,
-		EditButton::get( "section=songManager&artist=$name&amp;" . 
-				 "idArtist=$id&amp;album=$idAlbum",
-				 'insert', '&#43', 'addButton' ),
-		EditButton::get( '#', 'modify', '&#45', 'modifyButton' ),
-		EditButton::get( '#', 'remove', '&#44', 'removeButton' )
+		EditButton::get( "r.cgi?section=songManager&artist=$name&amp;" . 
+				 "idArtist=$id&amp;album=$idAlbum&amp;mode=insert",
+				 '&#43', 'addButton' ),
+		EditButton::get( 'modify', '&#45', 'modifyButton' ),
+		EditButton::get( 
+		    'remove_artist.cgi', 
+		    '&#44', 
+		    'removeButton'
+		)
 	    ) :
 	    Album::get( $nameAlbum, '#', $songList );
     }
@@ -80,8 +84,16 @@ sub get
 		'#',
 		$description,
 		Artist::listAlbum( @albums ),
-		EditButton::get( "section=artist&amp;id=$id", 'edit', 'Sezione Amministrativa', 'editButton' ),
-		EditButton::get( "section=albumManager&amp;artist=$id", 'insert', '&#43', 'addButton' )
+		EditButton::get( 
+		    "r.cgi?section=artist&amp;id=$id&amp;mode=edit", 
+		    'Sezione Amministrativa', 
+		    'editButton'
+		),
+		EditButton::get( 
+		    "r.cgi?section=albumManager&amp;artist=$id&amp;mode=insert", 
+		    '&#43', 
+		    'addButton'
+		)
 	    );
 
  	} else {
@@ -90,7 +102,11 @@ sub get
 		'#',
 		$description,
 		Artist::listAlbum( @albums ),
-		EditButton::get( "section=artist&amp;id=$id", 'edit', 'Sezione Amministrativa', 'editButton' )
+		EditButton::get( 
+		    "r.cgi?section=artist&amp;id=$id&amp;mode=edit", 
+		    'Sezione Amministrativa', 
+		    'editButton'
+		)
 	    );
 	}
     }

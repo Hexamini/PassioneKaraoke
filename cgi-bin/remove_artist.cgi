@@ -11,10 +11,7 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
-
-my $id = $cgi->param( 'idArtits' );
-
+my $id = $cgi->param( 'args' );
 my $file = '../data/database/artistlist.xml';
 
 my $parser = XML::LibXML->new();
@@ -25,4 +22,9 @@ my $root = $artist->parentNode;
 
 $root->removeChild( $artist );
 
+open( OUT, ">$file" );
+print OUT $doc->toString;
+close( OUT );
+
+print $cgi->redirect( -uri => 'r.cgi?section=artists&mode=edit' );
 

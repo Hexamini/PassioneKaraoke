@@ -32,8 +32,13 @@ sub get
 		       $name, 
 		       $id,
 		       '#',
-		       EditButton::get( '#', 'modify', '&#45', 'modifyButton' ),
-		       EditButton::get( '#', 'remove', '&#44', 'removeButton' )
+		       EditButton::get( '#', '&#44', 'modifyButton' ),
+		       EditButton::get( 
+			   'remove_artist.cgi',
+			   '&#45',
+			   'removeButton',
+			   "$id"
+		      )
 		   ) 
 	    ) :
 	    push( @artists, ArtistsList::get( $name, $id, '#' ) ) ;
@@ -51,14 +56,12 @@ sub get
 	    $artistsPage = Artists::get( 
 		Artists::artistsList( @artists ),
 		EditButton::get( 
-		    'section=artists', 
-		    'edit', 
+		    'r.cgi?section=artists&amp;mode=edit', 
 		    'Sezione amministrativa', 
 		    'editButton'
 		),
 		EditButton::get( 
-		    'section=artistManager', 
-		    'insert', 
+		    'r.cgi?section=artistManager&amp;mode=insert', 
 		    '&#43', 
 		    'addButton'
 		)
@@ -68,7 +71,11 @@ sub get
 
 	    $artistsPage = Artists::get( 
 		Artists::artistsList( @artists ),
-		EditButton::get( 'section=artists', 'edit', 'Sezione amministrativa', 'editButton' )
+		EditButton::get( 
+		    'r.cgi?section=artists&amp;mode=edit',
+		    'Sezione amministrativa',
+		    'editButton'
+		)
             );
 	}
     }

@@ -7,7 +7,15 @@ package LoginPage;
 
 sub get
 {
-    return Login::get();
+    my ( @pairs ) = @_;
+
+    my ( $status ) = ( ( shift @pairs ) =~ /=(.*)/ );
+    
+    if ( $status eq 'error' ) {
+	return Login::get( 'visible' );
+    } else {
+	return Login::get();
+    }
 }
 
 1;

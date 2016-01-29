@@ -5,6 +5,7 @@ use Page::Object::LastNews;
 use Page::Object::LastSong;
 use Page::Object::LastArticle;
 use Page::Object::Index;
+use Page::Object::Message;
 use Page::Object::Base::ParserXML;
 
 package IndexPage;
@@ -14,9 +15,11 @@ my $fileSong = '../data/database/artistlist.xml';
 
 sub get
 {
-    my ( $parser ) = @_; 
+    my ( $parser, @pairs ) = @_; 
     my $doc = ParserXML::getDoc( $parser, $fileNews );
     my $docSong = ParserXML::getDoc( $parser, $fileSong );
+
+    my ( $flag ) = ( ( shift @pairs ) =~ /=(.*)/ );
 
     my @nodeSong = $doc->findnodes( '//xs:newSong' );
     my @nodeArticle = $doc->findnodes( '//xs:newArticle' );
@@ -65,6 +68,10 @@ sub get
     my $lastSong = LastNews::lastSongs( @lastSongs );
 
     my $lastNews = LastNews::get( $lastSong, $lastArticle );
+
+    if ( $flag eq 'confirm' ) {
+	return Index::get( $lastNews, Message::get() );
+    }
 
     return Index::get( $lastNews );
 }

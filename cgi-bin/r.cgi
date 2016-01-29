@@ -48,8 +48,8 @@ switch( $section )
     case 'artist' { Page::display( ArtistPage::get( $parser, @pairs ), $section ); }
     case 'artists' { Page::display( ArtistsPage::get( $parser, @pairs ), $section ); }
     case 'artistManager' { Page::display( ArtistManagerPage::get( @pairs ), $section ); }
-    case 'index' { Page::display( IndexPage::get( $parser ), $section ); }
-    case 'login' { Page::display( LoginPage::get(), $section ); }
+    case 'index' { Page::display( IndexPage::get( $parser, @pairs ), $section ); }
+    case 'login' { Page::display( LoginPage::get( @pairs ), $section ); }
     case 'signin' { Page::display( SigninPage::get(), $section ); }
     case 'search' { Page::display( SearchPage::get(), $section ); }
     case 'songDescription' { Page::display( SongDescriptionPage::get( $parser, @pairs ), $section ); }

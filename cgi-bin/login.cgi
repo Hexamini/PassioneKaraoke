@@ -38,6 +38,5 @@ if( $node )
 }
 else
 {
-    print $cgi->header( -charset => 'utf-8' );
-    print 'User not found';
+    print $cgi->redirect( -uri => 'r.cgi?section=login&status=error' );
 }

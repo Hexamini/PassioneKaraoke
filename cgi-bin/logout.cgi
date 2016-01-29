@@ -14,5 +14,5 @@ $session->close();
 $session->delete();
 $session->flush();
 
-print $cgi->redirect( 'r.cgi?section=index' );
+print $cgi->redirect( 'r.cgi?section=index&flag=confirm' );
 

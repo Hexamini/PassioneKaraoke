@@ -14,9 +14,17 @@ Parametri:
 =cut
 sub get
 {
-    my ( $lastNews ) = @_;
+    my ( $lastNews, $message ) = @_;
 
-    return Behavior::getChain( $struct, $lastNews );
+    my $values = $lastNews;
+
+    if ( defined $message ) {
+	$values = Behavior::weld( $values, $message );
+    }
+
+    return Behavior::getChain( $struct, $values );
 }
 
 1;
+
+

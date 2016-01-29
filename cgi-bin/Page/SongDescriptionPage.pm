@@ -2,11 +2,14 @@ use lib "cgi-bin";
 use strict;
 
 use Page::Object::SongDescription;
+use Page::Object::SongVotes;
 use Page::Object::Base::ParserXML;
+use Page::Object::Base::Session;
 
 package SongDescriptionPage;
 
 my $file = '../data/database/artistlist.xml'; 
+my $fileUser = '../data/database/userlist.xml';
 
 sub get
 {
@@ -27,9 +30,33 @@ sub get
 
     my $nameSong = $node->findnodes( 'xs:name/text()' );
     my $lyrics = $node->findnodes( 'xs:lyrics/text()' );
-    my $extra = $node->findnodes( 'xs:extra/text()' );
-    
-    return SongDescription::get( $nameSong, $nameArtist, $id_artist, $nameAlbum, '#', $lyrics, $extra );
-}
+    my $url = $node->findnodes( 'xs:extra/text()' );
+    my $evalueate = $node->findnodes( 'xs:grades/text()' );
 
-1;
+    my $user = Session::getSession();
+
+    if ( $user ) {
+	$doc = ParserXML::getDoc( $parser, $fileUser );
+	
+	$node = $doc->findnodes( 
+	    "//user[\@username='$user']/votes/typeVote[\@idSong='$id_song'".
+	    "and \@idArtist='$id_artist' and \@idAlbum='$id_album']"
+	)->get_node( 1 );
+
+	my $songVotes = ( undef $node ) ? 
+	    SongVotes::get( $user, $id_artist, $id_album, $id_song ) :
+	    SongVotes::messageConfirm();
+
+	return SongDescription::get( 
+	    $nameSong, 
+	    $nameArtist, 
+	    $id_artist, 
+	    $nameAlbum, 
+	    $lyrics, 
+	    $url,
+	    $songVotes
+	 );
+    }
+    
+    return SongDescription::get( $nameSong, $nameArtist, $id_artist, $nameAlbum, $lyrics, $url );
+};

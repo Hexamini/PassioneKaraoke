@@ -15,21 +15,25 @@ Parametri:
     album = Nome album
     songDescription = Descrizione della canzone ( immagino note storiche o bibliografiche )
     songLyrics = Testo della canzone
-    songExtraResources = Risorse extra
+    url = Link al video su YouTube
 =cut
 sub get
 {
-    my ( $song, $artist, $idArtist, $album, $songDescription, $songLyrics, $songExtraResources ) = @_;
+    my ( $song, $artist, $idArtist, $album, $songLyrics, $url, $evaluate, $songVotes ) = @_;
 
     my $values = {
 	'song' => $song,
 	'artist' => $artist,
 	'idArtist' => $idArtist,
 	'album' => $album,
-	'songDescription' => $songDescription,
 	'songLyrics' => $songLyrics,
-	'songExtraResources' => $songExtraResources,
+	'url' => $url,
+	'evaluate' => $evaluate,
     };
+
+    if ( defined $songVotes ) {
+	$values = Behavior::weld( $values, $songVotes );
+    }
 
     return Behavior::getChain( $struct, $values );
 }

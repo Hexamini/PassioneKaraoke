@@ -31,19 +31,28 @@ sub get
     my $nameSong = $node->findnodes( 'xs:name/text()' );
     my $lyrics = $node->findnodes( 'xs:lyrics/text()' );
     my $url = $node->findnodes( 'xs:extra/text()' );
-    my $evalueate = $node->findnodes( 'xs:grades/text()' );
+
+    $doc = ParserXML::getDoc( $parser, $fileUser );
+    my $evaluate = 0;
+    
+    my @nodesEvaluate = $doc->findnodes( 
+	"//xs:typeVote[\@idSong='$id_song' and \@idArtist='$id_artist' ".
+	"and \@idAlbum='$id_album']" 
+    );
+
+    foreach my $node( @nodesEvaluate ) {
+	$evaluate = $evaluate + $node->textContent();
+    }
 
     my $user = Session::getSession();
 
     if ( $user ) {
-	$doc = ParserXML::getDoc( $parser, $fileUser );
-	
 	$node = $doc->findnodes( 
-	    "//user[\@username='$user']/votes/typeVote[\@idSong='$id_song'".
+	    "//xs:user[\@username='$user']/xs:votes/xs:typeVote[\@idSong='$id_song' ".
 	    "and \@idArtist='$id_artist' and \@idAlbum='$id_album']"
 	)->get_node( 1 );
 
-	my $songVotes = ( undef $node ) ? 
+	my $songVotes = ( !$node ) ? 
 	    SongVotes::get( $user, $id_artist, $id_album, $id_song ) :
 	    SongVotes::messageConfirm();
 
@@ -54,9 +63,18 @@ sub get
 	    $nameAlbum, 
 	    $lyrics, 
 	    $url,
+	    $evaluate,
 	    $songVotes
 	 );
     }
     
-    return SongDescription::get( $nameSong, $nameArtist, $id_artist, $nameAlbum, $lyrics, $url );
+    return SongDescription::get( 
+	$nameSong, 
+	$nameArtist, 
+	$id_artist, 
+	$nameAlbum, 
+	$lyrics, 
+	$url,
+	$evaluate 
+    );
 };

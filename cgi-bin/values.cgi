@@ -25,7 +25,7 @@ my $framment =
    "<typeVote idSong='$song' idArtist='$artist' idAlbum='$album'>$vote</typeVote>";
 
 my $votes = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
-my $root = $doc->findnodes( "//xs:user[\@username='$user']/xs:votes" );
+my $root = $doc->findnodes( "//xs:user[\@username='$user']/xs:votes" )->get_node( 1 );
 
 $root->appendChild( $votes ) || die( 'Non appeso' );
 

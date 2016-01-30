@@ -16,15 +16,17 @@ Paramentri:
 =cut
 sub get
 {
-    my ( $idArtist, $artist, $idAlbum, $title, $lyrics, $extra, $boxError ) = @_;
+    my ( $idArtist, $artist, $idAlbum, $idSong, $title, $lyrics, $extra, $mode, $boxError ) = @_;
 
     my $values = {
 	'idArtist' => $idArtist,
 	'idAlbum' => $idAlbum,
+	'idSong' => $idSong,
 	'artist' => $artist,
 	'title' => $title,
 	'lyrics' => $lyrics,
 	'extra' => $extra,
+	'mode' => $mode,
     };
 
     if ( defined $boxError ) {

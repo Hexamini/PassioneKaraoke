@@ -53,7 +53,7 @@ switch( $section )
     case 'signin' { Page::display( SigninPage::get(), $section ); }
     case 'search' { Page::display( SearchPage::get(), $section ); }
     case 'songDescription' { Page::display( SongDescriptionPage::get( $parser, @pairs ), $section ); }
-    case 'songManager' { Page::display( SongManagerPage::get( @pairs ), $section ); }
+    case 'songManager' { Page::display( SongManagerPage::get( $parser, @pairs ), $section ); }
     case 'userPage' { Page::display( UserPagePage::get( $parser, @pairs ), 'login' ); }
     case 'categoryManager' { Page::display( CategoryManagerPage::get(), $section ); }
     else { Page::display( C404Page::get() ); }

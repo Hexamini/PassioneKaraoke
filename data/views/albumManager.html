@@ -25,11 +25,11 @@ META_!
 	    <input type="hidden" name="artistName" value="[% idArtist %]" />
 
         <div class="error">Nome album non valido, inserire solo lettere o numeri</div>
-            <label for="album-name">Nome: *</label>
+            <label for="album-name" class="obligatory-input">Nome: *</label>
             <input type="text" name="albumName" id="album-name" value="[% name %]"/>
 
 	    <div class="error">La data inserita non è valida, il formato deve essere gg-mm-yyyy</div>
-            <label for="album-creation">Data di pubblicazione: *</label>
+            <label for="album-creation" class="obligatory-input">Data di pubblicazione: *</label>
             <input type="text" name="albumCreation" id="album-creation" value="[% date %]"/>
 
             <input type="submit" value="Conferma" name="action" />

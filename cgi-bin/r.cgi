@@ -47,7 +47,7 @@ switch( $section )
     case 'articleManager' { Page::display( ArticleManagerPage::get( @pairs ), $section ); }
     case 'artist' { Page::display( ArtistPage::get( $parser, @pairs ), $section ); }
     case 'artists' { Page::display( ArtistsPage::get( $parser, @pairs ), $section ); }
-    case 'artistManager' { Page::display( ArtistManagerPage::get( @pairs ), $section ); }
+    case 'artistManager' { Page::display( ArtistManagerPage::get( $parser, @pairs ), $section ); }
     case 'index' { Page::display( IndexPage::get( $parser, @pairs ), $section ); }
     case 'login' { Page::display( LoginPage::get( @pairs ), $section ); }
     case 'signin' { Page::display( SigninPage::get(), $section ); }

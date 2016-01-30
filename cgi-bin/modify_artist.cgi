@@ -11,20 +11,19 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
-
 my $id = $cgi->param( 'idArtist' );
-my $nick = $cgi->param( 'nickArtist' );
-my $born = $cgi->param( 'bornArtist' );
-my $death = $cgi->param( 'deathArtist' );
-my $description = $cgi->param( 'descriptionArtist' );
+my $nick = $cgi->param( 'artistNick' );
+my $born = $cgi->param( 'artistBorn' );
+my $death = $cgi->param( 'artistDeath' );
+my $image = $cgi->param( 'artistImage' );
+my $description = $cgi->param( 'artistDescription' );
 
 my $file = '../data/database/artistlist.xml';
 
 my $parser = XML::LibXML->new();
 my $doc = ParserXML::getDoc( $parser, $file );
 
-my $artist = $doc->findnodes( "\\xs:artist[\@id='$id']" );
+my $artist = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 
 if( $nick )
 {
@@ -34,26 +33,48 @@ if( $nick )
     $id = lc $id;
 
     $artist->setAttribute( 'id', $id );
+
+    $artist->removeChild( $artist->findnodes( 'xs:nick' )->get_node( 1 ) );
     
-    my $nodeNick = $artist->( 'xs:nick\text()' )->get_node( 1 );
-    $nodeNick->setData( $nick );
+    $nick = $parser->parse_balanced_chunk( "<nick>$nick</nick>" ) || die( 'Frammento non ben formato' );
+    $artist->appendChild( $nick );
 }
 
 if( $born )
 {
-    my $nodeBorn = $artist->( 'xs:born\text()' )->get_node( 1 );
-    $nodeBorn->setData( $born );
+    $artist->removeChild( $artist->findnodes( 'xs:born' )->get_node( 1 ) );
+    
+    $born = $parser->parse_balanced_chunk( "<born>$born</born>" ) || die( 'Frammento non ben formato' );
+    $artist->appendChild( $born );    
 }
-
+=Begin
 if( $death )
 {
-    my $nodeDeath = $artist->( 'xs:death\text()' )->get_node( 1 );
-    $nodeDeath->setData( $death );
+    $artist->removeChild( $artist->findnodes( 'xs:death' )->get_node( 1 ) );
+
+    $death = $parser->parse_balanced_chunk( "<dead>$death</dead>" ) || die( 'Frammento non ben formato' );
+    $artist->appendChild( $death );
 }
 
+if( $image )
+{
+    $artist->removeChild( $artist->findnodes( 'xs:image' )->get_node( 1 ) );
+    
+    $image = $parser->parse_balanced_chunk( "<image>$image</image>" ) || die( 'Frammento non ben formato' );
+    $artist->appenChild( $image );
+}
+=cut
 if( $description )
 {
-    my $nodeDescription = $artist->( 'xs:description\text()' )->get_node( 1 );
-    $nodeDescription->setData( $description );
+    $artist->removeChild( $artist->findnodes( 'xs:description' )->get_node( 1 ) );
+
+    $description = $parser->parse_balanced_chunk( "<description>$description</description>" )
+	|| die( 'Frammento non ben formato' );
+    $artist->appendChild( $description );
 }
 
+open( OUT, ">$file" );
+print OUT $doc->toString;
+close( OUT );
+
+print $cgi->redirect( -uri => "r.cgi?section=artist&amp;id=$id&amp;mode=edit" );

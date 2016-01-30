@@ -63,4 +63,4 @@ open( OUT, ">$file" );
 print OUT $doc->toString;
 close( OUT );
 
-print $cgi->redirect( -uri => "r.cgi?section=artist&id=$idArtist&mode=edit" );
+print $cgi->redirect( -uri => "r.cgi?section=artist&amp;id=$idArtist&amp;mode=edit" );

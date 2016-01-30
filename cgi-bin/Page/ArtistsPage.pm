@@ -28,16 +28,21 @@ sub get
 	my $name = $node->findnodes( 'xs:nick/text()' );
 	my $id = $node->getAttribute( 'id' );
 	( $mode eq 'edit' ) ? 
-	    push( @artists, ArtistsList::get( 
-		       $name, 
-		       $id,
-		       '#',
-		       EditButton::get( '#', '&#44', 'modifyButton' ),
-		       EditButton::get( 
-			   'remove_artist.cgi',
-			   '&#45',
-			   'removeButton',
-			   "$id"
+	    push( @artists, 
+		  ArtistsList::get( 
+		      $name, 
+		      $id,
+		      '#',
+		      EditButton::get( 
+			  "r.cgi?section=artistManager&amp;id=$id&amp;mode=modify",
+			  '&#44', 
+			  'modifyButton'
+		      ),
+		      EditButton::get( 
+			  'remove_artist.cgi',
+			  '&#45',
+			  'removeButton',
+			  "$id"
 		      )
 		   ) 
 	    ) :
@@ -61,7 +66,7 @@ sub get
 		    'editButton'
 		),
 		EditButton::get( 
-		    'r.cgi?section=artistManager&amp;mode=insert', 
+		    'r.cgi?section=artistManager&amp;id=0&amp;mode=edit', 
 		    '&#43', 
 		    'addButton'
 		)

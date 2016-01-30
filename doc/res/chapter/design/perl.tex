@@ -13,28 +13,35 @@ Prima di visualizzare l'HTML \`e necessario applicare il parsing del Perl Templa
 La Perl Template Toolkit dispone una serie di utilities a livello di sintassi dette ``\textit{Direttive}'', per offrire una serie di costrutti (es. ciclo for, while, ecc.) in grado di renderlo equiparabile alle trasformate XSLT: durante la stesura del progetto si \`e deciso di non implementare questa soluzione in quanto si si \`e temuto di mescolare il comportamento con la struttura.
 
 
-%TODO: da rileggere e controllare
 \subsubsection{Organizzazione}
-Un'aspetto importante che si \`e tenuto conto nel progetto \`e stata il fattore di estendibilit\`a e di riuso. Ci siamo ispirati al paradigma di programmazzione orientato agli oggetti per poter modellare la nostra 'gerarchia' di elementi web ed usato il pattern architetturale MVC in quanto si sposa magnificamente con le componenti di un sito web.
+Durante lo sviluppo del codice Perl si \`e puntato alla ricerca del riuso e dell'estendibilit\`a. Ispirandosi al paradigma della programmazione orientata agli oggetti si \`e applicato il pattern MVC, per poter modellare la ``gerarchia'' di elementi web in maniera efficacie ed efficente.
 
-Ogni elemento definito avr\`a tre componenti: la view HTML ( Model ), regole CSS sui tag definiti ( View ) ed il package Perl contenente le regole di costruzione e funzionalit\`a richieste ( Controller ).
-I package sono stati introdotti in sostituzione alle classi visto che l'unico momento di un oggetto web \`e l'istanziazzione per la visualizzazione, infatti in ogni package \`e presente il metodo \textit{get} che funge da costruttore.
+\paragraph*{Funzionamento del pattern MVC}Ogni elemento definito presenta tre componenti:
+\begin{enumerate}
+    \item viev HTML (\textit{Model});
+    \item regole CSS sui tag definiti (\textit{View});
+    \item package Perl contenente le regole di costruzione e funzionalit\`a richieste (\textit{Controller}).
+\end{enumerate}
 
-La OOP viene applicata nella definizione della gerarchia citata. Ogni package si pu\`o dire che derivi dal package \textit{Base} dove sono archiviati tutti gli script base per il funzionamento del sito web e metodi di uso comune. Di fatto in base troviamo:
+Data la mancanza delle classi nel linguaggio Perl, in sostituzione, sono stati utilizzati i \textit{Package}. Alla istanziazione di un package viene costruita la pagina web che viene poi ottenuta tramite il metodo \textit{get}, unico metodo che funge da costruttore.
+
+La OOP\footnote{Acronimo di \textit{Programmazione Orientata agli Oggetti}.} viene applicata nella definizione della gerarchia citata. Ogni package ``estende'' il package \textit{Base}, dove sono archiviati tutti gli script base per il funzionamento del sito web e metodi di uso comune. Di fatto nel package Base \`e possibile trovare:
 \begin{itemize}
-\item Script di parsing della view HTML usando Perl Template Toolkit;
-\item Script per la lettura dei file xml;
-\item Script per la gestione delle sessioni;
-\item Script per il concatenamento tra i vari oggetti;
+\item script di parsing della view HTML usando Perl Template Toolkit;
+\item script per la lettura dei file xml;
+\item script per la gestione delle sessioni;
+\item script per il concatenamento tra i vari oggetti;
 \end{itemize}
 
-Da Base si deriva in \textit{Object} che sfuttando le funzionalit\`a della classe padre si costruiscono tutti gli elementi presenti nel sito web. Infine c\`e \textit{Page} che mette in relazione gli oggetti tra di loro per formare le pagine da visualizzare. \`E qui che si dimostra la potenza dei segnaposti in quando \`e possibile definire la pagina come l'insieme di segnaposti e con Perl caricare ogni modulo senza legare comportamente con struttura.
-Durante lo sviluppo \`e capitato di modificare parti di HTML o molto pi\`u spesso quelle di Perl ma in entrambi i casi le operazioni non erano dispendiose in quanto un cambio nella logica non implicava un cambio nel modello, e viceversa.
+Da Base si deriva in \textit{Object} che, sfuttando le funzionalit\`a della classe padre, costruisce tutti gli elementi presenti nel sito web. L'oggetto \textit{Page} si occupa di mettere in relazione gli oggetti tra di loro per formare le pagine da visualizzare. Qui si pu\`o notare la reale versatilit\`a nell'utilizzo segnaposti: \`e possibile definire la pagina come l'insieme di segnaposti e con Perl caricare ogni modulo \underline{senza legare} comportamento con struttura.
+
+
+%Durante lo sviluppo \`e capitato di modificare parti di HTML o molto pi\`u spesso quelle di Perl ma in entrambi i casi le operazioni non erano dispendiose in quanto un cambio nella logica non implicava un cambio nel modello, e viceversa. %sta frase mi sembra inutile. Mi pare ovvio che in un progetto avvengano delle modifiche :D
+
+
+%TODO: da rileggere e controllare
 
 \subsubsection{Visualizzazione e navigazione}
-
-
-
 
 L'html \`e stato scritto in maniera tale da permettere una massima modularizzazione. \textbf{r.cgi} \`e lo script principale del sito, che si occupa di servire le pagine corrette.
 Le pagine web che vengono servite sono ``costruite" dal perl secondo uno specifico metodo. \textit{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.

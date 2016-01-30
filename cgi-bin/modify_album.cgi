@@ -11,19 +11,17 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
-
-my $idArtist = $cgi->param( 'idArtist' );
-my $idAlbum = $cgi->param( 'idAlbum' );
-my $name = $cgi->param( 'nameAlbum' );
-my $creation = $cgi->param( 'creationAlbum' );
+my $idArtist = $cgi->param( 'artistName' );
+my $idAlbum = $cgi->param( 'albumId' );
+my $name = $cgi->param( 'albumName' );
+my $creation = $cgi->param( 'albumCreation' );
 
 my $file = '../data/database/artistlist.xml';
 
 my $parser = XML::LibXML->new();
 my $doc = ParserXML::getDoc( $parser, $file );
 
-my $album = $doc->findnodes( "\\xs:artist[\@id='$idArtist']\xs:album[\@id='$idAlbum']" );
+my $album = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:album[\@id='$idAlbum']" )->get_node( 1 );
 
 if( $name )
 {
@@ -33,13 +31,25 @@ if( $name )
     $idAlbum = lc $idAlbum;
 
     $album->setAttribute( 'id', $idAlbum );
-    
-    my $nodeName = $album->( 'xs:name\text()' )->get_node( 1 );
-    $nodeName->setData( $name );
+
+    $album->removeChild( $album->findnodes( 'xs:name' )->get_node( 1 ) );
+
+    my $name = $parser->parse_balanced_chunk( "<name>$name</name>" ) || die( 'Frammento non ben formato' );
+    $album->appendChild( $name );
 }
 
 if( $creation )
 {
-    my $nodeCreation = $album->( 'xs:creation\text()' )->get_node( 1 );
-    $nodeCreation->setData( $creation );
+    $album->removeChild( $album->findnodes( 'xs:creation' )->get_node( 1 ) );
+
+    my $creation = $parser->parse_balanced_chunk( "<creation>$creation</creation>" ) || 
+	die( 'Frammento non ben formato' );
+
+    $album->appendChild( $creation );
 }
+
+open( OUT, ">$file" );
+print OUT $doc->toString;
+close( OUT );
+
+print $cgi->redirect( -uri => "r.cgi?section=artist&id=$idArtist&mode=edit" );

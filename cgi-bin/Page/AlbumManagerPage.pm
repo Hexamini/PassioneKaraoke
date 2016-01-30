@@ -17,6 +17,7 @@ sub get
     my $doc = ParserXML::getDoc( $parser, $file );
 
     my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
+    my ( $idAlbum ) = ( ( shift @pair ) =~ /=(.+)/ ); #Potenzialmente vuoto
     my ( $mode ) = ( ( shift @pair ) =~ /=(.+)/ );
 
     
@@ -33,6 +34,21 @@ sub get
 	}
     }
 
+    if ( $mode eq 'modify' ) {
+
+	print "$idArtist, $idAlbum";
+	
+	my $node = $doc->findnodes(
+	    "//xs:artist[\@id='$idArtist']/xs:album[\@id='$idAlbum']"
+	    )->get_node( 1 );
+
+	if ( !exists $forms{ 'album' } ) {
+	    $forms{ 'album' } = $node->findnodes( 'xs:name/text()' );
+	} if ( !exists $forms{ 'date' } ) {
+	    $forms{ 'date' } = $node->findnodes( 'xs:creation/text()' );
+	}
+    }
+    
     my $boxError = undef;
 
     if ( scalar @errors > 0 ) {
@@ -42,17 +58,15 @@ sub get
     my $artist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
     my $albumManager = '';
 
-    if ( $mode == 'insert' ) {
-	$albumManager = AlbumManager::get(
-	    $idArtist,
-	    $artist,
-	    $forms{ 'album' },
-	    $forms{ 'date' },
-	    $boxError 
+    $albumManager = AlbumManager::get(
+	$idArtist,
+	$idAlbum,
+	$artist,
+	$forms{ 'album' },
+	$forms{ 'date' },
+	$mode,
+	$boxError 
 	);
-    } else {
-	#Sezione per la modifica
-    }
 
     return $albumManager;
 }

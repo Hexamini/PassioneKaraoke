@@ -47,27 +47,34 @@ sub get
 	{
 	    my $idSong = $song->getAttribute( 'id' );
 	    my $nameSong = $song->findnodes( 'xs:name/text()' );
-	    push @songs, Song::get( 
-		$nameSong, 
-		$id, 
-		$idAlbum, 
-		$idSong,
-		EditButton::get( 
-		    'modify',
-		    '&#44',
-		    'modifyButton'
-		),
-		EditButton::get(
-		    'remove_song.cgi',
-		    '&#45',
-		    'removeButton',
-		    "$id:$idAlbum:$idSong"
-		)
-	    );
+	    push @songs, ( $editMode == 1 ) ?
+		Song::get( 
+		    $nameSong, 
+		    $id, 
+		    $idAlbum, 
+		    $idSong,
+		    EditButton::get( 
+			'modify',
+			'&#44',
+			'modifyButton'
+		    ),
+		    EditButton::get(
+			'remove_song.cgi',
+			'&#45',
+			'removeButton',
+			"$id:$idAlbum:$idSong"
+		    )
+		) :
+		Song::get( 
+		    $nameSong, 
+		    $id, 
+		    $idAlbum, 
+		    $idSong
+		);		
 	}
 
 	my $songList = Album::songsList( @songs );
-	push @albums, ( $editMode ) ?
+	push @albums, ( $editMode == 1 ) ?
 	    Album::get( 
 		$nameAlbum,
 		'#',

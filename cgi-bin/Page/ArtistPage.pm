@@ -54,7 +54,9 @@ sub get
 		    $idAlbum, 
 		    $idSong,
 		    EditButton::get( 
-			'modify',
+			"r.cgi?section=songManager&amp;artist=$name&amp;".
+			"idArtist=$id&amp;album=$idAlbum&amp;song=$idSong".
+			"&amp;mode=modify",
 			'&#44',
 			'modifyButton'
 		    ),
@@ -81,7 +83,7 @@ sub get
 		$songList,
 		EditButton::get( 
 		    "r.cgi?section=songManager&artist=$name&amp;" . 
-		    "idArtist=$id&amp;album=$idAlbum&amp;mode=insert",
+		    "idArtist=$id&amp;album=$idAlbum&amp;song=0&amp;mode=edit",
 		    '&#43', 
 		    'addButton'
 		),

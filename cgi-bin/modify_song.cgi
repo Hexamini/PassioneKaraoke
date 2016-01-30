@@ -11,21 +11,22 @@ use Page::Object::Base::ParserXML;
     
 my $cgi = new CGI;
 
-print $cgi->header();
-
-my $idArtist = $cgi->param( 'idArtist' );
-my $idAlbum = $cgi->param( 'idAlbum' );
-my $idSong = $cgi->parama( 'idSong' );
-my $name = $cgi->param( 'nameSong' );
-my $lirycs = $cgi->param( 'lirycsSong' );
-my $extra = $cgi->param( 'extraSong' );
+my $idArtist = $cgi->param( 'songArtist' );
+my $idAlbum = $cgi->param( 'songAlbum' );
+my $idSong = $cgi->param( 'songId' );
+my $name = $cgi->param( 'songTitle' );
+my $lyrics = $cgi->param( 'songLyrics' );
+my $extra = $cgi->param( 'songExtra' );
 
 my $file = '../data/database/artistlist.xml';
 
 my $parser = XML::LibXML->new();
 my $doc = ParserXML::getDoc( $parser, $file );
 
-my $song = $doc->findnodes( "\\xs:artist[\@id='$idArtist']\xs:album[\@id='$idAlbum']\xs:song[\@id='$idSong']" );
+my $song = $doc->findnodes( 
+      "//xs:artist[\@id='$idArtist']/xs:album[\@id='$idAlbum']/".
+      "xs:song[\@id='$idSong']" 
+    )->get_node( 1 );
 
 if( $name )
 {
@@ -36,18 +37,30 @@ if( $name )
 
     $song->setAttribute( 'id', $idSong );
     
-    my $nodeName = $song->( 'xs:name\text()' )->get_node( 1 );
-    $nodeName->setData( $name );
+    $song->removeChild( $song->findnodes( 'xs:name' )->get_node( 1 ) );
+
+    my $name = $parser->parse_balanced_chunk( "<name>$name</name>" ) || die( 'Frammento non ben formato' );
+    $song->appendChild( $name );
 }
 
-if( $lirycs )
+if( $lyrics )
 {
-    my $nodeLirycs = $song->( 'xs:lirycs\text()' )->get_node( 1 );
-    $nodeLirycs->setData( $lirycs );
+    $song->removeChild( $song->findnodes( 'xs:lyrics' )->get_node( 1 ) );
+
+    my $lyrics = $parser->parse_balanced_chunk( "<lyrics>$lyrics</lyrics>" ) || die( 'Frammento non ben formato' );
+    $song->appendChild( $lyrics );
 }
 
 if( $extra )
 {
-    my $nodeExtra = $song->( 'xs:extra\text()' )->get_node( 1 );
-    $nodeExtra->setData( $extra );
+    $song->removeChild( $song->findnodes( 'xs:extra' )->get_node( 1 ) ) || die( 'Frammento non ben formato' );
+
+    my $extra = $parser->parse_balanced_chunk( "<extra>$extra</extra>" );
+    $song->appendChild( $extra );
 }
+
+open( OUT, ">$file" );
+print OUT $doc->toString;
+close( OUT );
+
+print $cgi->redirect( -uri => "r.cgi?section=artist&id=$idArtist&mode=edit" );

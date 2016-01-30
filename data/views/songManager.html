@@ -18,7 +18,7 @@ META_!
 
     [% boxError %]
     
-    <form class="insert-song-form" action="../cgi-bin/edit_song.cgi" method="post">
+    <form class="insert-song-form" action="../cgi-bin/[% mode %]_song.cgi" method="post">
 
         <fieldset>
 
@@ -27,6 +27,7 @@ META_!
 	    <!-- @korut94 aggiunto campi nascosti per il passaggio degli id dell'artista ed album allo script -->
 	    <input type="hidden" name="songArtist" id="song-artist" value="[% idArtist %]" />
 	    <input type="hidden" name="songAlbum" id="song-album" value="[% idAlbum %]" />
+	    <input type="hidden" name="songId" id="song-id" value="[% idSong %]" />
 	    <!--                                                                                              -->
 
 	    <!-- @korut94 aggiunti label ai vari campi -->

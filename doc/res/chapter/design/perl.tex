@@ -35,18 +35,16 @@ La OOP\footnote{Acronimo di \textit{Programmazione Orientata agli Oggetti}.} vie
 
 Da Base si deriva in \textit{Object} che, sfuttando le funzionalit\`a della classe padre, costruisce tutti gli elementi presenti nel sito web. L'oggetto \textit{Page} si occupa di mettere in relazione gli oggetti tra di loro per formare le pagine da visualizzare. Qui si pu\`o notare la reale versatilit\`a nell'utilizzo segnaposti: \`e possibile definire la pagina come l'insieme di segnaposti e con Perl caricare ogni modulo \underline{senza legare} comportamento con struttura.
 
-
 %Durante lo sviluppo \`e capitato di modificare parti di HTML o molto pi\`u spesso quelle di Perl ma in entrambi i casi le operazioni non erano dispendiose in quanto un cambio nella logica non implicava un cambio nel modello, e viceversa. %sta frase mi sembra inutile. Mi pare ovvio che in un progetto avvengano delle modifiche :D
 
 
-%TODO: da rileggere e controllare
 
 \subsubsection{Visualizzazione e navigazione}
 
-L'html \`e stato scritto in maniera tale da permettere una massima modularizzazione. \textbf{r.cgi} \`e lo script principale del sito, che si occupa di servire le pagine corrette.
-Le pagine web che vengono servite sono ``costruite" dal perl secondo uno specifico metodo. \textit{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.
+L'html \`e stato scritto in maniera tale da permettere una massima modularizzazione. \textbf{r.cgi} \`e lo script principale del sito, che si occupa di servire le pagine in maniera corretta.
+Le pagine web che vengono servite sono ``costruite'' dal perl secondo uno specifico metodo. \textit{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.
 
-Durante il parsing, viene riconosciuto il segnaposto e viene aggiunto il modulo html corrente.
+Durante il parsing, viene riconosciuto il segnaposto e viene aggiunto il modulo HTML corrente.
 \subsubsection{Interazione con la base XML}
 Perl non si occupa solamente della generazione dell'html, ma anche del prelievo dei dati dalla base scritta in XML.
 %TODO

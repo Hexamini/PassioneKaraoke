@@ -11,7 +11,7 @@ my $struct = 'artist';
 =begin
 Parametri:
     artist = Nome del gruppo o cantante
-    pathArtista = Path dell'immagine
+    artistPhoto = Nome dell'immagine con il formato
     artistBio = Bibliografia del cantante
     albumList = Rappresentazione lista album 
     editButton = Rappresentazione bottone per l'entrata in edit mode
@@ -19,11 +19,11 @@ Parametri:
 =cut
 sub get
 {
-    my ( $artist, $pathArtista, $artistBio, $albumList, $editButton, $addButton ) = @_;
+    my ( $artist, $artistPhoto, $artistBio, $albumList, $editButton, $addButton ) = @_;
 
     my $values = {
 	'artist' => $artist,
-	'pathArtista' => $pathArtista,
+	'artistPhoto' => $artistPhoto,
 	'artistBio' => $artistBio,
 	'albumList' => $albumList,
     };

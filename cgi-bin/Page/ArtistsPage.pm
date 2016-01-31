@@ -26,13 +26,14 @@ sub get
     foreach my $node( @nodes )
     {
 	my $name = $node->findnodes( 'xs:nick/text()' );
+	my $img = $node->findnodes( 'xs:image/text()' );
 	my $id = $node->getAttribute( 'id' );
 	( $mode eq 'edit' ) ? 
 	    push( @artists, 
 		  ArtistsList::get( 
 		      $name, 
 		      $id,
-		      '#',
+		      $img,
 		      EditButton::get( 
 			  "r.cgi?section=artistManager&amp;id=$id&amp;mode=modify",
 			  '&#44', 
@@ -46,7 +47,7 @@ sub get
 		      )
 		   ) 
 	    ) :
-	    push( @artists, ArtistsList::get( $name, $id, '#' ) ) ;
+	    push( @artists, ArtistsList::get( $name, $id, $img ) ) ;
     }
 
     @artists = reverse @artists;

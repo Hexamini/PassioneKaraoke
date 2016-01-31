@@ -29,6 +29,7 @@ sub get
     my $nodo = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 
     my $name = ParserXML::getContent( $nodo->findnodes( "xs:nick/text()" ) ); #nome artista
+    my $img = $nodo->findnodes( 'xs:image/text()' );
     my $description = ParserXML::getContent( $nodo->findnodes( 'xs:description/text()' ) );
     
     my @nodeAlbum = $nodo->findnodes( 'xs:album' );
@@ -37,6 +38,7 @@ sub get
     foreach my $album( @nodeAlbum )
     {
 	my $nameAlbum = ParserXML::getContent( $album->findnodes( 'xs:name/text()' ) );
+	my $imgAlbum = $album->findnodes( 'xs:image/text()' );
 	my $idAlbum = $album->getAttribute( 'id' );
 	
 	my @nodeSong = $album->findnodes( 'xs:song' );
@@ -78,7 +80,7 @@ sub get
 	push @albums, ( $editMode == 1 ) ?
 	    Album::get( 
 		$nameAlbum,
-		'#',
+		$imgAlbum,
 		$songList,
 		EditButton::get( 
 		    "r.cgi?section=songManager&artist=$name&amp;" . 
@@ -99,7 +101,7 @@ sub get
 		    "$id:$idAlbum"
 		)
 	    ) :
-	    Album::get( $nameAlbum, '#', $songList );
+	    Album::get( $nameAlbum, $imgAlbum, $songList );
     }
 
     @albums = reverse @albums;
@@ -108,13 +110,13 @@ sub get
     my $artistPage = '';
 
     if ( !Session::isAdmin( $user ) ) {
-	$artistPage = Artist::get( $name, '#', $description, Artist::listAlbum( @albums ) ); 
+	$artistPage = Artist::get( $name, $img, $description, Artist::listAlbum( @albums ) ); 
     } else {
 	if ( $editMode ) {
 
 	    $artistPage = Artist::get( 
 		$name,
-		'#',
+		$img,
 		$description,
 		Artist::listAlbum( @albums ),
 		EditButton::get( 
@@ -132,7 +134,7 @@ sub get
  	} else {
 	    $artistPage = Artist::get( 
 		$name,
-		'#',
+		$img,
 		$description,
 		Artist::listAlbum( @albums ),
 		EditButton::get( 

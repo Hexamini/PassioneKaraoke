@@ -12,4 +12,11 @@ sub getDoc
     return $doc;    
 }
 
+sub getContent {
+    my ( $node ) = @_;
+    my ( $content ) = ( $node =~ /<!\[CDATA\[(.*)\]\]>/ );
+
+    return $content;
+}
+
 1;

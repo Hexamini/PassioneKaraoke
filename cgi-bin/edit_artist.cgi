@@ -27,7 +27,7 @@ my $doc = ParserXML::getDoc( $parser, $file );
 
 my $framment = 
     "<artist id='$id' >
-       <nick>$nick</nick>
+       <nick><![CDATA[$nick]]></nick>
        <born>$born</born>";
 
 if( $death )
@@ -35,7 +35,7 @@ if( $death )
     $framment = $framment . "<death>$death</death>";
 }
 
-$framment = $framment . "<description>$description</description></artist>";
+$framment = $framment . "<description><![CDATA[$description]]></description></artist>";
 
 my $artist = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
 my $root = $doc->findnodes( 'xs:artistList' )->get_node( 1 );

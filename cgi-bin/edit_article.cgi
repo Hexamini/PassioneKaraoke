@@ -28,10 +28,10 @@ $id = $id + 1;
 
 my $framment = 
     "<article id=\"_$id\"> 
-           <author>$author</author>
-           <title>$title</title>
-           <subtitle>$subtitle</subtitle>
-           <content>$content</content>
+           <author><![CDATA[$author]]></author>
+           <title><![CDATA[$title]]></title>
+           <subtitle><![CDATA[$subtitle]]></subtitle>
+           <content><![CDATA[$content]]></content>
          </article>";
 
 my $article = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
@@ -49,8 +49,8 @@ $doc = ParserXML::getDoc( $parser, $file );
 
 $framment =
     "<newArticle id='_$id'>
-       <title>$title</title>
-       <subtitle>$subtitle</subtitle>
+       <title><![CDATA[$title]]></title>
+       <subtitle><![CDATA[$subtitle]]></subtitle>
      </newArticle>";
 
 my $newArticle = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );

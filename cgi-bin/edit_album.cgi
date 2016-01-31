@@ -26,7 +26,7 @@ $id = lc $id;
 
 my $framment = 
     "<album id='$id'>
-       <name>$name</name>
+       <name><![CDATA[$name]]></name>
        <creation>$creation</creation>
      </album>";
 

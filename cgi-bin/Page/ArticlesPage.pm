@@ -17,16 +17,41 @@ sub get
     my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
+    my $size = @pairs;
+    my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
+    my $editMode = ( $size == 1 && $mode == 'edit' );
+    
     my @nodes = $doc->findnodes( '/xs:articleList/xs:article' );
     my @articles = ();
 
     foreach my $node( @nodes )
     {
-	my $title = $node->findnodes( 'xs:title/text()' );
-	my $subtitle = $node->findnodes( 'xs:subtitle/text()' );
+	my $title = ParserXML::getContent( $node->findnodes( 'xs:title/text()' ) );
+	my $subtitle = ParserXML::getContent( $node->findnodes( 'xs:subtitle/text()' ) );
 	my $id = $node->getAttribute( 'id' ); 
 	
-	push( @articles, ArticleList::get( $title, $subtitle, $id ) );
+	push( 
+	    @articles, 
+	    ( $editMode == 1 ) ? 
+	    ArticleList::get(
+		$title,
+		$subtitle,
+		$id,
+		EditButton::get(
+		    "r.cgi?section=articleManager&amp;id=$id&amp;mode=modify",
+		    '&#44',
+		    'modifyButton'
+		),
+		EditButton::get(
+		    'remove_article.cgi',
+		    '&#45',
+		    'removeButton',
+		    "$id"
+		)
+	    ) :
+	    ArticleList::get( $title, $subtitle, $id )
+	 );
     }
 
     @articles = reverse @articles;
@@ -37,12 +62,7 @@ sub get
     if ( !Session::isAdmin( $user ) ) {
 	$articlesPage = Articles::get( Articles::articleList( @articles ) );
     } else {
-
-	my $size = @pairs;
-	my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
-
-	if ( $size == 1 && $mode == 'edit' ) {
-
+	if ( $editMode == 1 ) {
 	    $articlesPage = Articles::get( 
 		Articles::articleList( @articles ),
 		EditButton::get( 
@@ -51,7 +71,7 @@ sub get
 		    'editButton'
 		),
 		EditButton::get( 
-		    'r.cgi?section=articleManager&amp;mode=insert', 
+		    'r.cgi?section=articleManager&amp;id=0&amp;mode=edit', 
 		    '&#43', 
 		    'addButton'
 		)

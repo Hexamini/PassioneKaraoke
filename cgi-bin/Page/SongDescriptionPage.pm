@@ -21,15 +21,15 @@ sub get
     my ( $id_song ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
     my $node = $doc->findnodes( "//xs:artist[\@id='$id_artist']" )->get_node( 1 ); #nodo artist
-    my $nameArtist = $node->findnodes( 'xs:nick/text()' );
+    my $nameArtist = ParserXML::getContent( $node->findnodes( 'xs:nick/text()' ) );
 
     $node = $node->findnodes( "xs:album[\@id='$id_album']" )->get_node( 1 ); #nodo album
-    my $nameAlbum = $node->findnodes( 'xs:name/text()' );
+    my $nameAlbum = ParserXML::getContent( $node->findnodes( 'xs:name/text()' ) );
 
     $node = $node->findnodes( "xs:song[\@id='$id_song']" )->get_node( 1 ); #nodo song
 
-    my $nameSong = $node->findnodes( 'xs:name/text()' );
-    my $lyrics = $node->findnodes( 'xs:lyrics/text()' );
+    my $nameSong = ParserXML::getContent( $node->findnodes( 'xs:name/text()' ) ); 
+    my $lyrics = ParserXML::getContent( $node->findnodes( 'xs:lyrics/text()' ) );
     my $url = $node->findnodes( 'xs:extra/text()' );
 
     $doc = ParserXML::getDoc( $parser, $fileUser );

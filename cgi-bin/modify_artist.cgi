@@ -36,7 +36,7 @@ if( $nick )
 
     $artist->removeChild( $artist->findnodes( 'xs:nick' )->get_node( 1 ) );
     
-    $nick = $parser->parse_balanced_chunk( "<nick>$nick</nick>" ) || die( 'Frammento non ben formato' );
+    $nick = $parser->parse_balanced_chunk( "<nick><![CDATA[$nick]]></nick>" ) || die( 'Frammento non ben formato' );
     $artist->appendChild( $nick );
 }
 
@@ -68,7 +68,7 @@ if( $description )
 {
     $artist->removeChild( $artist->findnodes( 'xs:description' )->get_node( 1 ) );
 
-    $description = $parser->parse_balanced_chunk( "<description>$description</description>" )
+    $description = $parser->parse_balanced_chunk( "<description><![CDATA[$description]]></description>" )
 	|| die( 'Frammento non ben formato' );
     $artist->appendChild( $description );
 }

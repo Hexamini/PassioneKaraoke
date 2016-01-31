@@ -24,8 +24,8 @@ $id = lc $id;
 #Sezione aggiunta canzoni nel database
 my $framment = 
     "<song id='$id'>
-       <name>$name</name>
-       <lyrics>$lyrics</lyrics>
+       <name><![CDATA[$name]]></name>
+       <lyrics><![CDATA[$lyrics]]</lyrics>
        <extra>$extra</extra>
        <grades>0</grades>
      </song>";
@@ -47,7 +47,7 @@ close( OUT );
 $file = '../data/database/news.xml';
 $doc = ParserXML::getDoc( $parser, $file );
 
-$framment = "<newSong id='$id' artist='$artist' album='$album'>$name</newSong>";
+$framment = "<newSong id='$id' artist='$artist' album='$album'><![CDATA[$name]]></newSong>";
 
 my $newSong = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
 

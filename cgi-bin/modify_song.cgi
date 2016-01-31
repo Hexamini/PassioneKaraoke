@@ -39,7 +39,7 @@ if( $name )
     
     $song->removeChild( $song->findnodes( 'xs:name' )->get_node( 1 ) );
 
-    my $name = $parser->parse_balanced_chunk( "<name>$name</name>" ) || die( 'Frammento non ben formato' );
+    my $name = $parser->parse_balanced_chunk( "<name><![CDATA[$name]]></name>" ) || die( 'Frammento non ben formato' );
     $song->appendChild( $name );
 }
 
@@ -47,7 +47,7 @@ if( $lyrics )
 {
     $song->removeChild( $song->findnodes( 'xs:lyrics' )->get_node( 1 ) );
 
-    my $lyrics = $parser->parse_balanced_chunk( "<lyrics>$lyrics</lyrics>" ) || die( 'Frammento non ben formato' );
+    my $lyrics = $parser->parse_balanced_chunk( "<lyrics><![CDATA[$lyrics]]></lyrics>" ) || die( 'Frammento non ben formato' );
     $song->appendChild( $lyrics );
 }
 

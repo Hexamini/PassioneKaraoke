@@ -28,16 +28,15 @@ sub get
     
     my $nodo = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 
-    my $name = $nodo->findnodes( "xs:nick/text()" ); #nome artista
-    my $description = $nodo->findnodes( 'xs:description/text()' );
-
+    my $name = ParserXML::getContent( $nodo->findnodes( "xs:nick/text()" ) ); #nome artista
+    my $description = ParserXML::getContent( $nodo->findnodes( 'xs:description/text()' ) );
+    
     my @nodeAlbum = $nodo->findnodes( 'xs:album' );
     my @albums = ();
-    
-    
+        
     foreach my $album( @nodeAlbum )
     {
-	my $nameAlbum = $album->findnodes( 'xs:name/text()' );
+	my $nameAlbum = ParserXML::getContent( $album->findnodes( 'xs:name/text()' ) );
 	my $idAlbum = $album->getAttribute( 'id' );
 	
 	my @nodeSong = $album->findnodes( 'xs:song' );
@@ -46,7 +45,7 @@ sub get
 	foreach my $song( @nodeSong )
 	{
 	    my $idSong = $song->getAttribute( 'id' );
-	    my $nameSong = $song->findnodes( 'xs:name/text()' );
+	    my $nameSong = ParserXML::getContent( $song->findnodes( 'xs:name/text()' ) );
 	    push @songs, ( $editMode == 1 ) ?
 		Song::get( 
 		    $nameSong, 

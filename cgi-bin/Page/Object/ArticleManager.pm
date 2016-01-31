@@ -14,14 +14,16 @@ Parametri:
 =cut
 sub get
 {
-    my ( $author, $date, $title, $subtitle, $content, $boxError ) = @_;
+    my ( $id, $author, $date, $title, $subtitle, $content, $mode, $boxError ) = @_;
 
     my $values = {
+	'id' => $id,
 	'author' => $author,
 	'date' => $date,
 	'title' => $title,
 	'subtitle' => $subtitle,
-	'content' => $content,
+	'body' => $content,
+	'mode' => $mode,
     };
 
     if ( defined $boxError ) {

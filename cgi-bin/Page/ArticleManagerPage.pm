@@ -4,13 +4,19 @@ use strict;
 use Page::Object::ArticleManager;
 use Page::Object::ErrorList;
 use Page::Object::BoxError;
+use Page::Object::Base::ParserXML;
 
 package ArticleManagerPage;
 
+my $file = '../data/database/articlelist.xml';
+
 sub get
 {
-    my ( @pairs ) = @_;
+    my ( $parser, @pairs ) = @_;
 
+    my ( $id ) = ( ( shift @pairs ) =~ /=(.+)/ ); #Potenzialmente vuoto
+    my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
+    
     my %forms = ();
     my @errors = ();
 
@@ -28,6 +34,24 @@ sub get
 	}
     }
 
+    if ( $mode eq 'modify' ) {
+	my $doc = ParserXML::getDoc( $parser, $file );
+
+	my $node = $doc->findnodes( "//xs:article[\@id='$id']" )->get_node( 1 );
+
+	if ( !exists $forms{ 'author' } ) {
+	    $forms{ 'author' } = $node->findnodes( 'xs:author/text()' );
+	} if ( !exists $forms{ 'date' } ) {
+	    $forms{ 'date' } = $node->findnodes( 'xs:data/text()' );
+	} if ( !exists $forms{ 'title' } ) {
+	    $forms{ 'title' } = $node->findnodes( 'xs:title/text()' );
+	} if ( !exists $forms{ 'subtitle' } ) {
+	    $forms{ 'subtitle' } = $node->findnodes( 'xs:subtitle/text()' );
+	} if ( !exists $forms{ 'content' } ) {
+	    $forms{ 'content' } = $node->findnodes( 'xs:content/text()' );
+	}
+    }
+
     my $boxError = undef;
     
     if ( scalar @errors > 0 ) {
@@ -35,11 +59,13 @@ sub get
     }
     
     return ArticleManager::get( 
+	$id,
 	$forms{ 'author' },
 	$forms{ 'date' },
 	$forms{ 'title' },
 	$forms{ 'subtitle' },
 	$forms{ 'content' },
+	$mode,
 	$boxError 
     );
 }

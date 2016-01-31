@@ -6,12 +6,14 @@
     <artist id="elioelestorietese">
         <nick>Elio e le storie tese</nick>
         <born>1985</born>
+		<image>default.jpg</image>
         <description>
         Elio e le Storie Tese (talvolta abbreviato in EelST o Elii) sono un gruppo musicale italiano di Milano, fondato da Stefano Belisari (in arte Elio) nel 1979.
         </description>
         <album id="_albumbiango">
             <name>Album Biango</name>
             <creation>2013</creation>
+			<image>albumbiango.jpg</image>
             <song id="_lacanzonemononota">
                 <name>La canzone Mononota</name>
                 <lyrics>la canzone mononota che si canta con una
@@ -34,12 +36,14 @@
     <artist id="fedez">
         <nick>Fedez</nick>
         <born>15/10/1989</born>
+		<image>fedez.jpg</image>
         <description>Federico Leonardo Lucia, meglio conosciuto con lo pseudonimo Fedez, è un rapper e produttore discografico italiano, considerato una grande promessa del rap italiano e una delle figure più importanti del panorama musicale italiano[2].
 
     Le sue vendite certificate dalla FIMI ammontano ad oltre 925.000 copie premiate con diciassette dischi di platino e sette dischi d'oro, ottenute grazie a due album in studio e otto singoli.[5] Fedez è stato uno dei quattro giudici dell'ottava edizione italiana del talent <span lang="en">show</span> X <span lang="en">Factor</span>: in tale occasione è cambiata anche qua riuscito a portare allo scontro finale due dei concorrenti da lui patrocinati, Madh e Lorenzo Fragola, vincendo la competizione con quest'ultimo.</description>
         <album id="penisolachenonce">
             <name>Penisola che non c'è</name>
             <creation>2011</creation>
+			<image>penisolachenonce.jpg</image>
             <song id="_penisolachenonce">
                 <name>Penisola che non c'è</name>
                 <lyrics>Penisola che non c'è e è cambiata

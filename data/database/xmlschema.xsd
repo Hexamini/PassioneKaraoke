@@ -37,6 +37,7 @@
             <xs:element name="nick" type="html" minOccurs="0" />
             <xs:element name="born" type="xs:string" />
             <xs:element name="death" minOccurs="0" type="xs:string" />
+			<xs:element name="image" minOccurs="1" maxOccurs="1" type="xs:string" />
             <xs:element name="description" type="html" />
             <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
         </xs:sequence>
@@ -50,6 +51,7 @@
         <xs:sequence>
             <xs:element name="name" type="html" />
             <xs:element name="creation" type="xs:string" />
+			<xs:element name="image" minOccurs="1" maxOccurs="1" type="xs:string" />
             <xs:element name="song" minOccurs="1" maxOccurs="unbounded"
                         type="Tsong" />
         </xs:sequence>

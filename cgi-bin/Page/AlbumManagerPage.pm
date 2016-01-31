@@ -20,7 +20,6 @@ sub get
     my ( $idAlbum ) = ( ( shift @pair ) =~ /=(.+)/ ); #Potenzialmente vuoto
     my ( $mode ) = ( ( shift @pair ) =~ /=(.+)/ );
 
-    
     my %forms = ();
     my @errors = ();
 
@@ -35,9 +34,6 @@ sub get
     }
 
     if ( $mode eq 'modify' ) {
-
-	print "$idArtist, $idAlbum";
-	
 	my $node = $doc->findnodes(
 	    "//xs:artist[\@id='$idArtist']/xs:album[\@id='$idAlbum']"
 	    )->get_node( 1 );

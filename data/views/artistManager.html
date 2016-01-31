@@ -24,11 +24,11 @@ META_!
             <p>L'asterisco (*) indica i campi obbligatori.</p>
 
             <div class="error">Nome d'arte non valido, inserire un testo presenti solo lettere e numeri</div>
-            <label for="a-Nick" class="obligatory-input">Nome d'arte o nome del gruppo: *</label>
+            <label for="a-Nick">Nome d'arte o nome del gruppo: *</label>
             <input type="text" name="artistNick" class="artist-nick" id="a-Nick" value="[% nick %]" />
 
             <div class="error">La data inserita non &egrave; valida, il formato deve essere gg-mm-yyyy </div>
-            <label for="a-Born" class="obligatory-input">Nascita dell'artista o formazione del gruppo: *</label>
+            <label for="a-Born">Nascita dell'artista o formazione del gruppo: *</label>
             <input type="text" name="artistBorn" class="artist-born" id="a-Born" value="[% born %]"/>
 
             <div class="error">La data inserita non &egrave; valida, il formato deve essere gg-mm-yyyy </div>
@@ -40,7 +40,7 @@ META_!
             <input type="text" name="artistImage" class="artist-image" id="a-Image" value="[% image %]" />
 
             <div class="error">Descrizione non valida</div>
-            <label for="a-Description" class="obligatory-input">Descrizione dell'artista: *</label>
+            <label for="a-Description">Descrizione dell'artista: *</label>
             <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40">[% description %]</textarea>
             <input type="submit" value="Conferma" name="action" />
         </fieldset>

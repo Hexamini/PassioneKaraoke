@@ -10,7 +10,6 @@
 body {
     width: 100%;
     font-family: 'Roboto', sans-serif;
-    padding-top: 5.5em;
     color: #333;
     font-size: 100%;
 }
@@ -27,9 +26,6 @@ body {
  HEADER
  ********************/
 #header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     background-color: #01579B;
     -webkit-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
@@ -39,11 +35,12 @@ body {
 
 #navigation-bar {
     width: 100%;
-    height: 4.5em;
+
 }
 
 #navigation-bar #logo {
-    height: 100%;
+    height: 4.5em;
+    text-align: center;
     margin-left: 1em;
 }
 
@@ -53,54 +50,19 @@ body {
 }
 
 #navigation-bar #menu {
-    height: 100%;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: -100%;
     background-color: #01579B;
-    z-index: 99;
     text-transform: uppercase;
-    -webkit-transition: all 0.3s cubic-bezier(.55, 0, .1, 1) 0s;
-    -moz-transition: all 0.3s cubic-bezier(.55, 0, .1, 1) 0s;
-    -o-transition: all 0.3s cubic-bezier(.55, 0, .1, 1) 0s;
-    transition: all 0.3s cubic-bezier(.55, 0, .1, 1) 0s;
-}
-
-#navigation-bar #open-menu-btn {
-    display: block;
-    width: 3em;
-    height: 3em;
-    position: absolute;
-    top: 0.75em;
-    right: 1em;
-    font-size: 1em;
-    z-index: 100;
-    color: transparent;
-    background: url('../../img/menu-hamb.svg') no-repeat center;
-    background-size: contain;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
-
-#navigation-bar #open-menu-btn:active {
-    background-color: #0277BD;
-}
-
-#navigation-bar #menu.open {
-    left: 0;
 }
 
 #navigation-bar #menu li {
     display: block;
-    height: 25%;
     width: 100%;
 }
 
 #navigation-bar #menu li a {
     font-size: 1.125em;
-    line-height: 3em;
+    line-height: 2.5em;
     height: 100%;
     width: 100%;
     color: white;
@@ -606,6 +568,12 @@ and (max-width: 768px) {
         padding-top: 7.25em;
     }
 
+    #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
     #navigation-bar {
         height: 6.25em !important;
     }
@@ -618,9 +586,6 @@ and (max-width: 768px) {
         height: 5.25em;
     }
 
-    #navigation-bar #open-menu-btn {
-        display: none;
-    }
 
     #navigation-bar #menu {
         position: static;

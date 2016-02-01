@@ -67,3 +67,8 @@ Per implementare questa feature viene usata la libreria Perl \textit{Session}, c
 \end{itemize}
 
 Durante lo sviluppo delle sessioni si \`e notato come fosse necessario salvare nei coockies solamente un id univoco che permettesse al sistema di riconoscere l'utente durante il login. \`E stato quindi ritenuto non necessario l'inserimento del banner nella normativa sui coockies (in quanto il banner si applica solamente se i coockies si utilizzano per la raccolta di dati a fini statistici)
+
+\subsubsection{Controlli sui campi form}
+All'invio di un form, viene invocato lo script \textit{check.cgi}, che si occupa di effettuare i vari controlli nei dati inseriti dell'utente. In caso i dati inseriti dall'utente non fossero validi per la base di dati progettata, verr\`a reso visibile un box di segnalazione che segnaler\`a all'utente il fatto che  l'input immesso non \`e valido, con tutti gli errori commessi per ogni input errato.
+
+I controlli sui campi form vengono eseguiti in Perl in caso di asseza di JavaScript e ci\`o si ottiene tramite un flag che ne segnala l'utilizzo o meno.

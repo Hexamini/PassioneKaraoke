@@ -1,8 +1,27 @@
+\graphicspath{ {res/img/} }
+
 \subsection{HTML}
 La struttura del sito \`e stata realizzata a ``moduli'': non esistono infatti pagine complete, ma son presenti spezzoni di pagine che servono al Perl per generare la pagina richiesta dall'utente. Questo permette un riutilizzo dei vari moduli, come ad esempio la lista di tutti gli album di un artista.
 \subsubsection{Strutturazione}
 
 %da scrivere: bisogna vedere la pagina web come una struttura ad albero, dove la radice e' page e tutto il resto son nodi figli
+\paragraph*{Gerarchizzazione ad albero}La struttura HTML adottata \`e stata ad albero. Questra struttura considera come nodo padre il file \textit{page.html}, e tutte le altre pagine come figli derivanti da esso.
+
+\newgeometry{margin=1.5cm}
+
+\begin{landscape}
+
+  \thispagestyle{empty}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{html_struct}
+    \caption{Struttura gerarchica dell'HTML del sito}
+  \end{figure}
+
+\end{landscape}
+
+\restoregeometry
 
 \paragraph*{MetaTag}Le pagine web presentano una gerarchia tra di loro, con il file page.html come nodo padre (radice). Per generare quindi correttamente i meta-tag si \`e deciso di inserire le informazioni nei nodi figli (sempre tramite segnaposti). Questo permette allo script \textit{r.cgi}, durante la costruzione della pagina web, di prendere le informazioni contenute nei nodi figli e di sostituirli al valore del segnaposto del padre.
 

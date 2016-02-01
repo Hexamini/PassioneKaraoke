@@ -31,7 +31,10 @@ my $cgi = new CGI;
 binmode(STDOUT, ":utf8");
 print $cgi->header( -charset => 'utf-8' );
 
-Page::collision( 'keywords', sub{ my ( $a, $b ) = @_; return "$a, $b"; }  );
+Page::collision( 
+    'keywords', 
+    sub{ my ( $a, $b ) = @_; return "$a, $b"; }  
+);
 
 my $buffer = $ENV{ 'QUERY_STRING' };
 my @pairs = split( /&/, $buffer );
@@ -41,20 +44,102 @@ my $parser = XML::LibXML->new();
 
 switch( $section )
 {
-    case 'albumManager' { Page::display( AlbumManagerPage::get( $parser, @pairs ), $section ); }
-    case 'article' { Page::display( ArticlePage::get( $parser, @pairs ), $section ); }
-    case 'articles' { Page::display( ArticlesPage::get( $parser, @pairs ), $section ); }
-    case 'articleManager' { Page::display( ArticleManagerPage::get( $parser, @pairs ), $section ); }
-    case 'artist' { Page::display( ArtistPage::get( $parser, @pairs ), $section ); }
-    case 'artists' { Page::display( ArtistsPage::get( $parser, @pairs ), $section ); }
-    case 'artistManager' { Page::display( ArtistManagerPage::get( $parser, @pairs ), $section ); }
-    case 'index' { Page::display( IndexPage::get( $parser, @pairs ), $section ); }
-    case 'login' { Page::display( LoginPage::get( @pairs ), $section ); }
-    case 'signin' { Page::display( SigninPage::get(), $section ); }
-    case 'search' { Page::display( SearchPage::get(), $section ); }
-    case 'songDescription' { Page::display( SongDescriptionPage::get( $parser, @pairs ), $section ); }
-    case 'songManager' { Page::display( SongManagerPage::get( $parser, @pairs ), $section ); }
-    case 'userPage' { Page::display( UserPagePage::get( $parser, @pairs ), 'login' ); }
-    case 'categoryManager' { Page::display( CategoryManagerPage::get(), $section ); }
+    case 'albumManager' { 
+	Page::display( 
+	    AlbumManagerPage::get( $parser, @pairs ), 
+	    $section
+	);
+    }
+
+
+    case 'article' {
+	Page::display( 
+	    ArticlePage::get( $parser, @pairs ), 
+	    $section
+	);
+    }
+    
+    case 'articles' { 
+	Page::display( 
+	    ArticlesPage::get( $parser, @pairs ), 
+	    $section
+	);
+    }
+    
+    case 'articleManager' { 
+	Page::display( 
+	    ArticleManagerPage::get( $parser, @pairs ), 
+	    $section
+	);
+    }
+    
+    case 'artist' { 
+	Page::display( 
+	    ArtistPage::get( $parser, @pairs ), 
+	    $section
+	);
+    }
+    
+    case 'artists' { 
+	Page::display( 
+	    ArtistsPage::get( $parser, @pairs ), 
+	    $section
+	);
+    }
+    
+    case 'artistManager' { 
+	Page::display( 
+	    ArtistManagerPage::get( $parser, @pairs ), 
+	    $section
+	);
+    }
+    
+    case 'index' { 
+	Page::display( 
+	    IndexPage::get( $parser, @pairs ), 
+	    $section
+	);
+    }
+    
+    case 'login' { 
+	Page::display( LoginPage::get( @pairs ), $section ); 
+    }
+    
+    case 'signin' { 
+	Page::display( SigninPage::get(), $section ); 
+    }
+    
+    case 'search' { 
+	Page::display( SearchPage::get(), $section ); 
+    }
+    
+    case 'songDescription' { 
+	Page::display( 
+	    SongDescriptionPage::get( $parser, @pairs ), 
+	    $section 
+	); 
+    }
+    
+    case 'songManager' { 
+	Page::display( 
+	    SongManagerPage::get( $parser, @pairs ), 
+	    $section 
+	); 
+    }
+    
+    case 'userPage' { 
+	Page::display( 
+	    UserPagePage::get( $parser, @pairs ), 
+	    'login'
+	);
+    }
+    
+    case 'categoryManager' { 
+	Page::display( 
+	    CategoryManagerPage::get(), 
+	    $section
+	);
+    }
+
     else { Page::display( C404Page::get() ); }
 }

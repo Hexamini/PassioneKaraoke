@@ -1,3 +1,39 @@
 \subsection{CSS}
 %TODO
 %MEMO: per css vedere la seguente issue: https://github.com/Hexamini/PassioneKaraoke/issues/59
+Creazione dei fogli di stile
+
+Per la creazione dei fogli di stile è stato deciso di utilizzare la metodologia mobile-first.
+Questa metodologia consiste nella creazione dei fogli di stile partendo da quelli riservati a schermi più piccoli (gli smartphone), fino ad arrivare a schermi di grandi dimensioni (come per i desktop).
+In particolare nel progetto sono stati individuati 3 punti di rottura:
+\begin{itemize}
+
+    \item schermi di piccole dimensioni fino a 480px: corrispondono ad uno smartphone in modalità portrait;
+    \item schermi di medie dimensioni: fino a 768px: corrispondono ad uno smartphone in modalità landscape e tablet di piccole dimensioni;
+    \item schermi di grandi dimensioni: da 768px: corrisondono a tablet di grandi dimensioni e computer desktop
+
+\end{itemize}
+
+\`E stato deciso di ridurre la seconda fascia individuata dai punti di rottura per consentire una navigazione desktop a tablet di grandi dimensioni perchè si è notata una più facile navigazione in questa modalità per questo tipo di dispositivi.
+
+I fogli di stile creati sono 3:
+\begin{itemize}
+
+    \item style.css: è il file CSS principale che contiene le regole grafiche per smartphone, tablet e desktop.
+    \item ie.css:  un foglio di stile utile alle vecchie versioni di Internet Explorer (versione minore o uguale a 8), in quanto questi brawser non riescono ad interpretare le mediaqueries di CSS. Per tale motivo in questo foglio di stile sono state riportare le regole che impostano la grafica per desktop, portando inoltre gli accorgimenti per la grandezza dello schermo: sono state ridotte le grandezze massime degli elementi per poterli adattare ad uno schermo 1024x768.
+    \item print.css: è il foglio di stile dedicato alla stampa. In questo caso si sono modificati gli elementi affinche la stampa possa essere eseguita con il minor consumo di colore: gli sfondi degli elementi sono stati portati a bianchi con le scritte nere. Nella modalità per la stampa viene rimossa anche la barra di navigazione perchè non è necessaria.
+
+\end{itemize}
+
+Punti di decisione importanti
+
+\paragraph*{Il Menu}
+Per la grafica del menu si è optato per un layout ad elenco per quanto riguara lo stile per smartphone e tablet: in tale modo le voci sono sempre visibili e non necessitano di Javascript per mostrarle, così anche con una navigazione con Javascript disabilitato sia possibile navigare agevolmente.
+Per desktop invece è stato deciso di adottare un menu fisso sulla parte alta dello schermo.
+
+\paragraph*{Layout generale della pagina}
+Il layout generale della pagina segue una formattazione ad una signola colonna disposta al centro, la quale segue la grandezza dello schermo fino ad una grandezza massima di 1200px (980px per vecchi brawser IE).
+Il menu è sempre a layout fluido e copre tutta la lunghezza dello schermo.
+
+\paragraph*{I Colori}
+Per la palette dei colori è stato deciso di utilizzare un sottoinsieme delle tonalità di colore proposte da Google nelle indicazioni per Material Design (link:  \url{https://www.google.com/design/spec/material-design/introduction.html}). Questa scelta deriva dal fatto che i colori proposti da Google, oltre ad essere più familiari agli utenti in quanto vengono utilizzati massivamente sia sul web che sulle applicazioni smartphone, offrono un ottimo rapporto di contrasto (si veda Acessibilità) e sono ottimi anche per utenti con handicap visivi (le varie forme di daltonismo).

@@ -46,7 +46,9 @@ Le pagine web che vengono servite sono ``costruite'' dal perl secondo uno specif
 
 Durante il parsing, viene riconosciuto il segnaposto e viene aggiunto il modulo HTML corrente.
 
-\paragraph*{r.cgi}Questo script \`e il motore del sito, che permette come gi\`a accennato il caricamento delle singole pagine web e la creazione dei link all'interno della pagina stessa. Scrivendo nell'URL del sito tramite una \textit{QueryString} la pagina desiderata e i parametri principali rimanda l'utente alla pagina richiesta sostituendo ai segnaposti al contenuto.
+\paragraph*{r.cgi}Questo script \`e il motore del sito, che permette come gi\`a accennato il caricamento delle singole pagine web e la creazione dei link. Scrivendo nell'URL del sito tramite una \textit{QueryString} la pagina desiderata e i parametri principali rimanda l'utente alla pagina richiesta sostituendo ai segnaposti al contenuto.
+
+In caso non ci sia corrispondenza con le pagine presenti nel sito si sar\`a rimandati alla pagina di \textit{404}.
 
 \subsubsection{Interazione con la base XML}
 Perl non si occupa solamente della generazione dell'html, ma anche del prelievo dei dati dalla base scritta in XML.

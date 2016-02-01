@@ -45,6 +45,9 @@ L'html \`e stato scritto in maniera tale da permettere una massima modularizzazi
 Le pagine web che vengono servite sono ``costruite'' dal perl secondo uno specifico metodo. \textit{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.
 
 Durante il parsing, viene riconosciuto il segnaposto e viene aggiunto il modulo HTML corrente.
+
+\paragraph*{r.cgi}Questo script \`e il motore del sito, che permette come gi\`a accennato il caricamento delle singole pagine web e la creazione dei link all'interno della pagina stessa. Scrivendo nell'URL del sito tramite una \textit{QueryString} la pagina desiderata e i parametri principali rimanda l'utente alla pagina richiesta sostituendo ai segnaposti al contenuto.
+
 \subsubsection{Interazione con la base XML}
 Perl non si occupa solamente della generazione dell'html, ma anche del prelievo dei dati dalla base scritta in XML.
 

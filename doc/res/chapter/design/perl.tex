@@ -58,4 +58,12 @@ La manipolazione dei dati utilizza la libreria Perl \textit{LibXML}, che da l'ac
 
 \subsubsection{Gesione delle sessioni}
 Le sessioni (salvate nel server) vengono gestite tramite l'utilizzo di cookies (che riportano l'id della sessione corrispondente): permettono agli utenti registrati di eseguire il login e di accedere ad altre funzionalit\`a.
-%TODO
+Per implementare questa feature viene usata la libreria Perl \textit{Session}, che fornisce i metodi necessari per dare la possibilit\`a di creare sessioni utente. Le sessioni avvengono tramite due fasi principali:
+\begin{itemize}
+
+    \item viene creato inizialmente un file (il coockie), che viene salvato lato client e gestito dal browser dell'utente;
+    \item viene creato un file lato server (il file sessione) dove vengono storicizzati i parametri per identificare con successo l'utente navigante sul sito web.
+
+\end{itemize}
+
+Durante lo sviluppo delle sessioni si \`e notato come fosse necessario salvare nei coockies solamente un id univoco che permettesse al sistema di riconoscere l'utente durante il login. \`E stato quindi ritenuto non necessario l'inserimento del banner nella normativa sui coockies (in quanto il banner si applica solamente se i coockies si utilizzano per la raccolta di dati a fini statistici)

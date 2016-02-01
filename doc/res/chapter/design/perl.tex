@@ -47,6 +47,14 @@ Le pagine web che vengono servite sono ``costruite'' dal perl secondo uno specif
 Durante il parsing, viene riconosciuto il segnaposto e viene aggiunto il modulo HTML corrente.
 \subsubsection{Interazione con la base XML}
 Perl non si occupa solamente della generazione dell'html, ma anche del prelievo dei dati dalla base scritta in XML.
+
+La manipolazione dei dati utilizza la libreria Perl \textit{LibXML}, che da l'accesso alla struttura XML consentendo l'utilizzo delle istruzioni XPath e conferendo l'accesso alla struttura ad albero dell'XML.
+
+\paragraph*{Funzionamento prelievo dati da XML}Tramite l'uso di espressioni XPath \`e possibile ottenere l'oggetto \textit{LibXML::NodeList}: \`e possibile scorrere la lista leggendo il singolo valore del nodo e, tramite un'operazione ricorsiva, eseguire nuovamente espressioni XPath allo scopo di giungere ai nodi figli (dove sono contenute le informazioni), permettendo di estrapolare il valore memorizzato nel nodo e raccogliendo le informazioni desiderate.
+
+\paragraph*{Funzionamento modifica dati da XML}Analogamente al prelievo dei dati XML, si raggiungono padri delle foglie tramite espressioni XPath. Una volta giunti a questo livello, si rimuove il nodo foglia da modificare e si inserisce il nuovo nodo foglia modificato, effettuando quindi una modifica del valore per sostituzione dei nodi.
+
+\paragraph*{Funzionamento rimozione dati da XML}Similmente per la modifica XML, una volta ottenuto il nodo padre del sotto albero che si vuole rimuovere, \`e possibile tramite un'istruzione Perl cancellare il dato sott'albero.
 %TODO
 \subsubsection{Gesione delle sessioni}
 Le sessioni (salvate nel server) vengono gestite tramite l'utilizzo di cookies (che riportano l'id della sessione corrispondente): permettono agli utenti registrati di eseguire il login e di accedere ad altre funzionalit\`a.

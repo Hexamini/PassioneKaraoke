@@ -496,9 +496,10 @@ h3 {
     font-size: 1.125em;
 }
 
+
 #song-extra iframe {
-    display:block;
     margin: 0 auto;
+    display:block;
     width: 320px;
     height: 240px;
 }
@@ -544,8 +545,8 @@ and (max-width: 768px) {
         max-width: 700px;
     }
 
-    #song-extra iframe {
-        margin: 0 auto;
+
+    #song-extra iframe{
         width: 480px;
         height: 360px;
     }
@@ -691,9 +692,10 @@ and (max-width: 768px) {
     }
 
     /************* SINGLE SONG **********************/
-    #song-extra iframe {
-        margin: 0 auto;
-        width: 768px;
+
+
+    #song-extra iframe{
+        width: 720px;
         height: 576px;
     }
 

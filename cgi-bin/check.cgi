@@ -13,4 +13,3 @@ print $cgi->header();
 my $javascript = $cgi->param( 'javascript' );
 my $script = $cgi->param( 'mode' ).'_'.$cgi->param( 'page' );
 
-print $script; 

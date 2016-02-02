@@ -5,6 +5,8 @@ function check(inputName, value) {
     console.log("Sono in check");
 
     var listOfInputToCheck = {
+	albumName : /^(\w+){2,}$/, //Nome album cantante
+	albumCreation : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //Data di creazione dell'album
         artistNick : /^(\w+){2,}$/, //'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
         artistBorn : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //'Il formato data non è valido'],
         artistDeath : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //'La morte dell\'artista non è valida'],
@@ -15,15 +17,7 @@ function check(inputName, value) {
         articleSubtitle : /^(\w+)$/ //'Il sotto-titolo contiene caratteri non validi']
     };
 
-
-    console.log("test2 " + inputName.toString());
-
-    var tmpVar = "\"" + inputName + "\"";
-
-    console.log(tmpVar);
-
     if ( !listOfInputToCheck[inputName].test(value) ){
-
         console.log("Cambio la voce in visible");
 
         document.getElementById("err-".concat(inputName)).className += " visible";

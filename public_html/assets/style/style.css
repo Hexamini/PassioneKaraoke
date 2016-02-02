@@ -497,6 +497,7 @@ h3 {
 }
 
 #song-extra iframe {
+    display:block;
     margin: 0 auto;
     width: 320px;
     height: 240px;

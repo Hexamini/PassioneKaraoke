@@ -35,12 +35,11 @@
 
     <div id="navigation-bar">
         <div id="logo"><img src="../img/logo.svg" alt="Logo Passione Karaoke"></div>
-        <ul id="menu"><!-- Il link attivo cambierà con JavaScript -->
-            <li><a href="r.cgi?section=index" class='[% index %]'>Home</a></li><!--
-            --><li><a href="r.cgi?section=artists" class='[% artists %]'>Artisti</a></li><!--
-            --><li><a href="r.cgi?section=articles" class='[% articles %]'>Articoli</a></li><!--
-             @korut94 aggiunto segnaposto in modo da far apparire il nome dell'utente quando sara' loggato
-            --><li><a href="r.cgi?[% ref_user %]">[% user %]</a></li> <!-- Voce da modificare -->
+        <ul id="menu">
+            <li>[% index %]</li><!--
+            --><li>[% artists %]</li><!--
+            --><li>[% articles %]</li><!--
+            --><li>[% login %]</li> <!-- Voce da modificare -->
         </ul>
     </div>
 

@@ -1,4 +1,6 @@
 use lib "cgi-bin"; #uso il mio package
+
+use Page::Object::Link;
 use Page::Object::Base::Behavior;
 use Page::Object::Base::Session;
 
@@ -18,31 +20,35 @@ sub display
     
     my $user = Session::getSession();
 
-    my $login = {
-	'user' => 'Login',
-	'ref_user' => 'section=login',
-    };
+    my %linkSections = (
+	'index' => Link::get( 'Index', 'r.cgi?section=index' ),
+	'artists' => Link::get( 'Artisti', 'r.cgi?section=artists' ),
+	'articles' => Link::get( 'Articoli', 'r.cgi?section=articles' ),
+	'login' => Link::get( 'Login', "r.cgi?section=login" ),
+    );
 
-    my $linkSections = {
-	'index' => 'enable',
-	'artists' => 'enable',
-	'articles' => 'enable',
-	'login' => 'enable',
-    };
+    my %nameSections = (
+	'index' => 'Index',
+	'artists' => 'Artisti',
+	'articles' => 'Articoli',
+	'login' => 'Login',
+    );
 
-    if( $section )
-    {
-	$linkSections->{ $section } = 'disable';
-    }
-    
-    if( $user )
-    {
-	$login->{ 'user' } = $user,
-	$login->{ 'ref_user' } = "section=userPage&username=$user",
+    if ( $user ) {
+	$linkSections{'login'} = Link::get( $user, "r.cgi?section=userPage&amp;id=$user" );
+	$nameSections{'login'} = $user;
     }
 
-    $chain = Behavior::weld( $chain, $login );
-    $chain = Behavior::weld( $chain, $linkSections );
+    if( $section ) {
+	$linkSections{ $section } = { 'link' => $nameSections{ $section } };
+    }
+
+    foreach my $key( keys %linkSections ) {
+	$chain = Behavior::weld( 
+	    $chain, 
+	    Link::rename( $linkSections{$key}, $key )
+	);
+    }
     
     print ParserHTML::parsing({ filename => $struct, values => $chain, });
 }

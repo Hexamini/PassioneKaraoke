@@ -1,7 +1,7 @@
 \subsection{CSS}
 %TODO
 %MEMO: per css vedere la seguente issue: https://github.com/Hexamini/PassioneKaraoke/issues/59
-Creazione dei fogli di stile
+\subsubsection{Creazione dei fogli di stile}
 
 Per la creazione dei fogli di stile è stato deciso di utilizzare la metodologia mobile-first.
 Questa metodologia consiste nella creazione dei fogli di stile partendo da quelli riservati a schermi più piccoli (gli smartphone), fino ad arrivare a schermi di grandi dimensioni (come per i desktop).
@@ -19,9 +19,9 @@ In particolare nel progetto sono stati individuati 3 punti di rottura:
 I fogli di stile creati sono 3:
 \begin{itemize}
 
-    \item style.css: è il file CSS principale che contiene le regole grafiche per smartphone, tablet e desktop.
-    \item ie.css:  un foglio di stile utile alle vecchie versioni di Internet Explorer (versione minore o uguale a 8), in quanto questi brawser non riescono ad interpretare le mediaqueries di CSS. Per tale motivo in questo foglio di stile sono state riportare le regole che impostano la grafica per desktop, portando inoltre gli accorgimenti per la grandezza dello schermo: sono state ridotte le grandezze massime degli elementi per poterli adattare ad uno schermo 1024x768.
-    \item print.css: è il foglio di stile dedicato alla stampa. In questo caso si sono modificati gli elementi affinche la stampa possa essere eseguita con il minor consumo di colore: gli sfondi degli elementi sono stati portati a bianchi con le scritte nere. Nella modalità per la stampa viene rimossa anche la barra di navigazione perchè non è necessaria.
+    \item style.css: è il file CSS principale che contiene le regole grafiche per smartphone, tablet e desktop;
+    \item ie.css:  un foglio di stile utile alle vecchie versioni di Internet Explorer (versione minore o uguale a 8), in quanto questi brawser non riescono ad interpretare le mediaqueries di CSS. Per tale motivo in questo foglio di stile sono state riportare le regole che impostano la grafica per desktop, portando inoltre gli accorgimenti per la grandezza dello schermo: sono state ridotte le grandezze massime degli elementi per poterli adattare ad uno schermo 1024x768;
+    \item print.css: è il foglio di stile dedicato alla stampa. In questo caso si sono modificati gli elementi affinchè la stampa possa essere eseguita con il minor consumo di colore: gli sfondi degli elementi sono stati portati a bianchi con le scritte nere. Nella modalità per la stampa viene rimossa anche la barra di navigazione perchè non è necessaria.
 
 \end{itemize}
 

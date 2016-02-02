@@ -4,7 +4,6 @@
 La struttura del sito \`e stata realizzata a ``moduli'': non esistono infatti pagine complete, ma son presenti spezzoni di pagine che servono al Perl per generare la pagina richiesta dall'utente. Questo permette un riutilizzo dei vari moduli, come ad esempio la lista di tutti gli album di un artista.
 \subsubsection{Strutturazione}
 
-%da scrivere: bisogna vedere la pagina web come una struttura ad albero, dove la radice e' page e tutto il resto son nodi figli
 \paragraph*{Gerarchizzazione ad albero}La struttura HTML adottata \`e stata ad albero. Questra struttura considera come nodo padre il file \textit{page.html}, e tutte le altre pagine come figli derivanti da esso.
 
 \newgeometry{margin=1.5cm}
@@ -23,7 +22,7 @@ La struttura del sito \`e stata realizzata a ``moduli'': non esistono infatti pa
 
 \restoregeometry
 
-\paragraph*{MetaTag}Per generare correttamente i meta-tag si \`e deciso di inserire le informazioni nei nodi figli (sempre tramite segnaposti). Questo permette allo script \textit{r.cgi}, durante la costruzione della pagina web, di prendere le informazioni contenute nei nodi figli delle pagine che vogliono essere visualizzate e di sostituirli al valore del segnaposto del padre. Per raggiungere questo obiettivo in ogni nodo foglia \`e stato applicato di aggiungere nei file HTML una area dichiarativa di meta informazioni: ogni valore dell'elemento \`e stato associato ad un nome, e se il primo antenato contiene un segnaposto corrispondente ai nomi trovati, vengono sostituiti i relativi valori.
+\paragraph*{MetaTag}Per generare correttamente i meta-tag si \`e deciso di inserire le informazioni nei nodi figli (sempre tramite segnaposti). Questo permette allo script \textit{r.cgi}, durante la costruzione della pagina web, di prendere le informazioni contenute nei nodi figli delle pagine che vogliono essere visualizzate e di sostituirli al valore del segnaposto del padre. Per raggiungere questo obiettivo in ogni nodo foglia \`e stato applicato di aggiungere nei file HTML una area dichiarativa di meta-informazioni: ogni valore dell'elemento \`e stato associato ad un nome, e se il primo antenato contiene un segnaposto corrispondente ai nomi trovati, vengono sostituiti i relativi valori.
 
 %IDEA: esprimere le funzionalità delle pagine principali del sito
 \paragraph*{page.html} Il file page.html \`e il file principale per tutta la struttura html. In esso infatti sono presenti la dichiarazioni di html usato (per la realizzazione di questo sito si \`e deciso di utilizzare HTML5), i tag \textit{meta}, il \textit{breadcrum}, il \textit{menu}. Tutte le altre pagine vengono costruite a partire da page.html: questo fa variare solamente parte della struttura, permettendo di apportare modifiche al men\`u o alle altre componenti condivise da tutte le pagine del sito in maniera semplice.

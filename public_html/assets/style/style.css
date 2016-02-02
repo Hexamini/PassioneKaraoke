@@ -31,6 +31,7 @@ body {
     -webkit-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
     -moz-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
     box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
+    z-index: 100;
 }
 
 #navigation-bar {
@@ -496,19 +497,12 @@ h3 {
     font-size: 1.125em;
 }
 
-#song-extra {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
-    max-width: 768px;
-}
+
 #song-extra iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    display:block;
+    width: 320px;
+    height: 240px;
 }
 
 /*************************
@@ -553,8 +547,8 @@ and (max-width: 768px) {
     }
 
     #song-extra iframe{
-        width: 90%;
-        margin: 2em auto;
+        width: 480px;
+        height: 360px;
     }
 
 }
@@ -700,6 +694,10 @@ and (max-width: 768px) {
 
     /************* SINGLE SONG **********************/
 
+    #song-extra iframe{
+        width: 720px;
+        height: 576px;
+    }
 
     /************* LOGIN *********************************/
     #login label {

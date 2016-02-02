@@ -130,7 +130,10 @@ h3 {
 }
 
 /************* SINGLE SONG **********************/
-
+#song-extra iframe{
+    width: 720px;
+    height: 576px;
+}
 /************* LOGIN *********************************/
 #login label {
     display: inline-block;

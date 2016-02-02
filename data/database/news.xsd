@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.passionekaraoke.com"
+           targetNamespace="http://www.passionekaraoke.com"
+           elementFormDefault="qualified">
+
+<!-- ****************** Inizio News ****************** -->
+    <xs:element name="lastNews" type="TlastNews"/>
+
+    <xs:complexType name="TlastNews">
+        <xs:sequence>
+            <xs:element name="songs" type="TsongsNew" />
+            <xs:element name="articles" type="TarticlesNew" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TsongsNew">
+        <xs:sequence>
+            <xs:element name="newSong" type="TnewSong" maxOccurs="5" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TarticlesNew">
+        <xs:sequence>
+            <xs:element name="newArticle" type="TnewArticle" maxOccurs="5" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TnewSong">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:ID" use="required"/>
+                <xs:attribute name="artist" type="xs:string" use="required"/>
+                <xs:attribute name="album" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="TnewArticle">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="subtitle" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+<!-- ****************** Fine News ****************** -->
+</xs:schema>

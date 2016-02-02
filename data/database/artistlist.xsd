@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.passionekaraoke.com"
+           targetNamespace="http://www.passionekaraoke.com"
+           elementFormDefault="qualified">
+
+<!-- Inizio Artisti -->
+    <xs:element name="artistList" type="TartistList"/>
+
+    <xs:complexType name="TartistList">
+        <xs:sequence>
+            <xs:element name="artist" type="Tartist"  maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Tartist">
+        <xs:sequence>
+            <xs:element name="nick" type="xs:string" minOccurs="0" />
+            <xs:element name="description" type="xs:string" />
+            <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+<!-- Fine Artisti -->
+
+<!-- Inizio Album -->
+    <xs:complexType name="Talbum">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="song" minOccurs="1" maxOccurs="unbounded"
+                        type="Tsong" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+<!-- Fine Album -->
+
+<!-- Inizio Canzoni -->
+	<xs:complexType name="Tsong">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="lyrics" type="xs:string"  />
+			<xs:element name="extra" type="xs:string"  />
+            <xs:element name="grades" type="xs:integer" default="0"/>
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+<!-- Fine Canzoni -->
+
+</xs:schema>

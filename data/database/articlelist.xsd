@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.passionekaraoke.com"
+           targetNamespace="http://www.passionekaraoke.com"
+           elementFormDefault="qualified">
+
+<!-- ****************** Inizio Articoli ****************** -->
+	<xs:element name="articleList" type="TarticleList"/>
+
+	<xs:complexType name="TarticleList">
+		<xs:sequence>
+			<xs:element name="article" maxOccurs="unbounded" type="Tarticle" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Tarticle">
+		<xs:sequence>
+            <xs:element name="author" type="xs:string" />
+            <xs:element name="data" type="xs:string" />
+			<xs:element name="title" type="xs:string" />
+			<xs:element name="subtitle" type="xs:string" />
+			<xs:element name="content" type="xs:string" />
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+
+<!-- ****************** Fine Articoli ****************** -->
+
+</xs:schema>

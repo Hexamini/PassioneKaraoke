@@ -4,10 +4,12 @@
 %TODO
 %MEMO TODO: per i problemi e le soluzioni addottate per l'accessibilita' vedere:
 %https://github.com/Hexamini/PassioneKaraoke/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3AAccessibilit%C3%A0+
-Il sito è stato utilizzato sviluppando solamente codice HTML5. Per i fogli di stile è invece stato deciso di applicare CSS 3.0, per potersi avvantaggiare di nuove tecnologie grafiche e ridurre al minimo l'utilizzo di JavaScript, che invece è stato applicato per i controlli sul form di login e sulla gestione del contenuto del sito, avendo comunque una buona degradazione in caso questa tecnologia non sia disponibile nel dispositivo in uso.
+Il sito è stato sviluppato utilizzando solamente codice HTML5. Per i fogli di stile si è invece deciso di applicare CSS 3.0, per poter sfruttare nuove tecnologie grafiche e ridurre al minimo l'utilizzo di JavaScript, che invece è stato utilizzato solo per i controlli sul form di login e sulla gestione del contenuto del sito. Il sito ha comunque una buona degradazione anche nel caso in cui questa tecnologia non fosse disponibile nel dispositivo in uso.
 
 \subsubsection{Colori del sito}
-I colori del sito sono stati scelti dopo diversi tentativi tramite l'utilizzo di \url{http://vischeck.com/}. Inizialmente si era stati propensi per un colore caldo, tendente al rosso/arancione, ma effettuando i test si è ottenuto i seguenti risultati:
+I colori del sito sono stati scelti tramite l'utilizzo di \url{http://vischeck.com/}. Inizialmente si pensava di usare un colore caldo, tendente al rosso/arancione, ma l`idea \`e stata scartata quando, effettuando i test, sono stati ottenuti i seguenti risultati:
+
+\textit{\`E stata presa l'homepage come esempio principale. Il resto del sito si basa su questa stessa gamma di colori.}
 
 \begin{itemize}
 
@@ -45,7 +47,7 @@ I colori del sito sono stati scelti dopo diversi tentativi tramite l'utilizzo di
 
 \end{itemize}
 
-Come si può ben vedere, i colori non ``degradano'' in maniera elegante, causando una distorsione troppo forte. Si è quindi deciso di cambiarli, ottenendo i seguenti risultati:
+Come si può ben vedere, i colori non degradano in maniera elegante, e causano invece una distorsione troppo forte. Si è quindi deciso di cambiarli, ottenendo i seguenti risultati:
 \begin{itemize}
 
     \item[]
@@ -82,10 +84,9 @@ Come si può ben vedere, i colori non ``degradano'' in maniera elegante, causand
 
 \end{itemize}
 
-Il resto del sito si basa su questa gamma di colori. \`E stata presa l'homepage come esempio principale.
 
-\subsubsection{Colori dei bottoni per esprimere preferenze}
-Per accertarsi di avere una accessibilit\`a dal punto di vista visivo completa, si \`e proceduto a controllare anche i bottoni per esprimere la preferenza o meno di una canzone: questa operazione di controllo in particolare \`e stata effettuata in quanto i simboli utilizzati (ovvero il microfono rivolto verso l'alto per esprimere un apprezzamento e un microfono rivolto verso il basso per esprimere un voto negativo) non rappresentano una convenzione standard, ma essendo convenzioni interne del sito si \`e preferito assicurarsi che tutti gli utenti con capacit\`a visive siano in grado di comprendere a pieno il messaggio trasmesso.
+\subsubsection{Colori delle icone per esprimere preferenze}
+Per accertarsi di avere un'accessibilit\`a completa dal punto di vista visivo, si \`e proceduto anche al controllo delle icone dei pulsanti per esprimere il giudizio positivo o negativo su una canzone. Questo controllo \`e stato necessario in quanto i simboli utilizzati (il microfono rivolto verso l'alto per esprimere un giudizio positivo e il microfono rivolto verso il basso per esprimere un voto negativo) non rappresentano una convenzione standard, ma essendo convenzioni interne del sito si \`e preferito assicurarsi che tutti gli utenti con percezione dei colori alterata siano in grado di comprendere a pieno il messaggio trasmesso.
 
 \begin{figure}[H]
     \centering
@@ -102,7 +103,7 @@ Per accertarsi di avere una accessibilit\`a dal punto di vista visivo completa, 
     \caption{Icone usate per esprimere preferenze all'interno del sito}
 \end{figure}
 
-\`E importante far notare come sia stato scelto il blu al posto di un pi\`u comune verde: dopo un test effettuato tramite \url{http://www.vischeck.com/} si \`e notato che non era abbastanza accessibile e che non era presente una distinzione abbastanza forte tra i colori delle due icone. Dopo aver cambiato il colore dell'icona di apprezzamento sono stati ri-effettuati i test, ottenendo i seguenti risultati:
+\`E importante notare la scelta del blu al posto di un pi\`u comune verde per l'icona per il voto positivo: dopo un test effettuato tramite \url{http://www.vischeck.com/} si \`e notato infatti che il verde non /`e abbastanza accessibile e che non sarebbe presente una distinzione abbastanza forte tra i colori delle due icone. Dopo aver cambiato il colore dell'icona di apprezzamento sono stati effettuati nuovamente i test, ottenendo risultati decisamente migliori:
 \begin{itemize}
 
     \item[]
@@ -152,7 +153,7 @@ Per accertarsi di avere una accessibilit\`a dal punto di vista visivo completa, 
 \end{itemize}
 
 \paragraph*{Contrasto e leggibilit\`a}
-\`E stato considerato importante anche la leggibilit\`a del testo per quelle persone che riportano problemi visivi. Un test sul contrasto tra testo e sfondo \`e stato effettuato utilizzando il tool reperibile al seguente indirizzo: \url{http://leaverou.github.io/contrast-ratio/#\%23E1F5FE-on-\%2301579B}.
+\`E stato dato peso nel progetto anche alla leggibilit\`a del testo per quelle persone che riportano problemi visivi. Per il test sul contrasto tra testo e sfondo si \`e rivelato utile il tool reperibile al seguente indirizzo: \url{http://leaverou.github.io/contrast-ratio/#\%23E1F5FE-on-\%2301579B}.
 I risultati ottenuti sono stati i seguenti: %TODO: da elencare i risultati ottenuti!
 
 \subsubsection{Form e segnalazione errori}

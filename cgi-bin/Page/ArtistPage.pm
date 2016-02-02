@@ -109,7 +109,7 @@ sub get
     my $user = Session::getSession();
     my $artistPage = '';
 
-    if ( !Session::isAdmin( $user ) ) {
+    if ( !Session::isAdmin( $user, $parser ) ) {
 	$artistPage = Artist::get( $name, $img, $description, Artist::listAlbum( @albums ) ); 
     } else {
 	if ( $editMode ) {

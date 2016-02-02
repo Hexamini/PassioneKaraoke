@@ -59,7 +59,7 @@ sub get
     my $user = Session::getSession();
     my $articlesPage = '';
 
-    if ( !Session::isAdmin( $user ) ) {
+    if ( !Session::isAdmin( $user, $parser ) ) {
 	$articlesPage = Articles::get( Articles::articleList( @articles ) );
     } else {
 	if ( $editMode == 1 ) {

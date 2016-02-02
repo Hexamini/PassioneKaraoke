@@ -55,7 +55,7 @@ sub get
     my $user = Session::getSession();
     my $artistsPage = '';
     
-    if ( !Session::isAdmin( $user ) ) {
+    if ( Session::isAdmin( $user, $parser ) == 0 ) {
 	$artistsPage = Artists::get( Artists::artistsList( @artists ) );
     } else {
 	if ( $mode eq 'edit' ) {

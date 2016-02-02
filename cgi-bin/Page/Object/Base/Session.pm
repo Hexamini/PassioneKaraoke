@@ -41,23 +41,15 @@ sub isAdmin
     my ( $user, $parser ) = @_;
 
     if ( length $user == 0 ) {
-
 	return 0;
-
     } else {
-
-	return ( $user == 'admin' );
-
-=Begin
         my $file = '../data/database/userlist.xml';
 	my $doc = ParserXML::getDoc( $parser, $file );
 
-	my $node = $doc->findnodes( "//xs:user[\@username='$user' and \@type='admin']" )->get_node( 1 );
-
-	return ( defined $node );
-=cut
+	return $doc->exists( 
+	    "//xs:user[\@username='$user' and xs:type='administrator']"
+	);
     }
-
 }
 
 1;

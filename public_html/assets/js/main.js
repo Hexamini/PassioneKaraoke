@@ -8,14 +8,13 @@ function check(input) {
     console.log("Sono in check");
 
     var listOfInputToCheck = {
-	albumName : /^(\w+){2,}$/, //Nome album cantante
-	albumCreation : /^(\d+){1,2}\-(d+){1,2}\-(d+){4}$/, //Data di creazione dell'album
-        artistNick : /^(\w+){2,}$/, //'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
+	//'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
+	artistNick : /^(\w+){2,}$/, 
+	artistImage : /^(\w+).(\w+)$/,
 	albumName : /^(\w+)$/, 
-	albumCreation: /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/,
-        artistBorn : /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/, //'Il formato data non è valido'],
-        artistDeath : /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/, //'La morte dell\'artista non è valida'],
+	albumImage : /^(\w+).(\w+)$/,
         songTitle : /^(\w+)$/, //'Il titolo contiene caratteri non validi'],
+	songExtra : /^(\w+)$/,
         articleAuthor : /^(\w+)$/, //'L\'autore dell\'articolo non è corretto'],
         articleData : /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/, //'La data inserita non è valida'],
         articleTitle : /^(\w+)$/, //'Il titolo contiene caratteri non validi'],

@@ -31,6 +31,7 @@ body {
     -webkit-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
     -moz-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
     box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.6);
+    z-index: 100;
 }
 
 #navigation-bar {
@@ -449,7 +450,7 @@ h3 {
     font-size: 1.125em;
     border: 0 none;
     width: 5em;
-    display:block;
+    display: block;
     font-weight: bolder;
     text-transform: uppercase;
     color: white !important;
@@ -464,8 +465,7 @@ h3 {
     background-color: #01579B;
 }
 
-
-#like-songs .song{
+#like-songs .song {
     padding: 0.6em 0;
     line-height: 1.75em;
     text-align: center;
@@ -487,28 +487,19 @@ h3 {
 /************* SINGLE SONG ***********************/
 
 #song-head #details {
-    text-align:center;
+    text-align: center;
     margin-bottom: 2em;
 }
 
 #song-head #details span {
-    font-weight:bold;
+    font-weight: bold;
     font-size: 1.125em;
 }
 
-#song-extra {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
-    max-width: 768px;
-}
 #song-extra iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    width: 320px;
+    height: 240px;
 }
 
 /*************************
@@ -552,9 +543,10 @@ and (max-width: 768px) {
         max-width: 700px;
     }
 
-    #song-extra iframe{
-        width: 90%;
-        margin: 2em auto;
+    #song-extra iframe {
+        margin: 0 auto;
+        width: 480px;
+        height: 360px;
     }
 
 }
@@ -585,7 +577,6 @@ and (max-width: 768px) {
     #navigation-bar #logo img {
         height: 5.25em;
     }
-
 
     #navigation-bar #menu {
         position: static;
@@ -699,7 +690,11 @@ and (max-width: 768px) {
     }
 
     /************* SINGLE SONG **********************/
-
+    #song-extra iframe {
+        margin: 0 auto;
+        width: 768px;
+        height: 576px;
+    }
 
     /************* LOGIN *********************************/
     #login label {

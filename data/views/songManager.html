@@ -30,7 +30,7 @@ META_!
 	    <!--                                                                                              -->
 
 	    <!-- @korut94 aggiunti label ai vari campi -->
-	    <div class="error" id="err-songTitle">Titolo della canzone errato, inserire un testo presenti solo lettere e numeri</div>
+	    <div class="error" id="err-songTitle">Titolo della canzone errato, inserire un testo che presenti solo lettere e numeri</div>
 	    <label for="song-title">Titolo: *</label>
             <input type="text" name="songTitle" id="song-title" value="[% title %]"/>
 
@@ -38,7 +38,7 @@ META_!
 	    <label for="song-lyrics">Testo della canzone: *</label>
             <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40">[% lyrics %]</textarea>
 
-	    <div class="error" id="err-songExtra">Formato del link non riconosciuto</div>
+	    <div class="error" id="err-songExtra">Formato del link non riconosciuto. Il formato del link deve essere ad esempio: https://www.youtube.com/embed/XXXXXX</div>
 	    <label for="song-extra">Link a youtube: *</label>
 	    <input name="songExtra" id="song-extra">[% extra %]</input>
             <!-- Le righe e le colonne definite in css? -->

@@ -21,28 +21,30 @@ META_!
 
         <div id="artist-name">
 
-            <h1>[% artist %]</h1>
+            <h1>Nome artista: [% artist %]</h1>
         </div>
     </div>
 
     <div id="artist-bio">
+
+        <h2>Biografia dell'artista</h2>
 
         [% artistBio %]
     </div>
 
     <div id="artist-list-of-albums">
 
-        <h2>Lista degli album</h2>
+       <h2>Lista degli album</h2>
 
         <!--Permette la modifica degli album -->
-        [% editButton %]
+       [% editButton %]
 	
-	<!-- @korut94 bottone per l'aggiunta di un album -->
-	[% addButton %]
-	<!--                                                  -->                              
+	   <!-- @korut94 bottone per l'aggiunta di un album -->
+	   [% addButton %]
+	   <!--                                                  -->
 
         <!-- Qui vanno elencati tutti gli album -->
-        [% albumList %]
+       [% albumList %]
 
     </div>
 

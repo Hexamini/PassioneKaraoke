@@ -7,21 +7,6 @@
 <xs:import namespace="http://www.w3.org/XML/1998/namespace"
            schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
-	<xs:complexType name="html" mixed="true">
-		<xs:choice minOccurs="0" maxOccurs="unbounded">
-			<xs:element name="span" type="TSpan" />
-		</xs:choice>
-	</xs:complexType>
-	
-	<xs:complexType name="TSpan">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="lang" />
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-
-
 <!-- ****************** Inizio Artista ****************** -->
 <!-- Inizio Artisti -->
     <xs:element name="artistList" type="TartistList"/>
@@ -34,10 +19,10 @@
 
     <xs:complexType name="Tartist">
         <xs:sequence>
-            <xs:element name="nick" type="html" minOccurs="0" />
+            <xs:element name="nick" type="xs:string" minOccurs="0" />
             <xs:element name="born" type="xs:string" />
             <xs:element name="death" minOccurs="0" type="xs:string" />
-            <xs:element name="description" type="html" />
+            <xs:element name="description" type="xs:string" />
             <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
@@ -48,7 +33,7 @@
 <!-- Inizio Album -->
     <xs:complexType name="Talbum">
         <xs:sequence>
-            <xs:element name="name" type="html" />
+            <xs:element name="name" type="xs:string" />
             <xs:element name="creation" type="xs:string" />
             <xs:element name="song" minOccurs="1" maxOccurs="unbounded"
                         type="Tsong" />
@@ -60,9 +45,9 @@
 <!-- Inizio Canzoni -->
 	<xs:complexType name="Tsong">
 		<xs:sequence>
-			<xs:element name="name" type="html" />
-			<xs:element name="lyrics" type="html"  />
-			<xs:element name="extra" type="html"  />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="lyrics" type="xs:string"  />
+			<xs:element name="extra" type="xs:string"  />
             <xs:element name="grades" type="xs:integer" default="0"/>
 		</xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
@@ -81,11 +66,11 @@
 
 	<xs:complexType name="Tarticle">
 		<xs:sequence>
-            <xs:element name="author" type="html" />
+            <xs:element name="author" type="xs:string" />
             <xs:element name="data" type="xs:string" />
-			<xs:element name="title" type="html" />
-			<xs:element name="subtitle" type="html" />
-			<xs:element name="content" type="html" />
+			<xs:element name="title" type="xs:string" />
+			<xs:element name="subtitle" type="xs:string" />
+			<xs:element name="content" type="xs:string" />
 		</xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
 	</xs:complexType>
@@ -163,8 +148,8 @@
 
     <xs:complexType name="TnewArticle">
         <xs:sequence>
-            <xs:element name="title" type="html" />
-            <xs:element name="subtitle" type="html" />
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="subtitle" type="xs:string" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>

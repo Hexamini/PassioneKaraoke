@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title> Testerino pane e vino</title>
+    </head>
+
+    <body>
+
+        <form class="insert-album-form" action="../cgi-bin/edit_album.cgi" method="post">
+
+        <fieldset>
+
+        <p>L'asterisco (*) indica i campi obbligatori.</p>
+
+	    <input type="hidden" name="artistName" value="[% idArtist %]" />
+
+        <div class="error" id="err-albumName">Nome album non valido, inserire solo lettere o numeri</div>
+            <label for="album-name">Nome: *</label>
+            <input type="text" name="albumName" id="album-name" value="[% name %]" />
+
+	    <div class="error" id="err-albumCreation">La data inserita non è valida, il formato deve essere gg-mm-yyyy</div>
+            <label for="album-creation">Data di pubblicazione: *</label>
+            <input type="text" name="albumCreation" id="album-creation" value="[% date %]" />
+
+            <input type="submit" value="Conferma" name="action" />
+        </fieldset>
+    </form>
+
+    </body>
+
+
+            <script src="main.js"></script>
+
+</html>

@@ -16,6 +16,9 @@ my $nick = $cgi->param( 'artistNick' );
 my $image = $cgi->param( 'artistImage' );
 my $description = $cgi->param( 'artistDescription' );
 
+#Aggiunta di uno spazio dopo una nuova linea
+$description =~ s/\n/n /g;
+
 my $qManager = 
     'r.cgi?section=artistManager&id=0&mode=edit'.
     "&s=$nick&s=$image&s=$description";
@@ -32,6 +35,7 @@ if ( !Check::check( $nick, 'artistNick' ) ) {
 } if ( !Check::check( $description, 'artistDescription' ) ) {
     $err = $err.'&e=La descrizione e\' vuota';
 }
+
 #Se uno dei test ha riscontrato errori vieni fatto il redirect su artistManger
 if ( $err ne '' ) {
     $qManager = $qManager.$err;

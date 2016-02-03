@@ -19,7 +19,7 @@ Parametri
 =cut
 sub get
 {
-    my( $album, $albumImage, $songsList, $addButton, $removeButton ) = @_;
+    my( $album, $albumImage, $songsList, $addButton, $modifyButton, $removeButton ) = @_;
 
     my $values = {
 	'album' => $album,
@@ -32,7 +32,10 @@ sub get
 
 	if ( defined $removeButton ) {
 	    $values = Behavior::weld( $values, $removeButton );
+	}
 
+	if ( defined $modifyButton ) {
+	    $values = Behavior::weld( $values, $modifyButton );
 	}
     }
     

@@ -23,11 +23,12 @@ sub get
 
     if ( ( scalar @pairs ) > 0 ) {
 	#Section catched forms
-	( $forms{ 'nick' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'image' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'description' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-
-	$forms{ 'description' } = Check::cleanExpression( $forms{ 'description' } );
+	$forms{ 'nick' } = 
+	    Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'image' } = 
+	    Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'description' } = 
+	    Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
 
         #Section catched errors
 	while ( ( scalar @pairs ) > 0 ) {

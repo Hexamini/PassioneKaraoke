@@ -33,7 +33,7 @@ if ( Check::check( $nick, 'artistNick' ) == 0 ) {
 #Se uno dei test ha riscontrato errori vieni fatto il redirect su artistManger
 if ( $err ne '' ) {
     $qManager = $qManager.$err;
-    
+    $cgi->redirect( $qManager );
 }
 
 my $id = $nick;

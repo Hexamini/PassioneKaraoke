@@ -463,8 +463,11 @@ h3 {
     background-color: #FFCDD2;
     color: #B71C1C;
     margin-top: 2em;
+    display: none;
 }
-
+.input-form .error.visible, .input-form .box-error.visible {
+    display: block;
+}
 .input-form .box-error ul {
     margin-top: 0.5em;
 }

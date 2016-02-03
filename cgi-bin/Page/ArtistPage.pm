@@ -126,6 +126,7 @@ sub get
 		Artist::listAlbum( @albums ),
 		EditButton::get( 
 		    "r.cgi?section=artist&amp;id=$id&amp;mode=edit", 
+		    'edit',
 		    'Sezione Amministrativa', 
 		    'editButton'
 		),
@@ -145,7 +146,7 @@ sub get
 		Artist::listAlbum( @albums ),
 		EditButton::get( 
 		    "r.cgi?section=artist&amp;id=$id&amp;mode=edit", 
-		    'null',
+		    'edit',
 		    'Sezione Amministrativa', 
 		    'editButton'
 		)

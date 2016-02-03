@@ -5,6 +5,7 @@ use Page::Object::ErrorList;
 use Page::Object::BoxError;
 use Page::Object::ArtistManager;
 use Page::Object::Base::ParserXML;
+use Page::Object::Base::Check;
 
 package ArtistManagerPage;
 
@@ -26,9 +27,13 @@ sub get
 	( $forms{ 'image' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
 	( $forms{ 'description' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
+	$forms{ 'description' } = Check::cleanExpression( $forms{ 'description' } );
+
         #Section catched errors
 	while ( ( scalar @pairs ) > 0 ) {
-	    push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+	    push @errors, ErrorList::get( 
+		Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ ) 
+	    );
 	}
     }
 

@@ -18,48 +18,50 @@ my $description = $cgi->param( 'artistDescription' );
 
 my $qManager = 
     'r.cgi?section=artistManager&id=0&mode=edit'.
-    "&s=$nick&s=$born&s=$death&s=$description";
+    "&s=$nick&s=$image&s=$description";
 
 my $err = '';
 
 #Controllo campi input
-if ( Check::check( $nick, 'artistNick' ) == 0 ) {
-    $err = $err.'&e=Nome d\'arte non valido, inserire un testo'.
-	'che presenti solo lettere e numeri'
-} if ( Check::check( $image, 'artistImage' ) == 0 ) {
-    $err = $err.'&e=Nome immagine non valido, inserire un testo'.
+if ( !Check::check( $nick, 'artistNick' ) ) {
+    $err = $err.'&e=Nome d\'arte non valido, inserire un nome di almeno '.
+	'due caratteri e che presenti solo lettere e numeri'
+} if ( !Check::check( $image, 'artistImage' ) ) {
+    $err = $err.'&e=Nome immagine non valido, inserire un testo '.
 	'che presenti solo lettere e numeri comprensivo del formato dell\'immagine';
+} if ( !Check::check( $description, 'artistDescription' ) ) {
+    $err = $err.'&e=La descrizione e\' vuota';
 }
 #Se uno dei test ha riscontrato errori vieni fatto il redirect su artistManger
 if ( $err ne '' ) {
     $qManager = $qManager.$err;
-    $cgi->redirect( $qManager );
-}
+    print $cgi->redirect( $qManager );
+} else {
+    my $id = $nick;
+    $id =~ s/\s+//g;
+    $id = lc $id;
 
-my $id = $nick;
-$id =~ s/\s+//g;
-$id = lc $id;
+    my $file = '../data/database/artistlist.xml';
 
-my $file = '../data/database/artistlist.xml';
+    my $parser = XML::LibXML->new();
+    my $doc = ParserXML::getDoc( $parser, $file );
 
-my $parser = XML::LibXML->new();
-my $doc = ParserXML::getDoc( $parser, $file );
-
-my $framment = 
-    "<artist id='$id' >
+    my $framment = 
+	"<artist id='$id' >
        <nick><![CDATA[$nick]]></nick>
        <image>$image</image>
        <description><![CDATA[$description]]></description>
     </artist>";
 
-my $artist = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
-my $root = $doc->findnodes( 'xs:artistList' )->get_node( 1 );
+    my $artist = $parser->parse_balanced_chunk( $framment )
+	|| die( 'Frammento non ben formato' );
+    my $root = $doc->findnodes( 'xs:artistList' )->get_node( 1 );
 
-$root->appendChild( $artist ) || die( 'Non appeso' );
+    $root->appendChild( $artist ) || die( 'Non appeso' );
 
-open( OUT, ">$file" );
-print OUT $doc->toString;
-close( OUT );
+    open( OUT, ">$file" );
+    print OUT $doc->toString;
+    close( OUT );
 
-print $cgi->redirect( 'r.cgi?section=artists&mode=edit' );
-
+    print $cgi->redirect( 'r.cgi?section=artists&mode=edit' );
+}

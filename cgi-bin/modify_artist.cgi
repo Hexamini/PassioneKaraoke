@@ -13,8 +13,6 @@ my $cgi = new CGI;
 
 my $id = $cgi->param( 'idArtist' );
 my $nick = $cgi->param( 'artistNick' );
-my $born = $cgi->param( 'artistBorn' );
-my $death = $cgi->param( 'artistDeath' );
 my $image = $cgi->param( 'artistImage' );
 my $description = $cgi->param( 'artistDescription' );
 
@@ -36,24 +34,9 @@ if( $nick )
 
     $artist->removeChild( $artist->findnodes( 'xs:nick' )->get_node( 1 ) );
     
-    $nick = $parser->parse_balanced_chunk( "<nick><![CDATA[$nick]]></nick>" ) || die( 'Frammento non ben formato' );
+    $nick = $parser->parse_balanced_chunk( "<nick><![CDATA[$nick]]></nick>" ) 
+	|| die( 'Frammento non ben formato' );
     $artist->appendChild( $nick );
-}
-
-if( $born )
-{
-    $artist->removeChild( $artist->findnodes( 'xs:born' )->get_node( 1 ) );
-    
-    $born = $parser->parse_balanced_chunk( "<born>$born</born>" ) || die( 'Frammento non ben formato' );
-    $artist->appendChild( $born );    
-}
-=Begin
-if( $death )
-{
-    $artist->removeChild( $artist->findnodes( 'xs:death' )->get_node( 1 ) );
-
-    $death = $parser->parse_balanced_chunk( "<dead>$death</dead>" ) || die( 'Frammento non ben formato' );
-    $artist->appendChild( $death );
 }
 
 if( $image )
@@ -63,7 +46,7 @@ if( $image )
     $image = $parser->parse_balanced_chunk( "<image>$image</image>" ) || die( 'Frammento non ben formato' );
     $artist->appenChild( $image );
 }
-=cut
+
 if( $description )
 {
     $artist->removeChild( $artist->findnodes( 'xs:description' )->get_node( 1 ) );

@@ -69,6 +69,7 @@ sub get
 		Articles::articleList( @articles ),
 		EditButton::get( 
 		    'r.cgi?section=articles&amp;mode=edit', 
+		    'edit',
 		    'Sezione amministrativa', 
 		    'editButton'
 		),
@@ -86,6 +87,7 @@ sub get
 		Articles::articleList( @articles ),
 		EditButton::get( 
 		    'r.cgi?section=articles&amp;mode=edit', 
+		    'edit',
 		    'Sezione amministrativa', 
 		    'editButton'
 		)

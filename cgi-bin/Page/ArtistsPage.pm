@@ -65,7 +65,7 @@ sub get
 		Artists::artistsList( @artists ),
 		EditButton::get( 
 		    'r.cgi?section=artists&amp;mode=edit', 
-		    'null',
+		    'edit',
 		    'Sezione amministrativa', 
 		    'editButton'
 		),
@@ -83,7 +83,7 @@ sub get
 		Artists::artistsList( @artists ),
 		EditButton::get( 
 		    'r.cgi?section=artists&amp;mode=edit',
-		    'null',
+		    'edit',
 		    'Sezione amministrativa',
 		    'editButton'
 		)

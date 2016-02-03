@@ -28,7 +28,7 @@ META_!
             <input type="hidden" name="page" value="artist"/>
             <input type="hidden" name="javascript" value="0"/>
 
-            <div class="error" id="err-artistNick">Nome d'arte non valido, inserire un testo che presenti solo lettere e
+            <div class="error" id="err-artistNick">Nome d'arte non valido, inserire un nome di almeno due caratterei e che presenti solo lettere e
                 numeri
             </div>
             <label for="a-Nick">Nome d'arte o nome del gruppo: *</label>
@@ -39,7 +39,9 @@ META_!
             </div>
             <label for="a-Image">Immagine dell'artista:</label>
             <input type="text" name="artistImage" class="artist-image" id="a-Image" value="[% image %]"/>
-
+            <div class="error" id="err-artistDescription">
+	      La descrizione &egrave; vuota
+	    </div>
             <label for="a-Description">Descrizione dell'artista: *</label>
             <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40">[% description %]</textarea>
             <input type="submit" value="Conferma" name="action"/>

@@ -17,6 +17,13 @@ my $album = $cgi->param( 'songAlbum' );
 my $lyrics = $cgi->param( 'songLyrics' );
 my $extra = $cgi->param( 'songExtra' );
 
+#Aggiunta di uno spazio dopo una nuova linea
+$lyrics =~ s/\n/\n /g;
+
+my $qManager =
+    'r.cgi?section=songManager&'.
+    'artist=&idArtist=elioelestorietese&album=_albumbiango&song=0&mode=edit';
+
 my $id = '_' . $name;
 $id =~ s/\s+//g;
 $id = lc $id;

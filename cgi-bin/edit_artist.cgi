@@ -39,7 +39,7 @@ if ( !Check::check( $nick, 'artistNick' ) ) {
 #Se uno dei test ha riscontrato errori vieni fatto il redirect su artistManger
 if ( $err ne '' ) {
     $qManager = $qManager.$err;
-    print $cgi->redirect( $qManager );
+    print $cgi->redirect( -uri => $qManager );
 } else {
     my $id = $nick;
     $id =~ s/\s+//g;
@@ -67,5 +67,5 @@ if ( $err ne '' ) {
     print OUT $doc->toString;
     close( OUT );
 
-    print $cgi->redirect( 'r.cgi?section=artists&mode=edit' );
+    print $cgi->redirect( -uri => 'r.cgi?section=artists&mode=edit' );
 }

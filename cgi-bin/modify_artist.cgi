@@ -21,7 +21,7 @@ my $description = $cgi->param( 'artistDescription' );
 $description =~ s/\n/\n /g;
 
 my $qManager = 
-    'r.cgi?section=artistManager&id=$id&mode=modify'.
+    "r.cgi?section=artistManager&id=$id&mode=modify".
     "&s=$nick&s=$image&s=$description";
 
 my $err = '';
@@ -46,7 +46,7 @@ if ( $err ne '' ) {
 
     my $parser = XML::LibXML->new();
     my $doc = ParserXML::getDoc( $parser, $file );
-
+    
     my $artist = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 
     if( $nick )
@@ -88,6 +88,6 @@ if ( $err ne '' ) {
     print OUT $doc->toString;
     close( OUT );
 
-    print $cgi->redirect( -uri => "r.cgi?section=artist&amp;id=$id&amp;mode=edit" );
+#    print $cgi->redirect( -uri => "r.cgi?section=artist&amp;id=$id&amp;mode=edit" );
 }
 

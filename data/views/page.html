@@ -34,7 +34,10 @@
     <a class="aiuti" href="#content">Passa al contenuto</a>
 
     <div id="navigation-bar">
-        <div id="logo"><img src="../img/logo.svg" alt="Logo Passione Karaoke"></div>
+        <div id="logo">
+			<h1 class="aiuti">Passione Karaoke</h1>
+			<img src="../img/logo.svg" alt="Logo Passione Karaoke">
+		</div>
         <ul id="menu">
             <li>[% index %]</li><!--
             --><li>[% artists %]</li><!--
@@ -56,12 +59,32 @@
 
 </div>
 
+<a class="aiuti" href="#header">Torna ad inizio pagina</a>
+
 <div id="footer">
+    <div id="resources">
+        <a href="../cgi-bin/r.cgi?section=map">Mappa del sito</a>
+    </div>
     <div id="copyright">
         <p>Creato da: Fabio Massignan, Davide Polonio, Luca Bianco, Andrea Mantovani &copy; 2015</p>
     </div>
-</div>
+	<div id="validator-logos">
+		<p>
+			<!-- style="border:0;width:88px;height:31px" -->
+			<img src="http://jigsaw.w3.org/css-validator/images/vcss-blue"	alt="Valid CSS!" />
+		</p>
 
-</body>
+		<p>
+			<!-- style="border:0;width:88px;height:31px" -->
+			<img src="../img/html5valid.png"	alt="Valid HTML5!" />
+		</p>
+
+		<p>
+			<img src="../img/wcag2AA.svg"	alt="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0" />
+		</p>
+
+	</div>
+</div>
 <script src="../assets/js/main.js"></script>
+</body>
 </html>

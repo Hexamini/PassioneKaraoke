@@ -5,7 +5,9 @@
 @description = Pagina che permette l'aggiunta di una nuova canzone in un album
 @keyword = canzone, aggiunta
 @title = [% artist %] - Aggiungi canzone
-@breadcrumb = <a href='r.cgi?section=index'><span lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&amp;id=[% idArtist %]'>[% artist %]</a> &gt; Aggiungi canzone
+@breadcrumb = <a href='r.cgi?section=index'><span lang='en'>Home</span></a> &gt; <a
+        href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&amp;id=[% idArtist %]'>[% artist
+    %]</a> &gt; Aggiungi canzone
 <!-- End default meta phrases -->
 
 META_!
@@ -14,36 +16,40 @@ META_!
 
     <h1>Gestione canzone</h1>
 
-    <p>Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
+    <p>Nota: &egrave; possibile inserire formattazione html nel testo della canzone.</p>
 
-    [% boxError %]
-    
+
     <form class="input-form" action="../cgi-bin/[% mode %]_song.cgi" method="post">
+        [% boxError %]
         <fieldset>
 
-        <p>L'asterisco (*) indica i campi obbligatori.</p>
+            <p>L'asterisco (*) indica i campi obbligatori.</p>
 
-	    <!-- @korut94 aggiunto campi nascosti per il passaggio degli id dell'artista ed album allo script -->
-	    <input type="hidden" name="songArtist" id="song-artist" value="[% idArtist %]" />
-	    <input type="hidden" name="songAlbum" id="song-album" value="[% idAlbum %]" />
-	    <input type="hidden" name="songId" id="song-id" value="[% idSong %]" />
-	    <!--                                                                                              -->
+            <!-- @korut94 aggiunto campi nascosti per il passaggio degli id dell'artista ed album allo script -->
+            <input type="hidden" name="songArtist" id="song-artist" value="[% idArtist %]"/>
+            <input type="hidden" name="songAlbum" id="song-album" value="[% idAlbum %]"/>
+            <input type="hidden" name="songId" id="song-id" value="[% idSong %]"/>
+            <!--                                                                                              -->
 
-	    <!-- @korut94 aggiunti label ai vari campi -->
-	    <div class="error" id="err-songTitle">Titolo della canzone errato, inserire un testo presenti solo lettere e numeri</div>
-	    <label for="song-title">Titolo: *</label>
+            <!-- @korut94 aggiunti label ai vari campi -->
+            <div class="error hidden" id="err-songTitle">Titolo della canzone errato, inserire un testo che presenti solo
+                lettere e numeri
+            </div>
+            <label for="song-title">Titolo: *</label>
             <input type="text" name="songTitle" id="song-title" value="[% title %]"/>
 
-	    <div class="error" id="err-songLyrics">Testo della canzone errato</div>
-	    <label for="song-lyrics">Testo della canzone: *</label>
+            <div class="error hidden" id="err-songLyrics">Testo della canzone errato</div>
+            <label for="song-lyrics">Testo della canzone: *</label>
             <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40">[% lyrics %]</textarea>
 
-	    <div class="error" id="err-songExtra">Formato del link non riconosciuto</div>
-	    <label for="song-extra">Link a youtube: *</label>
-	    <input name="songExtra" id="song-extra">[% extra %]</input>
+            <div class="error hidden" id="err-songExtra">Formato del link non riconosciuto. Deve essere preso solo il "XXXXXX"
+                del link in esempio: https://www.youtube.com/embed/XXXXXX
+            </div>
+            <label for="song-extra">Link a youtube: *</label>
+            <input name="songExtra" id="song-extra" value="[% extra %]"/>
             <!-- Le righe e le colonne definite in css? -->
-            <input type="submit" value="Conferma" name="action" />
-	    <!--                                        -->
+            <input type="submit" value="Conferma" name="action"/>
+            <!--                                        -->
 
         </fieldset>
     </form>

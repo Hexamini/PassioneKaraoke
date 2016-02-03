@@ -58,12 +58,14 @@ sub get
 			"r.cgi?section=songManager&amp;artist=$name&amp;".
 			"idArtist=$id&amp;album=$idAlbum&amp;song=$idSong".
 			"&amp;mode=modify",
-			'&#44',
+			'modifica',
+			'Modifica canzone',
 			'modifyButton'
 		    ),
 		    EditButton::get(
 			'remove_song.cgi',
-			'&#45',
+			'rimuovi',
+			'Rimuovi canzone',
 			'removeButton',
 			"$id:$idAlbum:$idSong"
 		    )
@@ -85,18 +87,21 @@ sub get
 		EditButton::get( 
 		    "r.cgi?section=songManager&artist=$name&amp;" . 
 		    "idArtist=$id&amp;album=$idAlbum&amp;song=0&amp;mode=edit",
-		    '&#43', 
+		    'aggiungi', 
+		    'Aggiungi canzone',
 		    'addButton'
 		),
 		EditButton::get(
 		    "r.cgi?section=albumManager&amp;artist=$id&amp;".
 		    "album=$idAlbum&amp;mode=modify",
-		    '&#44',
+		    'modifica',
+		    'Modifica album',
 		    'modifyButton'
 		),
 		EditButton::get( 
 		    'remove_album.cgi', 
-		    '&#45', 
+		    'rimuovi', 
+		    'Rimuovi album',
 		    'removeButton',
 		    "$id:$idAlbum"
 		)
@@ -121,12 +126,14 @@ sub get
 		Artist::listAlbum( @albums ),
 		EditButton::get( 
 		    "r.cgi?section=artist&amp;id=$id&amp;mode=edit", 
+		    'edit',
 		    'Sezione Amministrativa', 
 		    'editButton'
 		),
 		EditButton::get( 
 		    "r.cgi?section=albumManager&amp;artist=$id&amp;album=0&amp;mode=edit", 
-		    '&#43', 
+		    'aggiungi', 
+		    'Aggiungi album',
 		    'addButton'
 		)
 	    );
@@ -139,6 +146,7 @@ sub get
 		Artist::listAlbum( @albums ),
 		EditButton::get( 
 		    "r.cgi?section=artist&amp;id=$id&amp;mode=edit", 
+		    'edit',
 		    'Sezione Amministrativa', 
 		    'editButton'
 		)

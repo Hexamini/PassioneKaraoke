@@ -36,12 +36,14 @@ sub get
 		      $img,
 		      EditButton::get( 
 			  "r.cgi?section=artistManager&amp;id=$id&amp;mode=modify",
-			  '&#44', 
+			  'modifica',
+			  'Modifica artista',
 			  'modifyButton'
 		      ),
 		      EditButton::get( 
 			  'remove_artist.cgi',
-			  '&#45',
+			  'rimuovi',
+			  'Rimuovi artista',
 			  'removeButton',
 			  "$id"
 		      )
@@ -63,12 +65,14 @@ sub get
 		Artists::artistsList( @artists ),
 		EditButton::get( 
 		    'r.cgi?section=artists&amp;mode=edit', 
+		    'edit',
 		    'Sezione amministrativa', 
 		    'editButton'
 		),
 		EditButton::get( 
 		    'r.cgi?section=artistManager&amp;id=0&amp;mode=edit', 
-		    '&#43', 
+		    'aggiungi', 
+		    'Aggiungi artista',
 		    'addButton'
 		)
 	    );
@@ -79,6 +83,7 @@ sub get
 		Artists::artistsList( @artists ),
 		EditButton::get( 
 		    'r.cgi?section=artists&amp;mode=edit',
+		    'edit',
 		    'Sezione amministrativa',
 		    'editButton'
 		)

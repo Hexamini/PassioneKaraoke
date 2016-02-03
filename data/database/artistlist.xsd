@@ -16,6 +16,7 @@
     <xs:complexType name="Tartist">
         <xs:sequence>
             <xs:element name="nick" type="xs:string" minOccurs="0" />
+			<xs:element name="image" type="xs:string" />
             <xs:element name="description" type="xs:string" />
             <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
         </xs:sequence>
@@ -28,6 +29,7 @@
     <xs:complexType name="Talbum">
         <xs:sequence>
             <xs:element name="name" type="xs:string" />
+			<xs:element name="image" type="xs:string" />
             <xs:element name="song" minOccurs="1" maxOccurs="unbounded"
                         type="Tsong" />
         </xs:sequence>

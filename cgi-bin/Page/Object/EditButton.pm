@@ -13,12 +13,13 @@ Parametri:
 =cut
 sub get
 {
-    my ( $link, $value, $name, $args ) = @_;
+    my ( $link, $path, $value, $name, $args ) = @_;
 
     my $values = {
 	'link' => $link,
 	'args' => $args,
 	'value' => $value,
+	'name' => $path,
     };
 
     my $button = Behavior::getChain( $struct, $values, 1 );

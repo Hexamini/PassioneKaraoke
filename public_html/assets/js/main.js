@@ -9,16 +9,19 @@ function check(input) {
 
     var listOfInputToCheck = {
 	//'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
-	artistNick : /^(\w+){2,}$/, 
-	artistImage : /^(\w+).(\w+)$/,
-	albumName : /^(\w+)$/, 
-	albumImage : /^(\w+).(\w+)$/,
-        songTitle : /^(\w+)$/, //'Il titolo contiene caratteri non validi'],
-	songExtra : /^(\w+)$/,
-        articleAuthor : /^(\w+)$/, //'L\'autore dell\'articolo non è corretto'],
-        articleData : /^(\d+){1,2}-(\d+){1,2}-(\d+){4}$/, //'La data inserita non è valida'],
-        articleTitle : /^(\w+)$/, //'Il titolo contiene caratteri non validi'],
-        articleSubtitle : /^(\w+)$/ //'Il sotto-titolo contiene caratteri non validi']
+	artistNick : /^.{2,}$/, 
+	artistImage : /^(\w+.\w+)?$/,
+	artistDescription : /^.+$/,
+	albumName : /^.+$/, 
+	albumImage : /^\w+.\w+$/,
+        songTitle : /^.+$/, //'Il titolo contiene caratteri non validi'],
+	songLyrics : /^.+$/mg,
+	songExtra : /^\w+$/,
+        articleAuthor : /^.+$/, //'L\'autore dell\'articolo non è corretto'],
+        articleData : /^\d{1,2}-\d{1,2}-\d{4}$/, //'La data inserita non è valida'],
+        articleTitle : /^.+$/, //'Il titolo contiene caratteri non validi'],
+        articleSubtitle : /^.+$/, //'Il sotto-titolo contiene caratteri non validi']
+	articleContent : /^.+$/mg
     };
 
     if ( !listOfInputToCheck[inputName].test(value) ){
@@ -36,7 +39,7 @@ function main() {
 
     console.log("Main chiamato");
 
-    var inputTag = document.getElementsByTagName("input");
+    var inputTag = document.querySelectorAll("input,textarea");
 
     console.log(inputTag.length);
 
@@ -44,16 +47,10 @@ function main() {
 
         console.log("Sono nel for");
 
-        if ( inputTag[i].getAttribute("type") === "text" ) {
+        console.log("Stampa: " + inputTag[i].getAttribute("type"));
 
-            console.log("Stampa: " + inputTag[i].getAttribute("type"));
-
-            console.log(inputTag[i].getAttribute("name"));
-
-            //inputTag[i].onblur = check(inputTag[i].getAttribute("name"), inputTag[i].getAttribute("value") );
-            inputTag[i].addEventListener("blur", check.bind(null, inputTag[i]));
-
-        }
+        console.log(inputTag[i].getAttribute("name"));
+        inputTag[i].addEventListener("blur", check.bind(null, inputTag[i]));
     }
 
 }

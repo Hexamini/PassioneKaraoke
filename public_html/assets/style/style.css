@@ -22,6 +22,13 @@ body {
     top: 0;
 }
 
+
+#logout-message {
+    text-align: center;
+    font-size: 1.125em;
+    color: #1B5E20;
+    font-weight: bold;
+}
 /********************
  HEADER
  ********************/
@@ -59,16 +66,23 @@ body {
 #navigation-bar #menu li {
     display: block;
     width: 100%;
-}
-
-#navigation-bar #menu li a {
     font-size: 1.125em;
     line-height: 2.5em;
     height: 100%;
-    width: 100%;
     color: white;
-    display: block;
     text-align: center;
+    background-color: #1565C0;
+}
+
+#navigation-bar #menu li a {
+    color: white;
+    background-color: #01579B;
+    text-decoration: underline;
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
     -webkit-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
     -moz-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
     -o-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
@@ -155,6 +169,7 @@ h3 {
     margin: 0.5em 0;
     height: 5em;
     padding: 0.5em 0;
+    position: relative;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
@@ -182,6 +197,12 @@ h3 {
     margin-left: 2em;
     height: 100%;
     vertical-align: middle;
+}
+
+.artist .artist-option {
+    position: absolute;
+    top: 6px;
+    right: 0;
 }
 
 /************ SINGLE ARTIST ***************/
@@ -216,6 +237,12 @@ h3 {
     font-size: 1em;
     margin-top: 1em;
     border-bottom: 1px solid #90A4AE;
+    position: relative;
+}
+#artist-list-of-albums .description-album .album-option {
+    position: absolute;
+    top: 6px;
+    right: 0;
 }
 
 #artist-list-of-albums .description-album img {
@@ -244,8 +271,13 @@ h3 {
     color: #546E7A;
     font-size: 0.875em;
     border-bottom: 1px solid #B0BEC5;
+    position: relative;
 }
-
+#artist-list-of-albums .list-songs li .song-option {
+    position: absolute;
+    top: 6px;
+    right: 0;
+}
 /********** ARTICLE ***********************/
 
 .article {
@@ -258,9 +290,16 @@ h3 {
     color: #1A237E;
     font-size: 0.875em;
     margin: 0.6em 0;
+    position: relative;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
+}
+
+.article-option {
+    position: absolute;
+    top: 6px;
+    right: 0;
 }
 
 /****************** SINGLE ARTICLE **********************/
@@ -334,17 +373,17 @@ h3 {
 
 .edit-mode-form input {
     color: #01579B;
-    padding: 0.6em;
     display: inline-block;
-    font-size: 0.7em;
+    font-size: 1em;
     text-transform: uppercase;
-    background-color: #81D4FA;
+    background-color: #85D0F5;
     font-weight: bold;
-    margin: 0 1.5em 1.5em;
-    -webkit-border-radius: 1.2em;
-    -moz-border-radius: 1.2em;
-    border-radius: 1.2em;
-    min-width: 2.4em;
+    margin: 0 0.5em;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
@@ -425,6 +464,9 @@ h3 {
     color: #B71C1C;
     margin-top: 2em;
 }
+.input-form .error.hidden, .input-form .box-error.hidden {
+    display: none;
+}
 
 .input-form .box-error ul {
     margin-top: 0.5em;
@@ -504,6 +546,24 @@ h3 {
     height: 240px;
 }
 
+#song-appreciation {
+    margin-top: 2em;
+}
+
+#song-votes {
+    text-align: center;
+}
+#song-like, #song-unlike {
+    display: inline-block;
+    margin: 0.5em;
+    position: relative;
+}
+
+#song-votes .button{
+    height: 6em;
+    width: auto;
+}
+
 /*************************
 FOOTER
 **************************/
@@ -513,6 +573,13 @@ FOOTER
     font-size: 0.6em;
     text-align: center;
     color: #9E9E9E;
+}
+/**** 404 **************/
+#four-zero-four-not-found {
+    background: url('../../img/microphone.svg') no-repeat center;
+    background-size: contain;
+    min-height: 300px;
+    padding-top: 50px;
 }
 
 /**********************************************/
@@ -595,17 +662,13 @@ and (max-width: 768px) {
         text-align: center;
         height: 100%;
         float: left;
+        line-height: 5.55em;
     }
 
     #navigation-bar #menu li a {
-        position: static;
-        display: block;
-        width: 100%;
-        height: 100%;
         text-transform: uppercase;
         font-weight: bold;
         font-size: 1.125em;
-        line-height: 5.55em;
         margin: 0;
     }
 

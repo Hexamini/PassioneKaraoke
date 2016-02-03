@@ -17,7 +17,7 @@ my $image = $cgi->param( 'artistImage' );
 my $description = $cgi->param( 'artistDescription' );
 
 #Aggiunta di uno spazio dopo una nuova linea
-$description =~ s/\n/n /g;
+$description =~ s/\n/\n /g;
 
 my $qManager = 
     'r.cgi?section=artistManager&id=0&mode=edit'.

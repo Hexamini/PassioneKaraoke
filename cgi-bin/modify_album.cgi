@@ -8,17 +8,18 @@ use CGI;
 use XML::LibXML;
 
 use Page::Object::Base::ParserXML;
+use Page::Object::Base::Check;
     
 my $cgi = new CGI;
 
 my $idArtist = $cgi->param( 'artistName' );
 my $idAlbum = $cgi->param( 'albumId' );
 my $name = $cgi->param( 'albumName' );
-my $image = $cgi->param( 'albumCreation' );
+my $image = $cgi->param( 'albumImage' );
 
 my $qManager = 
     'r.cgi?section=albumManager'.
-    "&artist=$idArtist&album=$idAlbum&mode=modify";
+    "&artist=$idArtist&album=$idAlbum&mode=modify&s=$name&s=$image";
 
 my $err = '';
 

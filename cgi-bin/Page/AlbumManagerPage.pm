@@ -55,9 +55,8 @@ sub get
     }
     
     my $artist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
-    my $albumManager = '';
 
-    $albumManager = AlbumManager::get(
+    return AlbumManager::get(
 	$idArtist,
 	$idAlbum,
 	$artist,
@@ -65,9 +64,7 @@ sub get
 	$forms{ 'image' },
 	$mode,
 	$boxError 
-	);
-
-    return $albumManager;
+    );
 }
 
 1;

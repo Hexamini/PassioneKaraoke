@@ -18,7 +18,7 @@ my $image = $cgi->param( 'artistImage' );
 my $description = $cgi->param( 'artistDescription' );
 
 #Aggiunge ad uno spazio bianco dopo una nuova riga
-$description =~ s/\n/ /g;
+$description =~ s/\n/\n /g;
 
 my $qManager = 
     'r.cgi?section=artistManager&id=$id&mode=modify'.

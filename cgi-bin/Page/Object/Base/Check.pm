@@ -5,17 +5,17 @@ use warnings;
 package Check;
 
 my %checkTable = (
-    'artistNick' => qr/^\w{2,}$/, 
+    'artistNick' => qr/^.{2,}$/, 
     'artistImage' => qr/^(\w+\.\w+)?$/,
     'artistDescription' => qr/^.+$/,
-    'albumName' => qr/^\w+$/, 
+    'albumName' => qr/^.+$/, 
     'albumImage' => qr/^\w+\.\w+$/,
-    'songTitle' => qr/^\w+$/,
+    'songTitle' => qr/^.+$/,
     'songExtra' => qr/^\w+$/,
-    'articleAuthor' => qr/^\w+$/, 
+    'articleAuthor' => qr/^.+$/, 
     'articleData' => qr/^\d{1,2}-\d{1,2}-\d{4}$/,
-    'articleTitle' => qr/^\w+$/,
-    'articleSubtitle' => qr/^\w+$/
+    'articleTitle' => qr/^.+$/,
+    'articleSubtitle' => qr/^.+$/
 );
 
 =Begin

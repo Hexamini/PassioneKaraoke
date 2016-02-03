@@ -10,7 +10,7 @@ function check(input) {
     var listOfInputToCheck = {
 	//'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
 	artistNick : /^.{2,}$/, 
-	artistImage : /^\w+.\w+$/,
+	artistImage : /^(\w+.\w+)?$/,
 	artistDescription : /^.+$/,
 	albumName : /^.+$/, 
 	albumImage : /^\w+.\w+$/,
@@ -37,7 +37,7 @@ function main() {
 
     console.log("Main chiamato");
 
-    var inputTag = document.getElementsByTagName("input");
+    var inputTag = document.querySelectorAll("input,textarea");
 
     console.log(inputTag.length);
 
@@ -45,16 +45,12 @@ function main() {
 
         console.log("Sono nel for");
 
-        if ( inputTag[i].getAttribute("type") === "text" ) {
+        console.log("Stampa: " + inputTag[i].getAttribute("type"));
 
-            console.log("Stampa: " + inputTag[i].getAttribute("type"));
+        console.log(inputTag[i].getAttribute("name"));
 
-            console.log(inputTag[i].getAttribute("name"));
-
-            //inputTag[i].onblur = check(inputTag[i].getAttribute("name"), inputTag[i].getAttribute("value") );
-            inputTag[i].addEventListener("blur", check.bind(null, inputTag[i]));
-
-        }
+        //inputTag[i].onblur = check(inputTag[i].getAttribute("name"), inputTag[i].getAttribute("value") );
+        inputTag[i].addEventListener("blur", check.bind(null, inputTag[i]));
     }
 
 }

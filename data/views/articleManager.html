@@ -22,31 +22,32 @@ META_!
 
             <input type="hidden" name="id" id="article-id" value="[% id %]"/>
 
-            <div class="error" id="err-articleAuthor">Nome autore non valido, inserire un testo presenti solo lettere e
+            <div class="error hidden" id="err-articleAuthor">Nome autore non valido, inserire un testo presenti solo lettere e
                 numeri
             </div>
             <label for="articleAuthor">Autore: *</label>
             <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" value="[% author %]"/>
 
-            <div class="error" id="err-articleData">La data inserita non è valida, il formato deve essere
+            <div class="error hidden" id="err-articleData">La data inserita non è valida, il formato deve essere
                 giorno-mese-anno. Ad esempio: 12-03-1989
             </div>
             <label for="articleData">Data (da esprimere con gg-mm-aaaa): *</label>
             <input type="text" name="articleData" class="article-data" id="articleData" value="[% date %]"/>
 
-            <div class="error" id="err-articleTitle">Titolo errato, inserire un testo che presenti solo lettere e
+            <div class="error hidden" id="err-articleTitle">Titolo errato, inserire un testo che presenti solo lettere e
                 numeri
             </div>
             <label for="articleTitle">Titolo: *</label>
             <input type="text" name="articleTitle" class="article-title" id="articleTitle" value="[% title %]"/>
 
-            <div class="error" id="err-articleSubtitle">Sottotitolo errato, inserire un testo che presenti solo lettere
+            <div class="error hidden" id="err-articleSubtitle">Sottotitolo errato, inserire un testo che presenti solo lettere
                 e numeri
             </div>
             <label for="articleSubtitle">Sottotitolo: *</label>
             <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle"
                    value="[% subtitle %]"/>
 
+	    <div class="error hidden" id="err-articleContent">Il contenuto e' vuoto</div>
             <label for="articleContent">Descrizione dell'artista: *</label>
             <input name="articleContent" class="article-content" id="articleContent">[% body %]</input>
 

@@ -7,10 +7,11 @@ package Check;
 my %checkTable = (
     'artistNick' => qr/^.{2,}$/, 
     'artistImage' => qr/^(\w+\.\w+)?$/,
-    'artistDescription' => qr/^.+$/,
+    'artistDescription' => qr/^.+$/mg,
     'albumName' => qr/^.+$/, 
     'albumImage' => qr/^\w+\.\w+$/,
     'songTitle' => qr/^.+$/,
+    'songLyrics' => qr/^.+$/mg,
     'songExtra' => qr/^\w+$/,
     'articleAuthor' => qr/^.+$/, 
     'articleData' => qr/^\d{1,2}-\d{1,2}-\d{4}$/,

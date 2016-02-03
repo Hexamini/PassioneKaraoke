@@ -15,6 +15,7 @@ function check(input) {
 	albumName : /^.+$/, 
 	albumImage : /^\w+.\w+$/,
         songTitle : /^.+$/, //'Il titolo contiene caratteri non validi'],
+	songLyrics : /^.+$/mg,
 	songExtra : /^\w+$/,
         articleAuthor : /^.+$/, //'L\'autore dell\'articolo non è corretto'],
         articleData : /^\d{1,2}-\d{1,2}-\d{4}$/, //'La data inserita non è valida'],
@@ -48,8 +49,6 @@ function main() {
         console.log("Stampa: " + inputTag[i].getAttribute("type"));
 
         console.log(inputTag[i].getAttribute("name"));
-
-        //inputTag[i].onblur = check(inputTag[i].getAttribute("name"), inputTag[i].getAttribute("value") );
         inputTag[i].addEventListener("blur", check.bind(null, inputTag[i]));
     }
 

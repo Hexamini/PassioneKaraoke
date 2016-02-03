@@ -61,7 +61,7 @@ if ( $err ne '' ) {
 
     if( $image )
     {
-	$album->removeChildf( $album->findnodes( 'xs:image' )->get_node( 1 ) );
+	$album->removeChild( $album->findnodes( 'xs:image' )->get_node( 1 ) );
 
 	my $image = $parser->parse_balanced_chunk( "<image>$image</image>" ) || 
 	    die( 'Frammento non ben formato' );

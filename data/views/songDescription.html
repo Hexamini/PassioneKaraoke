@@ -13,14 +13,6 @@ META_!
     <p id="details">Autore: <span>[% artist %]</span> - Album: [% album %]</p>
 </div>
 
-<div id="song-appreciation">
-
-    <p>Questa canzone &egrave; stata valutata dagli utenti: [% evaluate %]</p>
-
-    [% songVotes %]
-
-</div>
-
 <div id="song-content">
 
     <div id="song-lyrics">
@@ -40,6 +32,14 @@ META_!
         <iframe src="https://www.youtube.com/embed/[% url %]?rel=0&amp;showinfo=0" title="Video del karaoke" allowfullscreen><a href="https://www.youtube.com/watch?v=[% url %]">Video del <span lang="en">karaoke</span></a></iframe>
 
     </div>
+
+	<div id="song-appreciation">
+
+    <p>Questa canzone &egrave; stata valutata dagli utenti: [% evaluate %]</p>
+
+    [% songVotes %]
+
+</div>
 
     <!-- Note aggiuntive: -che sia necessario un div da riempire con JavaScript
         in base al tipo di utente loggato? Per esempio per aggiungere eventuali

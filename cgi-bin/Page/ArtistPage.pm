@@ -88,7 +88,7 @@ sub get
 		    "r.cgi?section=songManager&artist=$name&amp;" . 
 		    "idArtist=$id&amp;album=$idAlbum&amp;song=0&amp;mode=edit",
 		    'aggiungi', 
-		    'Aggiungi album',
+		    'Aggiungi canzone',
 		    'addButton'
 		),
 		EditButton::get(

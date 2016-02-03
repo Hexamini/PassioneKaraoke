@@ -15,14 +15,14 @@ Parametri:
 =cut
 sub get
 {
-    my ( $idArtist, $idAlbum, $artist, $name, $date, $mode, $boxError ) = @_;
+    my ( $idArtist, $idAlbum, $artist, $name, $image, $mode, $boxError ) = @_;
 
     my $values = {
 	'idArtist' => $idArtist,
 	'idAlbum' => $idAlbum,
 	'artist' => $artist,
 	'name' => $name,
-	'date' => $date,
+	'image' => $image,
 	'mode' => $mode,
     };
 

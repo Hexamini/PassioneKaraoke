@@ -6,6 +6,7 @@ use Page::Object::ErrorList;
 use Page::Object::BoxError;
 use Page::Object::AlbumManager;
 use Page::Object::Base::ParserXML;
+use Page::Object::Base::Check;
 
 package AlbumManagerPage;
 
@@ -25,11 +26,13 @@ sub get
 
     if ( ( scalar @pair ) > 0 ) {
 	#Section catcher forms
-	( $forms{ 'album' } ) = ( ( shift @pair ) =~ /=(.+)/ );
-	( $forms{ 'date' } ) = ( ( shift @pair ) =~ /=(.+)/ );
+	$forms{ 'album' } = Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ );
+	$forms{ 'image' } = Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ );
 
 	while ( scalar @pair > 0 ) {
-	    push @errors, ErrorList::get( ( ( shift @pair ) =~ /=(.+)/ ) );
+	    push @errors, ErrorList::get( 
+		Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ ) 
+	    );
 	}
     }
 
@@ -40,8 +43,8 @@ sub get
 
 	if ( !exists $forms{ 'album' } ) {
 	    $forms{ 'album' } = $node->findnodes( 'xs:name/text()' );
-	} if ( !exists $forms{ 'date' } ) {
-	    $forms{ 'date' } = $node->findnodes( 'xs:creation/text()' );
+	} if ( !exists $forms{ 'image' } ) {
+	    $forms{ 'image' } = $node->findnodes( 'xs:image/text()' );
 	}
     }
     
@@ -59,7 +62,7 @@ sub get
 	$idAlbum,
 	$artist,
 	$forms{ 'album' },
-	$forms{ 'date' },
+	$forms{ 'image' },
 	$mode,
 	$boxError 
 	);

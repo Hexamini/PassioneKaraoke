@@ -133,8 +133,100 @@ Per accertarsi di avere un'accessibilit\`a completa dal punto di vista visivo, s
 \end{itemize}
 
 \subsubsection{Contrasto e leggibilit\`a}
-\`E stato dato peso nel progetto anche alla leggibilit\`a del testo per quelle persone che riportano problemi visivi. Per il test sul contrasto tra testo e sfondo si \`e rivelato utile il tool reperibile al seguente indirizzo: \url{http://leaverou.github.io/contrast-ratio/#\%23E1F5FE-on-\%2301579B}.
-Come si evice dalle immagini, il valore indica il rapporto cromatico tra lo sfondo e il colore delle scritte. Più alto il valore maggiore è presente il contrasto. %TODO: da elencare i risultati ottenuti!
+
+\paragraph*{Indice leggibilità}\`E stato dato peso nel progetto anche alla leggibilit\`a del testo per quelle persone che riportano problemi visivi. Per il test sul contrasto tra testo e sfondo si \`e rivelato utile il tool reperibile al seguente indirizzo: \url{http://leaverou.github.io/contrast-ratio/}.
+Il valore espresso in una scala da 0 a 10 indica il rapporto cromatico tra lo sfondo e il colore delle scritte. Più alto il valore maggiore è presente il contrasto.
+
+\paragraph*{Voci menu}I colori tra le voci del menu e lo sfondo della barra del menu stessa sono state scelte in maniera tale da permettere un buon contrasto mantenendo un certo design grafico.
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.35]{menuContrast}
+    \caption{Zoom in dettaglio per evidenziare il contrasto tra la voce del menu e lo sfondo dello stesso}
+
+\end{figure}
+
+L'indice di contrasto ha dato un valore più che accettabile, raffigurato nell'immagine sottostante.
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.25]{contrastRatioMenu}
+
+\end{figure}
+
+
+Lo stesso accorgimento è stato adottato anche per le voci di menu in cui l'utente ha posizionato il mouse. In questo caso si è ricorsi a un effetto \textit{hover} tramite CSS, che comunque non ha influenzato la leggibilità
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.35]{menuHoverContrast}
+    \caption{Zoom in dettaglio del menu in uno stato di \textit{hover}}
+
+\end{figure}
+
+Per il menu in uno stato di \textit{hover} si è ottenuto un valore più basso, ritenuto comunuque sufficente.
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.25]{contrastRatioHoverMenu}
+
+\end{figure}
+
+
+\paragraph*{Lista ultime canzoni/artisti}Il test di leggibilità è stato effettuato anche in questa zona, dove è stato deciso di adottare un vivace verde
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.35]{lastSongContrast}
+    \caption{Dettaglio della zona in cui è stato effettuato il test di leggibilità}
+
+\end{figure}
+
+Il test ha ottenuto un alto punteggio, indicando un ottimo rapporto di colori e quindi un'ottima leggibilità da parte di tutti gli utenti naviganti nel sito.
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.25]{contrastRatioLastSong}
+
+\end{figure}
+
+\paragraph*{Lista di tutti gli artisti}Nella lista di tutti gli artisti, è stato tenuto in grande importanza ottenere un'altissima leggibilità in quanto si è ritenuto la parte più importante di tutto il sito e quella più visitata dagli utenti.
+
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.35]{artistsListContrast}
+    \caption{Zona in cui si è considerato avere un'alta leggibilità nella pagina "Artisti"}
+
+\end{figure}
+
+Il tool con cui sono stati effettuati i test in questo punto ha dato uno dei punteggi più alti in assoluto.
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.25]{contrastRatioArtistsList}
+
+\end{figure}
+
+\paragraph{Box per gli articoli}È stato analizzato il contrasto anche nel box per gli articoli
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.35]{articlesListContrast}
+
+\end{figure}
+
+Il risultato ottenuto è nella media con i precedenti
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[scale=0.25]{contrastRatioArticleList}
+
+\end{figure}
+
+\paragraph*{Testo generico in articoli e canzoni}Nei contenuti di articoli e canzoni e nel testo generico (come titoli e sottotitoli) si è tenuto un classico contrasto bianco-nero, assicurando il massimo punteggio di leggibilità.
+
+%TODO: da elencare i risultati ottenuti!
 
 \subsubsection{Form e segnalazione errori}
 \label{form-accessibilita}

@@ -2,7 +2,7 @@
 
 \subsection{Accessibilità}
 %TODO
-%MEMO TODO: per i problemi e le soluzioni addottate per l'accessibilita' vedere:
+%MEMO: per i problemi e le soluzioni addottate per l'accessibilita' vedere:
 %https://github.com/Hexamini/PassioneKaraoke/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3AAccessibilit%C3%A0+
 Il sito è stato sviluppato utilizzando solamente codice HTML5. Per i fogli di stile si è invece deciso di applicare CSS 3.0, per poter sfruttare nuove tecnologie grafiche e ridurre al minimo l'utilizzo di JavaScript, che invece è stato utilizzato solo per i controlli sul form di login e sulla gestione del contenuto del sito. Il sito ha comunque una buona degradazione anche nel caso in cui questa tecnologia non fosse disponibile nel dispositivo in uso.
 
@@ -11,78 +11,58 @@ I colori del sito sono stati scelti tramite l'utilizzo di \url{http://vischeck.c
 
 \textit{\`E stata presa l'homepage come esempio principale. Il resto del sito si basa su questa stessa gamma di colori.}
 
-\begin{itemize}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.104]{firstImgNormal}
+        \caption{Design del sito con vecchi colori}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.5]{firstImgDeuteranope}
+        \caption{Risultati del test per \textit{Deuteranope}}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.5]{firstImgProtanope}
+        \caption{Risultati del test per \textit{Protanope}}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.5]{firstImgTritanope}
+        \caption{Risultati del test per \textit{Tritanope}}
+    \end{subfigure}
+    ~
+    \caption{Risultato del sito con i colori inizialmente scelti}
+\end{figure}
 
-    \item[]
-        \begin{figure}[H]
-
-            \centering
-            \includegraphics[scale=0.1]{firstImgNormal}
-            \caption{Design del sito con vecchi colori}
-        \end{figure}
-
-    \item[]
-        \begin{figure}[H]
-
-            \centering
-            \includegraphics[scale=0.5]{firstImgDeuteranope}
-            \caption{Risultati del test per \textit{Deuteranope}}
-        \end{figure}
-
-    \item[]
-        \begin{figure}[H]
-
-            \centering
-            \includegraphics[scale=0.5]{firstImgProtanope}
-            \caption{Risultati del test per \textit{Protanope}}
-        \end{figure}
-
-    \item[]
-        \begin{figure}[H]
-
-            \centering
-            \includegraphics[scale=0.5]{firstImgTritanope}
-            \caption{Risultati del test per \textit{Tritanope}}
-        \end{figure}
-
-\end{itemize}
 
 Come si può ben vedere, i colori non degradano in maniera elegante, e causano invece una distorsione troppo forte. Si è quindi deciso di cambiarli, ottenendo i seguenti risultati:
-\begin{itemize}
 
-    \item[]
-       \begin{figure}[H]
-
-            \centering
-            \includegraphics[scale=0.125]{lastImgNormal}
-            \caption{Design del sito con i colori finali}
-        \end{figure}
-
-    \item[]
-        \begin{figure}[H]
-
-            \centering
-            \includegraphics[scale=0.5]{lastImgDeuteranope}
-            \caption{Risultati del test per \textit{Deuteranope}}
-        \end{figure}
-
-    \item[]
-        \begin{figure}[H]
-
-            \centering
-            \includegraphics[scale=0.5]{lastImgProtanope}
-            \caption{Risultati del test per \textit{Protanope}}
-        \end{figure}
-
-    \item[]
-        \begin{figure}[H]
-
-            \centering
-            \includegraphics[scale=0.5]{lastImgTritanope}
-            \caption{Risultati del test per \textit{Tritanope}}
-        \end{figure}
-
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.119]{lastImgNormal}
+        \caption{Design del sito con i colori finali}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.5]{lastImgDeuteranope}
+        \caption{Risultati del test per \textit{Deuteranope}}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.5]{lastImgProtanope}
+        \caption{Risultati del test per \textit{Protanope}}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[scale=0.5]{lastImgTritanope}
+        \caption{Risultati del test per \textit{Tritanope}}
+    \end{subfigure}
+    ~
+    \caption{Risultato finale dei colori del sito}
+\end{figure}
 
 
 \subsubsection{Colori delle icone per esprimere preferenze}

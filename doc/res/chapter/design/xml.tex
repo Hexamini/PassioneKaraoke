@@ -1,14 +1,14 @@
 \subsection{Gestione dei Dati}
-Il sito contiene 4 tipi principali di dati che devono essere gestiti:
+Il sito contiene quattro tipi principali di dati che devono essere gestiti:
 \begin{itemize}
-    \item \textbf{Utenti}: i quali, oltre ai dati personali, contengono una lista di tutte le preferenze (positive o negative) che hanno espresso per le varie canzoni;
-    \item \textbf{Articoli}: sono gli articoli che vengono mostrate nell'apposita sezione;
+    \item \textbf{Utenti}: i quali, oltre ai dati personali, contengono una lista di tutte le preferenze (positive o negative) espresse per le varie canzoni;
+    \item \textbf{Articoli}: sono gli articoli che vengono mostrati nell'apposita sezione;
     \item \textbf{Artisti}: contengono al loro interno una lista degli album con le relative canzoni. Ogni canzone \`e corredata da il testo e il video con il relativo karaoke.
-    \item \text{News}: sono visualizzate in homepage, e contendono le ultime canzoni inserite, e gli ultimi articoli
+    \item \text{News}: visualizzate in homepage, contengono le ultime canzoni inserite e gli ultimi articoli
 \end{itemize}
 
 \subsubsection{XML}
 
 Per strutturare, e rendere validi i dati nel file XML sono stati creati degli appositi XMLSchema.
 Si \`e deciso di utilizzare il modello \textit{"Tende alla Veneziana"} per ogni tipo di dato presente che deve essere gestito.
-\`E stata valutata l'opportunit\`a di creare anche un elemento globale, presente in tutti i file XMLSchema che gestisca i tag HTML necessari per rendere il contenuto accessibile (ad esempio ```<span lang="en>```) come tag XML ma, essendo molti, /`e stato deciso di inserire i dati che richiedono questi tag in ```<![CDATA[testo]]>``` in modo tale da dare la massima possibilit/'a di scelta al amministratore di inserire quasiasi tag HTML, non compromettendo la validit/`a totale del file.
+\`E stata valutata poi l'opportunit\`a di creare anche un elemento globale, presente in tutti i file XMLSchema che gestisca i tag HTML necessari per rendere il contenuto accessibile (ad esempio ```<span lang="en>```) come tag XML ma, essendo molti, /`e stato deciso di inserire i dati che richiedono questi tag in ```<![CDATA[testo]]>``` in modo tale da dare la massima possibilit/'a di scelta all'amministratore di inserire quasiasi tag HTML, non compromettendo la validit/`a totale del file.

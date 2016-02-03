@@ -23,8 +23,6 @@ sub get
     if ( ( scalar @pairs ) > 0 ) {
 	#Section catched forms
 	( $forms{ 'nick' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'birthday' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'dead' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
 	( $forms{ 'image' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
 	( $forms{ 'description' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
@@ -41,12 +39,8 @@ sub get
 
 	if ( !exists $forms{ 'nick' } ) {
 	    $forms{ 'nick' } = $node->findnodes( 'xs:nick/text()' );
-	} if ( !exists $forms{ 'birthday' } ) {
-	    $forms{ 'birthday' } = $node->findnodes( 'xs:born/text()' );
-	} if ( !exists $forms{ 'dead' } ) {
-	    #$forms{ 'dead' } = $node->findnodes( 'xs:dead/text()' );
 	} if ( !exists $forms{ 'image' } ) {
-	    #$forms{ 'image' } = $node->findnodes( 'xs:image/text()' );
+	    $forms{ 'image' } = $node->findnodes( 'xs:image/text()' );
 	} if ( !exists $forms{ 'description' } ) {
 	    $forms{ 'description' } = $node->findnodes( 'xs:description/text()' );
 	}
@@ -61,8 +55,6 @@ sub get
     return ArtistManager::get( 
 	$id,
 	$forms{ 'nick' },
-	$forms{ 'birthday' },
-	$forms{ 'dead' },
 	$forms{ 'image' },
 	$forms{ 'description' },
 	$mode,

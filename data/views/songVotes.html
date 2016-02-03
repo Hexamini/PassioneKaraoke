@@ -6,8 +6,11 @@
                 <input type="hidden" name="album" value="[% album %]" />
                 <input type="hidden" name="song" value="[% song %]" />
                 <input type="hidden" name="like" id="like" value="1" />
-                <label for="buttonLike">Mi piace</label>
-                <input type="submit" value="Mi piace" id="buttonLike" name="action" />
+                <!--
+				<label for="buttonLike">Mi piace</label>
+                <input type="submit" value="Mi piace" id="buttonLike" name="action" /> -->
+				<input name="action" class="button" src="../img/like.svg" title="Pulsante mi piace" alt="Mi piace" value="Pulsante mi piace" type="Image">
+
             </fieldset>
     </form>
 
@@ -18,8 +21,10 @@
                 <input type="hidden" name="album" value="[% album %]" />
                 <input type="hidden" name="song" value="[% song %]" />
                 <input type="hidden" name="like" id="unlike" value="-1" />
-                <label for="buttonUnlike">Non mi piace</label>
-                <input type="submit" value="Non mi piace" id="buttonUnlike" name="action" />
+                <!--
+				<label for="buttonUnlike">Non mi piace</label>
+                <input type="submit" value="Non mi piace" id="buttonUnlike" name="action" /> -->
+				<input name="action" class="button" src="../img/unlike.svg" title="Pulsante non mi piace" alt="Non mi piace" value="Pulsante non mi piace" type="Image">
             </fieldset>
     </form>
 </div>

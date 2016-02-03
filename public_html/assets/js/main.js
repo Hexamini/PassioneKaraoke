@@ -20,7 +20,8 @@ function check(input) {
         articleAuthor : /^.+$/, //'L\'autore dell\'articolo non è corretto'],
         articleData : /^\d{1,2}-\d{1,2}-\d{4}$/, //'La data inserita non è valida'],
         articleTitle : /^.+$/, //'Il titolo contiene caratteri non validi'],
-        articleSubtitle : /^.+$/ //'Il sotto-titolo contiene caratteri non validi']
+        articleSubtitle : /^.+$/, //'Il sotto-titolo contiene caratteri non validi']
+	articleContent : /^.+$/mg
     };
 
     if ( !listOfInputToCheck[inputName].test(value) ){

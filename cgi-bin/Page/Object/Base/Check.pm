@@ -16,7 +16,8 @@ my %checkTable = (
     'articleAuthor' => qr/^.+$/, 
     'articleData' => qr/^\d{1,2}-\d{1,2}-\d{4}$/,
     'articleTitle' => qr/^.+$/,
-    'articleSubtitle' => qr/^.+$/
+    'articleSubtitle' => qr/^.+$/,
+    'articleContent' => qr/^.+$/mg
 );
 
 =Begin

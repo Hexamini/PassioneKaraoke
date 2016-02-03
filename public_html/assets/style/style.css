@@ -59,16 +59,17 @@ body {
 #navigation-bar #menu li {
     display: block;
     width: 100%;
-}
-
-#navigation-bar #menu li a {
     font-size: 1.125em;
     line-height: 2.5em;
     height: 100%;
-    width: 100%;
     color: white;
-    display: block;
     text-align: center;
+    background-color: #1565C0;
+}
+
+#navigation-bar #menu li a {
+    background-color: #01579B;
+    text-decoration: underline;
     -webkit-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
     -moz-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
     -o-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;

@@ -546,6 +546,13 @@ FOOTER
     text-align: center;
     color: #9E9E9E;
 }
+/**** 404 **************/
+#four-zero-four-not-found {
+    background: url('../../img/microphone.svg') no-repeat center;
+    background-size: contain;
+    min-height: 300px;
+    padding-top: 50px;
+}
 
 /**********************************************/
 /****************** TABLET ********************/

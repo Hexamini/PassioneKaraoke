@@ -12,3 +12,7 @@ Il sito contiene quattro tipi principali di dati che devono essere gestiti:
 Per strutturare, e rendere validi i dati nel file XML sono stati creati degli appositi XMLSchema.
 Si \`e deciso di utilizzare il modello \textit{"Tende alla Veneziana"} per ogni tipo di dato presente che deve essere gestito.
 \`E stata valutata poi l'opportunit\`a di creare anche un elemento globale, presente in tutti i file XMLSchema che gestisca i tag HTML necessari per rendere il contenuto accessibile (ad esempio ```<span lang="en>```) come tag XML ma, essendo molti, /`e stato deciso di inserire i dati che richiedono questi tag in ```<![CDATA[testo]]>``` in modo tale da dare la massima possibilit/'a di scelta all'amministratore di inserire quasiasi tag HTML, non compromettendo la validit/`a totale del file.
+
+\subsection{Trasformate XSLT}
+
+Per visualizzare il contenuto presente nel file XML si \`e deciso di non utilizzare i template XSLT, in quanto la trasformazione da XML a HTML \`e stata resa pi\`u facile dalle librerie Perl.

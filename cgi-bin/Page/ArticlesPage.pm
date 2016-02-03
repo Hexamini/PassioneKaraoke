@@ -40,12 +40,14 @@ sub get
 		$id,
 		EditButton::get(
 		    "r.cgi?section=articleManager&amp;id=$id&amp;mode=modify",
-		    '&#44',
+		    'modifica',
+		    'Modifica articolo',
 		    'modifyButton'
 		),
 		EditButton::get(
 		    'remove_article.cgi',
-		    '&#45',
+		    'rimuovi',
+		    'Rimuovi articolo',
 		    'removeButton',
 		    "$id"
 		)
@@ -72,7 +74,8 @@ sub get
 		),
 		EditButton::get( 
 		    'r.cgi?section=articleManager&amp;id=0&amp;mode=edit', 
-		    '&#43', 
+		    'aggiungi', 
+		    'Aggiungi articolo',
 		    'addButton'
 		)
 	    );

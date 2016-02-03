@@ -546,6 +546,24 @@ h3 {
     height: 240px;
 }
 
+#song-appreciation {
+    margin-top: 2em;
+}
+
+#song-votes {
+    text-align: center;
+}
+#song-like, #song-unlike {
+    display: inline-block;
+    margin: 0.5em;
+    position: relative;
+}
+
+#song-votes .button{
+    height: 6em;
+    width: auto;
+}
+
 /*************************
 FOOTER
 **************************/

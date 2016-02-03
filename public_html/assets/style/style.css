@@ -370,13 +370,14 @@ h3 {
     display: inline-block;
     font-size: 0.7em;
     text-transform: uppercase;
-    background-color: #81D4FA;
+    background-color: #85D0F5;
     font-weight: bold;
     margin: 0 1.5em 1.5em;
-    -webkit-border-radius: 1.2em;
-    -moz-border-radius: 1.2em;
-    border-radius: 1.2em;
+    -webkit-border-radius: 9em;
+    -moz-border-radius: 9em;
+    border-radius: 9em;
     min-width: 2.4em;
+	max-width: 5em;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);

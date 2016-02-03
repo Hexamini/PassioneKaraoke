@@ -30,7 +30,7 @@ sub errorList {
     foreach my $error( @errors ) {
 	$list = $list . ErrorList::extractContent( $error );
     }
-
+    
     return $list;
 }
 

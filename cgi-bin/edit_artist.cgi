@@ -26,7 +26,7 @@ my $err = '';
 if ( Check::check( $nick, 'artistNick' ) == 0 ) {
     $err = $err.'&e=Nome d\'arte non valido, inserire un testo'.
 	'che presenti solo lettere e numeri'
-} if ( Check::check( $born, 'artistImage' ) == 0 ) {
+} if ( Check::check( $image, 'artistImage' ) == 0 ) {
     $err = $err.'&e=Nome immagine non valido, inserire un testo'.
 	'che presenti solo lettere e numeri comprensivo del formato dell\'immagine';
 }
@@ -48,14 +48,9 @@ my $doc = ParserXML::getDoc( $parser, $file );
 my $framment = 
     "<artist id='$id' >
        <nick><![CDATA[$nick]]></nick>
-       <born>$born</born>";
-
-if( $death )
-{
-    $framment = $framment . "<death>$death</death>";
-}
-
-$framment = $framment . "<description><![CDATA[$description]]></description></artist>";
+       <image>$image</image>
+       <description><![CDATA[$description]]></description>
+    </artist>";
 
 my $artist = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
 my $root = $doc->findnodes( 'xs:artistList' )->get_node( 1 );

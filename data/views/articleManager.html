@@ -12,36 +12,45 @@ META_!
 
 <div id="article-manager">
 
-	<h1>Gestione Articolo</h1>
+    <h1>Gestione Articolo</h1>
 
-	[% boxError %]
 
     <form class="input-form" action="../cgi-bin/[% mode %]_article.cgi" method="post">
-       <fieldset>
-        <p>L'asterisco (*) indica i campi obbligatori.</p>
+        [% boxError %]
+        <fieldset>
+            <p>L'asterisco (*) indica i campi obbligatori.</p>
 
-	    <input type="hidden" name="id" id="article-id" value="[% id %]" />
-	
-	    <div class="error" id="err-articleAuthor">Nome autore non valido, inserire un testo presenti solo lettere e numeri</div>
+            <input type="hidden" name="id" id="article-id" value="[% id %]"/>
+
+            <div class="error" id="err-articleAuthor">Nome autore non valido, inserire un testo presenti solo lettere e
+                numeri
+            </div>
             <label for="articleAuthor">Autore: *</label>
-            <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" value="[% author %]" />
+            <input type="text" name="articleAuthor" class="article-author" id="articleAuthor" value="[% author %]"/>
 
-	    <div class="error" id="err-articleData">La data inserita non è valida, il formato deve essere giorno-mese-anno. Ad esempio: 12-03-1989</div>
+            <div class="error" id="err-articleData">La data inserita non è valida, il formato deve essere
+                giorno-mese-anno. Ad esempio: 12-03-1989
+            </div>
             <label for="articleData">Data (da esprimere con gg-mm-aaaa): *</label>
-            <input type="text" name="articleData" class="article-data" id="articleData" value="[% date %]" />
+            <input type="text" name="articleData" class="article-data" id="articleData" value="[% date %]"/>
 
-	    <div class="error" id="err-articleTitle">Titolo errato, inserire un testo che presenti solo lettere e numeri</div>
+            <div class="error" id="err-articleTitle">Titolo errato, inserire un testo che presenti solo lettere e
+                numeri
+            </div>
             <label for="articleTitle">Titolo: *</label>
-            <input type="text" name="articleTitle" class="article-title" id="articleTitle" value="[% title %]" />
+            <input type="text" name="articleTitle" class="article-title" id="articleTitle" value="[% title %]"/>
 
-	    <div class="error" id="err-articleSubtitle">Sottotitolo errato, inserire un testo che presenti solo lettere e numeri</div>
+            <div class="error" id="err-articleSubtitle">Sottotitolo errato, inserire un testo che presenti solo lettere
+                e numeri
+            </div>
             <label for="articleSubtitle">Sottotitolo: *</label>
-            <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle" value="[% subtitle %]" />
+            <input type="text" name="articleSubtitle" class="article-subtitle" id="articleSubtitle"
+                   value="[% subtitle %]"/>
 
             <label for="articleContent">Descrizione dell'artista: *</label>
             <input name="articleContent" class="article-content" id="articleContent">[% body %]</input>
 
-            <input type="submit" value="Conferma" name="action" />
+            <input type="submit" value="Conferma" name="action"/>
         </fieldset>
     </form>
 </div>

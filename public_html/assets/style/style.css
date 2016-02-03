@@ -366,18 +366,17 @@ h3 {
 
 .edit-mode-form input {
     color: #01579B;
-    padding: 0.6em;
     display: inline-block;
-    font-size: 0.7em;
+    font-size: 1em;
     text-transform: uppercase;
     background-color: #85D0F5;
     font-weight: bold;
-    margin: 0 1.5em 1.5em;
-    -webkit-border-radius: 9em;
-    -moz-border-radius: 9em;
-    border-radius: 9em;
-    min-width: 2.4em;
-	max-width: 5em;
+    margin: 0 0.5em;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     -moz-box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);
     box-shadow: 1px 1px 4px 0 rgba(50, 50, 50, 0.5);

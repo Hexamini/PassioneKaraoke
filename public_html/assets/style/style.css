@@ -68,8 +68,14 @@ body {
 }
 
 #navigation-bar #menu li a {
+    color: white;
     background-color: #01579B;
     text-decoration: underline;
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
     -webkit-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
     -moz-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
     -o-transition: all 0.2s cubic-bezier(.55, 0, .1, 1) 0s;
@@ -621,17 +627,13 @@ and (max-width: 768px) {
         text-align: center;
         height: 100%;
         float: left;
+        line-height: 5.55em;
     }
 
     #navigation-bar #menu li a {
-        position: static;
-        display: block;
-        width: 100%;
-        height: 100%;
         text-transform: uppercase;
         font-weight: bold;
         font-size: 1.125em;
-        line-height: 5.55em;
         margin: 0;
     }
 

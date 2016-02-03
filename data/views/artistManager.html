@@ -28,18 +28,18 @@ META_!
             <input type="hidden" name="page" value="artist"/>
             <input type="hidden" name="javascript" value="0"/>
 
-            <div class="error" id="err-artistNick">Nome d'arte non valido, inserire un nome di almeno due caratterei e che presenti solo lettere e
+            <div class="error hidden" id="err-artistNick">Nome d'arte non valido, inserire un nome di almeno due caratterei e che presenti solo lettere e
                 numeri
             </div>
             <label for="a-Nick">Nome d'arte o nome del gruppo: *</label>
             <input type="text" name="artistNick" class="artist-nick" id="a-Nick" value="[% nick %]"/>
 
-            <div class="error" id="err-artistImage">Nome immagine non valido, inserire un testo che presenti solo
+            <div class="error hidden" id="err-artistImage">Nome immagine non valido, inserire un testo che presenti solo
                 lettere e numeri comprensivo del formato dell'immagine
             </div>
             <label for="a-Image">Immagine dell'artista:</label>
             <input type="text" name="artistImage" class="artist-image" id="a-Image" value="[% image %]"/>
-            <div class="error" id="err-artistDescription">
+            <div class="error hidden" id="err-artistDescription">
 	      La descrizione &egrave; vuota
 	    </div>
             <label for="a-Description">Descrizione dell'artista: *</label>

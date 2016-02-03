@@ -32,17 +32,17 @@ META_!
             <!--                                                                                              -->
 
             <!-- @korut94 aggiunti label ai vari campi -->
-            <div class="error" id="err-songTitle">Titolo della canzone errato, inserire un testo che presenti solo
+            <div class="error hidden" id="err-songTitle">Titolo della canzone errato, inserire un testo che presenti solo
                 lettere e numeri
             </div>
             <label for="song-title">Titolo: *</label>
             <input type="text" name="songTitle" id="song-title" value="[% title %]"/>
 
-            <div class="error" id="err-songLyrics">Testo della canzone errato</div>
+            <div class="error hidden" id="err-songLyrics">Testo della canzone errato</div>
             <label for="song-lyrics">Testo della canzone: *</label>
             <textarea name="songLyrics" id="song-lyrics" rows="80" cols="40">[% lyrics %]</textarea>
 
-            <div class="error" id="err-songExtra">Formato del link non riconosciuto. Deve essere preso solo il "XXXXXX"
+            <div class="error hidden" id="err-songExtra">Formato del link non riconosciuto. Deve essere preso solo il "XXXXXX"
                 del link in esempio: https://www.youtube.com/embed/XXXXXX
             </div>
             <label for="song-extra">Link a youtube: *</label>

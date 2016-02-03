@@ -23,10 +23,10 @@ META_!
 	<input type="hidden" name="artistName" value="[% idArtist %]" />
 	<input type="hidden" name="albumId" value="[% idAlbum %]" />
 
-        <div class="error" id="err-albumName">Nome album non valido, inserire solo lettere o numeri</div>
+        <div class="error hidden" id="err-albumName">Nome album non valido, inserire solo lettere o numeri</div>
             <label for="album-name">Nome: *</label>
             <input type="text" name="albumName" id="album-name" value="[% name %]"/>
-	    <div class="error" id="err-albumImage">Nome immagine non valido, inserire un testo presenti solo lettere e numeri comprensivo del formato dell'immagine</div>
+	    <div class="error hidden" id="err-albumImage">Nome immagine non valido, inserire un testo presenti solo lettere e numeri comprensivo del formato dell'immagine</div>
             <label for="album-image">Immagine album: *</label>
             <input type="text" name="albumImage" id="album-image" value="[% image %]"/>
             <input type="submit" value="Conferma" name="action" />

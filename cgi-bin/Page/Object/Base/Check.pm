@@ -7,17 +7,17 @@ package Check;
 my %checkTable = (
     'artistNick' => qr/^.{2,}$/, 
     'artistImage' => qr/^(\w+\.\w+)?$/,
-    'artistDescription' => qr/^.+$/mg,
+    'artistDescription' => qr/^.+$/m,
     'albumName' => qr/^.+$/, 
     'albumImage' => qr/^\w+\.\w+$/,
     'songTitle' => qr/^.+$/,
-    'songLyrics' => qr/^.+$/mg,
+    'songLyrics' => qr/^.+$/m,
     'songExtra' => qr/^\w+$/,
     'articleAuthor' => qr/^.+$/, 
     'articleData' => qr/^\d{1,2}-\d{1,2}-\d{4}$/,
     'articleTitle' => qr/^.+$/,
     'articleSubtitle' => qr/^.+$/,
-    'articleContent' => qr/^.+$/mg
+    'articleContent' => qr/^.+$/m
 );
 
 =Begin

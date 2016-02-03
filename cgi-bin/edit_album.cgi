@@ -17,7 +17,7 @@ my $name = $cgi->param( 'albumName' );
 my $image = $cgi->param( 'albumImage' );
 
 my $qManager = 'r.cgi?section=albumManager&artist=fedez&album=0&mode=edit'.
-    "&s=$author&s=$name&s=$image";
+    "&s=$name&s=$image";
 
 my $err = '';
 

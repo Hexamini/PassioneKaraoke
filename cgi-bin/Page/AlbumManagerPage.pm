@@ -26,11 +26,13 @@ sub get
 
     if ( ( scalar @pair ) > 0 ) {
 	#Section catcher forms
-	( $forms{ 'album' } ) = Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ );
-	( $forms{ 'image' } ) = Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ );
+	$forms{ 'album' } = Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ );
+	$forms{ 'image' } = Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ );
 
 	while ( scalar @pair > 0 ) {
-	    push @errors, ErrorList::get( ( ( shift @pair ) =~ /=(.+)/ ) );
+	    push @errors, ErrorList::get( 
+		Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ ) 
+	    );
 	}
     }
 

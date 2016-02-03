@@ -25,7 +25,7 @@ $id = lc $id;
 my $framment = 
     "<song id='$id'>
        <name><![CDATA[$name]]></name>
-       <lyrics><![CDATA[$lyrics]]</lyrics>
+       <lyrics><![CDATA[$lyrics]]></lyrics>
        <extra>$extra</extra>
        <grades>0</grades>
      </song>";

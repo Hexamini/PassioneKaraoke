@@ -22,6 +22,13 @@ body {
     top: 0;
 }
 
+
+#logout-message {
+    text-align: center;
+    font-size: 1.125em;
+    color: #1B5E20;
+    font-weight: bold;
+}
 /********************
  HEADER
  ********************/

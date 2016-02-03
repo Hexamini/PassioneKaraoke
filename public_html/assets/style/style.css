@@ -463,11 +463,11 @@ h3 {
     background-color: #FFCDD2;
     color: #B71C1C;
     margin-top: 2em;
+}
+.input-form .error.hidden, .input-form .box-error.hidden {
     display: none;
 }
-.input-form .error.visible, .input-form .box-error.visible {
-    display: block;
-}
+
 .input-form .box-error ul {
     margin-top: 0.5em;
 }
@@ -544,6 +544,24 @@ h3 {
     display:block;
     width: 320px;
     height: 240px;
+}
+
+#song-appreciation {
+    margin-top: 2em;
+}
+
+#song-votes {
+    text-align: center;
+}
+#song-like, #song-unlike {
+    display: inline-block;
+    margin: 0.5em;
+    position: relative;
+}
+
+#song-votes .button{
+    height: 6em;
+    width: auto;
 }
 
 /*************************

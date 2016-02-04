@@ -49,6 +49,20 @@ body {
     font-weight: bold;
 }
 /********************
+ SITEMAP
+ ********************/
+#site-map {
+    font-size: 1.125em;
+}
+#site-map li{
+    list-style: disc;
+    line-height: 2em;
+
+}
+#site-map ul {
+    margin-left: 2em;
+}
+/********************
  HEADER
  ********************/
 #header {

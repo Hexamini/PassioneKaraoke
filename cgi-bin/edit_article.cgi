@@ -88,8 +88,9 @@ if ( $err ne '' ) {
     $root = $doc->findnodes( '//xs:articles' )->get_node( 1 );
 
     if ( $root->findnodes( '*' )->size() == 5 ) {
-	my $oldNode = $root->findnodes( 'newArticle[1]' )->get_node( 1 );
-	$root->removeChild( $oldNode );
+	$root->removeChild(
+	    $root->findnodes( 'xs:newArticle[1]' )->get_node( 1 )
+	);
     }
 
     $root->appendChild( $newArticle ) || die( 'Non appeso' );

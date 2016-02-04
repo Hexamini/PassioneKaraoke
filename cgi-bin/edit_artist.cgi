@@ -15,6 +15,7 @@ my $cgi = new CGI;
 my $nick = $cgi->param( 'artistNick' );
 my $image = $cgi->param( 'artistImage' );
 my $description = $cgi->param( 'artistDescription' );
+my $js = $cgi->param( 'javascript' );
 
 #Aggiunta di uno spazio dopo una nuova linea
 $description =~ s/\n/\n /g;
@@ -25,17 +26,19 @@ my $qManager =
 
 my $err = '';
 
+if ( !$js ) {
 #Controllo campi input
-if ( !Check::check( $nick, 'artistNick' ) ) {
-    $err = $err.'&e=Nome d\'arte non valido, inserire un nome di almeno '.
-	'due caratteri e che presenti solo lettere e numeri'
-} if ( !Check::check( $image, 'artistImage' ) ) {
-    $err = $err.'&e=Nome immagine non valido, inserire un testo '.
-	'che presenti solo lettere e numeri comprensivo del formato dell\'immagine';
-} if ( !Check::check( $description, 'artistDescription' ) ) {
-    $err = $err.'&e=La descrizione e\' vuota';
+    if ( !Check::check( $nick, 'artistNick' ) ) {
+	$err = $err.'&e=Nome d\'arte non valido, inserire un nome di almeno '.
+	    'due caratteri e che presenti solo lettere e numeri&i=a-Nick'
+    } if ( !Check::check( $image, 'artistImage' ) ) {
+	$err = $err.'&e=Nome immagine non valido, inserire un testo '.
+	    'che presenti solo lettere e numeri comprensivo del formato dell\'immagine'.
+	    '&i=a-Image';
+    } if ( !Check::check( $description, 'artistDescription' ) ) {
+	$err = $err.'&e=La descrizione e\' vuota&i=a-Description';
+    }
 }
-
 #Se uno dei test ha riscontrato errori vieni fatto il redirect su artistManger
 if ( $err ne '' ) {
     $qManager = $qManager.$err;

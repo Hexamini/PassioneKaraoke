@@ -16,6 +16,7 @@ my $id = $cgi->param( 'idArtist' );
 my $nick = $cgi->param( 'artistNick' );
 my $image = $cgi->param( 'artistImage' );
 my $description = $cgi->param( 'artistDescription' );
+my $js = $cgi->parama( 'javascript' )
 
 #Aggiunge ad uno spazio bianco dopo una nuova riga
 $description =~ s/\n/\n /g;

@@ -71,14 +71,14 @@ h3 {
 }
 
 #last-news {
-    width: 49%;
-    margin-left: 1%;
+    width: 48%;
+    margin-right: 2%;
     display: inline-block;
     vertical-align: top;
 }
 
 #last-song {
-    width: 49%;
+    width: 48%;
     display: inline-block;
 }
 

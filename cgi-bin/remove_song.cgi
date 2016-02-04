@@ -34,12 +34,14 @@ my $news = $doc->findnodes(
     "//xs:newSong[\@artist='$idArtist' and \@album='$idAlbum' and \@id='$idSong']"
 )->get_node( 1 );
 
-#Rimuovo la notizia riguardante la canzone
-my $root = $news->parentNode;
-$root->removeChild( $news );
+if ( $news ) {
+    #Rimuovo la notizia riguardante la canzone
+    my $root = $news->parentNode;
+    $root->removeChild( $news );
 
-open( OUT, ">$file" );
-print OUT $doc->toString;
-close( OUT );
+    open( OUT, ">$file" );
+    print OUT $doc->toString;
+    close( OUT );
+}
 
 print $cgi->redirect( -uri => "r.cgi?section=artist&id=$idArtist&mode=edit" );

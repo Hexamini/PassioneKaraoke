@@ -57,7 +57,7 @@ if ( $err ne '' ) {
     {
 	$artist->removeChild( $artist->findnodes( 'xs:nick' )->get_node( 1 ) );
 	
-	$nick = $parser->parse_balanced_chunk( "<nick><![CDATA[$nick]]></nick>" ) 
+	$nick = $parser->parse_balanced_chunk( "<nick>$nick</nick>" ) 
 	    || die( 'Frammento non ben formato' );
 	$artist->appendChild( $nick );
     }

@@ -55,7 +55,7 @@ if ( $err ne '' ) {
 
     my $framment = 
 	"<artist id='$id' >
-       <nick><![CDATA[$nick]]></nick>
+       <nick>$nick</nick>
        <image>$image</image>
        <description><![CDATA[$description]]></description>
     </artist>";

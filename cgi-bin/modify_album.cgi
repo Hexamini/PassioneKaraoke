@@ -51,7 +51,7 @@ if ( $err ne '' ) {
     {
 	$album->removeChild( $album->findnodes( 'xs:name' )->get_node( 1 ) );
 
-	my $name = $parser->parse_balanced_chunk( "<name><![CDATA[$name]]></name>" ) 
+	my $name = $parser->parse_balanced_chunk( "<name>$name</name>" ) 
 	    || die( 'Frammento non ben formato' );
 	$album->appendChild( $name );
     }

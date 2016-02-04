@@ -2,6 +2,12 @@ body {
     padding-top: 7.25em;
 }
 
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 #navigation-bar {
     height: 6.25em !important;
 }
@@ -12,10 +18,6 @@ body {
 
 #navigation-bar #logo img {
     height: 5.25em;
-}
-
-#navigation-bar #open-menu-btn {
-    display: none;
 }
 
 #navigation-bar #menu {
@@ -33,17 +35,13 @@ body {
     text-align: center;
     height: 100%;
     float: left;
+    line-height: 5.55em;
 }
 
 #navigation-bar #menu li a {
-    position: static;
-    display: block;
-    width: 100%;
-    height: 100%;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.125em;
-    line-height: 5.55em;
     margin: 0;
 }
 
@@ -119,7 +117,7 @@ h3 {
 
 /*************** ARTICLES *************************/
 .article {
-    max-width: 1024px;
+    max-width: 980px;
     margin: 0.5em auto;
 }
 
@@ -130,10 +128,13 @@ h3 {
 }
 
 /************* SINGLE SONG **********************/
+
+
 #song-extra iframe{
     width: 720px;
     height: 576px;
 }
+
 /************* LOGIN *********************************/
 #login label {
     display: inline-block;
@@ -188,7 +189,6 @@ h3 {
 }
 
 /*************************USER PAGE ********************/
-
 #like-songs {
     width: 60%;
     margin: 1em auto;

@@ -2,7 +2,7 @@
 <xs:lastNews xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com news.xsd">
     <songs>
         <newSong id="_lacanzonemononota" artist="elioelestorietese" album="_albumbiango">La canzone mononota</newSong>
-    <newSong id="_unangelodistesoalsole" artist="erosramazzotti" album="_noi">Un angelo disteso al sole></newSong><newSong id="_questanostrastagione" artist="erosramazzotti" album="_noi">Questa nostra stagione</newSong></songs>
+    <newSong id="_unangelodistesoalsole" artist="erosramazzotti" album="_noi">Un angelo disteso al sole&gt;</newSong><newSong id="_questanostrastagione" artist="erosramazzotti" album="_noi">Questa nostra stagione</newSong><newSong id="_inveceno" artist="laurapausini" album="_primaverainanticipo">Invece no</newSong><newSong id="_primaverainanticipo" artist="laurapausini" album="_primaverainanticipo">Primavera in anticipo</newSong></songs>
 
     <articles>
         

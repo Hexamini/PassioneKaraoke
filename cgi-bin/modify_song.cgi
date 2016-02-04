@@ -56,10 +56,26 @@ if ( $err ne '' ) {
 
     if( $name )
     {
+	my $fileNews = '../data/database/news.xml';
+	my $docNews = ParserXML::getDoc( $parser, $fileNews );
+
+	my $newSong = $docNews->findnodes( 
+	    "//xs:newSong[\@artist='$idArtist' and \@album='$idAlbum' and \@id='$idSong']"
+	)->get_node( 1 );
+
 	#Aggiorno l'id
 	$idSong = '_' . $name;
 	$idSong =~ s/\s+//g;
 	$idSong = lc $idSong;
+
+	#Aggiornamento id per le news che si riferiscono a quella canzone
+	if ( $newSong ) {
+	    $newSong->setAttribute( 'id', $id );
+
+	    open( OUT, ">$fileNews" );
+	    print OUT $doc->toString;
+	    close( OUT );
+	}
 
 	$song->setAttribute( 'id', $idSong );
 	

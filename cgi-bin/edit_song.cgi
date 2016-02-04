@@ -29,7 +29,7 @@ my $qManager =
 
 my $err = '';
 
-if ( !js ) {
+if ( !$js ) {
     #Controllo campi input
     if ( !Check::check( $name, 'songTitle' ) ) {
 	$err = $err . '&e=Titolo della canzone errato, inserire un testo che presenti '.

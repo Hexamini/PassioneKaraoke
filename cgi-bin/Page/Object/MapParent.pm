@@ -11,7 +11,12 @@ my $struct = 'mapParent';
 
 sub get{
     my ( $link, $mapList ) = @_;
-    my $values = Behavior::weld( $link, $mapList );
+    
+    my $values = {
+	'mapList' => $mapList,
+    };
+
+    $values = Behavior::weld( $values, $link );
 
     return Behavior::getChain( $struct, $values, 1 );
 }
@@ -29,7 +34,7 @@ sub mapList{
 
 sub extractContent{
     my ( $mapParent ) = @_;
-    return $mapList->{ $struct };
+    return $mapParent->{ $struct };
 }
 
 1;

@@ -26,6 +26,7 @@ use Page::UserPagePage;
 use Page::SearchPage;
 use Page::CategoryManagerPage;
 use Page::C404Page;
+use Page::MapPage;
 
 my $cgi = new CGI;
 binmode(STDOUT, ":utf8");
@@ -103,6 +104,10 @@ switch( $section )
     
     case 'login' { 
 	Page::display( LoginPage::get( @pairs ), $section ); 
+    }
+
+    case 'map' {
+	Page::display( MapPage::get( $parser ), $section );
     }
     
     case 'signin' { 

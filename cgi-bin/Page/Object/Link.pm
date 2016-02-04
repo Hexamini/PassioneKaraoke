@@ -23,6 +23,11 @@ sub get {
     return Behavior::getChain( $struct, $values, 1 );
 }
 
+sub noLink {
+    my ( $title ) = @_;
+    return { $struct => $title };
+}
+
 sub rename{
     my ( $link, $name ) = @_;
 

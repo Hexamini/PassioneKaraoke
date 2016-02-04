@@ -31,7 +31,7 @@ sub get {
 	);
 
     my @nodeArtists = $doc->findnodes( '//xs:artist' );
-    my @childArists = ();
+    my @childArtists = ();
     foreach my $nodeArtist( @nodeArtists ) { #Scorro tutti gli artisti
 	my @nodeAlbums = $nodeArtist->findnodes( 'xs:album' );
 	my @childAlbums = ();
@@ -57,7 +57,9 @@ sub get {
 		);
 	    }
 
-	    my $parentAlbum = MapParent::get( $nameAlbum, MapParent::mapList( @childSongs ) );
+	    my $parentAlbum = MapParent::get( 
+		Link::noLink( $nameAlbum ),
+		MapParent::mapList( @childSongs ) );
 	    push @childAlbums, Behavior::rename( $parentAlbum, 'mapParent', 'mapList' ); #Il padre diventa figlio
         }
 
@@ -110,7 +112,7 @@ sub get {
     if ( $user ) {
 	$mapLogin = MapList::get( Link::get( $user, "r.cgi?section=userPage&id=$user" ) );
     } else {
-	$mapLogin = MapList::get( Ling::get( 'Login', 'r.cgi?section=login' ) );
+	$mapLogin = MapList::get( Link::get( 'Login', 'r.cgi?section=login' ) );
     }
 
     push @parents, Behavior::rename(

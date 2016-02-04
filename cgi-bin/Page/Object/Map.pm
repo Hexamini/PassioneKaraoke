@@ -12,7 +12,11 @@ my $struct = 'map';
 sub get{
     my ( $mapParent ) = @_;
 
-    return Behavior::getChain( $struct, $mapParent );
+    my $values = {
+	'mapParent' => $mapParent,
+    };
+
+    return Behavior::getChain( $struct, $values );
 }    
 
 sub mapParent {

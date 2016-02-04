@@ -17,7 +17,7 @@ my $data = $cgi->param( 'articleData' );
 my $title = $cgi->param( 'articleTitle' );
 my $subtitle = $cgi->param( 'articleSubtitle' );
 my $content = $cgi->param( 'articleContent' );
-
+my $js = $cgi->param( 'javascript' );
 $content =~ s/\n/\n /g;
 
 my $qManager = 

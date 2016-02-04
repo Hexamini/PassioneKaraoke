@@ -17,6 +17,7 @@ my $artist = $cgi->param( 'songArtist' );
 my $album = $cgi->param( 'songAlbum' );
 my $lyrics = $cgi->param( 'songLyrics' );
 my $extra = $cgi->param( 'songExtra' );
+my $js = $cgi->parama( 'javascript' );
 
 #Aggiunta di uno spazio dopo una nuova linea
 $lyrics =~ s/\n/\n /g;
@@ -28,15 +29,18 @@ my $qManager =
 
 my $err = '';
 
-#Controllo campi input
-if ( !Check::check( $name, 'songTitle' ) ) {
-    $err = $err . '&e=Titolo della canzone errato, inserire un testo che presenti '.
-	'solo lettere e numeri';
-} if ( !Check::check( $lyrics, 'songLyrics' ) ) {
-    $err = $err . '&e=Il testo della canzone e\' vuoto';
-} if ( !Check::check( $extra, 'songExtra' ) ) {
-    $err = $err . '&e=Formato del link non riconosciuto. Deve essere preso solo il '.
-	'"XXXXXX" del link in esempio: https://www.youtube.com/embed/XXXXXX';
+if ( !js ) {
+    #Controllo campi input
+    if ( !Check::check( $name, 'songTitle' ) ) {
+	$err = $err . '&e=Titolo della canzone errato, inserire un testo che presenti '.
+	    'solo lettere e numeri&i=song-title';
+    } if ( !Check::check( $lyrics, 'songLyrics' ) ) {
+	$err = $err . '&e=Il testo della canzone e\' vuoto&i=song-lyrics';
+    } if ( !Check::check( $extra, 'songExtra' ) ) {
+	$err = $err . '&e=Formato del link non riconosciuto. Deve essere preso solo il '.
+	    '"XXXXXX" del link in esempio: https://www.youtube.com/embed/XXXXXX'.
+	    '&i=song-lyrics';
+    }
 }
 
 if ( $err ne '' ) {

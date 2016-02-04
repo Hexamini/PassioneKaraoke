@@ -37,7 +37,7 @@ sub get {
 	my @childAlbums = ();
 
 	my $idArtist = $nodeArtist->getAttribute( 'id' );
-	my $nameArtist = $nodeArtist->findnodes( 'xs:name/text()' );
+	my $nameArtist = $nodeArtist->findnodes( 'xs:nick/text()' );
 	foreach my $nodeAlbum( @nodeAlbums ) { #Scorro tutti i loro album
 	    my @nodeSongs = $nodeAlbum->findnodes( 'xs:song' );
 	    my @childSongs = ();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:artistList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
+<xs:artistList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com artistlist.xsd">
 
     <artist id="elioelestorietese">
         <album id="_albumbiango">
@@ -12,27 +12,31 @@
             <name><![CDATA[Album Biango]]></name>
 			<image>albumbiango.jpg</image>
 		</album>
-			<nick><![CDATA[Elio e le storie tese]]></nick>
-			<image>elioelestorietese.jpg</image>
-			<description><![CDATA[Elio e le Storie Tese (talvolta abbreviato in EelST o Elii) sono un gruppo musicale italiano di Milano, fondato da Stefano Belisari (in arte Elio) nel 1979.<br />Il gruppo ha conosciuto, nel tempo, una popolarit&agrave; sempre crescente, alimentata prima dalla circolazione di registrazioni bootleg dei loro spettacoli in locali come il Magia Music Meeting e lo Zelig di Milano, poi dalla pubblicazione dei primi album e dalle numerose apparizioni in televisione (Lupo solitario e L'araba fenice su Italia 1, al seguito della Gialappa's Band in Mai dire Gol o di Claudio Bisio a Zelig).]]></description>
+		<nick><![CDATA[Elio e le storie tese]]></nick>
+		<image>elioelestorietese.jpg</image>
+		<description><![CDATA[Elio e le Storie Tese (talvolta abbreviato in EelST o Elii) sono un gruppo musicale italiano di Milano, fondato da Stefano Belisari (in arte Elio) nel 1979.<br />Il gruppo ha conosciuto, nel tempo, una popolarit&agrave; sempre crescente, alimentata prima dalla circolazione di registrazioni bootleg dei loro spettacoli in locali come il Magia Music Meeting e lo Zelig di Milano, poi dalla pubblicazione dei primi album e dalle numerose apparizioni in televisione (Lupo solitario e L'araba fenice su Italia 1, al seguito della Gialappa's Band in Mai dire Gol o di Claudio Bisio a Zelig).]]></description>
 	</artist>
 
     
-<artist id="erosramazzotti">
-       
-       
-       
-    <album id="_noi">
-       <name><![CDATA[Noi]]></name>
-       <image>noi.jpg</image>
-     <song id="_unangelodistesoalsole">
-       <name><![CDATA[Un angelo disteso al sole]]></name>
-       <lyrics><![CDATA[Non chiedi libert&agrave;<br />lo sai non son o io<br />a incatenarti qua<br />il sentimento va<br />gi&agrave; libero da se<br />tu quanto amore dai?<br />in cambio niente vuoi<br />nell' attimo in cui sei<br />purezza e fedelt&agrave;<br />davanti agli occhi miei<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che &egrave caduto qua,<br />nuda verit&agrave;<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori<br /><br />E adesso che mi vuoi<br />non devi fare niente che non vuoi<br />il cuore non ci sta<br />in una scatola<br />e tantomeno noi<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che è caduto qua,<br />nuda verità<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori.. che tu sfiori..<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che è caduto qua,<br />nuda verità<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori.. che tu sfiori..<br />Segnala testo errato<br /><br />]]></lyrics>
-       <extra>VADxdeK4iMc</extra>
-       <grades>0</grades>
-     </song><song id="_questanostrastagione">
-       
-       
-       
-       <grades>0</grades>
-     <name><![CDATA[Questa nostra stagione]]></name><lyrics><![CDATA[Che cosa ti aspetti da noi<br />chissà se ci pensi mai<br />lo sai che anche il mare è più blu,poi nasconde scogli<br />c'è da correre,per rimanere dove siamo...<br /><br />Perfetta così<br />questa nostra stagione<br />di giorni insieme ad esplorare noi<br />è perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...le paure,le tue paure...<br /><br />Che cosa ti manca di te<br />da quando tu stai con me<br />se un giorno tu me lo dirai,lo avrò già intuito<br />c'è da vivere,per diventare quel che siamo...<br /><br />Perfetta così<br />questa nostra stagione<br />di vita insieme a innamorare noi<br />è perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...<br /><br />Guarda in quanti corrono spingendo il freno<br />e non riesco più a prendersi la mano fermi tra abitudini e speranze vane<br />se non ami l'amore dopo niente alla fine rimane di noi...<br /><br />Perfetta così<br />ma non c'è vero amore<br /> che non abbia bisogno di un pò di cure<br />Stupenda così<br />questa nostra stagione<br />di vita insieme a raccontarci noi...<br />Perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...le nostre paure...]]></lyrics><extra>UZXUrM_VALo</extra></song></album><nick><![CDATA[Eros Ramazzotti]]></nick><image>ramazzotti.jpg</image><description><![CDATA[Eros Walter Luciano Ramazzotti (Roma, 28 ottobre 1963) è un cantautore italiano. È uno dei cantanti di maggiore successo nel panorama della musica leggera italiana e nel pop latino a livello internazionale dagli anni ottanta.<br />Nella sua carriera ha venduto oltre 60 milioni di dischi, ed è tra gli artisti italiani che hanno venduto il maggior numero di dischi]]></description></artist></xs:artistList>
+	<artist id="erosramazzotti">
+    	<album id="_noi">
+     		<song id="_unangelodistesoalsole">
+       			<name><![CDATA[Un angelo disteso al sole]]></name>
+       			<lyrics><![CDATA[Non chiedi libert&agrave;<br />lo sai non son o io<br />a incatenarti qua<br />il sentimento va<br />gi&agrave; libero da se<br />tu quanto amore dai?<br />in cambio niente vuoi<br />nell' attimo in cui sei<br />purezza e fedelt&agrave;<br />davanti agli occhi miei<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che &egrave caduto qua,<br />nuda verit&agrave;<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori<br /><br />E adesso che mi vuoi<br />non devi fare niente che non vuoi<br />il cuore non ci sta<br />in una scatola<br />e tantomeno noi<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che è caduto qua,<br />nuda verità<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori.. che tu sfiori..<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che è caduto qua,<br />nuda verità<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori.. che tu sfiori..<br />Segnala testo errato<br /><br />]]></lyrics>
+       			<extra>VADxdeK4iMc</extra>
+       			<grades>0</grades>
+     		</song>
+			<song id="_questanostrastagione">
+				<grades>0</grades>
+     			<name><![CDATA[Questa nostra stagione]]></name>
+				<lyrics><![CDATA[Che cosa ti aspetti da noi<br />chissà se ci pensi mai<br />lo sai che anche il mare è più blu,poi nasconde scogli<br />c'è da correre,per rimanere dove siamo...<br /><br />Perfetta così<br />questa nostra stagione<br />di giorni insieme ad esplorare noi<br />è perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...le paure,le tue paure...<br /><br />Che cosa ti manca di te<br />da quando tu stai con me<br />se un giorno tu me lo dirai,lo avrò già intuito<br />c'è da vivere,per diventare quel che siamo...<br /><br />Perfetta così<br />questa nostra stagione<br />di vita insieme a innamorare noi<br />è perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...<br /><br />Guarda in quanti corrono spingendo il freno<br />e non riesco più a prendersi la mano fermi tra abitudini e speranze vane<br />se non ami l'amore dopo niente alla fine rimane di noi...<br /><br />Perfetta così<br />ma non c'è vero amore<br /> che non abbia bisogno di un pò di cure<br />Stupenda così<br />questa nostra stagione<br />di vita insieme a raccontarci noi...<br />Perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...le nostre paure...]]></lyrics>
+				<extra>UZXUrM_VALo</extra>
+			</song>
+			<name><![CDATA[Noi]]></name>
+       		<image>noi.jpg</image>
+		</album>
+		<nick><![CDATA[Eros Ramazzotti]]></nick>
+		<image>ramazzotti.jpg</image>
+		<description><![CDATA[Eros Walter Luciano Ramazzotti (Roma, 28 ottobre 1963) è un cantautore italiano. È uno dei cantanti di maggiore successo nel panorama della musica leggera italiana e nel pop latino a livello internazionale dagli anni ottanta.<br />Nella sua carriera ha venduto oltre 60 milioni di dischi, ed è tra gli artisti italiani che hanno venduto il maggior numero di dischi]]></description>
+	</artist>
+</xs:artistList>

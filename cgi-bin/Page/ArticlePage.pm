@@ -24,7 +24,7 @@ sub get
 	return Article::get( ParserXML::getContent( $article->findnodes( 'xs:title/text()' ) ),
 			     ParserXML::getContent( $article->findnodes( 'xs:subtitle/text()' ) ),
 			     ParserXML::getContent( $article->findnodes( 'xs:author/text()' ) ),
-			     ParserXML::getContent( $article->findnodes( 'xs:data/text()' ) ),
+			     $article->findnodes( 'xs:data/text()' ),
 			     ParserXML::getContent( $article->findnodes( 'xs:content/text()' ) ) );
     }
     else

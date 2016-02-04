@@ -57,6 +57,7 @@ if ( $err ne '' ) {
     my $framment = 
 	"<article id=\"_$id\"> 
            <author><![CDATA[$author]]></author>
+           <data>$data</data>
            <title><![CDATA[$title]]></title>
            <subtitle><![CDATA[$subtitle]]></subtitle>
            <content><![CDATA[$content]]></content>

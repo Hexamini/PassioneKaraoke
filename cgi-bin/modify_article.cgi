@@ -70,24 +70,46 @@ if ( $err ne '' ) {
 	    || die( 'Frammento non ben formato' );
 	$article->appendChild( $data );    
     }
+    
+    my $parserNews = XML::LibXML->new();
+    my $fileNews = '../data/database/news.xml';
+    my $docNews = ParserXML::getDoc( $parserNews, $fileNews );
+
+    my $news = $docNews->findnodes( "//xs:newArticle[\@id='$id']" )->get_node( 1 );
 
     if( $title )
     {
-	$article->removeChild( $article->findnodes( 'xs:title' )->get_node( 1 ) );
-
-	$title = $parser->parse_balanced_chunk( "<title><![CDATA[$title]]></title>" ) 
+	my $nodeTitle = $parser->parse_balanced_chunk( "<title><![CDATA[$title]]></title>" ) 
 	    || die( 'Frammento non ben formato' );
-	$article->appendChild( $title );
+
+	$article->removeChild( $article->findnodes( 'xs:title' )->get_node( 1 ) );
+	$article->appendChild( $nodeTitle );
+
+	if ( $news ) {
+	    $nodeTitle = $parser->parse_balanced_chunk( "<title><![CDATA[$title]]></title>" );
+
+	    $news->removeChild( $news->findnodes( 'xs:title' )->get_node( 1 ) );
+	    $news->appendChild( $nodeTitle ) || die( 'Impossibile appendere il nodo' );
+	}
     }
 
     if( $subtitle )
     {
 	$article->removeChild( $article->findnodes( 'xs:subtitle' )->get_node( 1 ) );
 	
-	$subtitle = $parser->parse_balanced_chunk( 
+	my $nodeSubtitle = $parser->parse_balanced_chunk( 
 	    "<subtitle><![CDATA[$subtitle]]></subtitle>" 
-	) || die( 'Frammento non ben formato' );
-	$article->appendChild( $subtitle );
+	    ) || die( 'Frammento non ben formato' );
+
+	$article->appendChild( $nodeSubtitle );
+
+	if ( $news ) {
+	    $nodeSubtitle = $parser->parse_balanced_chunk( 
+		"<subtitle><![CDATA[$subtitle]]></subtitle>" 
+		);
+	    $news->removeChild( $news->findnodes( 'xs:subtitle' )->get_node( 1 ) );
+	    $news->appendChild( $nodeSubtitle );
+	}
     }
 
     if( $content )
@@ -99,8 +121,13 @@ if ( $err ne '' ) {
 	$article->appendChild( $content );
     }
 
+    #Aggiorna la tabella degli artisti
     open( OUT, ">$file" );
     print OUT $doc->toString;
+    close( OUT );
+    #Aggiorna la tabella delle new
+    open( OUT, ">$fileNews" );
+    print OUT $docNews->toString;
     close( OUT );
 
     print $cgi->redirect( -uri => "r.cgi?section=article&amp;id=$id" );

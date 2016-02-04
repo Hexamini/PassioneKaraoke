@@ -12,10 +12,11 @@ Parametri:
     error = Teste dell'errore
 =cut
 sub get {
-    my ( $error ) = @_;
+    my ( $error, $idInput ) = @_;
 
     my $values = {
 	'error' => $error,
+	'idInput' => $idInput,
     };
 
     return Behavior::getChain( $struct, $values, 1 );

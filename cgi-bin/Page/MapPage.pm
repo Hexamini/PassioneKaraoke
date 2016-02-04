@@ -59,7 +59,9 @@ sub get {
 
 	    my $parentAlbum = MapParent::get( 
 		Link::noLink( $nameAlbum ),
-		MapParent::mapList( @childSongs ) );
+		MapParent::mapList( @childSongs ) 
+	    );
+
 	    push @childAlbums, Behavior::rename( $parentAlbum, 'mapParent', 'mapList' ); #Il padre diventa figlio
         }
 

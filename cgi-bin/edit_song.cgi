@@ -39,7 +39,7 @@ if ( !$js ) {
     } if ( !Check::check( $extra, 'songExtra' ) ) {
 	$err = $err . '&e=Formato del link non riconosciuto. Deve essere preso solo il '.
 	    '"XXXXXX" del link in esempio: https://www.youtube.com/embed/XXXXXX'.
-	    '&i=song-lyrics';
+	    '&i=song-extra';
     }
 }
 

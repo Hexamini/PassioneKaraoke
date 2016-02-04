@@ -29,7 +29,7 @@ function launch_syncronization() {
 
     #rsync via ssh
 
-    ssh $USERNAME@$FIRST_URL -i id_rsa "git clone --branch=$TRAVIS_BRANCH https://github.com/Hexamini/PassioneKaraoke.git tmpTravis && rsync -avz -e ssh  ~/tmpTravis/ $USERNAME@$WEBSERVER_URL:/home/2/2013/dpolonio/tecweb && rm -rf ~/tmpTravis/"
+    ssh $USERNAME@$FIRST_URL -i id_rsa "git clone --branch=$TRAVIS_BRANCH https://github.com/Hexamini/PassioneKaraoke.git tmpTravis && rm -rf ~/tmpTravis/.git/ && rsync -avz -e ssh  ~/tmpTravis/ $USERNAME@$WEBSERVER_URL:/home/2/2013/dpolonio/tecweb && rm -rf ~/tmpTravis/"
 
 }
 

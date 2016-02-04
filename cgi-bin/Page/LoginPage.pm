@@ -14,7 +14,7 @@ sub get
     if ( $status eq 'error' ) {
 	return Login::get( 'visible' );
     } else {
-	return Login::get();
+	return Login::get( 'hidden' );
     }
 }
 

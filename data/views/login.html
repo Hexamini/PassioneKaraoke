@@ -13,14 +13,12 @@ META_!
 
         <div id="login">
           <h1>Pagina di <span lang="en">login</span></h1>
-
-	  <div class="error [% visible %]">
+            <form id="login-form" action="../cgi-bin/login.cgi" method="post">
+	      <!-- @korut94 risolto conflitto di merge -->
+	      	  <div class="error [% visible %]">
             L'<span lang="en">username</span> o la <span lang="en">password</span> inseriti sono errati.
           </div>
 
-
-            <form id="login-form" action="../cgi-bin/login.cgi" method="post">
-	      <!-- @korut94 risolto conflitto di merge -->
                 <fieldset>
 
                     <label for="username"><span lang="en">Username</span></label>

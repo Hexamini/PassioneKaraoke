@@ -132,3 +132,5 @@ sub get {
 
     return Map::get( Map::mapParent( @parents ) );
 }
+
+1;

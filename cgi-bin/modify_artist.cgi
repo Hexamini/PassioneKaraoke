@@ -88,6 +88,6 @@ if ( $err ne '' ) {
     print OUT $doc->toString;
     close( OUT );
 
-#    print $cgi->redirect( -uri => "r.cgi?section=artist&amp;id=$id&amp;mode=edit" );
+    print $cgi->redirect( -uri => "r.cgi?section=artist&amp;id=$id&amp;mode=edit" );
 }
 

@@ -5,6 +5,7 @@ use Page::Object::ErrorList;
 use Page::Object::BoxError;
 use Page::Object::SongManager;
 use Page::Object::Base::ParserXML;
+use Page::Object::Base::Check;
 
 package SongManagerPage;
 
@@ -14,7 +15,6 @@ sub get
 {
     my ( $parser, @pairs ) = @_;
 
-    my ( $artist ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my ( $idArtist ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my ( $idAlbum ) = ( ( shift @pairs ) =~ /=(.+)/ );
     my ( $idSong ) = ( ( shift @pairs ) =~ /=(.+)/ ); #Potenzialmente vuoto
@@ -23,26 +23,29 @@ sub get
     my %forms = ();
     my @errors = ();
 
+    my $doc = ParserXML::getDoc( $parser, $file );
+    my $artist = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:nick/text()" );
+
     if ( ( scalar @pairs ) > 0 ) {
 	#Section catched forms
-	( $forms{ 'title' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'lyrics' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'extra' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'title' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'lyrics' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'extra' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
 
 	#Section catched errors
 	while ( scalar @pairs > 0 ) {
-	    push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+	    push @errors, ErrorList::get( 
+		Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ ) 
+	    );
 	}
     }
 
     if ( $mode eq 'modify' ) {
-	my $doc = ParserXML::getDoc( $parser, $file );
-
 	my $node = $doc->findnodes( 
 	    "//xs:artist[\@id='$idArtist']/xs:album[\@id='$idAlbum']/".
 	    "xs:song[\@id='$idSong']"
 	)->get_node( 1 );
-
+	
 	
 	if ( !exists $forms{ 'title' } ) {
 	    $forms{ 'title' } = $node->findnodes( 'xs:name/text()' );	    

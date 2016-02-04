@@ -570,9 +570,20 @@ FOOTER
 
 #footer {
     margin: 1.5em;
-    font-size: 0.6em;
+
     text-align: center;
+
+}
+
+#footer #copyright {
+    margin-top: 2em;
+    font-size: 0.7em;
     color: #9E9E9E;
+}
+
+#validator-logos p{
+    display: inline-block;
+    margin: 1.5em 0.5em;
 }
 /**** 404 **************/
 #four-zero-four-not-found {

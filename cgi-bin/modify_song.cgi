@@ -36,7 +36,7 @@ if ( !$js ) {
     } if ( !Check::check( $extra, 'songExtra' ) ) {
 	$err = $err . '&e=Formato del link non riconosciuto. Deve essere preso '.
 	    'solo il \"XXXXXX\" del link in esempio: https://www.youtube.com/embed/XXXXXX'. 
-	    '&i=song-lyrics';
+	    '&i=song-extra';
     }
 }
 
@@ -70,10 +70,10 @@ if ( $err ne '' ) {
 
 	#Aggiornamento id per le news che si riferiscono a quella canzone
 	if ( $newSong ) {
-	    $newSong->setAttribute( 'id', $id );
+	    $newSong->setAttribute( 'id', $idSong );
 
 	    open( OUT, ">$fileNews" );
-	    print OUT $doc->toString;
+	    print OUT $docNews->toString;
 	    close( OUT );
 	}
 

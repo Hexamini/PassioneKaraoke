@@ -72,7 +72,7 @@ if ( $err ne '' ) {
 	    }
 
 	    open( OUT, ">$fileNews" );
-	    print OUT $doc->toString;
+	    print OUT $docNews->toString;
 	    close( OUT );
 	}
 	

@@ -55,29 +55,6 @@ if ( $err ne '' ) {
 
     if( $nick )
     {
-	my $fileNews = '../data/database/news.xml';
-	my $docNews = ParserXML::getDoc( $parser, $fileNews );
-
-	my @newSongs = $docNews->findnodes( "//xs:newSong[\@artist='$id']" );
-	
-	#Aggiorno l'id
-	$id = $nick;
-	$id =~ s/\s+//g;
-	$id = lc $id;
-
-	#Aggiornamento id per le news che si riferiscono all'utente
-	if ( scalar @newSongs > 0 ) {
-	    foreach my $newSong( @newSongs ) {
-		$newSong->setAttribute( 'artist', $id );
-	    }
-
-	    open( OUT, ">$fileNews" );
-	    print OUT $docNews->toString;
-	    close( OUT );
-	}
-	
-	$artist->setAttribute( 'id', $id );
-
 	$artist->removeChild( $artist->findnodes( 'xs:nick' )->get_node( 1 ) );
 	
 	$nick = $parser->parse_balanced_chunk( "<nick><![CDATA[$nick]]></nick>" ) 

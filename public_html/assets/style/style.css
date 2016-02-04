@@ -490,6 +490,11 @@ h3 {
     background-color: #01579B;
 }
 
+.input-form input:disabled, .input-form select:disabled, .input-form textarea:disabled {
+    background-color: #FAFAFA;
+    color: #9E9E9E;
+}
+
 #artist-manager .note {
     font-style: italic;
     font-size: 0.67em;
@@ -838,6 +843,8 @@ and (max-width: 768px) {
     .input-form input[type=submit]:active {
         background-color: #01579B;
     }
+
+
 
     /*************************USER PAGE ********************/
     #like-songs {

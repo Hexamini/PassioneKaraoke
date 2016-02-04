@@ -40,13 +40,100 @@
     basicstyle=\ttfamily
 }
 
-\title{Relazione progetto Tecnologie Web}
-\author{Davide Polonio, Andrea Mantovani, Fabio Massignan, Luca Bianco}
+\usepackage{fancyhdr}
+
+
+\title{\textbf{Relazione progetto Tecnologie Web}}
+\author{ilQuartetto}
 \date{5 febbraio 2016}
+
+
+\newcommand{\makeFrontPage}{
+  % Declare new goemetry for the title page only.
+  \newgeometry{top=3.5cm}
+
+  \begin{titlepage}
+  \begin{center}
+
+  \begin{center}
+  \includegraphics[width=10cm]{res/img/logo.png}
+  \end{center}
+
+  \vspace{1cm}
+
+  \begin{Huge}
+  Relazione progetto Tecnologie Web
+  \end{Huge}
+
+  \vspace{1cm}
+
+  \textbf{\emph{Gruppo ilQuartetto, Progetto Passione Karaoke}}
+
+  \vspace{11pt}
+
+  \vspace{5cm}
+
+  \bgroup
+  \def\arraystretch{1.3}
+  \begin{tabular}{ r|l }
+    \multicolumn{2}{c}{\textbf{Informazioni sul gruppo}} \\
+    \hline
+    1070162 & Davide Polonio \\
+    1070541 & Fabio Massignan \\
+    1070258 & Andrea Mantovani \\
+    1073397 & Luca Bianco \\
+  \end{tabular}
+  \egroup
+
+  \vspace{1cm}
+
+  \textbf{Link del sito} \\
+  \url{http://tecnologie-web.studenti.math.unipd.it/tecweb/~amantova/cgi-bin/r.cgi?section=index}
+
+  \vspace{3cm}
+
+  \textit{Anno accademico 2015/2016}
+
+  \vspace{22pt}
+
+  \end{center}
+  \end{titlepage}
+
+  % Ends the declared geometry for the titlepage
+  \restoregeometry
+}
+
+
+\fancypagestyle{plain}{
+	% cancella tutti i campi di intestazione e piè di pagina
+	\fancyhf{}
+
+	\lhead{
+		\parbox[b]{10cm}{
+			\emph{ilQuartetto} \vspace{0pt} \\
+			\emph{Progetto PassioneKaraoke} \vspace{7pt}
+		}
+	}
+	\chead{}
+	\rhead{
+		\slshape \leftmark
+	}
+
+	\rfoot{Pagina \thepage{}}
+
+	% Visualizza una linea orizzontale in cima e in fondo alla pagina
+	\renewcommand{\headrulewidth}{0.3pt}
+	\renewcommand{\footrulewidth}{0.3pt}
+
+}
+
+\setlength{\headheight}{30pt}
+\pagestyle{plain}
+
 
 \begin{document}
 
-\maketitle
+\makeFrontPage
 
 \newpage
 

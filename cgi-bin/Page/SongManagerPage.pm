@@ -34,8 +34,12 @@ sub get
 
 	#Section catched errors
 	while ( scalar @pairs > 0 ) {
+	    my $message = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	    my ( $input ) = ( ( shift @pairs ) =~ /=(.+)/ );
+
 	    push @errors, ErrorList::get( 
-		Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ ) 
+		$message,
+		$input
 	    );
 	}
     }

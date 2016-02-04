@@ -19,23 +19,22 @@ my $parser = XML::LibXML->new();
 my $file = '../data/database/news.xml';
 my $doc = ParserXML::getDoc( $parser, $file );
 
-my @news = $doc->findnodes( "//xs:newSong[\@artist='$id']" );
 my $root = $doc->findnodes( "//xs:songs" )->get_node( 1 );
+my @news = $root->findnodes( "xs:newSong[\@artist='$id']" );
 
-print scalar @news;
+if ( scalar @news > 0 ) {
+    foreach my $newsSong( @news ) {
+	$root->removeChild( $newsSong );
+    }
 
-foreach my $newsSong( @news ) {
-    $root->removeChild( $newsSong );
+    open( OUT, ">$file" );
+    print OUT $doc->toString;
+    close( OUT );
 }
-
-open( OUT, ">$file" );
-print $doc->toString;
-close( OUT );
-
 #Cancello l'artista
 
-my $file = '../data/database/artistlist.xml';
-my $doc = ParserXML::getDoc( $parser, $file );
+$file = '../data/database/artistlist.xml';
+$doc = ParserXML::getDoc( $parser, $file );
 
 my $artist = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 my $root = $artist->parentNode;

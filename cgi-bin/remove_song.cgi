@@ -36,10 +36,10 @@ my $news = $doc->findnodes(
 
 #Rimuovo la notizia riguardante la canzone
 my $root = $news->parentNode;
-$root->removeChild( $newsSong );
+$root->removeChild( $news );
 
 open( OUT, ">$file" );
-print $doc->toString;
+print OUT $doc->toString;
 close( OUT );
 
 print $cgi->redirect( -uri => "r.cgi?section=artist&id=$idArtist&mode=edit" );

@@ -42,7 +42,7 @@ foreach my $newsSong( @news ) {
 }
 
 open( OUT, ">$file" );
-print $doc->toString;
+print OUT $doc->toString;
 close( OUT );
 
 print $cgi->redirect( "r.cgi?section=artist&id=$idArtist&mode=edit" );

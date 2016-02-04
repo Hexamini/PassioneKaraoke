@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://www.passionekaraoke.com"
-	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
+<xs:userList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
     <user username="admin">
         <mail>admin@passionekaraoke.com</mail>
         <password>password</password>
@@ -9,7 +7,7 @@
         <votes>
             <typeVote idSong="_lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
             <typeVote idSong="_tuttoalcontrario" idArtist="fedez" idAlbum="penisolachenonce">-1</typeVote>
-        </votes>
+        <typeVote idSong="_questanostrastagione" idArtist="erosramazzotti" idAlbum="_noi">1</typeVote></votes>
     </user>
 
     <user username="fabio">
@@ -28,4 +26,4 @@
         </votes>
     </user>
 
-</userList>
+</xs:userList>

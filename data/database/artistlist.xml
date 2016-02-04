@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<artistList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://www.passionekaraoke.com"
-	xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
+<xs:artistList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
 
     <artist id="elioelestorietese">
         <nick>Elio e le storie tese</nick>
@@ -32,33 +30,22 @@
         </album>
     </artist>
 
-    <artist id="fedez">
-        <nick>Fedez</nick>
-		<image>fedez.jpg</image>
-        <description>Federico Leonardo Lucia, meglio conosciuto con lo pseudonimo Fedez, è un rapper e produttore discografico italiano, considerato una grande promessa del rap italiano e una delle figure più importanti del panorama musicale italiano[2].
-
-    Le sue vendite certificate dalla FIMI ammontano ad oltre 925.000 copie premiate con diciassette dischi di platino e sette dischi d'oro, ottenute grazie a due album in studio e otto singoli.[5] Fedez è stato uno dei quattro giudici dell'ottava edizione italiana del talent <![CDATA[<span lang="en">show</span>]]> X <![CDATA[<span lang="en">Factor</span>]]>: in tale occasione è cambiata anche qua riuscito a portare allo scontro finale due dei concorrenti da lui patrocinati, Madh e Lorenzo Fragola, vincendo la competizione con quest'ultimo.</description>
-        <album id="penisolachenonce">
-            <name>Penisola che non c'è</name>
-			<image>penisolachenonce.jpg</image>
-            <song id="_penisolachenonce">
-                <name>Penisola che non c'è</name>
-                <lyrics>Penisola che non c'è e è cambiata
-                        Farà anche tanto schifo
-                        non so perchè ho scelto questo cantante
-                </lyrics>
-                <extra>gdzjlH_ffJU</extra>
-                <grades>0</grades>
-            </song>
-            <song id="_tuttoalcontrario">
-                <name>Tutto il contrario</name>
-                <lyrics>oirartnoc li ottuT
-                        i topi non avevano nipoti
-                        anna
-                </lyrics>
-                <extra>uezw2XS_va0</extra>
-                <grades>-1</grades>
-            </song>
-        </album>
-    </artist>
-</artistList>
+    
+<artist id="erosramazzotti">
+       <nick><![CDATA[Eros Ramazzotti]]></nick>
+       <image>ramazzotti.jpg</image>
+       <description><![CDATA[Eros Walter Luciano Ramazzotti (Roma, 28 ottobre 1963) è un cantautore italiano. È uno dei cantanti di maggiore successo nel panorama della musica leggera italiana e nel pop latino a livello internazionale dagli anni ottanta.<br />Nella sua carriera ha venduto oltre 60 milioni di dischi, ed è tra gli artisti italiani che hanno venduto il maggior numero di dischi]]></description>
+    <album id="_noi">
+       <name><![CDATA[Noi]]></name>
+       <image>noi.jpg</image>
+     <song id="_unangelodistesoalsole">
+       <name><![CDATA[Un angelo disteso al sole]]></name>
+       <lyrics><![CDATA[Non chiedi libert&agrave;<br />lo sai non son o io<br />a incatenarti qua<br />il sentimento va<br />gi&agrave; libero da se<br />tu quanto amore dai?<br />in cambio niente vuoi<br />nell' attimo in cui sei<br />purezza e fedelt&agrave;<br />davanti agli occhi miei<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che &egrave caduto qua,<br />nuda verit&agrave;<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori<br /><br />E adesso che mi vuoi<br />non devi fare niente che non vuoi<br />il cuore non ci sta<br />in una scatola<br />e tantomeno noi<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che è caduto qua,<br />nuda verità<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori.. che tu sfiori..<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che è caduto qua,<br />nuda verità<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori.. che tu sfiori..<br />Segnala testo errato<br /><br />]]></lyrics>
+       <extra>VADxdeK4iMc</extra>
+       <grades>0</grades>
+     </song><song id="_questanostrastagione">
+       
+       
+       
+       <grades>0</grades>
+     <name><![CDATA[Questa nostra stagione]]></name><lyrics><![CDATA[Che cosa ti aspetti da noi<br />chissà se ci pensi mai<br />lo sai che anche il mare è più blu,poi nasconde scogli<br />c'è da correre,per rimanere dove siamo...<br /><br />Perfetta così<br />questa nostra stagione<br />di giorni insieme ad esplorare noi<br />è perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...le paure,le tue paure...<br /><br />Che cosa ti manca di te<br />da quando tu stai con me<br />se un giorno tu me lo dirai,lo avrò già intuito<br />c'è da vivere,per diventare quel che siamo...<br /><br />Perfetta così<br />questa nostra stagione<br />di vita insieme a innamorare noi<br />è perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...<br /><br />Guarda in quanti corrono spingendo il freno<br />e non riesco più a prendersi la mano fermi tra abitudini e speranze vane<br />se non ami l'amore dopo niente alla fine rimane di noi...<br /><br />Perfetta così<br />ma non c'è vero amore<br /> che non abbia bisogno di un pò di cure<br />Stupenda così<br />questa nostra stagione<br />di vita insieme a raccontarci noi...<br />Perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...le nostre paure...]]></lyrics><extra>UZXUrM_VALo</extra></song></album></artist></xs:artistList>

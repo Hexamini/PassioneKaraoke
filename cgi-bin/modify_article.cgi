@@ -18,6 +18,7 @@ my $data = $cgi->param( 'articleData' );
 my $title = $cgi->param( 'articleTitle' );
 my $subtitle = $cgi->param( 'articleSubtitle' );
 my $content = $cgi->param( 'articleContent' );
+my $js = $cgi->param( 'javascript' );
 
 $content =~ s/\n/\n /g;
 
@@ -26,20 +27,22 @@ my $qManager =
     "&s=$author&s=$data&s=$title&s=$subtitle&s=$content";
 my $err = '';
 
-if ( !Check::check( $author, 'articleAuthor' ) ) {
-    $err = $err.'&e=Nome autore non valido, inserire un testo presenti solo '.
-	'lettere e numeri';
-} if ( !Check::check( $data, 'articleData' ) ) {
-    $err = $err.'&e=La data inserita non è valida, il formato deve essere '.
-	'giorno-mese-anno. Ad esempio: 12-03-1989';
-} if ( !Check::check( $title, 'articleTitle' ) ) {
-    $err = $err.'&e=Titolo errato, inserire un testo che presenti solo lettere e '.
-	'numeri';
-} if ( !Check::check( $subtitle, 'articleSubtitle' ) ) {
-    $err = $err.'&e=Sottotitolo errato, inserire un testo che presenti solo '.
-	'lettere e numeri';
-} if ( !Check::check( $content, 'articleContent' ) ) {
-    $err = $err.'&e=Il contenuto e\' vuoto';
+if ( !$js ) {
+    if ( !Check::check( $author, 'articleAuthor' ) ) {
+	$err = $err.'&e=Nome autore non valido, inserire un testo presenti solo '.
+	    'lettere e numeri&i=articleAuthor';
+    } if ( !Check::check( $data, 'articleData' ) ) {
+	$err = $err.'&e=La data inserita non è valida, il formato deve essere '.
+	    'giorno-mese-anno. Ad esempio: 12-03-1989&i=articleData';
+    } if ( !Check::check( $title, 'articleTitle' ) ) {
+	$err = $err.'&e=Titolo errato, inserire un testo che presenti solo lettere e '.
+	    'numeri&i=articleTitle';
+    } if ( !Check::check( $subtitle, 'articleSubtitle' ) ) {
+	$err = $err.'&e=Sottotitolo errato, inserire un testo che presenti solo '.
+	    'lettere e numeri&i=articleSubtitle';
+    } if ( !Check::check( $content, 'articleContent' ) ) {
+	$err = $err.'&e=Il contenuto e\' vuoto&i=articleContent';
+    }
 }
 
 if ( $err ne '' ) {

@@ -17,7 +17,7 @@ my $artist = $cgi->param( 'songArtist' );
 my $album = $cgi->param( 'songAlbum' );
 my $lyrics = $cgi->param( 'songLyrics' );
 my $extra = $cgi->param( 'songExtra' );
-my $js = $cgi->parama( 'javascript' );
+my $js = $cgi->param( 'javascript' );
 
 #Aggiunta di uno spazio dopo una nuova linea
 $lyrics =~ s/\n/\n /g;

@@ -40,7 +40,10 @@ function main() {
     console.log("Main chiamato");
 
     var inputTag = document.querySelectorAll("input,textarea");
-
+    
+    //Javascript attivo
+    document.getElementsByName("javascript")[0].value = 1;
+    
     console.log(inputTag.length);
 
     for (var i = 0; i < inputTag.length; i++ ){

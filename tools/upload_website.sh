@@ -5,7 +5,7 @@
 # @author: Polonio Davide poloniodavide@gmail.com
 # @license: GPLv3
 
-VERSION=0.0.1
+VERSION=0.0.2
 
 function load_lib() {
 

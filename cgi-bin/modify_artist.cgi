@@ -16,7 +16,7 @@ my $id = $cgi->param( 'idArtist' );
 my $nick = $cgi->param( 'artistNick' );
 my $image = $cgi->param( 'artistImage' );
 my $description = $cgi->param( 'artistDescription' );
-my $js = $cgi->parama( 'javascript' );
+my $js = $cgi->param( 'javascript' );
 
 #Aggiunge ad uno spazio bianco dopo una nuova riga
 $description =~ s/\n/\n /g;
@@ -27,7 +27,7 @@ my $qManager =
 
 my $err = '';
 
-if ( !js ) {
+if ( !$js ) {
 #Controllo campi input
     if ( !Check::check( $nick, 'artistNick' ) ) {
 	$err = $err.'&e=Nome d\'arte non valido, inserire un nome di almeno '.

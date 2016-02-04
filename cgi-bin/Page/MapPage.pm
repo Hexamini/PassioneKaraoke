@@ -25,7 +25,7 @@ sub get {
     my @parents = ();
 
     push @parents, Behavior::rename(
-	MapList::get( Link::get( 'Index', 'r.cgi?section=index' ) ),
+	MapList::get( Link::get( 'Pagina: Index', 'r.cgi?section=index' ) ),
 	'mapList',
 	'mapParent'
 	);
@@ -37,7 +37,7 @@ sub get {
 	my @childAlbums = ();
 
 	my $idArtist = $nodeArtist->getAttribute( 'id' );
-	my $nameArtist = $nodeArtist->findnodes( 'xs:name/text()' );
+	my $nameArtist = $nodeArtist->findnodes( 'xs:nick/text()' );
 	foreach my $nodeAlbum( @nodeAlbums ) { #Scorro tutti i loro album
 	    my @nodeSongs = $nodeAlbum->findnodes( 'xs:song' );
 	    my @childSongs = ();
@@ -50,7 +50,7 @@ sub get {
 
 		push @childSongs, MapList::get( 
 		    Link::get(
-			$nameSong,
+			"Canzone: $nameSong",
 			"r.cgi?section=songDescription&artist=$idArtist".
 			"&album=$idAlbum&song=$idSong"
 		    )
@@ -62,12 +62,14 @@ sub get {
 		MapParent::mapList( @childSongs ) 
 	    );
 
-	    push @childAlbums, Behavior::rename( $parentAlbum, 'mapParent', 'mapList' ); #Il padre diventa figlio
+	    push @childAlbums, Behavior::rename( 
+		$parentAlbum, 'mapParent', 'mapList' 
+	    ); #Il padre diventa figlio
         }
 
 	my $parentArtist = MapParent::get( 
 	    Link::get( 
-		$nameArtist,
+		"Artista: $nameArtist",
 		"r.cgi?section=artist&id=$idArtist"
 	    ),
 	    MapParent::mapList( @childAlbums )
@@ -76,7 +78,7 @@ sub get {
     }
 
     push @parents, MapParent::get( #Creata albero artisti
-	Link::get( 'Artisti', 'r.cgi?section=artists' ),
+	Link::get( 'Pagina: Artisti', 'r.cgi?section=artists' ),
 	MapParent::mapList( @childArtists )
     ); 
 
@@ -101,7 +103,7 @@ sub get {
     }
 
     push @parents, MapParent::get(
-	Link::get( 'Articoli', 'r.cgi?section=articles' ),
+	Link::get( 'Pagina: Articoli', 'r.cgi?section=articles' ),
 	MapParent::mapList( @childrenArticle )
     );
 
@@ -112,9 +114,14 @@ sub get {
     my $mapLogin = '';
     
     if ( $user ) {
-	$mapLogin = MapList::get( Link::get( $user, "r.cgi?section=userPage&id=$user" ) );
+	$mapLogin = MapList::get( 
+	    Link::get( 
+		"Pagina: $user",
+		"r.cgi?section=userPage&id=$user"
+	    )
+	);
     } else {
-	$mapLogin = MapList::get( Link::get( 'Login', 'r.cgi?section=login' ) );
+	$mapLogin = MapList::get( Link::get( 'Pagina: Login', 'r.cgi?section=login' ) );
     }
 
     push @parents, Behavior::rename(

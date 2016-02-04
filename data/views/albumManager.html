@@ -5,7 +5,7 @@
 @description = Pagina che permette l'inserimento di un nuovo album
 @keyword = album, inserimento
 @title = [% artist %] - Aggiungi album
-@breadcrumb = <a href='r.cgi?section=index'><span lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&amp;id=[% idArtist %]&amp;mode=edit'>[% artist %]</a> &gt; Aggiungi album
+@breadcrumb = <a href='r.cgi?section=index'><span lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; <a href='r.cgi?section=artist&amp;id=[% idArtist %]&amp;mode=edit'>[% artist %]</a> &gt; Gestione album
 <!-- End default meta phrases -->
 
 META_!
@@ -22,7 +22,7 @@ META_!
 
 	<input type="hidden" name="artistName" value="[% idArtist %]" />
 	<input type="hidden" name="albumId" value="[% idAlbum %]" />
-	<input type="hidden" name="javascript" values="0" />
+	<input type="hidden" name="javascript" value="0" />
 
         <div class="error hidden" id="err-albumName">Nome album non valido, inserire solo lettere o numeri</div>
             <label for="album-name">Nome: *</label>

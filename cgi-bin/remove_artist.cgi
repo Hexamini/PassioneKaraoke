@@ -45,5 +45,25 @@ open( OUT, ">$file" );
 print OUT $doc->toString;
 close( OUT );
 
+#Rimozione dalla tabella userlist
+
+$file = '../data/database/userlist.xml';
+$doc = ParserXML::getDoc( $parser, $file );
+
+my @typeVotes = $doc->findnodes( "//xs:typeVote[\@idArtist='$id']" );
+my $root = '';
+
+if ( scalar @typeVotes > 0 ) {
+    #Cancella ogni preferenza dell'utente rigurdante canzoni dell'album
+    foreach my $typeVote( @typeVotes ) {
+	$root = $typeVote->parentNode;
+	$root->removeChild( $typeVote );
+    }
+
+    open( OUT, ">$file" );
+    print OUT $doc->toString;
+    close( OUT );
+}
+
 print $cgi->redirect( -uri => 'r.cgi?section=artists&mode=edit' );
 

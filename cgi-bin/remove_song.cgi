@@ -44,4 +44,24 @@ if ( $news ) {
     close( OUT );
 }
 
+#Rimozione dalla tabella userlist
+
+$file = '../data/database/userlist.xml';
+$doc = ParserXML::getDoc( $parser, $file );
+
+my $typeVote = $doc->findnodes( 
+    "//xs:typeVote[\@idArtist='$idArtist' and \@idAlbum='$idAlbum' and ".
+    "\@idSong='$idSong']" 
+);
+
+if ( $typeVote ) {
+    my $root = $typeVote->parentNode;
+    $root->removeChild( $typeVote );
+
+    open( OUT, ">$file" );
+    print OUT $doc->toString;
+    close( OUT );
+}
+
+
 print $cgi->redirect( -uri => "r.cgi?section=artist&id=$idArtist&mode=edit" );

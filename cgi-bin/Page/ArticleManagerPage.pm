@@ -5,6 +5,7 @@ use Page::Object::ArticleManager;
 use Page::Object::ErrorList;
 use Page::Object::BoxError;
 use Page::Object::Base::ParserXML;
+use Page::Object::Base::Check;
 
 package ArticleManagerPage;
 
@@ -22,15 +23,17 @@ sub get
 
     if ( ( scalar @pairs ) > 0 ) {
 	#Section catched forms
-	( $forms{ 'author' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'date' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'title' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'subtitle' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	( $forms{ 'content' } ) = ( ( shift @pairs ) =~ /=(.+)/ );
-	
+	$forms{ 'author' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'date' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'title' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'subtitle' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'content' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+
 	#Section catched errors
 	while ( scalar @pairs > 0 ) {
-	    push @errors, ErrorList::get( ( ( shift @pairs ) =~ /=(.+)/ ) );
+	    push @errors, ErrorList::get( 
+		Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ ) 
+	    );
 	}
     }
 

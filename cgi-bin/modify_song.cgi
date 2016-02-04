@@ -21,8 +21,8 @@ my $extra = $cgi->param( 'songExtra' );
 
 my $qManager =
     'r.cgi?section=songManager&'.
-    "idArtist=$idArtist&album=$idAlbum&song=$idSong&mode=modify&title=$name".
-    "&lyrics=$lyrics&extra=$extra";
+    "idArtist=$idArtist&album=$idAlbum&song=$idSong&mode=modify&s=$name".
+    "&s=$lyrics&s=$extra";
 
 my $err = '';
 

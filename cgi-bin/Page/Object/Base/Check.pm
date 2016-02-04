@@ -1,6 +1,7 @@
 use lib "cgi-bin";
 use strict;
 use warnings;
+use URI::Escape;
 
 package Check;
 
@@ -39,10 +40,11 @@ sub cleanExpression {
 
     #Decodifica da Windows-1252
     $text =~ s/%20/ /g;
+    $text =~ s/%21/!/g;
+    $text =~ s/%22/"/g;
     $text =~ s/%27/'/g;
     $text =~ s/%3C/</g;
     $text =~ s/%3E/>/g;
-    $text =~ s/%22/"/g;
-    
+
     return $text;
 }

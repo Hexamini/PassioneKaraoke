@@ -23,8 +23,8 @@ $lyrics =~ s/\n/\n /g;
 
 my $qManager =
     'r.cgi?section=songManager&'.
-    "idArtist=$artist&album=$album&song=0&mode=edit&title=$name".
-    "&lyrics=$lyrics&extra=$extra";
+    "idArtist=$artist&album=$album&song=0&mode=edit&s=$name".
+    "&s=$lyrics&s=$extra";
 
 my $err = '';
 

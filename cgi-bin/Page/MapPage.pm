@@ -96,7 +96,7 @@ sub get {
 
 	push @childrenArticle, MapList::get(
 	    Link::get(
-		"$title - $subtitle",
+		"Articolo: $title - $subtitle",
 		"r.cgi?section=article&id=$idArticle"
 	    )
 	);
@@ -132,3 +132,5 @@ sub get {
 
     return Map::get( Map::mapParent( @parents ) );
 }
+
+1;

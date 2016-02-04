@@ -18,6 +18,9 @@ my ( $idArtist, $idAlbum ) = split /:/, $args;
 my $file = '../data/database/artistlist.xml';
 
 my $parser = XML::LibXML->new();
+
+#Rimozione dalla tabella artistlist
+
 my $doc = ParserXML::getDoc( $parser, $file );
 
 my $album = $doc->findnodes( "//xs:artist[\@id='$idArtist']/xs:album[\@id='$idAlbum']")->get_node( 1 );
@@ -28,6 +31,8 @@ $root->removeChild( $album );
 open( OUT, ">$file");
 print OUT $doc->toString;
 close( OUT );
+
+#Rimozione dalla tabella news
 
 $file = '../data/database/news.xml';
 $doc = ParserXML::getDoc( $parser, $file );
@@ -40,6 +45,26 @@ if ( scalar @news > 0 ) {
     foreach my $newsSong( @news ) {
 	$root = $newsSong->parentNode;
 	$root->removeChild( $newsSong );
+    }
+
+    open( OUT, ">$file" );
+    print OUT $doc->toString;
+    close( OUT );
+}
+
+#Rimozione dalla tabella userlist
+
+$file = '../data/database/userlist.xml';
+$doc = ParserXML::getDoc( $parser, $file );
+
+my @typeVotes = $doc->findnodes( "//xs:typeVote[\@idArtist='$idArtist' and \@idAlbum='$idAlbum']" );
+my $root = '';
+
+if ( scalar @typeVotes > 0 ) {
+    #Cancella ogni preferenza dell'utente rigurdante canzoni dell'album
+    foreach my $typeVote( @typeVotes ) {
+	$root = $typeVote->parentNode;
+	$root->removeChild( $typeVote );
     }
 
     open( OUT, ">$file" );

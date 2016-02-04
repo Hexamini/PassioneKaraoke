@@ -24,7 +24,7 @@ my $qManager =
 
 my $err = '';
 
-if ( !js ) {
+if ( !$js ) {
     if ( !Check::check( $name, 'albumName' ) ) {
 	$err = $err.'&e=Nome album non valido, inserire solo lettere o numeri'.
 	    '&i=album-name';

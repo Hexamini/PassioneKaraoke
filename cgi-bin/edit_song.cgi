@@ -80,7 +80,7 @@ if ( $err ne '' ) {
     $root = $doc->findnodes( '//xs:songs' )->get_node( 1 );
 
     if ( $root->findnodes( '*' )->size() == 5 ) {
-	my $oldNode = $root->findnodes( 'newSong[1]' )->get_node( 1 );
+	my $oldNode = $root->findnodes( 'xs:newSong[1]' )->get_node( 1 );
 	$root->removeChild( $oldNode );
     }    
 

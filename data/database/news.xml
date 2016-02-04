@@ -2,7 +2,6 @@
 <xs:lastNews xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
     <songs>
         <newSong id="_lacanzonemononota" artist="elioelestorietese" album="_albumbiango">La canzone mononota</newSong>
-        <newSong id="_tuttoalcontrario" artist="fedez" album="penisolachenonce">Tutto al contrario</newSong>
     <newSong id="_unangelodistesoalsole" artist="erosramazzotti" album="_noi"><![CDATA[Un angelo disteso al sole]]></newSong><newSong id="_questanostrastagione" artist="erosramazzotti" album="_noi"><![CDATA[Questa nostra stagione]]></newSong></songs>
 
     <articles>

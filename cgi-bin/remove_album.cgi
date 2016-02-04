@@ -29,4 +29,22 @@ open( OUT, ">$file");
 print OUT $doc->toString;
 close( OUT );
 
+$file = '../data/database/news.xml';
+$doc = ParserXML::getDoc( $parser, $file );
+
+my @news = $doc->findnodes( "//xs:newSong[\@artist='$idArtist' and \@album='$idAlbum']" );
+my $root = '';
+
+if ( scalar @news > 0 ) {
+    #Cancella ogni notizia riguardante l'album di un'artista
+    foreach my $newsSong( @news ) {
+	$root = $newsSong->parentNode;
+	$root->removeChild( $newsSong );
+    }
+
+    open( OUT, ">$file" );
+    print OUT $doc->toString;
+    close( OUT );
+}
+
 print $cgi->redirect( "r.cgi?section=artist&id=$idArtist&mode=edit" );

@@ -13,10 +13,19 @@
     </user>
 
     <user username="fabio">
-        <mail>massignanfab@gmail.com</mail>
+        <mail>fabio@passionekaraoke.it</mail>
         <password>fabio</password>
         <votes>
             <typeVote idSong="_lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
         </votes>
     </user>
+
+    <user username="utente">
+        <mail>utente@mail.com</mail>
+        <password>utente</password>
+        <votes>
+            
+        </votes>
+    </user>
+
 </userList>

@@ -4,7 +4,7 @@
 La struttura del sito \`e stata realizzata a ``moduli'': non esistono infatti pagine complete, ma son presenti spezzoni di pagine che servono al Perl per generare la pagina richiesta dall'utente. Questo permette un riutilizzo dei vari moduli, come ad esempio la lista di tutti gli album di un artista.
 \subsubsection{Strutturazione}
 
-\paragraph*{Gerarchizzazione ad albero}La struttura HTML adottata \`e una struttura ad albero. Questra considera come nodo padre il file \textit{page.html}, e tutte le altre pagine come figli derivanti da esso.
+\paragraph*{Gerarchizzazione ad albero}La struttura HTML adottata \`e una struttura ad albero. Questa considera come nodo padre il file \textit{page.html}, e tutte le altre pagine come figli derivanti da esso.
 
 \newgeometry{margin=1.5cm}
 
@@ -15,23 +15,23 @@ La struttura del sito \`e stata realizzata a ``moduli'': non esistono infatti pa
   \begin{figure}[H]
     \centering
     \includegraphics[scale=0.35]{html_struct}
-    \caption{Struttura gerarchica dell'HTML del sito}
+    \caption{Struttura gerarchica dell HTML del sito}
   \end{figure}
 
 \end{landscape}
 
 \restoregeometry
 
-\paragraph*{MetaTag}Per generare correttamente i meta-tag si \`e deciso di inserire le informazioni nei nodi figli (sempre tramite segnaposti). Questo permette allo script \textit{r.cgi}, durante la costruzione della pagina web, di prendere le informazioni contenute nei nodi figli delle pagine che vogliono essere visualizzate e di sostituirli al valore del segnaposto del padre. Per raggiungere questo obiettivo in ogni nodo foglia \`e stato deciso di aggiungere nei file HTML una area dichiarativa di meta-informazioni: ogni valore dell'elemento \`e stato associato ad un nome, e se il primo antenato contiene un segnaposto corrispondente ai nomi trovati, vengono sostituiti i relativi valori.
+\paragraph*{Meta-Tag}Per generare correttamente i meta-tag si \`e deciso di inserire le informazioni nei nodi figli (sempre tramite segnaposti). Questo permette allo script \textit{r.cgi}, durante la costruzione della pagina web, di prendere le informazioni contenute nei nodi figli delle pagine che vogliono essere visualizzate e di sostituirli al valore del segnaposto del padre. Per raggiungere questo obiettivo in ogni nodo foglia \`e stato deciso di aggiungere nei file HTML una area dichiarativa di meta-informazioni: ogni valore dell'elemento \`e stato associato ad un nome, e se il primo antenato contiene un segnaposto corrispondente ai nomi trovati, vengono sostituiti i relativi valori.
 
 %IDEA: esprimere le funzionalità delle pagine principali del sito
-\paragraph*{page.html} Il file page.html \`e il file principale per tutta la struttura html. In esso infatti sono presenti la dichiarazioni di html usato (per la realizzazione di questo sito si \`e deciso di utilizzare HTML5), i tag \textit{meta}, il \textit{breadcrum}, il \textit{menu}. Tutte le altre pagine vengono costruite a partire da page.html: questo fa variare solamente parte della struttura, permettendo di apportare modifiche al men\`u o alle altre componenti condivise da tutte le pagine del sito in maniera semplice.
+\paragraph*{page.html} Il file page.html \`e il file principale per tutta la struttura HTML. In esso infatti sono presenti la dichiarazioni di HTML usato (per la realizzazione di questo sito si \`e deciso di utilizzare HTML5), i tag \textit{meta}, il \textit{breadcrumb}, il \textit{menu}. Tutte le altre pagine vengono costruite a partire da page.html: questo fa variare solamente parte della struttura, permettendo di apportare modifiche al men\`u o alle altre componenti condivise da tutte le pagine del sito in maniera semplice.
 
 \paragraph*{userPage.html} Il file userPage.html si occupa della gestione della sezione utente, dove potrà vedere i voti apportati alle singole canzoni. L'utente ha la possibilità di apportare un voto positivo (+1) o negativo (-1) cliccando rispettivamente il microfono rivolto verso l'alto o rivolto verso il basso nella pagina della canzone.
 
-\paragraph*{songDescription.html} Questa struttura html si occupa di rappresentare le canzoni (i contenuti saranno effettivamente forniti dal Perl tramite l'uso dei \textit{segnaposti}). Subito al di sotto del breadcrum è possibile trovare il titolo della canzone con il rispettivo artista come sottotitolo. Per gli utenti autenticati sarà possibile trovare al di sotto del titolo l'opzione per esprimere il proprio giudizio. Il contenuto, ovvero le \textit{lyrics} si trovano subito sotto, seguite infine da un video\footnote{È importante notare come i video saranno resi fruibili tramite la piattaforma \textit{YouTube}} che può essere inserito o meno a discrezione dell'amministratore. I video saranno visualizzabili solamente dai browser che supportano questa funzionalità, altrimenti non verranno visualizzati. Nel caso non vengano visualizzati, si avr\`a comunque una buona degradazione del sito.
+\paragraph*{songDescription.html} Questa struttura HTML si occupa di rappresentare le canzoni (i contenuti saranno effettivamente forniti dal Perl tramite l'uso dei \textit{segnaposti}). Subito al di sotto del breadcrumb è possibile trovare il titolo della canzone con il rispettivo artista come sottotitolo. Per gli utenti autenticati sarà possibile trovare al di sotto del titolo l'opzione per esprimere il proprio giudizio. Il contenuto, ovvero le \textit{lyrics} si trovano subito sotto, seguite infine da un video\footnote{È importante notare come i video saranno resi fruibili tramite la piattaforma \textit{YouTube}} che può essere inserito o meno a discrezione dell'amministratore. I video saranno visualizzabili solamente dai browser che supportano questa funzionalità, altrimenti non verranno visualizzati. Nel caso non vengano visualizzati, si avr\`a comunque una buona degradazione del sito.
 
-\paragraph*{artist.html} artist.html è la struttura HTML che permette di rappresentare il profilo di un singolo artista. Il cantautore, o la band, sarà accompagnato, dopo un breve descrizione, dalla lista dei suoi album presenti nel sito. Non è possibile da parte dell'utente esprimere qualsiasi tipo di preferenze nè applicare qualsiasi modifica, che invece sarà compito dell'amministratore tramite la \textit{modalità amministrativa}.
+\paragraph*{artist.html} artist.html è la struttura HTML che permette di rappresentare il profilo di un singolo artista. Il cantautore, o la band, sarà accompagnato, dopo un breve descrizione, dalla lista dei suoi album presenti nel sito. Non è possibile da parte dell'utente esprimere qualsiasi tipo di preferenze né applicare qualsiasi modifica, che invece sarà compito dell'amministratore tramite la \textit{modalità amministrativa}.
 
 \paragraph*{album.html} In questa struttura HTML viene rappresentato un album specifico. All'interno della rappresentazione di un album si trovano le liste di tutte le canzoni appartenenti a esso. È possibile accedere per gli utenti autorizzati alla modalità ``amministrativa'', che d\`a loro la possibilità di modificare i dati relativi all'album e la lista delle canzoni appartenenti a esso. %paragrafo da rivedere
 

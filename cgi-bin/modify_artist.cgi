@@ -27,7 +27,7 @@ my $qManager =
 
 my $err = '';
 
-if ( !js ) {
+if ( !$js ) {
 #Controllo campi input
     if ( !Check::check( $nick, 'artistNick' ) ) {
 	$err = $err.'&e=Nome d\'arte non valido, inserire un nome di almeno '.

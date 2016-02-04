@@ -6,6 +6,8 @@
 %https://github.com/Hexamini/PassioneKaraoke/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3AAccessibilit%C3%A0+
 Il sito è stato sviluppato utilizzando solamente codice HTML5. Per i fogli di stile si è invece deciso di applicare CSS 3.0, per poter sfruttare nuove tecnologie grafiche e ridurre al minimo l'utilizzo di JavaScript, che invece è stato utilizzato solo per i controlli sul form di login e sulla gestione del contenuto del sito. Il sito ha comunque una buona degradazione anche nel caso in cui questa tecnologia non fosse disponibile nel dispositivo in uso.
 
+Gli accorgimenti utilizzati durante lo sviluppo del sito ci hanno permesso di soddisfare i punti del livello di accessibilità definito dallo standard WCAG 2.0 AA. Sono stati presi in considerazione tutti punti del WCAG 2.0 AAA ma non essendo possibile raggiungere completamente alcuni punti non si è potuto dichiarare il sito completamente WCAG 2.0 AAA
+
 \subsubsection{Colori del sito}
 I colori del sito sono stati scelti tramite l'utilizzo di \url{http://vischeck.com/}. Inizialmente si pensava di usare un colore caldo, tendente al rosso/arancione, ma l`idea \`e stata scartata quando, effettuando i test, sono stati ottenuti i seguenti risultati:
 
@@ -166,7 +168,7 @@ Lo stesso accorgimento è stato adottato anche per le voci di menu in cui l'uten
 
 \end{figure}
 
-Per il menu in uno stato di \textit{hover} si è ottenuto un valore più basso, ritenuto comunuque sufficente.
+Per il menu in uno stato di \textit{hover} si è ottenuto un valore più basso, ritenuto comunque sufficiente.
 \begin{figure}[H]
 
     \centering
@@ -244,13 +246,13 @@ Sono state effettuate anche delle scelte di usabilità, esplicate in \ref{form-u
 \paragraph*{Agevolazione per gli utenti usanti screen reader}Per tutti gli utenti che usano gli screen reader, sono stati adottati i seguenti accorgimenti:
 \begin{itemize}
 
-    \item inserimento di link all'interno della pagina stessa nascosti per permettere il salto di contenuti ridondanti nelle pagine (come ad esempio il menu). Il link è stato posto via css non visibile agli utenti normali, ma fruibili per gli utenti utilizzanti screen reader;
-    \item utilizzo del tag HTML \textit{span}, che ha permesso per le parole in lingua straniera di essere pronunciate correttamente dallo screeen reader;
+    \item inserimento di link all'interno della pagina stessa nascosti per permettere il salto di contenuti ridondanti nelle pagine (come ad esempio il menu). Il link è stato posto via CSS non visibile agli utenti normali, ma fruibili per gli utenti utilizzanti screen reader;
+    \item utilizzo del tag HTML \textit{span}, che ha permesso per le parole in lingua straniera di essere pronunciate correttamente dallo screen reader;
     \item fornito un titolo e un contenuto alternativo per ogni immagine presente nel sito;
 
     \item è stato specificato in modo chiaro ogni contenuto all'interno delle pagine per aiutare persone con problemi cognitivi;
 
-    \item ogni campo form è sempre stato corredato con un'etichetta label e le voci raggruppate in fildset;
+    \item ogni campo form è sempre stato corredato con un'etichetta label e le voci raggruppate in fieldset;
 
     \item fornito link a fondo pagina (prima del footer) per dare la possibilità agli screen reader di tornare a inizio pagina;
 

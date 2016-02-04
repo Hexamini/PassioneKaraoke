@@ -6,10 +6,10 @@
 %https://github.com/Hexamini/PassioneKaraoke/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3AAccessibilit%C3%A0+
 Il sito è stato sviluppato utilizzando solamente codice HTML5. Per i fogli di stile si è invece deciso di applicare CSS 3.0, per poter sfruttare nuove tecnologie grafiche e ridurre al minimo l'utilizzo di JavaScript, che invece è stato utilizzato solo per i controlli sul form di login e sulla gestione del contenuto del sito. Il sito ha comunque una buona degradazione anche nel caso in cui questa tecnologia non fosse disponibile nel dispositivo in uso.
 
-Gli accorgimenti utilizzati durante lo sviluppo del sito ci hanno permesso di soddisfare i punti del livello di accessibilità definito dallo standard WCAG 2.0 AA. Sono stati presi in considerazione tutti punti del WCAG 2.0 AAA ma non essendo possibile raggiungere completamente alcuni punti non si è potuto dichiarare il sito completamente WCAG 2.0 AAA
+Gli accorgimenti utilizzati durante lo sviluppo del sito ci hanno permesso di soddisfare i punti del livello di accessibilità definito dallo standard WCAG 2.0 AA. Sono stati presi in considerazione anche i punti del WCAG 2.0 AAA ma non essendo stato possibile raggiungere completamente tutte le richieste, non si è potuto dichiarare il sito WCAG 2.0 AAA
 
 \subsubsection{Colori del sito}
-I colori del sito sono stati scelti tramite l'utilizzo di \url{http://vischeck.com/}. Inizialmente si pensava di usare un colore caldo, tendente al rosso/arancione, ma l`idea \`e stata scartata quando, effettuando i test, sono stati ottenuti i seguenti risultati:
+I colori del sito sono stati scelti tramite l'utilizzo di \url{http://vischeck.com/}. Inizialmente si pensava di usare un colore caldo, tendente al rosso/arancione, ma l`idea \`e stata scartata quando, avendo effettuato i test, sono stati ottenuti i seguenti risultati:
 
 \textit{\`E stata presa l'homepage come esempio principale. Il resto del sito si basa su questa stessa gamma di colori.}
 
@@ -39,7 +39,7 @@ I colori del sito sono stati scelti tramite l'utilizzo di \url{http://vischeck.c
 \end{figure}
 
 
-Come si può ben vedere, i colori non degradano in maniera elegante, e causano invece una distorsione troppo forte. Si è quindi deciso di cambiarli, ottenendo i seguenti risultati:
+Come si può ben vedere, questa palette di colori non degrada in maniera elegante, e causa invece una distorsione troppo forte. Si è quindi deciso di cambiarli, ottenendo i seguenti risultati:
 
 \begin{figure}[H]
     \centering
@@ -68,7 +68,7 @@ Come si può ben vedere, i colori non degradano in maniera elegante, e causano i
 
 
 \subsubsection{Colori delle icone per esprimere preferenze}
-Per accertarsi di avere un'accessibilit\`a completa dal punto di vista visivo, si \`e proceduto anche al controllo delle icone dei pulsanti per esprimere il giudizio positivo o negativo su una canzone. Questo controllo \`e stato necessario in quanto i simboli utilizzati (il microfono rivolto verso l'alto per esprimere un giudizio positivo e il microfono rivolto verso il basso per esprimere un voto negativo) non rappresentano una convenzione standard, ma essendo convenzioni interne del sito si \`e preferito assicurarsi che tutti gli utenti con percezione dei colori alterata siano in grado di comprendere a pieno il messaggio trasmesso.
+Per accertarsi di avere un'accessibilit\`a completa dal punto di vista visivo, \`e stato fatto anche il controllo delle icone dei pulsanti per esprimere il giudizio positivo o negativo su una canzone. Questo controllo era necessario in quanto i simboli utilizzati (il microfono rivolto verso l'alto per esprimere un giudizio positivo e il microfono rivolto verso il basso per esprimere un voto negativo) non rappresentano una convenzione standard, ma essendo convenzioni interne del sito, bisognava assicurarsi che tutti gli utenti con percezione dei colori alterata fossero in grado di comprendere a pieno il messaggio trasmesso.
 
 \begin{figure}[H]
     \centering
@@ -85,7 +85,7 @@ Per accertarsi di avere un'accessibilit\`a completa dal punto di vista visivo, s
     \caption{Icone usate per esprimere preferenze all'interno del sito}
 \end{figure}
 
-\`E importante notare la scelta del blu al posto di un pi\`u comune verde per l'icona per il voto positivo: dopo un test effettuato tramite \url{http://www.vischeck.com/} si \`e notato infatti che il verde non /`e abbastanza accessibile e che non sarebbe presente una distinzione abbastanza forte tra i colori delle due icone. Dopo aver cambiato il colore dell'icona di apprezzamento sono stati effettuati nuovamente i test, ottenendo risultati decisamente migliori:
+\`E importante notare la scelta del blu al posto di un pi\`u comune verde per l'icona per il voto positivo: dopo un test effettuato tramite \url{http://www.vischeck.com/} si \`e notato infatti che l'utilizzo contemporaneo del verde e del rosso non avrebbe reso abbastanza accessibile il riconosciemnto delle icone, in quanto non ci sarebbe stata una distinzione abbastanza forte tra i due colori. Dopo aver cambiato il colore dell'icona di apprezzamento sono stati effettuati nuovamente i test, ottenendo risultati decisamente migliori:
 \begin{itemize}
 
     \item[]
@@ -107,7 +107,7 @@ Per accertarsi di avere un'accessibilit\`a completa dal punto di vista visivo, s
                 \caption{Risultati del test per \textit{Tritanope}}
             \end{subfigure}
         ~
-            \caption{Risultati del test per il bottone per esprimere una preferenza positiva}
+            \caption{Risultati del test per l'icona per esprimere una preferenza positiva}
         \end{figure}
 
     \item[]
@@ -129,7 +129,7 @@ Per accertarsi di avere un'accessibilit\`a completa dal punto di vista visivo, s
                 \caption{Risultati del test per \textit{Tritanope}}
             \end{subfigure}
         ~
-            \caption{Risultati del test per il bottone per esprimere una preferenza negativa}
+            \caption{Risultati del test per l'icona per esprimere una preferenza negativa}
         \end{figure}
 
 \end{itemize}
@@ -139,18 +139,18 @@ Per accertarsi di avere un'accessibilit\`a completa dal punto di vista visivo, s
 \subsubsection{Contrasto e leggibilit\`a}
 
 \paragraph*{Indice leggibilità}\`E stato dato peso nel progetto anche alla leggibilit\`a del testo per quelle persone che riportano problemi visivi. Per il test sul contrasto tra testo e sfondo si \`e rivelato utile il tool reperibile al seguente indirizzo: \url{http://leaverou.github.io/contrast-ratio/}.
-Il valore espresso in una scala indica il rapporto cromatico tra lo sfondo e il colore delle scritte. Più alto il valore maggiore è presente il contrasto.
+Il valore espresso in scala numerica indica il rapporto cromatico tra lo sfondo e il colore delle scritte. Più alto \`e il valore maggiore è il contrasto.
 
-\paragraph*{Voci menu}I colori tra le voci del menu e lo sfondo della barra del menu stessa sono state scelte in maniera tale da permettere un buon contrasto mantenendo un certo design grafico.
+\paragraph*{Voci menu}I colori delle voci del menu e dello sfondo della barra menu sono stati scelti in maniera tale che avessero un buon contrasto, cercando comunque di mantenere un certo standard di design grafico.
 \begin{figure}[H]
 
     \centering
     \includegraphics[scale=0.35]{menuContrast}
-    \caption{Zoom in dettaglio per evidenziare il contrasto tra la voce del menu e lo sfondo dello stesso}
+    \caption{Zoom in dettaglio per evidenziare il contrasto tra i colori delle voci del menu e dello sfondo dello stesso}
 
 \end{figure}
 
-L'indice di contrasto ha dato un valore più che accettabile, raffigurato nell'immagine sottostante.
+L'indice di contrasto ha dato un valore più che accettabile, come si pu\`o vedere nell'immagine sottostante.
 \begin{figure}[H]
 
     \centering
@@ -159,7 +159,7 @@ L'indice di contrasto ha dato un valore più che accettabile, raffigurato nell'i
 \end{figure}
 
 
-Lo stesso accorgimento è stato adottato anche per le voci di menu in cui l'utente ha posizionato il mouse. In questo caso si è ricorsi a un effetto \textit{hover} tramite CSS, che comunque non ha influenzato la leggibilità
+Lo stesso accorgimento è stato adottato anche per il colore delle voci del menu su cui l'utente ha posizionato il mouse. In questo caso \`e stato utile un effetto \textit{hover} tramite CSS, che comunque non ha influenzato la leggibilità.
 \begin{figure}[H]
 
     \centering
@@ -168,7 +168,7 @@ Lo stesso accorgimento è stato adottato anche per le voci di menu in cui l'uten
 
 \end{figure}
 
-Per il menu in uno stato di \textit{hover} si è ottenuto un valore più basso, ritenuto comunque sufficiente.
+Per il menu in uno stato di \textit{hover} si è ottenuto un valore più basso, che abbiamo ritenuto comunque sufficiente.
 \begin{figure}[H]
 
     \centering
@@ -177,16 +177,16 @@ Per il menu in uno stato di \textit{hover} si è ottenuto un valore più basso, 
 \end{figure}
 
 
-\paragraph*{Lista ultime canzoni/artisti}Il test di leggibilità è stato effettuato anche in questa zona, dove è stato deciso di adottare un vivace verde
+\paragraph*{Lista ultime canzoni/artisti}Il test di leggibilità è stato effettuato anche in questo particolare, per cui è stato deciso di adottare un vivace verde.
 \begin{figure}[H]
 
     \centering
     \includegraphics[scale=0.35]{lastSongContrast}
-    \caption{Dettaglio della zona in cui è stato effettuato il test di leggibilità}
+    \caption{Dettaglio del particolare per cui è stato effettuato il test di leggibilità}
 
 \end{figure}
 
-Il test ha ottenuto un alto punteggio, indicando un ottimo rapporto di colori e quindi un'ottima leggibilità da parte di tutti gli utenti naviganti nel sito.
+Il test ha ottenuto un punteggio alto, che indica un ottimo rapporto di colori e quindi un'ottima leggibilità da parte di tutti gli utenti del sito.
 \begin{figure}[H]
 
     \centering
@@ -194,13 +194,15 @@ Il test ha ottenuto un alto punteggio, indicando un ottimo rapporto di colori e 
 
 \end{figure}
 
-\paragraph*{Lista di tutti gli artisti}Nella lista di tutti gli artisti, è stato tenuto in grande importanza ottenere un'altissima leggibilità in quanto si è ritenuto la parte più importante di tutto il sito e quella più visitata dagli utenti.
+\paragraph*{Lista di tutti gli artisti}
+Per quanto riguarda la sezione contenente la lista di tutti gli artisti, si \`e voluto dare grande attenzione alla leggibilit\`a, in quanto dovrebbe essere la parte pi\`u importante del sito, nonch\`e quella pi\`u visitata dagli utenti.
+
 
 \begin{figure}[H]
 
     \centering
     \includegraphics[scale=0.35]{artistsListContrast}
-    \caption{Zona in cui si è considerato avere un'alta leggibilità nella pagina "Artisti"}
+    \caption{Particolare che suggerisce l'alta leggibilità della pagina "Artisti"}
 
 \end{figure}
 
@@ -212,7 +214,7 @@ Il tool con cui sono stati effettuati i test in questo punto ha dato uno dei pun
 
 \end{figure}
 
-\paragraph{Box per gli articoli}È stato analizzato il contrasto anche nel box per gli articoli
+\paragraph{Box per gli articoli}È stato analizzato il contrasto anche nel box per gli articoli.
 \begin{figure}[H]
 
     \centering
@@ -220,7 +222,7 @@ Il tool con cui sono stati effettuati i test in questo punto ha dato uno dei pun
 
 \end{figure}
 
-Il risultato ottenuto è nella media con i precedenti
+Il risultato ottenuto è nella media con i precedenti.
 \begin{figure}[H]
 
     \centering
@@ -232,11 +234,11 @@ Il risultato ottenuto è nella media con i precedenti
 
 \subsubsection{Form e segnalazione errori}
 \label{form-accessibilita}
-Durante la navigazione è possibile, da parte dell'utente amministratore, l'inserimento di dati tramite l'utilizzo di form (per esempio aggiungere un cantante). È stato quindi necessario rendere i form accessibili tramite diversi accorgimenti:
+Durante la navigazione è possibile, da parte dell'utente amministratore, inserire dati tramite l'utilizzo di form (per esempio aggiungere un cantante). È stato quindi necessario rendere i form accessibili tramite diversi accorgimenti:
 \begin{itemize}
 
-    \item aggiunta di un bordo per ogni form in modo da rendere chiaro all'utente quali sono i campi form;
-    \item nei box di errore vengono specificati in modo chiaro il tipo di errore riscontrato, tentando di dare un esempio di input corretto. I box, quando possibile, vengono posizionati il più vicino possibile al form di input corrispondente.
+    \item aggiunta di un bordo per ogni form in modo da rendere chiaro all'utente quali siano i campi form;
+    \item nei box di errore specificato in modo chiaro il tipo di errore riscontrato, con un esempio di input corretto. I box vengono posizionati il più vicino possibile al form di input corrispondente.
 
 \end{itemize}
 Sono state effettuate anche delle scelte di usabilità, esplicate in \ref{form-usabilita}
@@ -246,18 +248,17 @@ Sono state effettuate anche delle scelte di usabilità, esplicate in \ref{form-u
 \paragraph*{Agevolazione per gli utenti usanti screen reader}Per tutti gli utenti che usano gli screen reader, sono stati adottati i seguenti accorgimenti:
 \begin{itemize}
 
-    \item inserimento di link all'interno della pagina stessa nascosti per permettere il salto di contenuti ridondanti nelle pagine (come ad esempio il menu). Il link è stato posto via CSS non visibile agli utenti normali, ma fruibili per gli utenti utilizzanti screen reader;
-    \item utilizzo del tag HTML \textit{span}, che ha permesso per le parole in lingua straniera di essere pronunciate correttamente dallo screen reader;
-    \item fornito un titolo e un contenuto alternativo per ogni immagine presente nel sito;
+    \item inserimento di link all'interno della pagina stessa, nascosti per permettere il salto di contenuti ridondanti nelle pagine (come ad esempio il menu). Il link è stato posto via CSS non visibile agli utenti normali, ma fruibile dagli utenti che utilizzano screen reader;
+    \item utilizzo del tag HTML \textit{span}, che ha permesso la corretta pronuncia delle parole in lingua straniera da parte dello screen reader;
+    \item presenza di un titolo e di un contenuto alternativo per ogni immagine del sito;
 
-    \item è stato specificato in modo chiaro ogni contenuto all'interno delle pagine per aiutare persone con problemi cognitivi;
+    \item indicazione chiara di ogni contenuto all'interno delle pagine, per aiutare persone con problemi cognitivi;
 
-    \item ogni campo form è sempre stato corredato con un'etichetta label e le voci raggruppate in fieldset;
+    \item aggiunta in ogni form di un'etichetta label e raggruppamento dei form in fieldset;
 
-    \item fornito link a fondo pagina (prima del footer) per dare la possibilità agli screen reader di tornare a inizio pagina;
+    \item presenza del link a fondo pagina (prima del footer) per dare la possibilità agli screen reader di tornare a inizio pagina;
 
 \end{itemize}
-
-Per dare un opportunit\`a di navigare nel sito in una maniera diversa, e per aiutare la ricerca di informazioni per quelle persone che hanno disabilit\`a cognitive, \`e stata creata una \textit{Mappa del sito} che fornisce una visione sequenziale di tutti i contenuti, in modo tale da ottenere una vista globale del sito, senza passare tra le svariate pagine presenti.
+Infine, per dare l'opportunit\`a all'utente che sfrutta una tecnologia sceen reader di visitare il sito in maniera pi\`u lineare, e per aiutare la ricerca di informazioni da parte di quelle persone che hanno disabilit\`a cognitive, \`e stata creata una \textit{Mappa del sito} che fornisce una visione sequenziale di tutti i contenuti, in modo tale da fornire una vista globale del sito. Questo permette all'utente di ottenere quello che desidera senza dover necessariamente passare tra le svariate pagine presenti.
 
 %TODO

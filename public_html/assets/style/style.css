@@ -722,14 +722,14 @@ and (max-width: 768px) {
     }
 
     #last-news {
-        width: 49%;
+        width: 48%;
         margin-left: 1%;
         display: inline-block;
         vertical-align: top;
     }
 
     #last-song {
-        width: 49%;
+        width: 48%;
         display: inline-block;
     }
 

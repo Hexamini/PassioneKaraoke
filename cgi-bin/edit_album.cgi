@@ -22,7 +22,7 @@ my $qManager = 'r.cgi?section=albumManager&artist=fedez&album=0&mode=edit'.
 
 my $err = '';
 
-if ( !js ) {
+if ( !$js ) {
     #Controllo campi input
     if ( !Check::check( $name, 'albumName' ) ) {
 	$err = $err.'&e=Nome album non valido, inserire solo lettere o numeri'.

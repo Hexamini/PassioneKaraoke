@@ -16,6 +16,7 @@ my $idArtist = $cgi->param( 'artistName' );
 my $idAlbum = $cgi->param( 'albumId' );
 my $name = $cgi->param( 'albumName' );
 my $image = $cgi->param( 'albumImage' );
+my $js = $cgi->param( 'javascript' );
 
 my $qManager = 
     'r.cgi?section=albumManager'.
@@ -23,11 +24,14 @@ my $qManager =
 
 my $err = '';
 
-if ( !Check::check( $name, 'albumName' ) ) {
-    $err = $err.'&e=Nome album non valido, inserire solo lettere o numeri';
-} if ( !Check::check( $image, 'albumImage' ) ) {
-    $err = $err.'Nome immagine non valido, inserire un testo presenti solo'.
-	'lettere e numeri comprensivo del formato dell\'immagine';
+if ( !js ) {
+    if ( !Check::check( $name, 'albumName' ) ) {
+	$err = $err.'&e=Nome album non valido, inserire solo lettere o numeri'.
+	    '&i=album-name';
+    } if ( !Check::check( $image, 'albumImage' ) ) {
+	$err = $err.'Nome immagine non valido, inserire un testo presenti solo'.
+	    'lettere e numeri comprensivo del formato dell\'immagine&i=album-image';
+    }
 }
 
 if ( $err ne '' ) {

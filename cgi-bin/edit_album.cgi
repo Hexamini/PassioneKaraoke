@@ -15,18 +15,23 @@ my $cgi = new CGI;
 my $author = $cgi->param( 'artistName' );
 my $name = $cgi->param( 'albumName' );
 my $image = $cgi->param( 'albumImage' );
+my $js = $cgi->param( 'javascript' );
 
 my $qManager = 'r.cgi?section=albumManager&artist=fedez&album=0&mode=edit'.
     "&s=$name&s=$image";
 
 my $err = '';
 
-#Controllo campi input
-if ( !Check::check( $name, 'albumName' ) ) {
-    $err = $err.'&e=Nome album non valido, inserire solo lettere o numeri';
-} if ( !Check::check( $image, 'albumImage' ) ) {
-    $err = $err.'&e=Nome immagine non valido, inserire un testo presenti'.
-	'solo lettere e numeri comprensivo del formato dell\'immagine';
+if ( !js ) {
+    #Controllo campi input
+    if ( !Check::check( $name, 'albumName' ) ) {
+	$err = $err.'&e=Nome album non valido, inserire solo lettere o numeri'.
+	    '&i=album-name';
+    } if ( !Check::check( $image, 'albumImage' ) ) {
+	$err = $err.'&e=Nome immagine non valido, inserire un testo presenti'.
+	    'solo lettere e numeri comprensivo del formato dell\'immagine'.
+	    '&i=album-image';
+    }
 }
 
 #Se uno dei test ha riscontrato errori viene fatto il redirect su albumManager

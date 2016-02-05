@@ -60,7 +60,7 @@ if ( $err ne '' ) {
     {
 	$article->removeChild( $article->findnodes( 'xs:author' )->get_node( 1 ) );
 	
-	$author = $parser->parse_balanced_chunk( "<author><![CDATA[$author]]></author>" )
+	$author = $parser->parse_balanced_chunk( "<author>$author</author>" )
 	    || die( 'Frammento non ben formato' );
 	$article->appendChild( $author );
     }
@@ -82,14 +82,14 @@ if ( $err ne '' ) {
 
     if( $title )
     {
-	my $nodeTitle = $parser->parse_balanced_chunk( "<title><![CDATA[$title]]></title>" ) 
+	my $nodeTitle = $parser->parse_balanced_chunk( "<title>$title</title>" ) 
 	    || die( 'Frammento non ben formato' );
 
 	$article->removeChild( $article->findnodes( 'xs:title' )->get_node( 1 ) );
 	$article->appendChild( $nodeTitle );
 
 	if ( $news ) {
-	    $nodeTitle = $parser->parse_balanced_chunk( "<title><![CDATA[$title]]></title>" );
+	    $nodeTitle = $parser->parse_balanced_chunk( "<title>$title</title>" );
 
 	    $news->removeChild( $news->findnodes( 'xs:title' )->get_node( 1 ) );
 	    $news->appendChild( $nodeTitle ) || die( 'Impossibile appendere il nodo' );
@@ -101,14 +101,14 @@ if ( $err ne '' ) {
 	$article->removeChild( $article->findnodes( 'xs:subtitle' )->get_node( 1 ) );
 	
 	my $nodeSubtitle = $parser->parse_balanced_chunk( 
-	    "<subtitle><![CDATA[$subtitle]]></subtitle>" 
+	    "<subtitle>$subtitle</subtitle>" 
 	    ) || die( 'Frammento non ben formato' );
 
 	$article->appendChild( $nodeSubtitle );
 
 	if ( $news ) {
 	    $nodeSubtitle = $parser->parse_balanced_chunk( 
-		"<subtitle><![CDATA[$subtitle]]></subtitle>" 
+		"<subtitle>$subtitle</subtitle>" 
 		);
 	    $news->removeChild( $news->findnodes( 'xs:subtitle' )->get_node( 1 ) );
 	    $news->appendChild( $nodeSubtitle );

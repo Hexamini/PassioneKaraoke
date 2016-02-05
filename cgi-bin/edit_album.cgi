@@ -17,7 +17,7 @@ my $name = $cgi->param( 'albumName' );
 my $image = $cgi->param( 'albumImage' );
 my $js = $cgi->param( 'javascript' );
 
-my $qManager = 'r.cgi?section=albumManager&artist=fedez&album=0&mode=edit'.
+my $qManager = "r.cgi?section=albumManager&artist=$author&album=0&mode=edit".
     "&s=$name&s=$image";
 
 my $err = '';

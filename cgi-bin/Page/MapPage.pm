@@ -25,7 +25,12 @@ sub get {
     my @parents = ();
 
     push @parents, Behavior::rename(
-	MapList::get( Link::get( 'Pagina: Home', 'r.cgi?section=index' ) ),
+	MapList::get( 
+	    Link::get( 
+		'Pagina: <span lang="en">Home</span>', 
+		'r.cgi?section=index' 
+	    ) 
+	),
 	'mapList',
 	'mapParent'
 	);
@@ -121,7 +126,12 @@ sub get {
 	    )
 	);
     } else {
-	$mapLogin = MapList::get( Link::get( 'Pagina: Login', 'r.cgi?section=login' ) );
+	$mapLogin = MapList::get( 
+	    Link::get( 
+		'Pagina: <span lang="en">Login</span>', 
+		'r.cgi?section=login'
+	    )
+	);
     }
 
     push @parents, Behavior::rename(

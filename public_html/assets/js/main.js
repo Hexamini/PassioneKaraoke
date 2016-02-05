@@ -2,10 +2,10 @@ function regByName( name ) {
     var listOfInputToCheck = {
 	//'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
 	artistNick : /^\w{2,}(\w| )+$/, 
-	artistImage : /^(\w+.\w+)?$/,
+	artistImage : /^(\w+\.\w+)?$/,
 	artistDescription : /^.+$/,
 	albumName : /^\w{2,}(\w| )+$/, 
-	albumImage : /^\w+.\w+$/,
+	albumImage : /^\w+\.\w+$/,
 	songTitle : /^\w{2,}(\w| )+$/, //'Il titolo contiene caratteri non validi'],
 	songLyrics : /^.+$/m,
 	songExtra : /^\w+$/,

@@ -110,7 +110,7 @@ function main() {
     if ( form !== undefined ) {
 	//L'unico form della pagina, impedisci di eseguire il submit finché
 	//tutti i campi non sono validati
-	form[0].onsubmit = function() { return checkAll(); }
+	form.onsubmit = function() { return checkAll(); }
     }
 }
 

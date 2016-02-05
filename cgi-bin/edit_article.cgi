@@ -31,7 +31,7 @@ if ( !$js ) {
 	$err = $err.'&e=Nome autore non valido, inserire un testo presenti solo '.
 	    'lettere e numeri&i=articleAuthor';
     } if ( !Check::check( $data, 'articleData' ) ) {
-	$err = $err.'&e=La data inserita non è valida, il formato deve essere '.
+	$err = $err.'&e=La data inserita non e\' valida, il formato deve essere '.
 	    'giorno-mese-anno. Ad esempio: 12-03-1989&i=articleData';
     } if ( !Check::check( $title, 'articleTitle' ) ) {
 	$err = $err.'&e=Titolo errato, inserire un testo che presenti solo lettere e '.

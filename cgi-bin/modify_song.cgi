@@ -35,7 +35,7 @@ if ( !$js ) {
 	$err = $err . '&e=Testo della canzone e\' vuoto&i=song-lyrics';
     } if ( !Check::check( $extra, 'songExtra' ) ) {
 	$err = $err . '&e=Formato del link non riconosciuto. Deve essere preso '.
-	    'solo il \"XXXXXX\" del link in esempio: https://www.youtube.com/embed/XXXXXX'. 
+	    'solo il "XXXXXX" del link in esempio: https://www.youtube.com/embed/XXXXXX'. 
 	    '&i=song-extra';
     }
 }

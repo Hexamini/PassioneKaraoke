@@ -5,16 +5,15 @@
         <password>password</password>
         <type>administrator</type>
         <votes>
-            <typeVote idSong="_lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
-            <typeVote idSong="_tuttoalcontrario" idArtist="fedez" idAlbum="penisolachenonce">-1</typeVote>
-        <typeVote idSong="_questanostrastagione" idArtist="erosramazzotti" idAlbum="_noi">1</typeVote></votes>
+            <typeVote idSong="__lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
+        <typeVote idSong="__questanostrastagione" idArtist="erosramazzotti" idAlbum="_noi">1</typeVote></votes>
     </user>
 
     <user username="fabio">
         <mail>fabio@passionekaraoke.it</mail>
         <password>fabio</password>
         <votes>
-            <typeVote idSong="_lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
+            <typeVote idSong="__lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
         </votes>
     </user>
 
@@ -22,7 +21,7 @@
         <mail>utente@mail.com</mail>
         <password>utente</password>
         <votes>
-            
+			<typeVote idSong="__lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
         </votes>
     </user>
 

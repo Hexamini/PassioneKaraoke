@@ -58,7 +58,7 @@ sub get {
 	    }
 
 	    my $parentAlbum = MapParent::get( 
-		Link::noLink( $nameAlbum ),
+		Link::noLink( "Album: $nameAlbum" ),
 		MapParent::mapList( @childSongs ) 
 	    );
 
@@ -116,7 +116,7 @@ sub get {
     if ( $user ) {
 	$mapLogin = MapList::get( 
 	    Link::get( 
-		"Pagina: $user",
+		"Pagina personale di $user",
 		"r.cgi?section=userPage&id=$user"
 	    )
 	);

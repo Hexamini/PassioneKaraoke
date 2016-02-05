@@ -42,6 +42,7 @@ function checkAll() {
 
     //Catturo tutti gli input
     var inputTag = document.querySelectorAll("input,textarea");
+    console.log( "Catturati gli input, dimensione: " + inputTag.length );
 
     var size = inputTag.lenght;
     var check = true;
@@ -56,6 +57,8 @@ function checkAll() {
 	var value = input.value;
 
 	var checker = listOfInputToCheck[inputName];
+    console.log( "Controllo di " + name + " regex " + checker );
+    console.log( checker != null );
 
 	if ( checker != null && !checker.test(value) ){
             console.log("Cambio la voce in visible");

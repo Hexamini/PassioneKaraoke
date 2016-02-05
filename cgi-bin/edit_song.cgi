@@ -47,13 +47,13 @@ if ( $err ne '' ) {
     $qManager = $qManager . $err;
     print $cgi->redirect( -uri => $qManager );
 } else {
-    my $id = '_' . $name;
+    my $id = '_x_'.$name;
     $id =~ s/\s+//g;
     $id = lc $id;
 
     #Sezione aggiunta canzoni nel database
     my $framment = 
-	"<song id='__$id'>
+	"<song id='$id'>
        <name>$name</name>
        <lyrics><![CDATA[$lyrics]]></lyrics>
        <extra>$extra</extra>

@@ -53,8 +53,8 @@ sub get
     foreach my $newArticle( @nodeArticle )
     {
 	push( @lastArticles, LastArticle::get(
-		  ParserXML::getContent( $newArticle->findnodes( 'xs:title/text()' ) ),
-		  ParserXML::getContent( $newArticle->findnodes( 'xs:subtitle/text()' ) ),
+		  $newArticle->findnodes( 'xs:title/text()' ),
+		  $newArticle->findnodes( 'xs:subtitle/text()' ),
 		  $newArticle->getAttribute( 'id' )
 	      )
 	    );

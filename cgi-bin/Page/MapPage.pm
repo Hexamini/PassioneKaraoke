@@ -25,7 +25,7 @@ sub get {
     my @parents = ();
 
     push @parents, Behavior::rename(
-	MapList::get( Link::get( 'Pagina: Index', 'r.cgi?section=index' ) ),
+	MapList::get( Link::get( 'Pagina: Home', 'r.cgi?section=index' ) ),
 	'mapList',
 	'mapParent'
 	);

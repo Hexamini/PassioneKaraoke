@@ -314,7 +314,7 @@ h3 {
 /********** ARTICLE ***********************/
 
 .article {
-    height: 3.6em;
+    min-height: 3.6em;
     padding: 1.125em 0;
     line-height: 1.875em;
     text-align: center;

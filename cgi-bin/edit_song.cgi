@@ -53,7 +53,7 @@ if ( $err ne '' ) {
 
     #Sezione aggiunta canzoni nel database
     my $framment = 
-	"<song id='$id'>
+	"<song id='__$id'>
        <name>$name</name>
        <lyrics><![CDATA[$lyrics]]></lyrics>
        <extra>$extra</extra>

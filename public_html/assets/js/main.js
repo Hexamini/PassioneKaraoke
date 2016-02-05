@@ -9,18 +9,18 @@ function check(input) {
 
     var listOfInputToCheck = {
 	//'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
-	artistNick : /^.{2,}$/, 
+	artistNick : /^\w{2,}$/, 
 	artistImage : /^(\w+.\w+)?$/,
 	artistDescription : /^.+$/,
-	albumName : /^.+$/, 
+	albumName : /^\w+$/, 
 	albumImage : /^\w+.\w+$/,
-        songTitle : /^.+$/, //'Il titolo contiene caratteri non validi'],
+        songTitle : /^\w+$/, //'Il titolo contiene caratteri non validi'],
 	songLyrics : /^.+$/m,
 	songExtra : /^\w+$/,
-        articleAuthor : /^.+$/, //'L\'autore dell\'articolo non è corretto'],
+        articleAuthor : /^\w{2,}$/, //'L\'autore dell\'articolo non è corretto'],
         articleData : /^\d{1,2}-\d{1,2}-\d{4}$/, //'La data inserita non è valida'],
-        articleTitle : /^.+$/, //'Il titolo contiene caratteri non validi'],
-        articleSubtitle : /^.+$/, //'Il sotto-titolo contiene caratteri non validi']
+        articleTitle : /^\w+$/, //'Il titolo contiene caratteri non validi'],
+        articleSubtitle : /^\w+$/, //'Il sotto-titolo contiene caratteri non validi']
 	articleContent : /^.+$/m
     };
 

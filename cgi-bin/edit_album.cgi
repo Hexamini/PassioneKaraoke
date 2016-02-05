@@ -50,7 +50,7 @@ if ( $err ne '' ) {
 
     my $framment = 
 	"<album id='$id'>
-       <name><![CDATA[$name]]></name>
+       <name>$name</name>
        <image>$image</image>
      </album>";
 

@@ -44,6 +44,10 @@ if ( $err ne '' ) {
     $qManager = $qManager.$err;
     print $cgi->redirect( -uri => $qManager );
 } else {
+    if ( $image eq '' ) {
+	$image = 'default.jpg';
+    }
+
     my $id = $nick;
     $id =~ s/\s+//g;
     $id = lc $id;
@@ -55,7 +59,7 @@ if ( $err ne '' ) {
 
     my $framment = 
 	"<artist id='$id' >
-       <nick><![CDATA[$nick]]></nick>
+       <nick>$nick</nick>
        <image>$image</image>
        <description><![CDATA[$description]]></description>
     </artist>";

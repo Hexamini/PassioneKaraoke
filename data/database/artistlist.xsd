@@ -15,10 +15,10 @@
 
     <xs:complexType name="Tartist">
         <xs:sequence>
+			<xs:element name="album" maxOccurs="unbounded" type="Talbum" />
             <xs:element name="nick" type="xs:string" minOccurs="0" />
 			<xs:element name="image" type="xs:string" />
             <xs:element name="description" type="xs:string" />
-            <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
@@ -28,10 +28,10 @@
 <!-- Inizio Album -->
     <xs:complexType name="Talbum">
         <xs:sequence>
+			<xs:element name="song" maxOccurs="unbounded"
+						type="Tsong" />
             <xs:element name="name" type="xs:string" />
 			<xs:element name="image" type="xs:string" />
-            <xs:element name="song" minOccurs="1" maxOccurs="unbounded"
-                        type="Tsong" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
@@ -39,12 +39,12 @@
 
 <!-- Inizio Canzoni -->
 	<xs:complexType name="Tsong">
-		<xs:sequence>
+		<xs:all>
 			<xs:element name="name" type="xs:string" />
 			<xs:element name="lyrics" type="xs:string"  />
 			<xs:element name="extra" type="xs:string"  />
             <xs:element name="grades" type="xs:integer" default="0"/>
-		</xs:sequence>
+		</xs:all>
         <xs:attribute name="id" type="xs:ID" use="required"/>
 	</xs:complexType>
 <!-- Fine Canzoni -->

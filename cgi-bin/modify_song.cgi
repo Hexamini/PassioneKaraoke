@@ -36,7 +36,7 @@ if ( !$js ) {
     } if ( !Check::check( $extra, 'songExtra' ) ) {
 	$err = $err . '&e=Formato del link non riconosciuto. Deve essere preso '.
 	    'solo il \"XXXXXX\" del link in esempio: https://www.youtube.com/embed/XXXXXX'. 
-	    '&i=song-lyrics';
+	    '&i=song-extra';
     }
 }
 
@@ -56,16 +56,9 @@ if ( $err ne '' ) {
 
     if( $name )
     {
-	#Aggiorno l'id
-	$idSong = '_' . $name;
-	$idSong =~ s/\s+//g;
-	$idSong = lc $idSong;
-
-	$song->setAttribute( 'id', $idSong );
-	
 	$song->removeChild( $song->findnodes( 'xs:name' )->get_node( 1 ) );
 
-	my $name = $parser->parse_balanced_chunk( "<name><![CDATA[$name]]></name>" ) 
+	my $name = $parser->parse_balanced_chunk( "<name>$name</name>" ) 
 	    || die( 'Frammento non ben formato' );
 	$song->appendChild( $name );
     }

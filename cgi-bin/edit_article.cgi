@@ -59,10 +59,10 @@ if ( $err ne '' ) {
 
     my $framment = 
 	"<article id=\"_$id\"> 
-           <author><![CDATA[$author]]></author>
+           <author>$author</author>
            <data>$data</data>
-           <title><![CDATA[$title]]></title>
-           <subtitle><![CDATA[$subtitle]]></subtitle>
+           <title>$title</title>
+           <subtitle>$subtitle</subtitle>
            <content><![CDATA[$content]]></content>
          </article>";
 
@@ -82,8 +82,8 @@ if ( $err ne '' ) {
 
     $framment =
 	"<newArticle id='_$id'>
-       <title><![CDATA[$title]]></title>
-       <subtitle><![CDATA[$subtitle]]></subtitle>
+       <title>$title</title>
+       <subtitle>$subtitle</subtitle>
      </newArticle>";
 
     my $newArticle = $parser->parse_balanced_chunk( $framment )

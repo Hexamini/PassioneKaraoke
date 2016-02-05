@@ -1,10 +1,9 @@
 <div class="edit-mode">
-        <!-- @korut94 Correto link per il reload alla pagina in edit mode -->
-        <form class="edit-mode-form" action="../cgi-bin/[% link %]" method="post">
-        <!--                                                              -->
-            <fieldset>
+
+    <form class="edit-mode-form" action="../cgi-bin/[% link %]" method="post">
+
+        <fieldset>
 	      <input type="hidden" name="args" class="arguments" value="[% args %]" />
-                <!-- <input type="submit" value="[% value %]" name="action" /> -->
 
 				<input name="action" class="button" src="../img/[% name %].png" title="Pulsante [% value %]" alt="[% value %]" value="Pulsante [% value %]" type="Image">
             </fieldset>

@@ -6,18 +6,18 @@ use URI::Escape;
 package Check;
 
 my %checkTable = (
-    'artistNick' => qr/^.{2,}$/, 
+    'artistNick' => qr/^\w{2,}(\w| )+$/, 
     'artistImage' => qr/^(\w+\.\w+)?$/,
     'artistDescription' => qr/^.+$/m,
-    'albumName' => qr/^.+$/, 
+    'albumName' => qr/^\w{2,}(\w| )+$/, 
     'albumImage' => qr/^\w+\.\w+$/,
-    'songTitle' => qr/^.+$/,
+    'songTitle' => qr/^\w{2,}(\w| )+$/,
     'songLyrics' => qr/^.+$/m,
     'songExtra' => qr/^\w+$/,
-    'articleAuthor' => qr/^.+$/, 
+    'articleAuthor' => qr/^\w{2,}(\w| )+$/, 
     'articleData' => qr/^\d{1,2}-\d{1,2}-\d{4}$/,
-    'articleTitle' => qr/^.+$/,
-    'articleSubtitle' => qr/^.+$/,
+    'articleTitle' => qr/^\w{2,}(\w| )+$/,
+    'articleSubtitle' => qr/^\w{2,}(\w| )+$/,
     'articleContent' => qr/^.+$/m
 );
 

@@ -49,16 +49,9 @@ if ( $err ne '' ) {
 
     if( $name )
     {
-	#Aggiorno l'id
-	$idAlbum = '_' . $name;
-	$idAlbum =~ s/\s+//g;
-	$idAlbum = lc $idAlbum;
-
-	$album->setAttribute( 'id', $idAlbum );
-
 	$album->removeChild( $album->findnodes( 'xs:name' )->get_node( 1 ) );
 
-	my $name = $parser->parse_balanced_chunk( "<name><![CDATA[$name]]></name>" ) 
+	my $name = $parser->parse_balanced_chunk( "<name>$name</name>" ) 
 	    || die( 'Frammento non ben formato' );
 	$album->appendChild( $name );
     }

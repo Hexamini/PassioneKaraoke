@@ -58,7 +58,7 @@ sub get {
 	    }
 
 	    my $parentAlbum = MapParent::get( 
-		Link::noLink( $nameAlbum ),
+		Link::noLink( "Album: $nameAlbum" ),
 		MapParent::mapList( @childSongs ) 
 	    );
 
@@ -96,7 +96,7 @@ sub get {
 
 	push @childrenArticle, MapList::get(
 	    Link::get(
-		"$title - $subtitle",
+		"Articolo: $title - $subtitle",
 		"r.cgi?section=article&id=$idArticle"
 	    )
 	);
@@ -116,7 +116,7 @@ sub get {
     if ( $user ) {
 	$mapLogin = MapList::get( 
 	    Link::get( 
-		"Pagina: $user",
+		"Pagina personale di $user",
 		"r.cgi?section=userPage&id=$user"
 	    )
 	);
@@ -132,3 +132,5 @@ sub get {
 
     return Map::get( Map::mapParent( @parents ) );
 }
+
+1;

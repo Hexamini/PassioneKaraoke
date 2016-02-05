@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:lastNews xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com xmlschema.xsd">
+<xs:lastNews xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com news.xsd">
     <songs>
         <newSong id="_lacanzonemononota" artist="elioelestorietese" album="_albumbiango">La canzone mononota</newSong>
-    <newSong id="_unangelodistesoalsole" artist="erosramazzotti" album="_noi"><![CDATA[Un angelo disteso al sole]]></newSong><newSong id="_questanostrastagione" artist="erosramazzotti" album="_noi"><![CDATA[Questa nostra stagione]]></newSong></songs>
+    <newSong id="_unangelodistesoalsole" artist="erosramazzotti" album="_noi">Un angelo disteso al sole&gt;</newSong><newSong id="_questanostrastagione" artist="erosramazzotti" album="_noi">Questa nostra stagione</newSong><newSong id="_inveceno" artist="laurapausini" album="_primaverainanticipo">Invece no</newSong><newSong id="_primaverainanticipo" artist="laurapausini" album="_primaverainanticipo">Primavera in anticipo</newSong></songs>
 
     <articles>
         
 
         
     <newArticle id="_2">
-       <title><![CDATA[Primi contenuti disponibili]]></title>
-       <subtitle><![CDATA[Annuncio popolamento sito]]></subtitle>
+       <title>Primi contenuti disponibili</title>
+       <subtitle>Annuncio popolamento sito</subtitle>
      </newArticle><newArticle id="_3">
-       <title><![CDATA[Springsteen in Italia]]></title>
-       <subtitle><![CDATA[A brevissimo le info su biglietti, prezzi, prevendite per Roma e Milano]]></subtitle>
+       <title>Springsteen in Italia</title>
+       <subtitle>A brevissimo le info su biglietti, prezzi, prevendite per Roma e Milano</subtitle>
      </newArticle><newArticle id="_4">
        
        
-     <title><![CDATA[ Blink-182 al lavoro sul nuovo album]]></title><subtitle><![CDATA[Mark Hoppus dallo studio]]></subtitle></newArticle><newArticle id="_5">
-       <title><![CDATA[Sanremo 2016]]></title>
-       <subtitle><![CDATA[Quest'anno arriva anche Ginza il reaggeton di Balvin]]></subtitle>
+     <title>Blink-182 al lavoro sul nuovo album</title><subtitle>Mark Hoppus dallo studio</subtitle></newArticle><newArticle id="_5">
+       <title>Sanremo 2016</title>
+       <subtitle>Quest'anno arriva anche Ginza il reaggeton di Balvin</subtitle>
      </newArticle><newArticle id="_6">
-       <title><![CDATA[Ozzy sta male: rinviate due date del tour d'addio dei Black Sabbath]]></title>
-       <subtitle><![CDATA[A causa di una forte sinusite di cui soffre Ozzy, gli spettacoli di Edmonton e Calgary sono stati posticipati.]]></subtitle>
-     </newArticle></articles>
+       
+       
+     <title>Ozzy sta male: rinviate due date del tour d'addio dei Black Sabbath</title><subtitle>A causa di una forte sinusite di cui soffre Ozzy, gli spettacoli di Edmonton e Calgary sono stati posticipati.</subtitle></newArticle></articles>
 
 </xs:lastNews>

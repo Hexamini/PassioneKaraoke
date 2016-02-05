@@ -45,6 +45,9 @@ if ( $err ne '' ) {
     $qManager = $qManager.$err;
     print $cgi->redirect( -uri => $qManager );
 } else {
+    if ( $image eq '' ) {
+	$image = 'default.jpg';
+    }
 
     my $file = '../data/database/artistlist.xml';
 
@@ -55,16 +58,9 @@ if ( $err ne '' ) {
 
     if( $nick )
     {
-	#Aggiorno l'id
-	$id = $nick;
-	$id =~ s/\s+//g;
-	$id = lc $id;
-
-	$artist->setAttribute( 'id', $id );
-
 	$artist->removeChild( $artist->findnodes( 'xs:nick' )->get_node( 1 ) );
 	
-	$nick = $parser->parse_balanced_chunk( "<nick><![CDATA[$nick]]></nick>" ) 
+	$nick = $parser->parse_balanced_chunk( "<nick>$nick</nick>" ) 
 	    || die( 'Frammento non ben formato' );
 	$artist->appendChild( $nick );
     }

@@ -39,7 +39,7 @@ if ( !$js ) {
     } if ( !Check::check( $extra, 'songExtra' ) ) {
 	$err = $err . '&e=Formato del link non riconosciuto. Deve essere preso solo il '.
 	    '"XXXXXX" del link in esempio: https://www.youtube.com/embed/XXXXXX'.
-	    '&i=song-lyrics';
+	    '&i=song-extra';
     }
 }
 
@@ -54,7 +54,7 @@ if ( $err ne '' ) {
     #Sezione aggiunta canzoni nel database
     my $framment = 
 	"<song id='$id'>
-       <name><![CDATA[$name]]></name>
+       <name>$name</name>
        <lyrics><![CDATA[$lyrics]]></lyrics>
        <extra>$extra</extra>
        <grades>0</grades>
@@ -77,7 +77,7 @@ if ( $err ne '' ) {
     $file = '../data/database/news.xml';
     $doc = ParserXML::getDoc( $parser, $file );
 
-    $framment = "<newSong id='$id' artist='$artist' album='$album'><![CDATA[$name]]></newSong>";
+    $framment = "<newSong id='$id' artist='$artist' album='$album'>$name</newSong>";
 
     my $newSong = $parser->parse_balanced_chunk( $framment ) || die( 'Frammento non ben formato' );
 

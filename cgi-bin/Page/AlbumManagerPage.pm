@@ -14,24 +14,28 @@ my $file = '../data/database/artistlist.xml';
 
 sub get
 {
-    my ( $parser, @pair ) = @_;
+    my ( $parser, @pairs ) = @_;
     my $doc = ParserXML::getDoc( $parser, $file );
 
-    my ( $idArtist ) = ( ( shift @pair ) =~ /=(.+)/ );
-    my ( $idAlbum ) = ( ( shift @pair ) =~ /=(.+)/ ); #Potenzialmente vuoto
-    my ( $mode ) = ( ( shift @pair ) =~ /=(.+)/ );
+    my ( $idArtist ) = ( ( shift @pairs ) =~ /=(.+)/ );
+    my ( $idAlbum ) = ( ( shift @pairs ) =~ /=(.+)/ ); #Potenzialmente vuoto
+    my ( $mode ) = ( ( shift @pairs ) =~ /=(.+)/ );
 
     my %forms = ();
     my @errors = ();
 
-    if ( ( scalar @pair ) > 0 ) {
+    if ( ( scalar @pairs ) > 0 ) {
 	#Section catcher forms
-	$forms{ 'album' } = Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ );
-	$forms{ 'image' } = Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ );
+	$forms{ 'album' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	$forms{ 'image' } = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
 
-	while ( scalar @pair > 0 ) {
+	while ( scalar @pairs > 0 ) {
+	    my $message = Check::cleanExpression( ( shift @pairs ) =~ /=(.+)/ );
+	    my ( $input ) = ( ( shift @pairs ) =~ /=(.+)/ );
+	    
 	    push @errors, ErrorList::get( 
-		Check::cleanExpression( ( shift @pair ) =~ /=(.+)/ ) 
+		$message,
+		$input
 	    );
 	}
     }

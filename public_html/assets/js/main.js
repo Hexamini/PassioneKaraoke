@@ -2,10 +2,10 @@ function regByName( name ) {
     var listOfInputToCheck = {
 	//'Il nome del cantante deve avere almeno 2 caratteri composti da lettere o numeri'],
 	artistNick : /^\w{2,}(\w| )+$/, 
-	artistImage : /^(\w+.\w+)?$/,
+	artistImage : /^(\w+\.\w+)?$/,
 	artistDescription : /^.+$/,
 	albumName : /^\w{2,}(\w| )+$/, 
-	albumImage : /^\w+.\w+$/,
+	albumImage : /^\w+\.\w+$/,
 	songTitle : /^\w{2,}(\w| )+$/, //'Il titolo contiene caratteri non validi'],
 	songLyrics : /^.+$/m,
 	songExtra : /^\w+$/,
@@ -87,7 +87,11 @@ function main() {
     var inputTag = document.querySelectorAll("input,textarea");
     
     //Javascript attivo
-    document.getElementsByName("javascript")[0].value = 1;
+    var jsFlag = document.getElementsByName("javascript")[0];
+
+    if ( jsFlag !== undefined ) {
+	jsFlag.value = 1;
+    }
     
     console.log(inputTag.length);
 
@@ -101,13 +105,17 @@ function main() {
         inputTag[i].addEventListener("blur", check.bind(null, inputTag[i]));
     }
 
-    //L'unico form della pagina, impedisci di eseguire il submit finché
-    //tutti i campi non sono validati
-    document.getElementsByTagName( "form" )[0].onsubmit = function() {
-	return checkAll();
+    var form = document.getElementsByTagName( "form" )[0];
+
+    if ( form !== undefined ) {
+	//L'unico form della pagina, impedisci di eseguire il submit finché
+	//tutti i campi non sono validati
+	form[0].onsubmit = function() { return checkAll(); }
     }
 }
 
 window.onload = main();
 
-//window.document.getElementsByTagName("body").onload = main();
+
+
+

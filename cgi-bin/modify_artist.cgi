@@ -56,13 +56,16 @@ if ( $err ne '' ) {
     
     my $artist = $doc->findnodes( "//xs:artist[\@id='$id']" )->get_node( 1 );
 
-    if( $nick )
+    #Ordine rilevante per le modifiche nel file xml
+
+    if( $description )
     {
-	$artist->removeChild( $artist->findnodes( 'xs:nick' )->get_node( 1 ) );
-	
-	$nick = $parser->parse_balanced_chunk( "<nick>$nick</nick>" ) 
-	    || die( 'Frammento non ben formato' );
-	$artist->appendChild( $nick );
+	$artist->removeChild( $artist->findnodes( 'xs:description' )->get_node( 1 ) );
+
+	$description = $parser->parse_balanced_chunk( 
+	    "<description><![CDATA[$description]]></description>"
+	) || die( 'Frammento non ben formato' );
+	$artist->appendChild( $description );
     }
 
     if( $image )
@@ -74,14 +77,13 @@ if ( $err ne '' ) {
 	$artist->appendChild( $image );
     }
 
-    if( $description )
+    if( $nick )
     {
-	$artist->removeChild( $artist->findnodes( 'xs:description' )->get_node( 1 ) );
-
-	$description = $parser->parse_balanced_chunk( 
-	    "<description><![CDATA[$description]]></description>"
-	) || die( 'Frammento non ben formato' );
-	$artist->appendChild( $description );
+	$artist->removeChild( $artist->findnodes( 'xs:nick' )->get_node( 1 ) );
+	
+	$nick = $parser->parse_balanced_chunk( "<nick>$nick</nick>" ) 
+	    || die( 'Frammento non ben formato' );
+	$artist->appendChild( $nick );
     }
 
     open( OUT, ">$file" );

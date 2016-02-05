@@ -21,14 +21,14 @@ sub display
     my $user = Session::getSession();
 
     my %linkSections = (
-	'index' => Link::get( 'Index', 'r.cgi?section=index' ),
+	'index' => Link::get( 'Home', 'r.cgi?section=index' ),
 	'artists' => Link::get( 'Artisti', 'r.cgi?section=artists' ),
 	'articles' => Link::get( 'Articoli', 'r.cgi?section=articles' ),
 	'login' => Link::get( 'Login', "r.cgi?section=login" ),
     );
 
     my %nameSections = (
-	'index' => 'Index',
+	'index' => 'Home',
 	'artists' => 'Artisti',
 	'articles' => 'Articoli',
 	'login' => 'Login',

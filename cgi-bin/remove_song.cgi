@@ -52,7 +52,7 @@ $doc = ParserXML::getDoc( $parser, $file );
 my $typeVote = $doc->findnodes( 
     "//xs:typeVote[\@idArtist='$idArtist' and \@idAlbum='$idAlbum' and ".
     "\@idSong='$idSong']" 
-);
+)->get_node( 1 );
 
 if ( $typeVote ) {
     my $root = $typeVote->parentNode;

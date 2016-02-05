@@ -45,6 +45,9 @@ if ( $err ne '' ) {
     $qManager = $qManager.$err;
     print $cgi->redirect( -uri => $qManager );
 } else {
+    if ( $image eq '' ) {
+	$image = 'default.jpg';
+    }
 
     my $file = '../data/database/artistlist.xml';
 

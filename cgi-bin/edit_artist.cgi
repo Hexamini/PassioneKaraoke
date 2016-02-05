@@ -44,6 +44,10 @@ if ( $err ne '' ) {
     $qManager = $qManager.$err;
     print $cgi->redirect( -uri => $qManager );
 } else {
+    if ( $image eq '' ) {
+	$image = 'default.jpg';
+    }
+
     my $id = $nick;
     $id =~ s/\s+//g;
     $id = lc $id;

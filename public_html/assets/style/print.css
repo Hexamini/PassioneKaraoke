@@ -1,0 +1,102 @@
+#header {
+    display: none;
+}
+
+#content {
+    margin: 0 !important;
+    width: 95%;
+    padding: 0 !important;
+    color: #000;
+}
+
+h1 {
+    text-align: center;
+    color: #000;
+    font-size: 4em;
+}
+
+h2 {
+    text-align: center;
+    color: #000;
+    font-size: 3em;
+}
+
+h3 {
+    text-align: center;
+    color: #000;
+    font-size: 2em;
+}
+
+a {
+    color: blue !important;
+    text-decoration: underline;
+}
+
+/************************************
+**      CONTENT
+*************************************/
+
+#last-news, #last-song {
+    width: 100%;
+    margin: 0;
+    display: block;
+    text-align: center;
+}
+
+#last-news .new-article, #last-song .new-song, .artist, #article-list .article {
+    background-color: white;
+    border: 1px solid black;
+}
+.artist img {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+/**** ARTIST *****/
+
+#artist-photo {
+    display: block;
+    margin: auto;
+}
+
+#artist-bio {
+    text-align: justify;
+}
+
+#artist-list-of-albums .description-album {
+    border: 1px solid black;
+    background-color: white;
+}
+
+#artist-list-of-albums .list-songs li {
+    border-bottom: 1px solid black;
+}
+
+
+/**** ARTICLE ***********/
+
+#article-content {
+    text-align: justify;
+    margin: 0;
+}
+
+#article-author {
+    color: black;
+    font-weight: bolder;
+}
+
+/** USER PAGE ****/
+#like-songs {
+    width: 100%;
+    padding: 0;
+}
+
+#like-songs .song {
+    border: 1px solid black;
+    background-color: white;
+}
+
+#logout-btn {
+    display: none;
+}

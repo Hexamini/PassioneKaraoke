@@ -1,0 +1,43 @@
+!_META
+
+@description = Descrizione e testo della canzone [% song %]
+@keyword = canzone, karaoke, testo, [% song %], [% artist %], [% album %]
+@title = [% song %] - [% album %] - [% artist %]
+@breadcrumb = <a href="r.cgi?section=index"><span lang="en">Home</span></a> &gt; <a href="r.cgi?section=artists">Artisti</a> &gt; <a href="r.cgi?section=artist&amp;id=[% idArtist %]">[% artist %]</a> &gt; [% song %]
+
+META_!
+
+<div id="song-head">
+
+    <h1>Canzone: [% song %]</h1>
+    <p id="details">Autore: <span>[% artist %]</span> - Album: [% album %]</p>
+</div>
+
+<div id="song-content">
+
+    <div id="song-lyrics">
+
+
+
+        <h2>Testo della canzone</h2>
+
+        [% songLyrics %]
+    </div>
+
+    <div id="song-extra">
+
+
+
+        <iframe src="https://www.youtube.com/embed/[% url %]?rel=0&amp;showinfo=0" title="Video del karaoke" allowfullscreen><a href="https://www.youtube.com/watch?v=[% url %]">Video del <span lang="en">karaoke</span></a></iframe>
+
+    </div>
+
+	<div id="song-appreciation">
+
+    <p>Questa canzone &egrave; stata valutata dagli utenti: [% evaluate %]</p>
+
+    [% songVotes %]
+
+</div>
+
+</div>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.passionekaraoke.com"
+           targetNamespace="http://www.passionekaraoke.com"
+           elementFormDefault="qualified">
+ <!-- per l'attributo xml:lang -->
+<xs:import namespace="http://www.w3.org/XML/1998/namespace"
+           schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+	<xs:complexType name="html" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="span" type="TSpan" />
+		</xs:choice>
+	</xs:complexType>
+	
+	<xs:complexType name="TSpan">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+<!-- ****************** Inizio Artista ****************** -->
+<!-- Inizio Artisti -->
+    <xs:element name="artistList" type="TartistList"/>
+
+    <xs:complexType name="TartistList">
+        <xs:sequence>
+            <xs:element name="artist" type="Tartist"  maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Tartist">
+        <xs:sequence>
+            <xs:element name="nick" type="html" minOccurs="0" />
+            <xs:element name="born" type="xs:string" />
+            <xs:element name="death" minOccurs="0" type="xs:string" />
+			<xs:element name="image" minOccurs="1" maxOccurs="1" type="xs:string" />
+            <xs:element name="description" type="html" />
+            <xs:element name="album" maxOccurs="unbounded" type="Talbum" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+<!-- Fine Artisti -->
+
+<!-- Inizio Album -->
+    <xs:complexType name="Talbum">
+        <xs:sequence>
+            <xs:element name="name" type="html" />
+            <xs:element name="creation" type="xs:string" />
+			<xs:element name="image" minOccurs="1" maxOccurs="1" type="xs:string" />
+            <xs:element name="song" minOccurs="1" maxOccurs="unbounded"
+                        type="Tsong" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+<!-- Fine Album -->
+
+<!-- Inizio Canzoni -->
+	<xs:complexType name="Tsong">
+		<xs:sequence>
+			<xs:element name="name" type="html" />
+			<xs:element name="lyrics" type="html"  />
+			<xs:element name="extra" type="html"  />
+            <xs:element name="grades" type="xs:integer" default="0"/>
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+<!-- Fine Canzoni -->
+<!-- ****************** Fine Artista ****************** -->
+
+<!-- ****************** Inizio Articoli ****************** -->
+	<xs:element name="articleList" type="TarticleList"/>
+
+	<xs:complexType name="TarticleList">
+		<xs:sequence>
+			<xs:element name="article" maxOccurs="unbounded" type="Tarticle" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Tarticle">
+		<xs:sequence>
+            <xs:element name="author" type="html" />
+            <xs:element name="data" type="xs:string" />
+			<xs:element name="title" type="html" />
+			<xs:element name="subtitle" type="html" />
+			<xs:element name="content" type="html" />
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+
+<!-- ****************** Fine Articoli ****************** -->
+
+<!-- ****************** Inizio Utenti ****************** -->
+	<xs:element name="userList" type="TuserList"/>
+	
+	<xs:complexType name="TuserList">
+		<xs:sequence>
+			<xs:element name="user" maxOccurs="unbounded" type="Tuser" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Tuser">
+		<xs:sequence>
+			<xs:element name="mail" type="xs:string" />
+			<xs:element name="password" type="xs:string" />
+            <xs:element name="type" type="xs:string" minOccurs="0"/>
+			<xs:element name="votes" type="Tvotes" />
+		</xs:sequence>
+        <xs:attribute name="username" type="xs:ID" use="required"/>
+	</xs:complexType>
+
+    <xs:complexType name="Tvotes">
+        <xs:sequence>
+            <xs:element name="typeVote" type="TtypeVote" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="TtypeVote">
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="idSong" type="xs:string" />
+	  <xs:attribute name="idArtist" type="xs:string" />
+	  <xs:attribute name="idAlbum" type="xs:string" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+
+<!-- ****************** Fine Utenti ****************** -->
+
+<!-- ****************** Inizio News ****************** -->
+    <xs:element name="lastNews" type="TlastNews"/>
+
+    <xs:complexType name="TlastNews">
+        <xs:sequence>
+            <xs:element name="songs" type="TsongsNew" />
+            <xs:element name="articles" type="TarticlesNew" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TsongsNew">
+        <xs:sequence>
+            <xs:element name="newSong" type="TnewSong" maxOccurs="5" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TarticlesNew">
+        <xs:sequence>
+            <xs:element name="newArticle" type="TnewArticle" maxOccurs="5" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TnewSong">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:ID" use="required"/>
+                <xs:attribute name="artist" type="xs:string" use="required"/>
+                <xs:attribute name="album" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="TnewArticle">
+        <xs:sequence>
+            <xs:element name="title" type="html" />
+            <xs:element name="subtitle" type="html" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+<!-- ****************** Fine News ****************** -->
+
+</xs:schema>
+
+<!--
+**********************SPIEGAZIONI**********************
+ID:
+- single = nick
+- album = nome album senza spazi
+- song = nome canzone con _ all'inizio
+- article = _numero progressivo
+- user = username
+*******************************************************
+-->

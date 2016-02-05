@@ -1,0 +1,47 @@
+!_META
+
+<!-- Default meta phrases -->
+
+@description = Pagina con la liste delle canzoni e degli album di [% artist %]
+@keyword = [% artist %]
+@title = [% artist %]
+@breadcrumb = <a href='r.cgi?section=index'><span lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; [% artist %]
+<!-- End default meta phrases -->
+
+META_!
+
+<div id="artist-content">
+
+    <div id="artist-description">
+
+        <div id="artist-photo">
+
+            <img src="../img/artist/[% artistPhoto %]" alt="Immagine dell'artista [% artist %]" />
+        </div>
+
+        <div id="artist-name">
+
+            <h1>Nome artista: [% artist %]</h1>
+        </div>
+    </div>
+
+    <div id="artist-bio">
+
+        <h2>Biografia dell'artista</h2>
+
+        [% artistBio %]
+    </div>
+
+    <div id="artist-list-of-albums">
+
+       <h2>Lista degli album</h2>
+
+        [% editButton %]
+
+        [% addButton %]
+
+        [% albumList %]
+
+    </div>
+
+</div>

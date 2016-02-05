@@ -1,0 +1,30 @@
+!_META
+
+<!-- Default meta phrases -->
+
+@title = [% title %]
+@description = Pagina riguardante [% subtitle %]
+@keyword = [% title %]
+@breadcrumb = <a href='r.cgi?section=index'> Home </a> &gt; <a href='r.cgi?section=articles'> Articoli </a> &gt; [% title %]
+
+<!-- End default meta phrases -->
+
+META_!
+
+<div id="article-data">
+    <span id="article-author">Autore: [% author %]</span>
+    <span id="article-date">Data creazione dell'articolo: [% date %]</span>
+</div>
+
+
+<div id="article-head">
+    <h1>Titolo: [% title %]</h1>
+    <h2>Sottotitolo: [% subtitle %]</h2>
+</div>
+
+
+<div id="article-content">
+
+    <h3>Articolo</h3>
+    [% content %]
+</div>

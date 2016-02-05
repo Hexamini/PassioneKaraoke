@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:artistList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com artistlist.xsd">
+
+    <artist id="elioelestorietese">
+        <album id="_albumbiango">
+            <song id="__lacanzonemononota">
+                <grades>1</grades>
+            	<name>La canzone Mononota</name>
+				<lyrics><![CDATA[Condurre un’esistenza di sforzi<br / />Tallonando la chimera di una melodia composita<br />Gremita di arzigogoli rarissimi<br />Che poi alla fine scopri<br />Che ti mancava quella nota sola<br />Bellissima<br />Che sciocco non aver pensato prima<br />Alla canzone mononota<br />Una canzone poco nota<br />Che si fa con una nota<br />E quella nota &egrave; questa<br />&Egrave; la canzonemononota<br />Pupi cambiare il ritmo<br />Puoi cambiare la velocit&agrave;<br />Puoi cambiare l’atmosfera<br />Puoi cambiare gli accordi<br />La puoi fare maggiore, minore, eccedente,diminuita<br />Puoi cambiare il cantante<br />Puoi cambiare l’argomento<br />Puoi cantarla da solo<br />Puoi cantarla tutti insieme con il coro<br />Puoi farla fare all’orchestra<br />Mentre ti prendi una pausetta<br />Puoi cambiare la lingua<br />For example you can sing it in english<br />Auf Deutsch, en francais, en espanol,<br />In cinese: “Unci, dunci, trinci…”<br />Quante cose che puoi fare<br />Senza cambiare la nota!<br />Puoi cambiare l’ottava<br />Pupi cantare all’ottava bassa<br />Puoi far finta che sia finita<br />Ma se non sei in grado neanche<br />Di cantare la canzone mononota<br />Ti consigliamo di abbandonare il tuo sogno di cantante<br />Se sei un cantante virtuoso<br />Stai attento<br />Che qui basta che fai: “Aaah”<br />E sei fuori<br />La canzone mononota<br />Che non scende a compromessi<br />E se lo fa il compromesso &egrave; piccolo<br />Tipo questo<br />La canzone mononota<br />Ha avuto i suoi antesignani<br />Uno su tutti: Rossini, Bob Dylan, Tintarella di Luna<br />&Egrave; anche facile da fischiettare<br />Democratica, osteggiata dalle dittature<br />Fateci caso: l’inno cubano &egrave; pieno di note<br />C’&egrave; poi il samba di una nota sola<br />Ma, se ascolti attentamente, dopo un po’ cambia:<br />Jobim non ha avuto le palle di perseguire un obiettivo<br />Non ci ha creduto fino in fondo<br />Invece Noi<br />Sì]]></lyrics>
+				<extra>mP81HdoCCPo</extra>
+			</song>
+            <name>Album Biango</name>
+			<image>albumbiango.jpg</image>
+		</album>
+		<nick>Elio e le storie tese</nick>
+		<image>elioelestorietese.jpg</image>
+		<description><![CDATA[Elio e le Storie Tese (talvolta abbreviato in EelST o Elii) sono un gruppo musicale italiano di Milano, fondato da Stefano Belisari (in arte Elio) nel 1979.<br />Il gruppo ha conosciuto, nel tempo, una popolarit&agrave; sempre crescente, alimentata prima dalla circolazione di registrazioni bootleg dei loro spettacoli in locali come il Magia Music Meeting e lo Zelig di Milano, poi dalla pubblicazione dei primi album e dalle numerose apparizioni in televisione (Lupo solitario e L'araba fenice su Italia 1, al seguito della Gialappa's Band in Mai dire Gol o di Claudio Bisio a Zelig).]]></description>
+	</artist>
+
+    
+	<artist id="erosramazzotti">
+    	<album id="_noi">
+     		<song id="__unangelodistesoalsole">
+       			<name>Un angelo disteso al sole</name>
+       			<lyrics><![CDATA[Non chiedi libert&agrave;<br />lo sai non son o io<br />a incatenarti qua<br />il sentimento va<br />gi&agrave; libero da se<br />tu quanto amore dai?<br />in cambio niente vuoi<br />nell' attimo in cui sei<br />purezza e fedelt&agrave;<br />davanti agli occhi miei<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che &egrave caduto qua,<br />nuda verit&agrave;<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori<br /><br />E adesso che mi vuoi<br />non devi fare niente che non vuoi<br />il cuore non ci sta<br />in una scatola<br />e tantomeno noi<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che è caduto qua,<br />nuda verità<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori.. che tu sfiori..<br /><br />Ma tu chi sei?<br />Ci credi che non lo so dire?<br />Un angelo disteso al sole<br />che è caduto qua,<br />nuda verità<br />e fa l' amore anche l'anima!<br />Ma tu chi sei?<br />Il cielo ti ha lasciato andare!<br />un angelo disteso al sole<br />la natura che<br />si manifesta in te<br />e in tutto quello che tu sfiori.. che tu sfiori..<br />Segnala testo errato<br /><br />]]></lyrics>
+       			<extra>VADxdeK4iMc</extra>
+       			<grades>0</grades>
+     		</song>
+			<song id="__questanostrastagione">
+				<grades>0</grades>
+     			<name>Questa nostra stagione</name>
+				<lyrics><![CDATA[Che cosa ti aspetti da noi<br />chissà se ci pensi mai<br />lo sai che anche il mare è più blu,poi nasconde scogli<br />c'è da correre,per rimanere dove siamo...<br /><br />Perfetta così<br />questa nostra stagione<br />di giorni insieme ad esplorare noi<br />è perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...le paure,le tue paure...<br /><br />Che cosa ti manca di te<br />da quando tu stai con me<br />se un giorno tu me lo dirai,lo avrò già intuito<br />c'è da vivere,per diventare quel che siamo...<br /><br />Perfetta così<br />questa nostra stagione<br />di vita insieme a innamorare noi<br />è perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...<br /><br />Guarda in quanti corrono spingendo il freno<br />e non riesco più a prendersi la mano fermi tra abitudini e speranze vane<br />se non ami l'amore dopo niente alla fine rimane di noi...<br /><br />Perfetta così<br />ma non c'è vero amore<br /> che non abbia bisogno di un pò di cure<br />Stupenda così<br />questa nostra stagione<br />di vita insieme a raccontarci noi...<br />Perfetta così<br />ma non c'è vero amore<br />che non abbia bisogno di un pò di cure...le nostre paure...]]></lyrics>
+				<extra>UZXUrM_VALo</extra>
+			</song>
+			<name>Noi</name>
+       		<image>noi.jpg</image>
+		</album>
+		<nick>Eros Ramazzotti</nick>
+		<image>ramazzotti.jpg</image>
+		<description><![CDATA[Eros Walter Luciano Ramazzotti (Roma, 28 ottobre 1963) è un cantautore italiano. È uno dei cantanti di maggiore successo nel panorama della musica leggera italiana e nel pop latino a livello internazionale dagli anni ottanta.<br />Nella sua carriera ha venduto oltre 60 milioni di dischi, ed è tra gli artisti italiani che hanno venduto il maggior numero di dischi]]></description>
+	</artist>
+<artist id="laurapausini">
+       <nick>Laura Pausini</nick>
+       <image>pausini.jpg</image>
+       <description><![CDATA[Laura Pausini (Faenza, 16 maggio 1974) &egrave; una cantante italiana.<br />Ha iniziato la sua carriera nel 1993, vincendo il Festival di Sanremo nella sezione Novit&agrave; con il brano La solitudine. Ha raggiunto il mercato discografico internazionale, soprattutto in numerosi paesi dell'Europa e dell'America Latina, incidendo brani in spagnolo, portoghese, inglese, francese e catalano.<br />Ha una voce potente, calda, corposa, ben impostata, in grado di sostenere per molti secondi anche le note pi&ugrave; acute del suo registro. Grazie alla sua voce, &egrave; stata paragonata dai critici musicali a vari artisti di sesso femminile, tra cui Whitney Houston, Céline Dion, Mariah Carey e Barbra Streisand che definisce la sua voce come velluto. All'inizio della sua carriera, &egrave; stata descritta dalla critica musicale come un idolo degli adolescenti cantando principalmente problemi e storie d'amore adolescenziali. Spesso le sue canzoni vengono dai critici considerate malinconiche. A partire dal 1998 con l'album La mia risposta i critici musicali italiani hanno iniziato a considerarla come una cantante più matura, lodando la sua semplicità e la sua voce. La sua musica si basa principalmente sulla tipica melodia italiana ma il suo stile musicale si è evoluto nel corso della sua carriera con influenze di vari generi, tra cui musica latina, musica <span lang="en">soul</span> e <span lang="en">pop rock</span>.]]></description>
+    <album id="_primaverainanticipo">
+       <name>Primavera in anticipo</name>
+       <image>primaverainanticipo.jpg</image>
+     <song id="__inveceno">
+       <name>Invece no</name>
+       <lyrics><![CDATA[Forse bastava respirare<br>solo respirare un p&ograve;<br>Fino a riprendersi ogni battito e non cercare l'attimo<br>per andar via<br>Non andare via<br>Perch&egrave; non pu&ograve; essere abitudine Dicembre senza te<br>Chi resta qui spera l'impossibile<br><br>Invece no<br>non c'&egrave; più tempo per spiegare<br>Per chiedere se ti avevo dato amore<br>Io sono qui<br>E avrei da dire ancora, ancora...<br><br>Perch&egrave; si spezzano tra i denti<br>le cose pi&ugrave; importanti<br>Quelle parole<br>Che non osiamo mai<br>E faccio un tuffo nel dolore per farle risalire<br>Riportarle qui<br>Una per una qui<br>Le senti tu pesano e si posano per sempre su di noi<br>E se manchi tu<br>Io non so ripeterle<br>Io non riesco a dirle pi&ugrave;!<br><br>Invece no<br>qui piovono i ricordi<br>Ed io farei di più di ammettere che &egrave; tardi<br>Come vorrei<br>Potere parlare ancora, ancora<br>E invece no!<br>Non ho!<br>Pi&ugrave; tempo per spiegare<br>Che avevo anch'io, io!<br>Qualcosa da sperare davanti a me<br>Qualcosa da finire insieme a te<br><br>Forse mi basta respirare<br>solo respirare un po'<br>Forse &egrave; tardi, forse invece no]]></lyrics>
+       <extra>uX0PUwucynE</extra>
+       <grades>0</grades>
+     </song><song id="__primaverainanticipo">
+       <name>Primavera in anticipo</name>
+       <lyrics><![CDATA[Per scontato non do<br>niente di quel che ho<br>neanche un minimo brivido, ora no<br><br>c'&egrave; pi&ugrave; ossigeno <br>nel mio perimetro<br>&egrave; un sintomo... <br>chiarissimo<br><br>Confesso... sei la causa mia primaria<br>adesso in me<br>di tutto il buono che c'&egrave;<br><br>Ah-a-a-a lo so<br>sei la primavera in anticipo<br>ah-a-a-a la prova che<br>dimostra quale effetto hai su di me<br>perché...<br><br>l'autoscatto di noi, ormai<br>non prescinde da te<br>&egrave; un cantico...<br>reciproco...<br><br>Per questo nei polmoni cambia l'aria<br>del resto sei... sei<br>sei tutto il buono che c'&egrave;<br><br>Ahahah lo so<br>questa primavera in anticipo<br>ahahah l'esempio che<br>dimostra quanto effetto hai su me<br><br>Fiori... che nascono dai rovi ah-a (ah-a)<br>qui fuori cicatrizzano... gli errori miei<br>ah-a-a-a ah-a-a-a<br>ah-a-a-a<br><br>Sei tu senz'alcun dubbio l'artefice<br>di questa primavera che c'&egrave;<br>in me... in me<br>qui fuori<br>ah-a-a-a... ah<br>nell'autoscatto di noi]]></lyrics>
+       <extra>joU4PbEkgzo</extra>
+       <grades>0</grades>
+     </song></album></artist></xs:artistList>

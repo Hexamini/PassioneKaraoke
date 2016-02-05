@@ -1,0 +1,21 @@
+!_META
+
+<!-- Default meta phrases -->
+
+@title = Pagina Utente di [% username %]
+@description = Pagina riservata alla gestione dell'utente
+@keyword = utente, user
+@breadcrumb = <a href='r.cgi?section=index'><span lang='en'>Home</span></a> &gt; Tu
+<!-- End default meta phrases -->
+
+META_!
+
+<h1>Pagina di [% username %]</h1>
+<a href='logout.cgi' id="logout-btn"><span lang='en'>Logout</span></a>
+
+<h2>Lista canzoni piaciute</h2>
+
+<ul id="like-songs">
+	[% likeSong %]
+</ul>
+

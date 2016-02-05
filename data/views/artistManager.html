@@ -1,0 +1,49 @@
+!_META
+
+<!-- Default meta phrases -->
+
+@description = Pagina che permette l'inserimento di un nuovo artista
+@keyword = artisti, inserimento
+@title = Aggiungi artista
+@breadcrumb = <a href='r.cgi?section=index'><span lang='en'>Home</span></a> &gt; <a href='r.cgi?section=artists'>Artisti</a> &gt; Gestione artista
+<!-- End default meta phrases -->
+
+META_!
+
+<div id="artist-manager">
+
+    <h1>Gestione artista</h1>
+
+    <p class="note">Nota: &egrave; possibile inserire formattazione html nel testo dell'articolo.</p>
+
+
+    <form class="input-form" action="../cgi-bin/[% mode %]_artist.cgi" method="post">
+        [% boxError %]
+        <fieldset>
+
+            <p>L'asterisco (*) indica i campi obbligatori.</p>
+
+            <input type="hidden" name="idArtist" id="artist-id" value="[% id %]"/>
+            <input type="hidden" name="page" value="artist"/>
+            <input type="hidden" name="javascript" value="0"/>
+
+            <div class="error hidden" id="err-artistNick">Nome d'arte non valido, inserire un nome di almeno due caratterei e che presenti solo lettere e
+                numeri
+            </div>
+            <label for="a-Nick">Nome d'arte o nome del gruppo: *</label>
+            <input type="text" name="artistNick" class="artist-nick" id="a-Nick" value="[% nick %]"/>
+
+            <div class="error hidden" id="err-artistImage">Nome immagine non valido, inserire un testo che presenti solo
+                lettere e numeri comprensivo del formato dell'immagine
+            </div>
+            <label for="a-Image">Immagine dell'artista:</label>
+            <input type="text" name="artistImage" class="artist-image" id="a-Image" value="[% image %]"/>
+            <div class="error hidden" id="err-artistDescription">
+	      La descrizione &egrave; vuota
+	    </div>
+            <label for="a-Description">Descrizione dell'artista: *</label>
+            <textarea name="artistDescription" class="artist-description" id="a-Description" rows="80" cols="40">[% description %]</textarea>
+            <input type="submit" value="Conferma" name="action"/>
+        </fieldset>
+    </form>
+</div>

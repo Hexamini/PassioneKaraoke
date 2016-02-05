@@ -1,0 +1,79 @@
+\subsection{Perl}
+Il Perl \`e il motore del sito, che ne permette il funzionamento offrendo pagine HTML all'utente. Gestisce inoltre le query sulla base XML garantendo la compatibilit\`a tra dispositivi in quando eseguito lato server.
+\subsubsection{Generazione delle pagine web}
+\textit{The biggest cause of unmaintainable web sites is mixing markup code such as HTML and program code such as Perl.}\footnote{[cit. \textit{Perl Template Toolkit}]}\\
+
+La netta divisione tra le tre componenti di un sito web (\textit{Presentazione}, \textit{Struttura}, \textit{Comportamento}) \`e un traguardo ambito ma non semplice da raggiungere. Se infatti il CSS rende semplice la divisione tra struttura e presentazione, lo stesso non si pu\`o dire del Perl. Questo perch\`e, contrariamente al CSS dove si ha una netta separazione tra struttura e presentazione, \`e necessario prestare attenzione all'interazione con l'HTML. Si \`e quindi adottato uno sviluppo tramite modularizzazione, che ha permesso di raggiungere un buon compromesso.
+
+\paragraph*{Descrizione della soluzione adottata}Una separazione poco chiara tra struttura e comportamento sta nella mancanza di un supporto nativo per Perl ed HTML, che non è in grado di dare la possibilit\`a in modo \textit{semplice e bello} di definire una procedura per il popolamento di una pagina Web. L'obiettivo degli script creati durante la realizzazione del progetto \`e riempire spazi vuoti in aree \textit{statiche} costrette ad essere considerate come \textit{dinamiche} per una limitazione espressiva del linguaggio. Da qui \`e nata l'esigenza di ampliare il linguaggio HTML in modo di dare la possibilit\`a al Perl di riferirsi ad una determinata area dove inserire il contenuto d'interesse. La soluzione \`e stata raggiunta adottando l'utilizzo della libreria \textit{Perl Template Toolkit}, che rende possibile in maniera agevole l'inserimento di \textit{segnaposti} all'interno della struttura HTML. Gli script, infine, si occupano di sostituire i \textit{segnaposti} con l'effettivo contenuto.
+\paragraph*{Segnaposti} Qui un esempio di segnaposto, racchiuso tra la sequenza `[\%' e `\%]', applicato alla struttura HTML.
+\lstinputlisting[language=HTML,caption=Esempio di segnaposto]{res/codeExample/segnaposto.html}
+
+Prima di visualizzare l'HTML \`e necessario applicare il parsing del Perl Template Toolkit in modo da sostituire i simboli di segnaposto con il valore richiesto, sia esso solo testo o struttura HTML, preso da altri file.
+La Perl Template Toolkit dispone una serie di utilities a livello di sintassi dette ``\textit{Direttive}'', per offrire una serie di costrutti (es. ciclo for, while, ecc.) in grado di renderlo equiparabile alle trasformate XSLT. Durante la stesura del progetto si \`e deciso di non implementare questa soluzione in quanto si temeva di mescolare il comportamento con la struttura.
+
+
+\subsubsection{Organizzazione}
+Durante lo sviluppo del codice Perl si \`e puntato alla ricerca del riuso e dell'estendibilit\`a. Ispirandosi al paradigma della programmazione orientata agli oggetti si \`e applicato il pattern MVC, per poter modellare la ``gerarchia'' di elementi web in maniera efficace ed efficiente.
+
+\paragraph*{Funzionamento del pattern MVC}Ogni elemento definito presenta tre componenti:
+\begin{enumerate}
+    \item view HTML (\textit{Model});
+    \item regole CSS sui tag definiti (\textit{View});
+    \item package Perl contenente le regole di costruzione e funzionalit\`a richieste (\textit{Controller}).
+\end{enumerate}
+
+Data la mancanza delle classi nel linguaggio Perl, in sostituzione, sono stati utilizzati i \textit{Package}. All'istanziazione di un package viene costruita la pagina web che viene poi ottenuta tramite il metodo \textit{get}, unico metodo che funge da costruttore.
+
+La OOP\footnote{Acronimo di \textit{Programmazione Orientata agli Oggetti}.} viene applicata nella definizione della gerarchia citata. Ogni package ``estende'' il package \textit{Base}, dove sono archiviati tutti gli script base per il funzionamento del sito web e metodi di uso comune. Di fatto nel package Base \`e possibile trovare:
+\begin{itemize}
+\item script di parsing della view HTML usando Perl Template Toolkit;
+\item script per la lettura dei file XML;
+\item script per la gestione delle sessioni;
+\item script per il concatenamento tra i vari oggetti;
+\end{itemize}
+
+Da Base si deriva in \textit{Object} che, sfruttando le funzionalit\`a della classe padre, costruisce tutti gli elementi presenti nel sito web. L'oggetto \textit{Page} si occupa di mettere in relazione gli oggetti tra di loro per formare le pagine da visualizzare. Qui si pu\`o notare la reale versatilit\`a nell'utilizzo segnaposti: \`e possibile definire la pagina come l'insieme di segnaposti e con Perl caricare ogni modulo \underline{senza legare} comportamento con struttura.
+
+%Durante lo sviluppo \`e capitato di modificare parti di HTML o molto pi\`u spesso quelle di Perl ma in entrambi i casi le operazioni non erano dispendiose in quanto un cambio nella logica non implicava un cambio nel modello, e viceversa. %sta frase mi sembra inutile. Mi pare ovvio che in un progetto avvengano delle modifiche :D
+
+
+
+\subsubsection{Visualizzazione e navigazione}
+
+L'HTML \`e stato scritto in maniera tale da permettere una massima modularizzazione. \textbf{r.cgi} \`e lo script principale del sito, che si occupa di servire le pagine in maniera corretta.
+Le pagine web che vengono servite sono ``costruite'' dal Perl secondo uno specifico metodo. \textit{r.cgi} chiama il modulo per la costruzione della pagina, che ricorsivamente chiama il modulo per la costruzione delle sottoparti, restituendo poi il tutto all'utente.
+
+Durante il parsing, viene riconosciuto il segnaposto e viene aggiunto il modulo HTML corrente.
+
+\paragraph*{r.cgi}Questo script \`e il motore del sito, che permette come gi\`a accennato il caricamento delle singole pagine web e la creazione dei link. Scrivendo nell'URL del sito tramite una \textit{QueryString} la pagina desiderata e i parametri principali rimanda l'utente alla pagina richiesta sostituendo ai segnaposti al contenuto.
+
+In caso non ci sia corrispondenza con le pagine presenti nel sito si sar\`a rimandati alla pagina di \textit{404}.
+
+\subsubsection{Interazione con la base XML}
+Perl non si occupa solamente della generazione del HTML, ma anche del prelievo dei dati dalla base scritta in XML.
+
+La manipolazione dei dati utilizza la libreria Perl \textit{LibXML}, che d\`a l'accesso alla struttura XML consentendo l'utilizzo delle istruzioni XPath e conferendo l'accesso alla struttura ad albero dell'XML.
+
+\paragraph*{Funzionamento prelievo dati da XML}Tramite l'uso di espressioni XPath \`e possibile ottenere l'oggetto \textit{LibXML::NodeList}: \`e possibile scorrere la lista leggendo il singolo valore del nodo e, tramite un'operazione ricorsiva, eseguire nuovamente espressioni XPath allo scopo di giungere ai nodi figli (dove sono contenute le informazioni), permettendo di estrapolare il valore memorizzato nel nodo e raccogliendo le informazioni desiderate.
+
+\paragraph*{Funzionamento modifica dati da XML}Analogamente al prelievo dei dati XML, si raggiungono padri delle foglie tramite espressioni XPath. Una volta giunti a questo livello, si rimuove il nodo foglia da modificare e si inserisce il nuovo nodo foglia modificato, effettuando quindi una modifica del valore per sostituzione dei nodi.
+
+\paragraph*{Funzionamento rimozione dati da XML}Similmente per la modifica XML, una volta ottenuto il nodo padre del sotto albero che si vuole rimuovere, \`e possibile tramite un'istruzione Perl cancellare il dato sotto albero.
+
+\subsubsection{Gestione delle sessioni}
+Le sessioni (salvate nel server) vengono gestite tramite l'utilizzo di cookies (che riportano l'id della sessione corrispondente):questo permette agli utenti registrati di eseguire il login e di accedere ad altre funzionalit\`a.
+Per implementare questa feature viene usata la libreria Perl \textit{Session}, che fornisce i metodi necessari per dare la possibilit\`a di creare sessioni utente. Le sessioni avvengono tramite due fasi principali:
+\begin{itemize}
+
+    \item viene creato inizialmente un file (il cookie), che viene salvato lato client e gestito dal browser dell'utente;
+    \item viene creato un file lato server (il file sessione) dove vengono storicizzati i parametri per identificare con successo l'utente navigante sul sito web.
+
+\end{itemize}
+
+Durante lo sviluppo delle sessioni si \`e notato come fosse necessario salvare nei cookies solamente un id univoco che permettesse al sistema di riconoscere l'utente durante il login. \`E stato quindi ritenuto non necessario l'inserimento del banner nella normativa sui cookies (in quanto il banner si applica solamente se i cookies si utilizzano per la raccolta di dati a fini statistici)
+
+\subsubsection{Controlli sui campi form}
+I controlli vengono eseguiti sullo stesso file su cui vengono eseguite le operazioni richieste. In un primo momento avviene la ricezione del valori, e successivamente avvengono i controlli. Se questi vanno a buon fine viene eseguita l'operazione, altrimenti si viene rimandati alla pagina di inserimento con segnalati in primo piano gli errori rilevati.
+
+I controlli sui campi form vengono eseguiti in Perl in caso di assenza di JavaScript e ci\`o si ottiene tramite un flag che ne segnala l'utilizzo o meno.

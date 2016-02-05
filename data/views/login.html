@@ -1,0 +1,34 @@
+!_META
+
+<!-- Default meta phrases -->
+
+@title = Login
+@description = Pagina di login per accedere alle funzionalit&agrave; del sito
+@keyword = login, pagina, personale
+@breadcrumb = <a href='r.cgi?section=index'> Home </a> &gt; Login
+
+<!-- End default meta phrases -->
+
+META_!
+
+        <div id="login">
+          <h1>Pagina di <span lang="en">login</span></h1>
+            <form id="login-form" action="../cgi-bin/login.cgi" method="post">
+
+                <div class="error [% visible %]">
+            L'<span lang="en">username</span> o la <span lang="en">password</span> inseriti sono errati.
+          </div>
+
+                <fieldset>
+
+                    <label for="username"><span lang="en">Username</span></label>
+                    <input type="text" name="username" id="username" maxlength="18"/>
+                    <label for="password"><span lang="en">Password</span></label>
+                    <input type="password" name="password" id="password" maxlength="8"/>
+                    <input type="submit" value="login" name="action" />
+                </fieldset>
+
+            </form>
+    </div>
+
+

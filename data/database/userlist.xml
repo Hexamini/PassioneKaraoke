@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:userList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.passionekaraoke.com" xmlns:xs="http://www.passionekaraoke.com" xsi:schemaLocation="http:/www.passionekaraoke.com userlist.xsd">
+    <user username="admin">
+        <mail>admin@passionekaraoke.com</mail>
+        <password>password</password>
+        <type>administrator</type>
+        <votes>
+            <typeVote idSong="__lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
+        <typeVote idSong="__questanostrastagione" idArtist="erosramazzotti" idAlbum="_noi">1</typeVote></votes>
+    </user>
+
+    <user username="fabio">
+        <mail>fabio@passionekaraoke.it</mail>
+        <password>fabio</password>
+        <votes>
+            <typeVote idSong="__lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
+        </votes>
+    </user>
+
+    <user username="utente">
+        <mail>utente@mail.com</mail>
+        <password>utente</password>
+        <votes>
+			<typeVote idSong="__lacanzonemononota" idArtist="elioelestorietese" idAlbum="_albumbiango">1</typeVote>
+        </votes>
+    </user>
+
+</xs:userList>

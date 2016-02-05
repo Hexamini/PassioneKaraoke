@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8" >
+
+
+    <title>[% title %] - Passione Karaoke</title>
+
+
+
+    <meta name="title" content="[% title %] Passione Karaoke"/>
+    <meta name="description" content="[% description %]"/>
+    <meta name="keywords" content="[% keyword %]"/>
+    <meta name="language" content="italian it"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Fabio Massignan, Davide Polonio, Andrea Mantovani, Luca Bianco"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="../assets/style/style.css"/>
+
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="../assets/style/ie.css"/>
+    <![endif]-->
+    <link rel="stylesheet" media="print" type="text/css" href="../assets/style/print.css" />
+</head>
+
+
+<body>
+
+<div id="header">
+
+    <a class="aiuti" href="#content">Passa al contenuto</a>
+
+    <div id="navigation-bar">
+        <div id="logo">
+			<h1 class="aiuti">Passione Karaoke</h1>
+			<img src="../img/logo.svg" alt="Logo Passione Karaoke">
+		</div>
+        <ul id="menu">
+            <li>[% index %]</li><!--
+            --><li>[% artists %]</li><!--
+            --><li>[% articles %]</li><!--
+            --><li>[% login %]</li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="content">
+
+    <div id="nav-bar">
+        <p>Ti trovi in: [% breadcrumb %]</p>
+    </div>
+
+    [% content %]
+
+
+</div>
+
+<a class="aiuti" href="#header">Torna ad inizio pagina</a>
+
+<div id="footer">
+    <div id="resources">
+        <a href="../cgi-bin/r.cgi?section=map">Mappa del sito</a>
+    </div>
+    <div id="copyright">
+        <p>Creato da: Fabio Massignan, Davide Polonio, Luca Bianco, Andrea Mantovani &copy; 2015</p>
+    </div>
+	<div id="validator-logos">
+		<p>
+
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+		</p>
+
+		<p>
+
+            <img src="../img/html5valid.png" alt="Valid HTML5!" />
+		</p>
+
+		<p>
+			<img src="../img/wcag2AA.svg" alt="Level Double-A conformance WAI WCAG 2.0" />
+		</p>
+
+	</div>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

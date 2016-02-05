@@ -1,0 +1,39 @@
+!_META
+
+<!-- Default meta phrases -->
+
+@title = Registrazione
+@description = Pagina di registrazione
+@keyword = sign-in, pagina, personale
+
+
+<!-- End default meta phrases -->
+
+META_!
+
+
+<div id="signin">
+
+    <h1>Pagina di registrazione</h1>
+
+    <form id="signin-form" action="../cgi-bin/signin.cgi" method="post">
+
+
+        <fieldset>
+
+            <label for="email"><span lang="en">E-Mail</span>(ad esempio mail@example.com)</label>
+            <input type="text" name="email" id="email" maxlength="18"/>
+	    
+            <label for="username"><span lang="en">Username</span></label>
+            <input type="text" name="username" id="username" maxlength="18"/>
+
+
+
+            <label for="password"><span lang="en">Password</span></label>
+            <input type="password" name="password" id="password" maxlength="8"/>
+
+
+            <input type="submit" value="Registrati" name="action" />
+        </fieldset>
+    </form>
+</div>

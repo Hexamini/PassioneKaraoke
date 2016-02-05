@@ -27,8 +27,8 @@ sub get
 
     foreach my $node( @nodes )
     {
-	my $title = ParserXML::getContent( $node->findnodes( 'xs:title/text()' ) );
-	my $subtitle = ParserXML::getContent( $node->findnodes( 'xs:subtitle/text()' ) );
+	my $title = $node->findnodes( 'xs:title/text()' );
+	my $subtitle = $node->findnodes( 'xs:subtitle/text()' );
 	my $id = $node->getAttribute( 'id' ); 
 	
 	push( 
